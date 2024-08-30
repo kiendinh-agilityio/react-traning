@@ -11,11 +11,32 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.profile {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.btn {
+  background-color: aqua;
+  margin: 20px;
 }
 
 @keyframes logo-spin {
