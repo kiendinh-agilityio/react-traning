@@ -1,7 +1,16 @@
 // import { useState } from 'react';
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
-import { Avatar, Gallery, Button, List, TeaSet } from "./components/index";
+import {
+  Avatar,
+  Gallery,
+  Button,
+  List,
+  TeaSet,
+  Toolbar,
+  Signup,
+  PackingList,
+} from "./components/index";
 import "./App.css";
 
 const App = () => {
@@ -24,7 +33,9 @@ const App = () => {
         </button>
       </div> */}
       <Button label="Click me" />
+      <Toolbar />
       <TeaSet />
+      <Signup />
       <div>
         <Avatar
           size={100}
@@ -48,6 +59,7 @@ const App = () => {
           }}
         />
       </div>
+      <PackingList />
       <Gallery />
       <div>
         <h2>Scientists List</h2>

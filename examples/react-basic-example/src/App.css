@@ -61,3 +61,33 @@
 .read-the-docs {
   color: #888;
 }
+
+.toolbar {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  width: 150px;
+  height: 40px;
+}
+
+.btn-primary {
+  background-color: rgb(64, 64, 170);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: rgb(196, 154, 154);
+  color: white;
+}
+
+.packing-list {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.packing-list h3 {
+  margin-bottom: 0;
+}
