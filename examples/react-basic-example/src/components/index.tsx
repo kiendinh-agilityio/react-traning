@@ -6,3 +6,6 @@ export { TeaSet } from "./Pure";
 export { Toolbar } from "./Toolbar";
 export { Signup } from "./Signup";
 export { PackingList } from "./PackingList";
+export { GalleryState } from "./GalleryState";
+export { TodoList } from "./TodoList";
+export { AdvancedCounter } from "./AdvancedCounter";

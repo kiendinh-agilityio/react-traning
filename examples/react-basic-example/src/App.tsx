@@ -10,6 +10,9 @@ import {
   Toolbar,
   Signup,
   PackingList,
+  GalleryState,
+  TodoList,
+  AdvancedCounter,
 } from "./components/index";
 import "./App.css";
 
@@ -59,6 +62,9 @@ const App = () => {
           }}
         />
       </div>
+      <TodoList />
+      <AdvancedCounter />
+      <GalleryState />
       <PackingList />
       <Gallery />
       <div>
