@@ -2,7 +2,6 @@
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import {
-  Avatar,
   Gallery,
   Button,
   List,
@@ -13,6 +12,9 @@ import {
   GalleryState,
   TodoList,
   AdvancedCounter,
+  MediaControlApp,
+  Counter,
+  Accordion,
 } from "./components/index";
 import "./App.css";
 
@@ -30,40 +32,15 @@ const App = () => {
         </a>
       </div>
       <h1>Vite + React</h1>
-      {/* <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div> */}
       <Button label="Click me" />
+      <Accordion />
       <Toolbar />
       <TeaSet />
+      <Counter />
       <Signup />
-      <div>
-        <Avatar
-          size={100}
-          person={{
-            name: "Katsuko Saruhashi",
-            imageId: "YfeOqp2",
-          }}
-        />
-        <Avatar
-          size={80}
-          person={{
-            name: "Aklilu Lemma",
-            imageId: "OKS67lh",
-          }}
-        />
-        <Avatar
-          size={50}
-          person={{
-            name: "Lin Lanying",
-            imageId: "1bX5QH6",
-          }}
-        />
-      </div>
       <TodoList />
       <AdvancedCounter />
+      <MediaControlApp />
       <GalleryState />
       <PackingList />
       <Gallery />
