@@ -15,6 +15,9 @@ import {
   MediaControlApp,
   Counter,
   Accordion,
+  TaskApp,
+  UserForm,
+  ChatRoomManager,
 } from "./components/index";
 import "./App.css";
 
@@ -32,15 +35,18 @@ const App = () => {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <TaskApp />
       <Button label="Click me" />
       <Accordion />
       <Toolbar />
+      <ChatRoomManager />
       <TeaSet />
       <Counter />
       <Signup />
       <TodoList />
       <AdvancedCounter />
       <MediaControlApp />
+      <UserForm />
       <GalleryState />
       <PackingList />
       <Gallery />

@@ -13,3 +13,6 @@ export { MediaControlApp } from "./Video";
 export { Counter } from "./Counter";
 export { Panel } from "./Panel";
 export { Accordion } from "./Accordion";
+export { TaskApp } from "./TaskList";
+export { UserForm } from "./Form";
+export { ChatRoomManager } from "./ChatRoomManager";

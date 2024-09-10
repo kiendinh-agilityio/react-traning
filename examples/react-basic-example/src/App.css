@@ -112,3 +112,19 @@
   padding: 10px;
   border: 1px solid #aaa;
 }
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group {
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
