@@ -18,6 +18,11 @@ import {
   TaskApp,
   UserForm,
   ChatRoomManager,
+  StopWatch,
+  ThemeProvider,
+  ThemedComponent,
+  SelectableList,
+  PersonList,
 } from "./components/index";
 import "./App.css";
 
@@ -35,6 +40,15 @@ const App = () => {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <ThemeProvider>
+        <ThemedComponent />
+      </ThemeProvider>
+      <div>
+        <h3>Selectable List</h3>
+        <SelectableList />
+      </div>
+      <PersonList />
+      <StopWatch />
       <TaskApp />
       <Button label="Click me" />
       <Accordion />
