@@ -23,6 +23,11 @@ import {
   ThemedComponent,
   SelectableList,
   PersonList,
+  MultipleInput,
+  Product,
+  Increment,
+  FilterList,
+  EditorForm,
 } from "./components/index";
 import "./App.css";
 
@@ -39,14 +44,19 @@ const App = () => {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
+      <EditorForm />
       <h1>Vite + React</h1>
+      <FilterList />
       <ThemeProvider>
         <ThemedComponent />
       </ThemeProvider>
+      <Increment />
       <div>
         <h3>Selectable List</h3>
         <SelectableList />
       </div>
+      <MultipleInput />
+      <Product referrer="wizard_of_oz" productId="123" />
       <PersonList />
       <StopWatch />
       <TaskApp />
