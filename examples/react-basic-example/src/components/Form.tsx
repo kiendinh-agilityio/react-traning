@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useReducer, ChangeEvent } from "react";
 
 interface UserInfo {
   name: string;
@@ -39,5 +39,70 @@ export const UserForm = () => {
         <label>Email: {user.email}</label>
       </div>
     </div>
+  );
+};
+
+// Define types for the state and actions
+interface State {
+  name: string;
+  age: number;
+}
+
+interface Action {
+  type: "incremented_age" | "changed_name";
+  nextName?: string;
+}
+
+// Reducer function with types
+const reducer = (state: State, action: Action): State => {
+  switch (action.type) {
+    case "incremented_age": {
+      return {
+        name: state.name,
+        age: state.age + 1,
+      };
+    }
+    case "changed_name": {
+      return {
+        name: action.nextName || state.name,
+        age: state.age,
+      };
+    }
+    default:
+      throw new Error("Unknown action: " + action.type);
+  }
+};
+
+// Initial state with types
+const initialState: State = { name: "Kien Dinh", age: 27 };
+
+export const EditorForm: React.FC = () => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const handleButtonClick = () => {
+    dispatch({ type: "incremented_age" });
+  };
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    dispatch({
+      type: "changed_name",
+      nextName: e.target.value,
+    });
+  };
+
+  return (
+    <>
+      <input
+        className="input"
+        value={state.name}
+        onChange={handleInputChange}
+      />
+      <button className="btn btn-primary" onClick={handleButtonClick}>
+        Increment age
+      </button>
+      <p>
+        Hello, {state.name}. You are {state.age}.
+      </p>
+    </>
   );
 };
