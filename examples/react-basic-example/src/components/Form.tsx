@@ -1,4 +1,5 @@
 import React, { useState, useReducer, ChangeEvent } from "react";
+import useActionState from "../hooks/useActionState";
 
 interface UserInfo {
   name: string;
@@ -104,5 +105,69 @@ export const EditorForm: React.FC = () => {
         Hello, {state.name}. You are {state.age}.
       </p>
     </>
+  );
+};
+
+// Example for Login Form
+
+interface User {
+  id: number;
+  username: string;
+  token: string;
+}
+
+export const LoginForm = () => {
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
+  const loginUser = async (): Promise<User> => {
+    const response = await fetch("https://api.example.com/login", {
+      method: "POST",
+      body: JSON.stringify({ username, password }),
+      headers: { "Content-Type": "application/json" },
+    });
+    if (!response.ok) {
+      throw new Error("Login failed");
+    }
+    return response.json();
+  };
+
+  const { isLoading, isSuccess, isError, data, executeAction } =
+    useActionState<User>(loginUser);
+
+  const handleLogin = () => {
+    executeAction();
+  };
+
+  return (
+    <div>
+      <h2>Login</h2>
+      <form>
+        <input
+          className="input"
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Username"
+        />
+        <input
+          className="input"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+        />
+      </form>
+      <button
+        className="btn btn-primary"
+        onClick={handleLogin}
+        disabled={isLoading}
+      >
+        {isLoading ? "Logging in..." : "Login"}
+      </button>
+
+      {isError && <p>Error: {isError.message}</p>}
+      {isSuccess && data && <p>Welcome, {data.username}!</p>}
+    </div>
   );
 };
