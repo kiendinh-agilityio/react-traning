@@ -28,6 +28,9 @@ import {
   Increment,
   FilterList,
   EditorForm,
+  MovingBox,
+  LoginForm,
+  ModalExample,
 } from "./components/index";
 import "./App.css";
 
@@ -44,9 +47,12 @@ const App = () => {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
+      <ModalExample />
       <EditorForm />
+      <LoginForm />
       <h1>Vite + React</h1>
       <FilterList />
+      <MovingBox />
       <ThemeProvider>
         <ThemedComponent />
       </ThemeProvider>
