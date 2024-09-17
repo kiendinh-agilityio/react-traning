@@ -25,3 +25,8 @@ export { Increment } from "./Increment";
 export { FilterList } from "./FilterList";
 export { MovingBox } from "./Box";
 export { ModalExample } from "./Modal";
+export { CartProviderApp } from "./Cart";
+export { MarkdownPreview } from "./MarkdownPreview";
+export { Loading } from "./Loading";
+export { MarkdownEditor } from "./MarkdownEditor";
+export { Switch } from "./Switch";

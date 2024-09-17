@@ -31,6 +31,9 @@ import {
   MovingBox,
   LoginForm,
   ModalExample,
+  CartProviderApp,
+  MarkdownEditor,
+  Switch,
 } from "./components/index";
 import "./App.css";
 
@@ -47,6 +50,9 @@ const App = () => {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
+      <Switch />
+      <CartProviderApp />
+      <MarkdownEditor />
       <ModalExample />
       <EditorForm />
       <LoginForm />
