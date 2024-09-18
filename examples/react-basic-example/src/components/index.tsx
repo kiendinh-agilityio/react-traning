@@ -30,3 +30,4 @@ export { MarkdownPreview } from "./MarkdownPreview";
 export { Loading } from "./Loading";
 export { MarkdownEditor } from "./MarkdownEditor";
 export { Switch } from "./Switch";
+export { ToggleVisibility } from "./ToggleVisibility";

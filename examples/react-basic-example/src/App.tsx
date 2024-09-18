@@ -34,6 +34,7 @@ import {
   CartProviderApp,
   MarkdownEditor,
   Switch,
+  ToggleVisibility,
 } from "./components/index";
 import "./App.css";
 
@@ -50,6 +51,7 @@ const App = () => {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
+      <ToggleVisibility />
       <Switch />
       <CartProviderApp />
       <MarkdownEditor />
