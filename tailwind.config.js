@@ -6,6 +6,11 @@ module.exports = {
     extend: {
       colors: {
         primary: '#4fd1c5',
+        dark: '#2d3748',
+      },
+      fontFamily: {
+        helveticaRegular: ['Helvetica-Regular'],
+        helveticaBold: ['Helvetica-Bold'],
       },
     },
   },

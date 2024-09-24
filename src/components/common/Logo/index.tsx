@@ -4,7 +4,7 @@ const Logo = () => (
   <div className="flex justify-center items-center gap-12">
     <a href="#" className="flex justify-center items-center gap-2">
       <PurityIcon />
-      <span className="text-sm font-bold">PURITY UI DASHBOARD</span>
+      <span className="font-helveticaBold text-sm font-bold">PURITY UI DASHBOARD</span>
     </a>
   </div>
 );
