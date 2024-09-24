@@ -1,7 +1,6 @@
 {
   "name": "purity-dashboard",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -29,7 +28,7 @@
     "@storybook/addon-links": "^8.1.0",
     "@storybook/addon-onboarding": "^8.1.0",
     "@storybook/blocks": "^8.1.0",
-    "@storybook/react": "^8.1.0",
+    "@storybook/react": "^8.3.2",
     "@storybook/react-vite": "^8.1.0",
     "@storybook/test": "^8.1.0",
     "@testing-library/jest-dom": "^6.4.5",
