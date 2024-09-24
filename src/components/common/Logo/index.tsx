@@ -1,4 +1,4 @@
-import PurityIcon from '@/components/common/Icon/PurityIcon';
+import { PurityIcon } from '@/components/common/Icons';
 
 const Logo = () => (
   <div className="flex justify-center items-center gap-12">
