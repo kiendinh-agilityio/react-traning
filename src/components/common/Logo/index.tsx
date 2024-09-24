@@ -1,9 +1,9 @@
-import logoIcon from '@/assets/icons/logo-icon.svg';
+import PurityIcon from '@/components/common/Icon/PurityIcon';
 
 const Logo = () => (
   <div className="flex justify-center items-center gap-12">
     <a href="#" className="flex justify-center items-center gap-2">
-      <img width="22px" height="22px" src={logoIcon} alt="Logo" />
+      <PurityIcon />
       <span className="text-sm font-bold">PURITY UI DASHBOARD</span>
     </a>
   </div>
