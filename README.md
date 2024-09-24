@@ -59,6 +59,7 @@
 | Syntax                                                     | Description                                     |
 | ---------------------------------------------------------- | ----------------------------------------------- |
 | `git@gitlab.asoft-python.com:kien.dinh/react-training.git` | Clone repository from GitLab                    |
+| `git checkout feature/react-basic-practice`                | Checkout branch                                 |
 | `cd react-basic-practice`                                  | Change directory to folder                      |
 | `pnpm install`                                             | Install dependencies                            |
 | `pnpm dev`                                                 | Start dev server, aliases: vite dev, vite serve |
