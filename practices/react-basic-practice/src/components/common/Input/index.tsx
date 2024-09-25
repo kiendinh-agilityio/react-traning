@@ -7,7 +7,7 @@ interface InputProps {
   name: string;
   type: string;
   placeholder: string;
-  hasIcon?: boolean; // New prop to conditionally render the icon
+  hasIcon?: boolean;
 }
 
 const Input = ({ value, name, placeholder, type, hasIcon = false }: InputProps) => {
