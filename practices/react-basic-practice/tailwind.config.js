@@ -7,6 +7,7 @@ module.exports = {
       colors: {
         primary: '#4fd1c5',
         dark: '#2d3748',
+        input: '#e2e8f0',
       },
       fontFamily: {
         helveticaRegular: ['Helvetica-Regular'],
