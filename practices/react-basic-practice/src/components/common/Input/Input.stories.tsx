@@ -1,4 +1,5 @@
 import Input from '.';
+import { SearchIcon } from '@/components/common/Icons';
 
 export default {
   component: Input,
@@ -19,6 +20,6 @@ export const InputSearch = {
     type: 'search',
     name: 'search',
     placeholder: 'Type here...',
-    hasIcon: true,
+    leftIcon: <SearchIcon />,
   },
 };

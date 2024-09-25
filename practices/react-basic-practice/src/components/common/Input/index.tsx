@@ -1,5 +1,5 @@
-// Import components
-import { SearchIcon } from '@/components/common/Icons';
+// Import necessary components
+import { ReactNode } from 'react';
 
 // Create input props
 interface InputProps {
@@ -7,15 +7,15 @@ interface InputProps {
   name: string;
   type: string;
   placeholder: string;
-  hasIcon?: boolean;
+  leftIcon?: ReactNode;
 }
 
-const Input = ({ value, name, placeholder, type, hasIcon = false }: InputProps) => {
+const Input = ({ value, name, placeholder, type, leftIcon }: InputProps) => {
   const className = `flex justify-center items-center px-5 py-[15px] border border-input gap-3 w-full rounded-[15px]`;
 
   return (
     <div className={className}>
-      {hasIcon && <SearchIcon />}
+      {leftIcon && <div>{leftIcon}</div>}
       <input
         type={type}
         value={value}
