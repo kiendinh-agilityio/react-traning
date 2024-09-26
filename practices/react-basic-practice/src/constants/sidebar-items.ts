@@ -11,39 +11,39 @@ import {
 export const SIDEBAR_ITEMS = [
   {
     icon: HomeIcon,
-    text: 'Dashboard',
+    label: 'Dashboard',
     active: true,
   },
   {
     icon: ChartIcon,
-    text: 'Tables',
+    label: 'Tables',
     active: false,
   },
   {
     icon: BillingIcon,
-    text: 'Billing',
+    label: 'Billing',
     active: false,
   },
   {
     icon: SettingIcon,
-    text: 'RTL',
+    label: 'RTL',
     active: false,
   },
   {
     icon: ProfileIcon,
-    text: 'Profile',
+    label: 'Profile',
     active: false,
     group: 'ACCOUNT PAGES',
   },
   {
     icon: SigninIcon,
-    text: 'Sign In',
+    label: 'Sign In',
     active: false,
     group: 'ACCOUNT PAGES',
   },
   {
     icon: SignupIcon,
-    text: 'Sign Up',
+    label: 'Sign Up',
     active: false,
     group: 'ACCOUNT PAGES',
   },

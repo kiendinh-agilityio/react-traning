@@ -4,14 +4,14 @@ import SidebarItem from './SidebarItem';
 
 interface SidebarItemType {
   icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
-  text: string;
+  label: string;
   active: boolean;
   group?: string;
 }
 
 const renderSidebarItems = (items: SidebarItemType[]) =>
   items.map((item) => (
-    <SidebarItem key={item.text} icon={item.icon} text={item.text} active={item.active} />
+    <SidebarItem key={item.label} icon={item.icon} label={item.label} active={item.active} />
   ));
 
 const Sidebar = () => {
