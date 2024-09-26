@@ -5,14 +5,15 @@ interface ButtonProps {
   textColor: string;
   isDisabled?: boolean;
   onClick?: () => void;
-  children: ReactNode;
+  label: ReactNode;
 }
 
-const Button = ({ textColor, backgroundColor, isDisabled, onClick, children }: ButtonProps) => {
+const Button = ({ textColor, backgroundColor, isDisabled, onClick, label }: ButtonProps) => {
   const className = `${textColor} ${backgroundColor} w-40 border border-primary px-[22px] py-2.5 font-helveticaBold font-bold rounded-xl`;
+
   return (
     <button className={className} onClick={onClick} disabled={isDisabled}>
-      {children}
+      {label}
     </button>
   );
 };
