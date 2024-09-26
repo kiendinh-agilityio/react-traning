@@ -1,11 +1,9 @@
-import { ReactNode } from 'react';
-
 interface ButtonProps {
   backgroundColor: string;
   textColor: string;
   isDisabled?: boolean;
   onClick?: () => void;
-  label: ReactNode;
+  label: string;
 }
 
 const Button = ({ textColor, backgroundColor, isDisabled, onClick, label }: ButtonProps) => {

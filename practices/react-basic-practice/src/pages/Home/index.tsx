@@ -16,9 +16,8 @@ const Home = () => {
       <Button
         textColor={BUTTON_STYLE.TEXT_COLOR.PRIMARY}
         backgroundColor={BUTTON_STYLE.BACKGROUND_COLOR.SECONDARY}
-      >
-        Add New Author
-      </Button>
+        label="Add New Author"
+      />
     </>
   );
 };
