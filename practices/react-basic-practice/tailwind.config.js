@@ -1,7 +1,9 @@
 /* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
+import plugin from 'tailwindcss/plugin';
+
 module.exports = {
-  content: ['./src/**/*.{ts,tsx}'],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -15,5 +17,19 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        '.primary': {
+          backgroundColor: '#4fd1c5',
+          color: '#fff',
+        },
+
+        '.secondary': {
+          backgroundColor: 'transparent',
+          color: '#4fd1c5',
+        },
+      });
+    }),
+  ],
 };
