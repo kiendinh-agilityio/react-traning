@@ -20,4 +20,11 @@ body {
   font-family: 'Helvetica-Regular', sans-serif;
   font-size: 14px;
   line-height: 20px;
+  background: #f8f9fa;
+}
+
+@layer components {
+  .sidebar-item {
+    @apply py-2 px-4 text-sm min-w-[180px] rounded-lg font-bold font-helveticaBold text-sidebar mb-3;
+  }
 }
