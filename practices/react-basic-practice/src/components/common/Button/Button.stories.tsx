@@ -1,4 +1,3 @@
-import { BUTTON_STYLE } from '@/constants';
 import Button from '.';
 
 export default {
@@ -9,16 +8,14 @@ export default {
 
 export const Primary = {
   args: {
-    textColor: BUTTON_STYLE.TEXT_COLOR.LIGHT,
-    backgroundColor: BUTTON_STYLE.BACKGROUND_COLOR.PRIMARY,
+    variant: 'primary',
     label: 'Submit',
   },
 };
 
 export const Secondary = {
   args: {
-    textColor: BUTTON_STYLE.TEXT_COLOR.PRIMARY,
-    backgroundColor: BUTTON_STYLE.BACKGROUND_COLOR.SECONDARY,
+    variant: 'secondary',
     label: 'Add New Author',
   },
 };
