@@ -13,4 +13,5 @@ const SignupIcon = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
+
 export default SignupIcon;

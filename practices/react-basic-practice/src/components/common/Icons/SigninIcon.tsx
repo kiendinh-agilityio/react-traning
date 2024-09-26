@@ -12,4 +12,5 @@ const SiginIcon = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
+
 export default SiginIcon;

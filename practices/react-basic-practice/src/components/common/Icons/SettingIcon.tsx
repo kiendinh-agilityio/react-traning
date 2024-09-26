@@ -15,4 +15,5 @@ const SettingIcon = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
+
 export default SettingIcon;

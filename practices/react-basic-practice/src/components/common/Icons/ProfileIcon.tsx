@@ -8,4 +8,5 @@ const ProfileIcon = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
+
 export default ProfileIcon;

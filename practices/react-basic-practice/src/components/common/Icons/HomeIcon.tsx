@@ -13,4 +13,5 @@ const HomeIcon = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
+
 export default HomeIcon;

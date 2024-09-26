@@ -12,4 +12,5 @@ const BillingIcon = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
+
 export default BillingIcon;
