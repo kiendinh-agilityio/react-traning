@@ -1,21 +1,26 @@
-import SelectItem from './SelectItem';
-
-type OptionType = { name: string; value: string }[];
+type OptionType = { text: string; value: string }[];
 
 interface SelectProps {
-  value?: string;
-  name?: string;
   label?: string;
+  name: string;
   optionList: OptionType;
 }
 
-const SelectForm = ({ value, name, optionList, label }: SelectProps) => {
+const Select = ({ name, optionList, label }: SelectProps) => {
   return (
     <div className="flex flex-col gap-1.5 font-helveticaRegular text-dark font-regular">
-      <label className="font-helveticaBold font-bold">{label}</label>
-      <SelectItem name={name} optionList={optionList} value={value} />
+      {label && <label className="font-helveticaBold font-bold">{label}</label>}
+      <select
+        className="px-5 py-[15px] border border-input w-full rounded-[15px] focus:outline-none"
+        name={name}
+        id={name}
+      >
+        {optionList.map((option) => (
+          <option value={option.value}>{option.text}</option>
+        ))}
+      </select>
     </div>
   );
 };
 
-export default SelectForm;
+export default Select;

@@ -1,19 +1,19 @@
 // Variables for option class list
 export const POSITION_LIST = [
   {
-    name: 'Manager',
+    text: 'Manager',
     value: 'manager',
   },
   {
-    name: 'Programmer',
+    text: 'Programmer',
     value: 'programmer',
   },
   {
-    name: 'Executive',
+    text: 'Executive',
     value: 'executive',
   },
   {
-    name: 'Designer',
+    text: 'Designer',
     value: 'designer',
   },
 ];
