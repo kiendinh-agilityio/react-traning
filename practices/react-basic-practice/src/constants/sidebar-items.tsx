@@ -1,3 +1,4 @@
+// Import components icon
 import {
   HomeIcon,
   ChartIcon,
@@ -8,41 +9,42 @@ import {
   SignupIcon,
 } from '@/components/common/Icons';
 
+// Create constants for Sidebar item
 export const SIDEBAR_ITEMS = [
   {
-    icon: HomeIcon,
+    icon: <HomeIcon />,
     label: 'Dashboard',
     active: true,
   },
   {
-    icon: ChartIcon,
+    icon: <ChartIcon />,
     label: 'Tables',
     active: false,
   },
   {
-    icon: BillingIcon,
+    icon: <BillingIcon />,
     label: 'Billing',
     active: false,
   },
   {
-    icon: SettingIcon,
+    icon: <SettingIcon />,
     label: 'RTL',
     active: false,
   },
   {
-    icon: ProfileIcon,
+    icon: <ProfileIcon />,
     label: 'Profile',
     active: false,
     group: 'ACCOUNT PAGES',
   },
   {
-    icon: SigninIcon,
+    icon: <SigninIcon />,
     label: 'Sign In',
     active: false,
     group: 'ACCOUNT PAGES',
   },
   {
-    icon: SignupIcon,
+    icon: <SignupIcon />,
     label: 'Sign Up',
     active: false,
     group: 'ACCOUNT PAGES',

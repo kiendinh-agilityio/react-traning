@@ -1,7 +1,5 @@
-import React, { SVGProps } from 'react';
-
 interface SidebarItemProps {
-  icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+  icon: React.ReactNode;
   label: string;
   active: boolean;
 }
@@ -18,7 +16,7 @@ const SidebarItem = ({ icon, label, active }: SidebarItemProps) => {
   ) : (
     <li className={className}>
       <a className="flex items-center gap-4" href="#">
-        <span className={iconClassName}>{React.createElement(icon, {})}</span>
+        <span className={iconClassName}>{icon}</span>
         <span>{label}</span>
       </a>
     </li>

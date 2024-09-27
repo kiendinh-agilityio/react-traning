@@ -1,9 +1,8 @@
-import { SVGProps } from 'react';
 import { SIDEBAR_ITEMS } from '@/constants';
 import SidebarItem from './SidebarItem';
 
 interface SidebarItemType {
-  icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+  icon: React.ReactNode;
   label: string;
   active: boolean;
   group?: string;
