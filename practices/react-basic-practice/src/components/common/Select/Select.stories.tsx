@@ -15,6 +15,6 @@ export const SelectLayout = {
     label: 'Position',
     name: 'position',
     value: 'position',
-    optionList: POSITION_LIST,
+    optionsList: POSITION_LIST,
   },
 };

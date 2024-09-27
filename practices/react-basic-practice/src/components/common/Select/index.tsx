@@ -1,12 +1,12 @@
-type OptionType = { text: string; value: string }[];
+type OptionsType = { text: string; value: string }[];
 
 interface SelectProps {
   label?: string;
   name: string;
-  optionList: OptionType;
+  optionsList: OptionsType;
 }
 
-const Select = ({ name, optionList, label }: SelectProps) => {
+const Select = ({ name, optionsList, label }: SelectProps) => {
   return (
     <div className="flex flex-col gap-1.5 font-helveticaRegular text-dark font-regular">
       {label && <label className="font-helveticaBold font-bold">{label}</label>}
@@ -15,8 +15,10 @@ const Select = ({ name, optionList, label }: SelectProps) => {
         name={name}
         id={name}
       >
-        {optionList.map((option) => (
-          <option value={option.value}>{option.text}</option>
+        {optionsList.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.text}
+          </option>
         ))}
       </select>
     </div>
