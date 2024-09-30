@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 // Import for common component icon
 import { CloseIcon, FailedIcon, SuccessIcon } from '@/components/common/Icons';
@@ -9,21 +9,46 @@ import './Toast.css';
 interface ToastProps {
   type: string;
   message: string;
+  isOpen: boolean;
+  onClose?: () => void;
 }
 
-const Toast = ({ type, message }: ToastProps) => {
-  const [isOpen, setIsOpen] = useState(true);
+const Toast = ({ type, message, isOpen: initialIsOpen, onClose }: ToastProps) => {
+  const [isOpen, setIsOpen] = useState<boolean>(initialIsOpen);
+  const countTime = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsOpen(false);
-    }, 5000);
+    // Update isOpen state when props initialIsOpen changes
+    setIsOpen(initialIsOpen);
+  }, [initialIsOpen]);
 
-    return () => clearTimeout(timeout);
-  }, []);
+  useEffect(() => {
+    // If isOpen is true, set timeout to automatically close Toast after 5 seconds
+    if (isOpen) {
+      countTime.current = setTimeout(() => {
+        setIsOpen(false);
+
+        // Call callback when Toast closes
+        onClose && onClose();
+      }, 5000);
+    }
+
+    // Clean up timeouts when component unmounts or when isOpen changes
+    return () => {
+      if (countTime.current) {
+        clearTimeout(countTime.current);
+      }
+    };
+  }, [isOpen, onClose]);
 
   const handleCloseToast = () => {
+    // Cancel the timeout and close the Toast as soon as the user clicks the close button
+    countTime.current && clearTimeout(countTime.current);
+
     setIsOpen(false);
+
+    // Call callback when user closes Toast
+    onClose && onClose();
   };
 
   return (
