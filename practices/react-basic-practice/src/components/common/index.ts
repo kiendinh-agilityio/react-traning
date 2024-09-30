@@ -4,3 +4,4 @@ export { default as Input } from './Input';
 export { default as Button } from './Button';
 export { default as Sidebar } from './Sidebar';
 export { default as Select } from './Select';
+export { default as LoadingSpinner } from './LoadingSpinner';
