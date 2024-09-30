@@ -7,3 +7,6 @@ export { default as SettingIcon } from './SettingIcon';
 export { default as ProfileIcon } from './ProfileIcon';
 export { default as SigninIcon } from './SigninIcon';
 export { default as SignupIcon } from './SignupIcon';
+export { default as SuccessIcon } from './SuccessIcon';
+export { default as FailedIcon } from './FailedIcon';
+export { default as CloseIcon } from './CloseIcon';
