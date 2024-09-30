@@ -10,3 +10,6 @@ export { default as SignupIcon } from './SignupIcon';
 export { default as SuccessIcon } from './SuccessIcon';
 export { default as FailedIcon } from './FailedIcon';
 export { default as CloseIcon } from './CloseIcon';
+export { default as PinionIcon } from './PinionIcon';
+export { default as NotificationIcon } from './NotificationIcon';
+export { default as UserIcon } from './UserIcon';
