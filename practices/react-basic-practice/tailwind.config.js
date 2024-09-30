@@ -10,6 +10,7 @@ module.exports = {
         primary: '#4fd1c5',
         dark: '#2d3748',
         input: '#e2e8f0',
+        sidebar: '#a0aec0',
       },
       fontFamily: {
         helveticaRegular: ['Helvetica-Regular'],
