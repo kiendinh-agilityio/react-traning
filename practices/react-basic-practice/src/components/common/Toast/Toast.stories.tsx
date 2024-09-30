@@ -13,6 +13,7 @@ export const Success = {
   args: {
     type: 'success',
     message: 'Author has been add successfully',
+    isOpen: true,
   },
 };
 
@@ -20,5 +21,6 @@ export const Failed = {
   args: {
     type: 'failed',
     message: 'Author has been add unsuccessfully',
+    isOpen: true,
   },
 };
