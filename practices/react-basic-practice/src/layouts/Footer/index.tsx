@@ -1,10 +1,13 @@
 // Import constants
 import { NAVBAR_ITEMS } from '@/constants';
 
+// Get the current year
+const currentYear = new Date().getFullYear();
+
 const Footer = () => (
   <footer className="flex justify-between text-sidebar px-[21px]">
     <p>
-      @ 2024, Made with ❤️ by{' '}
+      @ {currentYear}, Made with ❤️ by{' '}
       <span className="text-primary font-helveticaBold font-bold">Creative Tim</span> &{' '}
       <span className="text-primary font-helveticaBold font-bold">Simmmple</span> for a better web
     </p>
