@@ -94,7 +94,7 @@ module.exports = {
           animation: theme('animation.ball2'),
         },
         '.gradient-border': {
-          'border-width': '1px',
+          'border-bottom': '1px',
           'border-style': 'solid',
           'border-image-source':
             'linear-gradient(90deg, rgba(224, 225, 226, 0) 0%, #E0E1E2 49.52%, rgba(224, 225, 226, 0.15625) 99.04%)',
