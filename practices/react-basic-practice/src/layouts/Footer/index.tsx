@@ -1,8 +1,8 @@
 // Import constants
 import { NAVBAR_ITEMS } from '@/constants';
 
-// Get the current year
-const currentYear = new Date().getFullYear();
+// Import utils
+import { currentYear } from '@/utils';
 
 const Footer = () => (
   <footer className="flex justify-between text-sidebar px-[21px]">
