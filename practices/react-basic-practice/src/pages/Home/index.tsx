@@ -26,12 +26,9 @@ const Home = () => {
   useEffect(() => {
     const fetchAuthors = async () => {
       setLoading(true);
-      try {
-        const authorsData = await getAllAuthors();
-        setAuthors(authorsData);
-      } finally {
-        setLoading(false);
-      }
+      const authorsData = await getAllAuthors();
+      setAuthors(authorsData);
+      setLoading(false);
     };
     fetchAuthors();
   }, []);
