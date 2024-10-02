@@ -2,19 +2,19 @@
 export const ROLES = [
   {
     text: 'Manager',
-    value: 'manager',
+    value: 'Manager',
   },
   {
     text: 'Programmer',
-    value: 'programmer',
+    value: 'Programmer',
   },
   {
     text: 'Executive',
-    value: 'executive',
+    value: 'Executive',
   },
   {
     text: 'Designer',
-    value: 'designer',
+    value: 'Designer',
   },
 ];
 
@@ -22,11 +22,11 @@ export const ROLES = [
 export const STATUS = [
   {
     text: 'Active',
-    value: 'active',
+    value: 'Active',
   },
   {
     text: 'Inactive',
-    value: 'inactive',
+    value: 'Inactive',
   },
 ];
 
@@ -34,18 +34,18 @@ export const STATUS = [
 export const POSITIONS = [
   {
     text: 'Organization',
-    value: 'organization',
+    value: 'Organization',
   },
   {
     text: 'Developer',
-    value: 'developer',
+    value: 'Developer',
   },
   {
     text: 'Projects',
-    value: 'projects',
+    value: 'Projects',
   },
   {
     text: 'UI/UX Design',
-    value: 'ui/ux Design',
+    value: 'UI/UX Design',
   },
 ];
