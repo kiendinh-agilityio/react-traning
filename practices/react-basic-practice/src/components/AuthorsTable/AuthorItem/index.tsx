@@ -9,9 +9,10 @@ import { formatDate } from '@/utils';
 
 interface AuthorItemProps {
   author: Author;
+  onEdit: (author: Author) => void;
 }
 
-const AuthorItem = ({ author }: AuthorItemProps) => {
+const AuthorItem = ({ author, onEdit }: AuthorItemProps) => {
   const { id, avatarUrl, name, email, roles, position, status, date } = author;
 
   return (
@@ -50,7 +51,7 @@ const AuthorItem = ({ author }: AuthorItemProps) => {
       {/* Actions */}
       <div className="w-32 flex justify-between items-center font-helveticaBold font-bold">
         {/* Button Edit */}
-        <button className="flex items-center gap-0.5">
+        <button className="flex items-center gap-0.5" onClick={() => onEdit(author)}>
           <EditIcon /> <span>Edit</span>
         </button>
 
