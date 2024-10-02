@@ -4,7 +4,7 @@ export interface Author {
   email: string;
   avatarUrl: string;
   position: string;
-  roles: string[];
-  status: 'active' | 'inactive';
+  roles: string;
+  status: 'Active' | 'Inactive';
   date: string;
 }
