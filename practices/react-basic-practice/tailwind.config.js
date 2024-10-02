@@ -11,6 +11,10 @@ module.exports = {
         dark: '#2d3748',
         input: '#e2e8f0',
         sidebar: '#a0aec0',
+        gray: '#718096',
+        active: '#48bb78',
+        inactive: '#cbd5e0',
+        danger: '#e53e3e',
       },
       fontFamily: {
         helveticaRegular: ['Helvetica-Regular'],

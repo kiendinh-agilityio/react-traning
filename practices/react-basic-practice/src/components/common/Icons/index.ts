@@ -13,3 +13,5 @@ export { default as CloseIcon } from './CloseIcon';
 export { default as PinionIcon } from './PinionIcon';
 export { default as NotificationIcon } from './NotificationIcon';
 export { default as UserIcon } from './UserIcon';
+export { default as EditIcon } from './EditIcon';
+export { default as DeleteIcon } from './DeleteIcon';
