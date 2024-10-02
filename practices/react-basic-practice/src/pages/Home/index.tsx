@@ -60,13 +60,7 @@ const Home = () => {
                 <Button variant="secondary" label="Add New Author" />
               </div>
             </div>
-            {loading ? (
-              <div className="flex justify-center">
-                <LoadingSpinner />
-              </div>
-            ) : (
-              <AuthorsTable authors={authors} />
-            )}
+            {loading ? <LoadingSpinner /> : <AuthorsTable authors={authors} />}
           </div>
           <Footer />
         </div>
