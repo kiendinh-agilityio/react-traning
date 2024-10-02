@@ -21,7 +21,6 @@ import { Author } from '@/types';
 const Home = () => {
   const [authors, setAuthors] = useState<Author[]>([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   // Fetch authors on component mount
   useEffect(() => {
@@ -30,8 +29,6 @@ const Home = () => {
       try {
         const authorsData = await getAllAuthors();
         setAuthors(authorsData);
-      } catch (err) {
-        setError('Failed to load authors.');
       } finally {
         setLoading(false);
       }
@@ -67,8 +64,6 @@ const Home = () => {
               <div className="flex justify-center">
                 <LoadingSpinner />
               </div>
-            ) : error ? (
-              <p className="text-red-500">{error}</p>
             ) : (
               <AuthorsTable authors={authors} />
             )}
