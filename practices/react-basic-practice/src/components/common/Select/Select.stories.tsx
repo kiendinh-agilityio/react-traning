@@ -1,5 +1,5 @@
 import SelectForm from './index';
-import { POSITION_LIST } from '@/constants';
+import { POSITIONS } from '@/constants';
 
 export default {
   component: SelectForm,
@@ -15,6 +15,6 @@ export const SelectLayout = {
     label: 'Position',
     name: 'position',
     value: 'position',
-    optionsList: POSITION_LIST,
+    optionsList: POSITIONS,
   },
 };
