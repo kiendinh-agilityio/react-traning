@@ -21,7 +21,7 @@ const Input = ({
   onBlur,
   errorMessage,
 }: InputProps) => {
-  const className = `flex justify-center items-center px-5 py-[15px] border border-input gap-3 w-full rounded-[15px] ${errorMessage ? 'border-danger' : ''}`;
+  const className = `flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] ${errorMessage ? 'border-danger' : 'border-input'}`;
 
   return (
     <div className={className}>
