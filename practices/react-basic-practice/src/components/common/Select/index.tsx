@@ -25,7 +25,7 @@ const Select = ({
     <div className="flex flex-col gap-1.5 font-helveticaRegular text-dark font-regular">
       {label && <label>{label}</label>}
       <select
-        className={`px-5 py-[15px] border border-input w-full rounded-[15px] focus:outline-none mb-1.5 ${errorMessage ? 'border-danger' : ''}`}
+        className={`px-5 py-[15px] border w-full rounded-[15px] focus:outline-none mb-1.5 ${errorMessage ? 'border-danger' : 'border-input'}`}
         name={name}
         id={name}
         value={value}
