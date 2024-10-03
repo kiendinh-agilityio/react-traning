@@ -5,6 +5,6 @@ export interface Author {
   avatarUrl: string;
   position: string;
   roles: string;
-  status: 'Active' | 'Inactive';
+  status: string;
   date: string;
 }
