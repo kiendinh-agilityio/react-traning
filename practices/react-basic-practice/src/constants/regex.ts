@@ -1,6 +1,5 @@
-// Regex patterns
 export const REGEX = {
-  EMAIL: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-  URL: /^(https?:\/\/)?([\w\d-]+\.){1,}[a-zA-Z]{2,}(\/.*)?$/,
-  NAME: /^[A-Za-z\s]+$/,
+  NAME: /^[^\d]+$/,
+  EMAIL: /\S+@\S+\.\S+/,
+  AVATAR_URL: /^https?:\/\/.*\.(jpg|jpeg|png|gif)$/,
 };
