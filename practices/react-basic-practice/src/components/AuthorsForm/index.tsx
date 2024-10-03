@@ -11,7 +11,7 @@ import { ROLES, STATUS, POSITIONS } from '@/constants';
 import { Author } from '@/types';
 
 // Import validation function for form validation
-import { validateForm } from '@/utils/validations';
+import { validateForm } from '@/utils';
 
 interface AuthorsFormProps {
   isUpdate: boolean;
