@@ -49,3 +49,14 @@ export const POSITIONS = [
     value: 'UI/UX Design',
   },
 ];
+
+// Variables profile Author
+export const PROFILE_AUTHOR = {
+  NAME: 'Name',
+  AVATAR_URL: 'Avatar URL',
+  EMAIL: 'Email',
+  POSITIONS: 'Position',
+  ROLES: 'Roles',
+  STATUS: 'Status',
+  DATE: 'Date',
+};
