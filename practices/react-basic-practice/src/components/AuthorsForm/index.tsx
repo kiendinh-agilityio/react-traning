@@ -1,13 +1,17 @@
+// Import React hooks
 import { useState, useEffect } from 'react';
 
 // Import components
 import { Input, Select, Button } from '@/components/common';
 
-// Import constants
-import { ROLES, STATUS, POSITIONS, MESSAGE_ERROR } from '@/constants';
+// Import constants for roles, status, and positions options
+import { ROLES, STATUS, POSITIONS } from '@/constants';
 
-// Import types
+// Import types for Author data model
 import { Author } from '@/types';
+
+// Import validation function for form validation
+import { validateForm } from '@/utils/validations';
 
 interface AuthorsFormProps {
   isUpdate: boolean;
@@ -24,82 +28,67 @@ const AuthorsForm = ({
   onChange,
   onSubmit,
 }: AuthorsFormProps) => {
-  const [formValues, setFormValues] = useState<Author>(
-    selectedAuthor || {
-      id: '',
-      name: '',
-      email: '',
-      avatarUrl: '',
-      position: '',
-      roles: '',
-      status: 'Active',
-      date: '',
-    },
-  );
+  // Local state for form values initialized with the selectedAuthor data
+  const [formValues, setFormValues] = useState<Author>(selectedAuthor);
 
+  // Local state for error messages for each form field
   const [errorMessages, setErrorMessages] = useState({
     name: '',
     email: '',
     avatarUrl: '',
+    date: '',
+    roles: '',
+    position: '',
+    status: '',
   });
 
-  // Update form values when selectedAuthor changes
+  // Update form values when the selectedAuthor prop changes (typically when editing an existing author)
   useEffect(() => {
     if (selectedAuthor) {
       setFormValues(selectedAuthor);
     }
   }, [selectedAuthor]);
 
+  // Handle input changes in form fields
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
+
+    // Update form values
     setFormValues({ ...formValues, [name]: value });
+
+    // Propagate changes to parent component
     onChange({ ...formValues, [name]: value });
+
+    // Clear error message for the changed field
     setErrorMessages({ ...errorMessages, [name]: '' });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (validateForm()) {
+  // Validate form on blur (when user leaves the field)
+  const handleBlur = () => {
+    const { isValid, errorMessages: validationErrors } = validateForm(formValues);
+
+    // Set error messages if validation fails
+    if (!isValid) {
+      setErrorMessages(validationErrors);
+    }
+  };
+
+  // Handle form submission (called when the user submits the form)
+  const handleSubmit = () => {
+    const { isValid } = validateForm(formValues);
+
+    // Call the onSubmit function if the form is valid
+    if (isValid) {
       onSubmit();
     }
   };
 
-  const validateForm = () => {
-    let isValid = true;
-    const newErrorMessages = {
-      name: '',
-      email: '',
-      avatarUrl: '',
-    };
-
-    if (!formValues.name) {
-      newErrorMessages.name = MESSAGE_ERROR.REQUIRED_ERROR('Name');
-      isValid = false;
-    }
-
-    if (!formValues.email || !/\S+@\S+\.\S+/.test(formValues.email)) {
-      newErrorMessages.email = MESSAGE_ERROR.INVALID_EMAIL;
-      isValid = false;
-    }
-
-    if (
-      !formValues.avatarUrl ||
-      !/^https?:\/\/.*\.(jpg|jpeg|png|gif)$/.test(formValues.avatarUrl)
-    ) {
-      newErrorMessages.avatarUrl = MESSAGE_ERROR.INVALID_AVATAR_URL;
-      isValid = false;
-    }
-
-    setErrorMessages(newErrorMessages);
-    return isValid;
-  };
-
   return (
     <>
-      <h2 className="text-lg font-helveticaBold font-bold">
-        {isUpdate ? 'EDIT AUTHOR' : 'ADD AUTHOR'}
-      </h2>
-      <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
+      {/* Display form title based on whether we are adding or editing an author */}
+      <h2 className="text-lg font-helveticaBold font-bold">{isUpdate ? 'EDIT' : 'ADD'} AUTHOR</h2>
+      <form className="flex flex-col gap-6">
+        {/* Name input field */}
         <div className="flex flex-col gap-1.5">
           <label>Name</label>
           <Input
@@ -108,9 +97,13 @@ const AuthorsForm = ({
             value={formValues.name}
             onChange={handleChange}
             placeholder="Please enter name"
+            onBlur={handleBlur}
+            errorMessage={errorMessages.name}
           />
           {errorMessages.name && <p className="text-danger">{errorMessages.name}</p>}
         </div>
+
+        {/* Email input field */}
         <div className="flex flex-col gap-1.5">
           <label>Email</label>
           <Input
@@ -119,9 +112,13 @@ const AuthorsForm = ({
             value={formValues.email}
             onChange={handleChange}
             placeholder="Please enter email address"
+            onBlur={handleBlur}
+            errorMessage={errorMessages.email}
           />
           {errorMessages.email && <p className="text-danger">{errorMessages.email}</p>}
         </div>
+
+        {/* Avatar URL input field */}
         <div className="flex flex-col gap-1.5">
           <label>Avatar</label>
           <Input
@@ -130,9 +127,13 @@ const AuthorsForm = ({
             value={formValues.avatarUrl}
             onChange={handleChange}
             placeholder="Please enter link image"
+            onBlur={handleBlur}
+            errorMessage={errorMessages.avatarUrl}
           />
           {errorMessages.avatarUrl && <p className="text-danger">{errorMessages.avatarUrl}</p>}
         </div>
+
+        {/* Roles and Position dropdowns */}
         <div className="grid grid-cols-2 gap-5">
           <div>
             <Select
@@ -141,7 +142,10 @@ const AuthorsForm = ({
               value={formValues.roles}
               optionsList={ROLES}
               onChange={handleChange}
+              onBlur={handleBlur}
+              errorMessage={errorMessages.roles}
             />
+            {errorMessages.roles && <p className="text-danger">{errorMessages.roles}</p>}
           </div>
           <div>
             <Select
@@ -150,9 +154,14 @@ const AuthorsForm = ({
               value={formValues.position}
               optionsList={POSITIONS}
               onChange={handleChange}
+              onBlur={handleBlur}
+              errorMessage={errorMessages.position}
             />
+            {errorMessages.position && <p className="text-danger">{errorMessages.position}</p>}
           </div>
         </div>
+
+        {/* Status and Date fields */}
         <div className="grid grid-cols-2 gap-5">
           <div>
             <Select
@@ -161,18 +170,31 @@ const AuthorsForm = ({
               value={formValues.status}
               optionsList={STATUS}
               onChange={handleChange}
+              onBlur={handleBlur}
+              errorMessage={errorMessages.status}
             />
+            {errorMessages.status && <p className="text-danger">{errorMessages.status}</p>}
           </div>
           <div className="flex flex-col gap-1.5">
             <label>Employed</label>
-            <Input name="date" type="date" value={formValues.date} onChange={handleChange} />
+            <Input
+              name="date"
+              type="date"
+              value={formValues.date}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              errorMessage={errorMessages.date}
+            />
+            {errorMessages.date && <p className="text-danger">{errorMessages.date}</p>}
           </div>
         </div>
-        <div className="flex justify-center items-center gap-6 mt-6">
-          <Button variant="primary" label="Submit" onClick={handleSubmit} />
-          <Button variant="secondary" label="Cancel" onClick={closeModal} />
-        </div>
       </form>
+
+      {/* Submit and Cancel buttons */}
+      <div className="flex justify-center items-center gap-6 mt-6">
+        <Button variant="primary" label={isUpdate ? 'Save' : 'Submit'} onClick={handleSubmit} />
+        <Button variant="secondary" label="Cancel" onClick={closeModal} />
+      </div>
     </>
   );
 };
