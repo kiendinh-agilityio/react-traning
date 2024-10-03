@@ -30,6 +30,9 @@ import { Author } from '@/types';
 // Import constants
 import { MESSAGE_SUCCESS } from '@/constants';
 
+// Import utils
+import { profileAuthor } from '@/utils';
+
 const Home = () => {
   // State to store the list of authors
   const [authors, setAuthors] = useState<Author[]>([]);
@@ -47,16 +50,7 @@ const Home = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // State to store the selected author data for editing or adding
-  const [selectedAuthor, setSelectedAuthor] = useState<Author>({
-    id: '',
-    name: '',
-    email: '',
-    avatarUrl: '',
-    position: '',
-    roles: '',
-    status: '',
-    date: '',
-  });
+  const [selectedAuthor, setSelectedAuthor] = useState<Author>(profileAuthor);
 
   // State to manage the toast notification message
   const [toastMessage, setToastMessage] = useState('');
@@ -98,16 +92,7 @@ const Home = () => {
     setIsUpdate(false);
 
     // Clear selectedAuthor state
-    setSelectedAuthor({
-      id: '',
-      name: '',
-      email: '',
-      avatarUrl: '',
-      position: '',
-      roles: '',
-      status: '',
-      date: '',
-    });
+    setSelectedAuthor(profileAuthor);
 
     // Open the modal
     setIsModalOpen(true);
@@ -173,9 +158,13 @@ const Home = () => {
    * closeModal Function
    * Closes the modal without making any changes.
    */
-  const closeModal = () => {
-    setIsModalOpen(false); // Close the modal
-  };
+  const closeModal = () => setIsModalOpen(false);
+
+  /**
+   * closeToast Function
+   * Closes the toast notification.
+   */
+  const closeToast = () => setIsToastOpen(false);
 
   return (
     <>
@@ -217,7 +206,7 @@ const Home = () => {
             type={toastType}
             message={toastMessage}
             isOpen={isToastOpen}
-            onClose={() => setIsToastOpen(false)}
+            onClose={closeToast}
           />
           {/* Render the footer */}
           <Footer />
