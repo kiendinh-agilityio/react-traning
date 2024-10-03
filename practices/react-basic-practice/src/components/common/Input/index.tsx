@@ -7,10 +7,21 @@ interface InputProps {
   placeholder?: string;
   leftIcon?: ReactNode;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (e: ChangeEvent<HTMLInputElement>) => void;
+  errorMessage?: string;
 }
 
-const Input = ({ value, name, placeholder, type, leftIcon, onChange }: InputProps) => {
-  const className = `flex justify-center items-center px-5 py-[15px] border border-input gap-3 w-full rounded-[15px]`;
+const Input = ({
+  value,
+  name,
+  placeholder,
+  type,
+  leftIcon,
+  onChange,
+  onBlur,
+  errorMessage,
+}: InputProps) => {
+  const className = `flex justify-center items-center px-5 py-[15px] border border-input gap-3 w-full rounded-[15px] ${errorMessage ? 'border-danger' : ''}`;
 
   return (
     <div className={className}>
@@ -22,6 +33,7 @@ const Input = ({ value, name, placeholder, type, leftIcon, onChange }: InputProp
         className="w-full focus:outline-none text-dark"
         placeholder={placeholder}
         onChange={onChange}
+        onBlur={onBlur}
       />
     </div>
   );
