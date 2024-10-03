@@ -32,7 +32,7 @@ type Story = StoryObj<typeof Modal>;
 export const ModalUpdateAuthors: Story = {
   render: (args) => {
     const handleClose = () => {
-      // Logic to close the modal, e.g., resetting state or updating props
+      console.log('Close modal');
     };
 
     const handleChange = (author: Author) => {
@@ -43,7 +43,9 @@ export const ModalUpdateAuthors: Story = {
     const handleSubmit = () => {
       // Logic to handle form submission
       console.log('Form submitted');
-      handleClose(); // Optionally close the modal after submission
+
+      // Optionally close the modal after submission
+      handleClose();
     };
 
     const selectedAuthor = {
