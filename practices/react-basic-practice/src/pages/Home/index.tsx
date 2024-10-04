@@ -33,6 +33,9 @@ import { MESSAGE_SUCCESS } from '@/constants';
 // Import utils
 import { profileAuthor } from '@/utils';
 
+// Import custom hooks
+import { useDebounce } from '@/hooks';
+
 const Home = () => {
   // State to store the list of authors
   const [authors, setAuthors] = useState<Author[]>([]);
@@ -61,6 +64,15 @@ const Home = () => {
   // State to handle the visibility of the toast notification
   const [isToastOpen, setIsToastOpen] = useState(false);
 
+  // Declare a state variable 'filteredAuthors' to store the list of authors
+  const [filteredAuthors, setFilteredAuthors] = useState<Author[]>([]);
+
+  // State variable 'searchTerm' to store the current search input
+  const [searchTerm, setSearchTerm] = useState('');
+
+  // Debounced value of the search term
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+
   /**
    * useEffect Hook
    * Fetches the list of authors when the component is mounted.
@@ -77,11 +89,34 @@ const Home = () => {
       // Set authors state with fetched data
       setAuthors(authorsData);
 
+      // Set filtered authors initially
+      setFilteredAuthors(authorsData);
+
       // Hide loading spinner once data is fetched
       setLoading(false);
     };
     fetchAuthors();
   }, []);
+
+  /**
+   * useEffect hook that triggers whenever 'debouncedSearchTerm' or 'authors' changes.
+   * Filter authors based on the debounced search term.
+   */
+  useEffect(() => {
+    if (debouncedSearchTerm) {
+      const filtered = authors.filter(
+        (author) =>
+          author.name.toLowerCase().includes(debouncedSearchTerm.toLowerCase()) ||
+          author.email.toLowerCase().includes(debouncedSearchTerm.toLowerCase()),
+      );
+
+      // Update filteredAuthors with the filtered list of authors
+      setFilteredAuthors(filtered);
+    } else {
+      // If no search term, show all authors
+      setFilteredAuthors(authors);
+    }
+  }, [debouncedSearchTerm, authors]);
 
   /**
    * handleAddNewAuthor Function
@@ -150,6 +185,9 @@ const Home = () => {
     const updatedAuthors = await getAllAuthors();
     setAuthors(updatedAuthors);
 
+    // Update filtered authors
+    setFilteredAuthors(updatedAuthors);
+
     // Re-enable form submission
     setIsSubmitting(false);
   };
@@ -188,6 +226,8 @@ const Home = () => {
                     type="search"
                     placeholder="Type here..."
                     leftIcon={<SearchIcon />}
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
                   />
                 </div>
                 <Button variant="secondary" label="Add New Author" onClick={handleAddNewAuthor} />
@@ -196,9 +236,12 @@ const Home = () => {
             {/* Show loading spinner while data is being fetched or submitted */}
             {loading || isSubmitting ? (
               <LoadingSpinner />
+            ) : filteredAuthors.length > 0 ? (
+              <AuthorsTable authors={filteredAuthors} onEditAuthor={handleEditAuthor} />
             ) : (
-              // Render the table with authors' data
-              <AuthorsTable authors={authors} onEditAuthor={handleEditAuthor} />
+              <p className="font-helveticaBold font-bold text-center text-[#a0aec0] text-3xl py-14">
+                No search results found.
+              </p>
             )}
           </div>
           {/* Render the toast notification */}
