@@ -16,10 +16,10 @@ import {
 } from '@/components/common';
 
 // Import components
-import { AuthorsTable, AuthorsForm } from '@/components';
+import { AuthorsTable, AuthorsForm, ConfirmModal } from '@/components';
 
 // Import services
-import { getAllAuthors, addNewAuthor, editAuthor } from '@/services';
+import { getAllAuthors, addNewAuthor, editAuthor, deleteAuthor } from '@/services';
 
 // Import layouts
 import { Header, Footer } from '@/layouts';
@@ -72,6 +72,12 @@ const Home = () => {
 
   // Debounced value of the search term
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
+
+  // State for modal confirm
+  const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
+
+  // State for author ID to delete
+  const [authorToDelete, setAuthorToDelete] = useState<string | null>(null);
 
   /**
    * useEffect Hook
@@ -204,6 +210,51 @@ const Home = () => {
    */
   const closeToast = () => setIsToastOpen(false);
 
+  /**
+   * Handle function delete author
+   * This function is triggered when the user confirms the deletion of an author.
+   */
+  const handleDeleteAuthor = async () => {
+    if (authorToDelete) {
+      // Close modal confirm
+      setIsConfirmModalOpen(false);
+
+      // Show Loading Spinner
+      setLoading(true);
+
+      // Delete Author
+      await deleteAuthor(authorToDelete);
+
+      // Show Toast
+      setToastMessage(MESSAGE_SUCCESS.DELETE_AUTHOR);
+      setToastType('success');
+
+      // Fetch the updated list of authors to reflect the deletion in the UI
+      const updatedAuthors = await getAllAuthors();
+      setAuthors(updatedAuthors);
+      setFilteredAuthors(updatedAuthors);
+
+      // Hide the loading spinner after the process is complete
+      setLoading(false);
+
+      // Open the toast notification to inform the user about the success
+      setIsToastOpen(true);
+    }
+  };
+
+  /**
+   *Function show modal confirm
+   */
+  const openConfirmModal = (id: string) => {
+    setAuthorToDelete(id);
+    setIsConfirmModalOpen(true);
+  };
+
+  /**
+   *  Function cancel modal confirm
+   */
+  const handleCancelConfirmModal = () => setIsConfirmModalOpen(false);
+
   return (
     <>
       <div className="min-h-screen flex pt-[30px] pr-[22px] pb-[23px]">
@@ -237,7 +288,11 @@ const Home = () => {
             {loading || isSubmitting ? (
               <LoadingSpinner />
             ) : filteredAuthors.length > 0 ? (
-              <AuthorsTable authors={filteredAuthors} onEditAuthor={handleEditAuthor} />
+              <AuthorsTable
+                authors={filteredAuthors}
+                onEditAuthor={handleEditAuthor}
+                onDeleteAuthor={openConfirmModal}
+              />
             ) : (
               <p className="font-helveticaBold font-bold text-center text-[#a0aec0] text-3xl py-14">
                 No search results found.
@@ -265,6 +320,13 @@ const Home = () => {
             onChange={setSelectedAuthor}
             onSubmit={handleSubmit}
           />
+        </Modal>
+      )}
+
+      {/* Show the modal confirm when delete Author*/}
+      {isConfirmModalOpen && (
+        <Modal>
+          <ConfirmModal onSubmit={handleDeleteAuthor} onClose={handleCancelConfirmModal} />
         </Modal>
       )}
     </>
