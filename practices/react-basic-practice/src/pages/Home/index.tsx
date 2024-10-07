@@ -16,10 +16,10 @@ import {
 } from '@/components/common';
 
 // Import components
-import { AuthorsTable, AuthorsForm } from '@/components';
+import { AuthorsTable, AuthorsForm, ConfirmModal } from '@/components';
 
 // Import services
-import { getAllAuthors, addNewAuthor, editAuthor } from '@/services';
+import { getAllAuthors, addNewAuthor, editAuthor, deleteAuthor } from '@/services';
 
 // Import layouts
 import { Header, Footer } from '@/layouts';
@@ -32,6 +32,9 @@ import { MESSAGE_SUCCESS } from '@/constants';
 
 // Import utils
 import { profileAuthor } from '@/utils';
+
+// Import custom hooks
+import { useDebounce } from '@/hooks';
 
 const Home = () => {
   // State to store the list of authors
@@ -61,6 +64,21 @@ const Home = () => {
   // State to handle the visibility of the toast notification
   const [isToastOpen, setIsToastOpen] = useState(false);
 
+  // Declare a state variable 'filteredAuthors' to store the list of authors
+  const [filteredAuthors, setFilteredAuthors] = useState<Author[]>([]);
+
+  // State variable 'searchTerm' to store the current search input
+  const [searchTerm, setSearchTerm] = useState<string>('');
+
+  // Debounced value of the search term
+  const debouncedSearchTerm = useDebounce(searchTerm);
+
+  // State for modal confirm
+  const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
+
+  // State for author ID to delete
+  const [authorIdToDelete, setAuthorToDelete] = useState<string | null>(null);
+
   /**
    * useEffect Hook
    * Fetches the list of authors when the component is mounted.
@@ -77,11 +95,34 @@ const Home = () => {
       // Set authors state with fetched data
       setAuthors(authorsData);
 
+      // Set filtered authors initially
+      setFilteredAuthors(authorsData);
+
       // Hide loading spinner once data is fetched
       setLoading(false);
     };
     fetchAuthors();
   }, []);
+
+  /**
+   * useEffect hook that triggers whenever 'debouncedSearchTerm' or 'authors' changes.
+   * Filter authors based on the debounced search term.
+   */
+  useEffect(() => {
+    if (debouncedSearchTerm) {
+      const filtered = authors.filter(
+        (author) =>
+          author.name.toLowerCase().includes(debouncedSearchTerm) ||
+          author.email.includes(debouncedSearchTerm),
+      );
+
+      // Update filteredAuthors with the filtered list of authors
+      setFilteredAuthors(filtered);
+    } else {
+      // If no search term, show all authors
+      setFilteredAuthors(authors);
+    }
+  }, [debouncedSearchTerm, authors]);
 
   /**
    * handleAddNewAuthor Function
@@ -150,6 +191,9 @@ const Home = () => {
     const updatedAuthors = await getAllAuthors();
     setAuthors(updatedAuthors);
 
+    // Update filtered authors
+    setFilteredAuthors(updatedAuthors);
+
     // Re-enable form submission
     setIsSubmitting(false);
   };
@@ -165,6 +209,58 @@ const Home = () => {
    * Closes the toast notification.
    */
   const closeToast = () => setIsToastOpen(false);
+
+  /**
+   * Handle function delete author
+   * This function is triggered when the user confirms the deletion of an author.
+   */
+  const handleDeleteAuthor = async () => {
+    if (authorIdToDelete) {
+      // Close modal confirm
+      setIsConfirmModalOpen(false);
+
+      // Show Loading Spinner
+      setLoading(true);
+
+      // Delete Author
+      await deleteAuthor(authorIdToDelete);
+
+      // Show Toast
+      setToastMessage(MESSAGE_SUCCESS.DELETE_AUTHOR);
+      setToastType('success');
+
+      // Fetch the updated list of authors to reflect the deletion in the UI
+      const updatedAuthors = await getAllAuthors();
+      setAuthors(updatedAuthors);
+      setFilteredAuthors(updatedAuthors);
+
+      // Hide the loading spinner after the process is complete
+      setLoading(false);
+
+      // Open the toast notification to inform the user about the success
+      setIsToastOpen(true);
+    }
+  };
+
+  /**
+   *Function show modal confirm
+   */
+  const openConfirmModal = (id: string) => {
+    setAuthorToDelete(id);
+    setIsConfirmModalOpen(true);
+  };
+
+  /**
+   *  Function cancel modal confirm
+   */
+  const handleCancelConfirmModal = () => setIsConfirmModalOpen(false);
+
+  /**
+   *  Function for handling search term change
+   */
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  };
 
   return (
     <>
@@ -188,6 +284,8 @@ const Home = () => {
                     type="search"
                     placeholder="Type here..."
                     leftIcon={<SearchIcon />}
+                    value={searchTerm}
+                    onChange={handleSearchChange}
                   />
                 </div>
                 <Button variant="secondary" label="Add New Author" onClick={handleAddNewAuthor} />
@@ -196,9 +294,16 @@ const Home = () => {
             {/* Show loading spinner while data is being fetched or submitted */}
             {loading || isSubmitting ? (
               <LoadingSpinner />
+            ) : filteredAuthors.length > 0 ? (
+              <AuthorsTable
+                authors={filteredAuthors}
+                onEditAuthor={handleEditAuthor}
+                onDeleteAuthor={openConfirmModal}
+              />
             ) : (
-              // Render the table with authors' data
-              <AuthorsTable authors={authors} onEditAuthor={handleEditAuthor} />
+              <p className="font-helveticaBold font-bold text-center text-[#a0aec0] text-3xl py-14">
+                No search results found.
+              </p>
             )}
           </div>
           {/* Render the toast notification */}
@@ -222,6 +327,13 @@ const Home = () => {
             onChange={setSelectedAuthor}
             onSubmit={handleSubmit}
           />
+        </Modal>
+      )}
+
+      {/* Show the modal confirm when delete Author*/}
+      {isConfirmModalOpen && (
+        <Modal>
+          <ConfirmModal onSubmit={handleDeleteAuthor} onClose={handleCancelConfirmModal} />
         </Modal>
       )}
     </>

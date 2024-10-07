@@ -4,9 +4,10 @@ import AuthorItem from './AuthorItem';
 export interface AuthorTableProps {
   authors: Author[];
   onEditAuthor: (updatedAuthor: Author) => void;
+  onDeleteAuthor: (id: string) => void;
 }
 
-const AuthorTable = ({ authors, onEditAuthor }: AuthorTableProps) => {
+const AuthorTable = ({ authors, onEditAuthor, onDeleteAuthor }: AuthorTableProps) => {
   const handleEditAuthor = (updatedAuthor: Author) => {
     onEditAuthor(updatedAuthor);
   };
@@ -24,7 +25,12 @@ const AuthorTable = ({ authors, onEditAuthor }: AuthorTableProps) => {
 
       {/* Body */}
       {authors.map((author) => (
-        <AuthorItem key={author.id} author={author} onEdit={handleEditAuthor} />
+        <AuthorItem
+          key={author.id}
+          author={author}
+          onEdit={handleEditAuthor}
+          onDelete={onDeleteAuthor}
+        />
       ))}
     </div>
   );
