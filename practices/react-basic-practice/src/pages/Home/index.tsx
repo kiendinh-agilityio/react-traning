@@ -68,10 +68,10 @@ const Home = () => {
   const [filteredAuthors, setFilteredAuthors] = useState<Author[]>([]);
 
   // State variable 'searchTerm' to store the current search input
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
   // Debounced value of the search term
-  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+  const debouncedSearchTerm = useDebounce(searchTerm);
 
   // State for modal confirm
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
@@ -112,8 +112,8 @@ const Home = () => {
     if (debouncedSearchTerm) {
       const filtered = authors.filter(
         (author) =>
-          author.name.toLowerCase().includes(debouncedSearchTerm.toLowerCase()) ||
-          author.email.toLowerCase().includes(debouncedSearchTerm.toLowerCase()),
+          author.name.toLowerCase().includes(debouncedSearchTerm) ||
+          author.email.includes(debouncedSearchTerm),
       );
 
       // Update filteredAuthors with the filtered list of authors
@@ -255,6 +255,13 @@ const Home = () => {
    */
   const handleCancelConfirmModal = () => setIsConfirmModalOpen(false);
 
+  /**
+   *  Function for handling search term change
+   */
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  };
+
   return (
     <>
       <div className="min-h-screen flex pt-[30px] pr-[22px] pb-[23px]">
@@ -278,7 +285,7 @@ const Home = () => {
                     placeholder="Type here..."
                     leftIcon={<SearchIcon />}
                     value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
+                    onChange={handleSearchChange}
                   />
                 </div>
                 <Button variant="secondary" label="Add New Author" onClick={handleAddNewAuthor} />
