@@ -77,7 +77,7 @@ const Home = () => {
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
 
   // State for author ID to delete
-  const [authorToDelete, setAuthorToDelete] = useState<string | null>(null);
+  const [authorIdToDelete, setAuthorToDelete] = useState<string | null>(null);
 
   /**
    * useEffect Hook
@@ -215,7 +215,7 @@ const Home = () => {
    * This function is triggered when the user confirms the deletion of an author.
    */
   const handleDeleteAuthor = async () => {
-    if (authorToDelete) {
+    if (authorIdToDelete) {
       // Close modal confirm
       setIsConfirmModalOpen(false);
 
@@ -223,7 +223,7 @@ const Home = () => {
       setLoading(true);
 
       // Delete Author
-      await deleteAuthor(authorToDelete);
+      await deleteAuthor(authorIdToDelete);
 
       // Show Toast
       setToastMessage(MESSAGE_SUCCESS.DELETE_AUTHOR);
