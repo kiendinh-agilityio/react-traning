@@ -1,5 +1,11 @@
+// Import constants
 import { SIDEBAR_ITEMS } from '@/constants';
+
+// Import sidebar item
 import SidebarItem from './SidebarItem';
+
+// Import components
+import { QuestionIcon } from '@/components/common/Icons';
 
 interface SidebarItemType {
   icon: React.ReactNode;
@@ -22,11 +28,23 @@ const Sidebar = () => {
   );
 
   return (
-    <ul className="px-[30px]">
-      {renderSidebarItems(mainItems)}
-      <li className="font-bold font-helveticaBold py-6 px-4">ACCOUNT PAGES</li>
-      {renderSidebarItems(accountItems)}
-    </ul>
+    <>
+      <ul className="px-[30px]">
+        {renderSidebarItems(mainItems)}
+        <li className="font-bold font-helveticaBold py-6 px-4">ACCOUNT PAGES</li>
+        {renderSidebarItems(accountItems)}
+      </ul>
+      <div className="bg-primary w-[218px] py-4 px-4 border border-primary rounded-[15px] m-auto mt-16 text-white">
+        <div className="flex items-center justify-center w-[35px] h-[35px] bg-white rounded-xl mb-5">
+          <QuestionIcon />
+        </div>
+        <p className="font-helveticaBold font-bold">Need help?</p>
+        <p>Please check our docs</p>
+        <button className="border border-primary rounded-xl bg-white text-dark font-helveticaBold font-bold py-2.5 px-[50px] mt-[9px]">
+          DOCUMENT
+        </button>
+      </div>
+    </>
   );
 };
 

@@ -10,10 +10,17 @@ import { formatDate } from '@/utils';
 interface AuthorItemProps {
   author: Author;
   onEdit: (author: Author) => void;
+  onDelete: (id: string) => void;
 }
 
-const AuthorItem = ({ author, onEdit }: AuthorItemProps) => {
+const AuthorItem = ({ author, onEdit, onDelete }: AuthorItemProps) => {
   const { id, avatarUrl, name, email, roles, position, status, date } = author;
+
+  // Handle edit button click
+  const handleEditClick = () => onEdit(author);
+
+  // Handle delete button click
+  const handleDeleteClick = () => onDelete(id);
 
   return (
     <div key={id} className="flex items-center border-b border-input text-sm">
@@ -51,12 +58,12 @@ const AuthorItem = ({ author, onEdit }: AuthorItemProps) => {
       {/* Actions */}
       <div className="w-32 flex justify-between items-center font-helveticaBold font-bold">
         {/* Button Edit */}
-        <button className="flex items-center gap-0.5" onClick={() => onEdit(author)}>
+        <button className="flex items-center gap-0.5" onClick={handleEditClick}>
           <EditIcon /> <span>Edit</span>
         </button>
 
         {/* Button Delete */}
-        <button className="flex items-center gap-0.5">
+        <button className="flex items-center gap-0.5" onClick={handleDeleteClick}>
           <DeleteIcon /> <span className="text-danger">Delete</span>
         </button>
       </div>
