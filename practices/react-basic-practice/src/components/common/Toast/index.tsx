@@ -55,7 +55,7 @@ const Toast = ({ type, message, isOpen: initialIsOpen, onClose }: ToastProps) =>
     <>
       {isOpen && (
         <div
-          className={`toast ${type} flex items-center justify-between w-[400px] p-4 bg-white rounded shadow-md m-auto`}
+          className={`toast ${type} flex items-center justify-between w-[400px] p-4 bg-white rounded shadow-md m-auto absolute left-0 right-0 bottom-32`}
         >
           <div className="flex items-center gap-4">
             {type === 'success' ? <SuccessIcon /> : <FailedIcon />}
