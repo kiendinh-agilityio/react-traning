@@ -37,9 +37,6 @@ const AuthorsForm = ({
     email: '',
     avatarUrl: '',
     date: '',
-    roles: '',
-    position: '',
-    status: '',
   });
 
   // Update form values when the selectedAuthor prop changes (typically when editing an existing author)
@@ -102,7 +99,6 @@ const AuthorsForm = ({
           />
           {errorMessages.name && <p className="text-danger">{errorMessages.name}</p>}
         </div>
-
         {/* Email input field */}
         <div className="flex flex-col gap-1.5">
           <label>Email</label>
@@ -117,7 +113,6 @@ const AuthorsForm = ({
           />
           {errorMessages.email && <p className="text-danger">{errorMessages.email}</p>}
         </div>
-
         {/* Avatar URL input field */}
         <div className="flex flex-col gap-1.5">
           <label>Avatar</label>
@@ -132,9 +127,21 @@ const AuthorsForm = ({
           />
           {errorMessages.avatarUrl && <p className="text-danger">{errorMessages.avatarUrl}</p>}
         </div>
-
+        {/* Date fields */}
+        <div className="flex flex-col gap-1.5">
+          <label>Employed</label>
+          <Input
+            name="date"
+            type="date"
+            value={formValues.date}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            errorMessage={errorMessages.date}
+          />
+          {errorMessages.date && <p className="text-danger">{errorMessages.date}</p>}
+        </div>
         {/* Roles and Position dropdowns */}
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-3 gap-5">
           <div>
             <Select
               label="Roles"
@@ -143,9 +150,7 @@ const AuthorsForm = ({
               optionsList={ROLES}
               onChange={handleChange}
               onBlur={handleBlur}
-              errorMessage={errorMessages.roles}
             />
-            {errorMessages.roles && <p className="text-danger">{errorMessages.roles}</p>}
           </div>
           <div>
             <Select
@@ -155,14 +160,8 @@ const AuthorsForm = ({
               optionsList={POSITIONS}
               onChange={handleChange}
               onBlur={handleBlur}
-              errorMessage={errorMessages.position}
             />
-            {errorMessages.position && <p className="text-danger">{errorMessages.position}</p>}
           </div>
-        </div>
-
-        {/* Status and Date fields */}
-        <div className="grid grid-cols-2 gap-5">
           <div>
             <Select
               label="Status"
@@ -171,21 +170,7 @@ const AuthorsForm = ({
               optionsList={STATUS}
               onChange={handleChange}
               onBlur={handleBlur}
-              errorMessage={errorMessages.status}
             />
-            {errorMessages.status && <p className="text-danger">{errorMessages.status}</p>}
-          </div>
-          <div className="flex flex-col gap-1.5">
-            <label>Employed</label>
-            <Input
-              name="date"
-              type="date"
-              value={formValues.date}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              errorMessage={errorMessages.date}
-            />
-            {errorMessages.date && <p className="text-danger">{errorMessages.date}</p>}
           </div>
         </div>
       </form>

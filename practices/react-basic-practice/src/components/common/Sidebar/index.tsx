@@ -40,8 +40,8 @@ const Sidebar = () => {
         </div>
         <p className="font-helveticaBold font-bold">Need help?</p>
         <p>Please check our docs</p>
-        <button className="border border-primary rounded-xl bg-white text-dark font-helveticaBold font-bold py-2.5 px-[50px] mt-[9px]">
-          DOCUMENT
+        <button className="border border-primary rounded-xl bg-white text-dark font-helveticaBold font-bold py-2.5 px-[48px] mt-[9px] text-[10px]">
+          DOCUMENTATION
         </button>
       </div>
     </>

@@ -17,8 +17,8 @@ export const profileAuthor: Author = {
   name: '',
   email: '',
   avatarUrl: '',
-  position: '',
-  roles: '',
-  status: '',
+  position: 'Organization',
+  roles: 'Manager',
+  status: 'Active',
   date: '',
 };
