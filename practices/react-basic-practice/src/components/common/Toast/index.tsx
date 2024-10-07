@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from 'react';
 import { CloseIcon, FailedIcon, SuccessIcon } from '@/components/common/Icons';
 
 // Import styles animation for toast
-import './Toast.css';
+import './toast.css';
 
 interface ToastProps {
   type: string;

@@ -1,5 +1,5 @@
 // Import styles animation for toast
-import './Loading.css';
+import './loading.css';
 
 const LoadingSpinner = () => (
   <div className="loading-container">
