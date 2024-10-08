@@ -34,6 +34,20 @@ module.exports = {
           backgroundColor: 'transparent',
           color: '#4fd1c5',
         },
+        '.tertiary': {
+          backgroundColor: 'transparent',
+          color: '#a0aec0',
+          border: '1px solid #a0aec0',
+        },
+        '.danger': {
+          backgroundColor: '#e53e3e',
+          color: '#fff',
+          border: '1px solid #e53e3e',
+        },
+        '.danger:hover': {
+          backgroundColor: '#c53030',
+          borderColor: '#c53030',
+        },
         '.gradient-border': {
           'border-bottom': '1px',
           'border-style': 'solid',
