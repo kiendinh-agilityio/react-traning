@@ -283,7 +283,7 @@ const Home = () => {
                     name="authorName"
                     type="search"
                     placeholder="Type here..."
-                    leftIcon={<SearchIcon />}
+                    leftIcon={<SearchIcon className="cursor-pointer" />}
                     value={searchTerm}
                     onChange={handleSearchChange}
                   />
@@ -319,7 +319,7 @@ const Home = () => {
       </div>
       {/* Show the modal if it is open */}
       {isModalOpen && (
-        <Modal>
+        <Modal className="w-2/4 px-[51px] py-11" onClose={closeModal}>
           <AuthorsForm
             isUpdate={isUpdate}
             selectedAuthor={selectedAuthor}
@@ -332,7 +332,7 @@ const Home = () => {
 
       {/* Show the modal confirm when delete Author*/}
       {isConfirmModalOpen && (
-        <Modal>
+        <Modal className="w-[580px] p-5" onClose={handleCancelConfirmModal}>
           <ConfirmModal onSubmit={handleDeleteAuthor} onClose={handleCancelConfirmModal} />
         </Modal>
       )}
