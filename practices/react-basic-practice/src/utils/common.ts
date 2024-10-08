@@ -7,7 +7,8 @@ import { Author } from '@/types';
 // Get the current year
 export const currentYear = new Date().getFullYear();
 
-export const formatDate = (date: string): string => dayjs(date).format('DD/MM/YY');
+export const formatDate = (date: string, dateFormat: string = 'DD/MM/YY'): string =>
+  dayjs(date).format(dateFormat);
 
 // Define default author object for reuse
 export const profileAuthor: Author = {
