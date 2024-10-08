@@ -1,15 +1,18 @@
+// Import dayjs
+import dayjs from 'dayjs';
+
 // Import types for Author
 import { Author } from '@/types';
+
+// Import constants
+import { DATE_FORMAT } from '@/constants';
 
 // Get the current year
 export const currentYear = new Date().getFullYear();
 
-// Format date
-export const formatDate = (dateString: string): string => {
-  const date = new Date(dateString);
-
-  return date.toLocaleDateString();
-};
+// Function format date
+export const formatDate = (date: string, dateFormat: string = DATE_FORMAT): string =>
+  dayjs(date).format(dateFormat);
 
 // Define default author object for reuse
 export const profileAuthor: Author = {

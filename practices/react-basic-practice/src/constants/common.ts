@@ -60,3 +60,6 @@ export const PROFILE_AUTHOR = {
   STATUS: 'Status',
   DATE: 'Date',
 };
+
+// Variables for date format
+export const DATE_FORMAT = 'DD/MM/YY';

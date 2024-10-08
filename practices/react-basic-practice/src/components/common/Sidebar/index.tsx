@@ -38,8 +38,8 @@ const Sidebar = () => {
         <div className="flex items-center justify-center w-[35px] h-[35px] bg-white rounded-xl mb-5">
           <QuestionIcon />
         </div>
-        <p className="font-helveticaBold font-bold">Need help?</p>
-        <p>Please check our docs</p>
+        <p className="font-helveticaBold font-bold tracking-wide">Need help?</p>
+        <p className="font-xs leading-[18px]">Please check our docs</p>
         <button className="border border-primary rounded-xl bg-white text-dark font-helveticaBold font-bold py-2.5 px-[48px] mt-[9px] text-[10px]">
           DOCUMENTATION
         </button>

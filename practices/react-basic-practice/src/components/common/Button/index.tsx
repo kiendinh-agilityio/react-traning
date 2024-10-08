@@ -1,5 +1,5 @@
 interface ButtonProps {
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger';
   isDisabled?: boolean;
   onClick?: () => void;
   label: string;
