@@ -1,5 +1,5 @@
 export const REGEX = {
   NAME: /^[^\d]+$/,
-  EMAIL: /\S+@\S+\.\S+/,
+  EMAIL: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/,
   AVATAR_URL: /^https?:\/\/.*\.(jpg|jpeg|png|gif)$/,
 };
