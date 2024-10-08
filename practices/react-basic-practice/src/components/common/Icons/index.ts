@@ -17,3 +17,4 @@ export { default as EditIcon } from './EditIcon';
 export { default as DeleteIcon } from './DeleteIcon';
 export { default as QuestionIcon } from './QuestionIcon';
 export { default as ArrowIcon } from './ArrowIcon';
+export { default as TrashIcon } from './TrashIcon';
