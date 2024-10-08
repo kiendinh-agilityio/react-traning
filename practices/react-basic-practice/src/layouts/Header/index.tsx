@@ -15,8 +15,8 @@ const Header = ({ currentPage }: HeaderProps) => (
     </div>
     <div className="flex items-center gap-[17px]">
       <UserIcon />
-      <PinionIcon />
-      <NotificationIcon />
+      <PinionIcon className="cursor-pointer" />
+      <NotificationIcon className="cursor-pointer" />
     </div>
   </header>
 );
