@@ -30,7 +30,9 @@ const AuthorItem = ({ author, onEdit, onDelete }: AuthorItemProps) => {
           <img className="w-10 h-10 rounded-[12px] mr-3.5" src={avatarUrl} alt={`${name} avatar`} />
           <div>
             <p className="font-helveticaBold font-bold">{name}</p>
-            <p className="text-gray">{email}</p>
+            <a href={`mailto:${email}`} className="text-gray">
+              {email}
+            </a>
           </div>
         </div>
       </div>
