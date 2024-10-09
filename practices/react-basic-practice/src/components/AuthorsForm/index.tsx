@@ -11,7 +11,7 @@ import { ROLES, STATUS, POSITIONS } from '@/constants';
 import { Author } from '@/types';
 
 // Import validation function for form validation
-import { validateForm } from '@/utils';
+import { validateForm, formatDate } from '@/utils';
 
 interface AuthorsFormProps {
   isUpdate: boolean;
@@ -42,7 +42,10 @@ const AuthorsForm = ({
   // Update form values when the selectedAuthor prop changes (typically when editing an existing author)
   useEffect(() => {
     if (selectedAuthor) {
-      setFormValues(selectedAuthor);
+      setFormValues({
+        ...selectedAuthor,
+        date: selectedAuthor.date || formatDate(new Date().toISOString(), 'YYYY-MM-DD'),
+      });
     }
   }, [selectedAuthor]);
 
@@ -61,23 +64,27 @@ const AuthorsForm = ({
   };
 
   // Validate form on blur (when user leaves the field)
-  const handleBlur = () => {
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    const field = e.target.name;
     const { isValid, errorMessages: validationErrors } = validateForm(formValues);
 
-    // Set error messages if validation fails
-    if (!isValid) {
-      setErrorMessages(validationErrors);
+    // Only set error message for the current field being interacted with
+    if (!isValid && validationErrors[field]) {
+      setErrorMessages((prevErrors) => ({
+        ...prevErrors,
+        [field]: validationErrors[field],
+      }));
     }
   };
 
   // Handle form submission (called when the user submits the form)
   const handleSubmit = () => {
-    const { isValid } = validateForm(formValues);
+    const { isValid, errorMessages: validationErrors } = validateForm(formValues);
 
-    // Call the onSubmit function if the form is valid
-    if (isValid) {
-      onSubmit();
-    }
+    // If the form is invalid, display all error messages
+    !isValid
+      ? setErrorMessages(validationErrors)
+      : (setErrorMessages(validationErrors), onSubmit());
   };
 
   return (
@@ -149,7 +156,6 @@ const AuthorsForm = ({
               value={formValues.roles}
               optionsList={ROLES}
               onChange={handleChange}
-              onBlur={handleBlur}
             />
           </div>
           <div>
@@ -159,7 +165,6 @@ const AuthorsForm = ({
               value={formValues.position}
               optionsList={POSITIONS}
               onChange={handleChange}
-              onBlur={handleBlur}
             />
           </div>
           <div>
@@ -169,7 +174,6 @@ const AuthorsForm = ({
               value={formValues.status}
               optionsList={STATUS}
               onChange={handleChange}
-              onBlur={handleBlur}
             />
           </div>
         </div>
@@ -178,7 +182,7 @@ const AuthorsForm = ({
       {/* Submit and Cancel buttons */}
       <div className="flex justify-center items-center gap-6 mt-6">
         <Button variant="primary" label={isUpdate ? 'Save' : 'Submit'} onClick={handleSubmit} />
-        <Button variant="secondary" label="Cancel" onClick={closeModal} />
+        <Button variant="tertiary" label="Cancel" onClick={closeModal} />
       </div>
     </>
   );
