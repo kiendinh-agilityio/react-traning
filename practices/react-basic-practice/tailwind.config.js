@@ -30,14 +30,26 @@ module.exports = {
           backgroundColor: '#4fd1c5',
           color: '#fff',
         },
+        '.primary:hover': {
+          backgroundColor: '#38b2ac',
+        },
         '.secondary': {
           backgroundColor: 'transparent',
           color: '#4fd1c5',
+        },
+        '.secondary:hover': {
+          backgroundColor: 'rgba(79, 209, 197, 0.1)',
+          color: '#38b2ac',
         },
         '.tertiary': {
           backgroundColor: 'transparent',
           color: '#a0aec0',
           border: '1px solid #a0aec0',
+        },
+        '.tertiary:hover': {
+          backgroundColor: 'rgba(160, 174, 192, 0.1)',
+          borderColor: '#718096',
+          color: '#718096',
         },
         '.danger': {
           backgroundColor: '#e53e3e',
