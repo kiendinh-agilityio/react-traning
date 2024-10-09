@@ -319,7 +319,7 @@ const Home = () => {
       </div>
       {/* Show the modal if it is open */}
       {isModalOpen && (
-        <Modal className="w-2/4 px-[51px] py-11" onClose={closeModal}>
+        <Modal className="w-2/4 px-9 py-9" onClose={closeModal}>
           <AuthorsForm
             isUpdate={isUpdate}
             selectedAuthor={selectedAuthor}
