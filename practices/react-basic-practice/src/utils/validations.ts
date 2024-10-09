@@ -1,3 +1,6 @@
+// Import dayjs
+import dayjs from 'dayjs';
+
 // Import types
 import { Author, ErrorMessages } from '@/types';
 
@@ -25,7 +28,11 @@ const validateField = (
   return '';
 };
 
-// Function to validate the entire form
+// Dayjs date validation function using arrow function
+const validateDate = (date: string, format: string): boolean =>
+  dayjs(date, format).format(format) === date;
+
+// Function to validate the entire form using arrow function
 export const validateForm = (formValues: Author): ValidationResult => {
   let isValid = true;
 
@@ -48,7 +55,7 @@ export const validateForm = (formValues: Author): ValidationResult => {
     MESSAGE_ERROR.INVALID_NAME,
   );
 
-  // Validate for email
+  // Validate email
   errorMessages.email = validateField(
     formValues.email,
     REGEX.EMAIL,
@@ -56,7 +63,7 @@ export const validateForm = (formValues: Author): ValidationResult => {
     MESSAGE_ERROR.INVALID_EMAIL,
   );
 
-  // Validate for avatar url
+  // Validate avatar URL
   errorMessages.avatarUrl = validateField(
     formValues.avatarUrl,
     REGEX.AVATAR_URL,
@@ -64,16 +71,21 @@ export const validateForm = (formValues: Author): ValidationResult => {
     MESSAGE_ERROR.INVALID_AVATAR_URL,
   );
 
-  // Validate for date
-  errorMessages.date = validateField(formValues.date, null, PROFILE_AUTHOR.DATE, '');
+  // Validate date using dayjs with arrow function
+  const isDateValid = validateDate(formValues.date, 'YYYY-MM-DD');
+  errorMessages.date = !formValues.date
+    ? MESSAGE_ERROR.REQUIRED_ERROR(PROFILE_AUTHOR.DATE)
+    : !isDateValid
+      ? MESSAGE_ERROR.INVALID_DATE
+      : '';
 
-  // Validate for date
+  // Validate roles
   errorMessages.roles = validateField(formValues.roles, null, PROFILE_AUTHOR.ROLES, '');
 
-  // Validate for date
+  // Validate position
   errorMessages.position = validateField(formValues.position, null, PROFILE_AUTHOR.POSITIONS, '');
 
-  // Validate for date
+  // Validate status
   errorMessages.status = validateField(formValues.status, null, PROFILE_AUTHOR.STATUS, '');
 
   // Check if any error messages were set
