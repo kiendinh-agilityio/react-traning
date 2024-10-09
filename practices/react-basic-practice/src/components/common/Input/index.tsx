@@ -7,7 +7,7 @@ interface InputProps {
   placeholder?: string;
   leftIcon?: ReactNode;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-  onBlur?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
   errorMessage?: string;
 }
 
