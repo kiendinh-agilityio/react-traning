@@ -42,6 +42,9 @@ const AuthorsForm = ({
   // State changes made in the form
   const [hasChanges, setHasChanges] = useState<boolean>(false);
 
+  // State to track initial values
+  const [initialValues] = useState<Author>(selectedAuthor);
+
   // Update form values when the selectedAuthor prop changes
   useEffect(() => {
     if (selectedAuthor) {
@@ -60,6 +63,10 @@ const AuthorsForm = ({
 
     // Update form values
     setFormValues({ ...formValues, [name]: value });
+
+    // Check if the new value differs from the initial value
+    const isChanged = value !== initialValues[name as keyof Author];
+    setHasChanges(isChanged);
 
     // Propagate changes to parent component
     onChange({ ...formValues, [name]: value });
