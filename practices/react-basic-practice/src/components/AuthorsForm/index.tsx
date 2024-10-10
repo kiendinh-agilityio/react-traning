@@ -39,7 +39,10 @@ const AuthorsForm = ({
     date: '',
   });
 
-  // Update form values when the selectedAuthor prop changes (typically when editing an existing author)
+  // State changes made in the form
+  const [hasChanges, setHasChanges] = useState<boolean>(false);
+
+  // Update form values when the selectedAuthor prop changes
   useEffect(() => {
     if (selectedAuthor) {
       setFormValues({
@@ -51,6 +54,9 @@ const AuthorsForm = ({
   // Handle input changes in form fields
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
+
+    // Mark form as having changes
+    setHasChanges(true);
 
     // Update form values
     setFormValues({ ...formValues, [name]: value });
@@ -177,10 +183,14 @@ const AuthorsForm = ({
           </div>
         </div>
       </form>
-
       {/* Submit and Cancel buttons */}
       <div className="flex justify-center items-center gap-6 mt-6">
-        <Button variant="primary" label={isUpdate ? 'Save' : 'Submit'} onClick={handleSubmit} />
+        <Button
+          variant="primary"
+          label={isUpdate ? 'Save' : 'Submit'}
+          onClick={handleSubmit}
+          isDisabled={isUpdate && !hasChanges}
+        />
         <Button variant="tertiary" label="Cancel" onClick={closeModal} />
       </div>
     </>

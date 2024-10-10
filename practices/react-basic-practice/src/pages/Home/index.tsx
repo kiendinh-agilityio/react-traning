@@ -164,9 +164,19 @@ const Home = () => {
     // Show Loading Spinner
     setLoading(true);
 
+    // Function to update authors in state
+    const updateAuthors = (prevAuthors: Author[]): Author[] =>
+      prevAuthors.map((author: Author) =>
+        author.id === selectedAuthor.id ? selectedAuthor : author,
+      );
+
     if (isUpdate) {
       // Edit author if we are in update mode
       await editAuthor(selectedAuthor.id, selectedAuthor);
+
+      // Update the authors list in state without making an API call
+      setAuthors(updateAuthors);
+      setFilteredAuthors(updateAuthors);
 
       // Set success message for editing
       setToastMessage(MESSAGE_SUCCESS.EDIT_AUTHOR);
