@@ -11,7 +11,7 @@ import { ROLES, STATUS, POSITIONS } from '@/constants';
 import { Author } from '@/types';
 
 // Import validation function for form validation
-import { validateForm, formatDate } from '@/utils';
+import { validateForm, today } from '@/utils';
 
 interface AuthorsFormProps {
   isUpdate: boolean;
@@ -44,7 +44,6 @@ const AuthorsForm = ({
     if (selectedAuthor) {
       setFormValues({
         ...selectedAuthor,
-        date: selectedAuthor.date || formatDate(new Date().toISOString(), 'YYYY-MM-DD'),
       });
     }
   }, [selectedAuthor]);
@@ -140,7 +139,7 @@ const AuthorsForm = ({
           <Input
             name="date"
             type="date"
-            value={formValues.date}
+            defaultValue={formValues.date || today}
             onChange={handleChange}
             onBlur={handleBlur}
             errorMessage={errorMessages.date}

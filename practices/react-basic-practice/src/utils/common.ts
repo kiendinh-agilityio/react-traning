@@ -22,3 +22,6 @@ export const profileAuthor: Author = {
   status: 'Active',
   date: '',
 };
+
+// Get today's date in the required format (YYYY-MM-DD)
+export const today = formatDate(new Date().toISOString(), 'YYYY-MM-DD');
