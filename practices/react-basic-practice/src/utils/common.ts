@@ -20,7 +20,7 @@ export const profileAuthor: Author = {
   position: 'Organization',
   roles: 'Manager',
   status: 'Active',
-  date: '',
+  date: formatDate(new Date().toISOString(), 'YYYY-MM-DD'),
 };
 
 // Get today's date in the required format (YYYY-MM-DD)
