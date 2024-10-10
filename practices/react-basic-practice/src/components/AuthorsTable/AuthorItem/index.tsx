@@ -7,6 +7,9 @@ import { Author } from '@/types';
 // Import utils
 import { formatDate } from '@/utils';
 
+// Import constants
+import { DATE_FORMAT } from '@/constants';
+
 interface AuthorItemProps {
   author: Author;
   onEdit: (author: Author) => void;
@@ -45,17 +48,19 @@ const AuthorItem = ({ author, onEdit, onDelete }: AuthorItemProps) => {
 
       {/* Status */}
       <div className="flex-1 py-3.5">
-        <span
+        <div
           className={`flex justify-center items-center w-[70px] h-[25px] border rounded-lg font-helveticaBold font-bold text-white ${
             status === 'Active' ? 'border-active bg-active' : 'border-inactive bg-inactive'
           }`}
         >
-          {status}
-        </span>
+          <p>{status}</p>
+        </div>
       </div>
 
       {/* Employed Date */}
-      <div className="flex-1 py-3.5 font-helveticaBold font-bold">{formatDate(date)}</div>
+      <div className="flex-1 py-3.5 font-helveticaBold font-bold">
+        {formatDate(date, DATE_FORMAT)}
+      </div>
 
       {/* Actions */}
       <div className="w-32 flex justify-between items-center font-helveticaBold font-bold">

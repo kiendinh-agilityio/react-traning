@@ -49,9 +49,6 @@ const Home = () => {
   // State to differentiate between adding a new author or updating an existing one
   const [isUpdate, setIsUpdate] = useState(false);
 
-  // State to handle the form submission status
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
   // State to store the selected author data for editing or adding
   const [selectedAuthor, setSelectedAuthor] = useState<Author>(profileAuthor);
 
@@ -161,11 +158,11 @@ const Home = () => {
    * and updates the authors list by fetching the latest data.
    */
   const handleSubmit = async () => {
-    // Disable form submission while processing
-    setIsSubmitting(true);
-
     // Close the modal after submission
     setIsModalOpen(false);
+
+    // Show Loading Spinner
+    setLoading(true);
 
     if (isUpdate) {
       // Edit author if we are in update mode
@@ -175,7 +172,13 @@ const Home = () => {
       setToastMessage(MESSAGE_SUCCESS.EDIT_AUTHOR);
     } else {
       // Add new author
-      await addNewAuthor(selectedAuthor);
+      const newAuthor = await addNewAuthor(selectedAuthor);
+
+      // Prepend the newly added author to the authors array
+      setAuthors((prevAuthors) => [newAuthor, ...prevAuthors]);
+
+      // Update filtered authors as well
+      setFilteredAuthors((prevAuthors) => [newAuthor, ...prevAuthors]);
 
       // Set success message for adding
       setToastMessage(MESSAGE_SUCCESS.ADD_AUTHOR);
@@ -184,18 +187,11 @@ const Home = () => {
     // Set toast type to success
     setToastType('success');
 
+    // Hide the loading spinner after the process is complete
+    setLoading(false);
+
     // Show the toast notification
     setIsToastOpen(true);
-
-    // Fetch updated list of authors and update state
-    const updatedAuthors = await getAllAuthors();
-    setAuthors(updatedAuthors);
-
-    // Update filtered authors
-    setFilteredAuthors(updatedAuthors);
-
-    // Re-enable form submission
-    setIsSubmitting(false);
   };
 
   /**
@@ -273,7 +269,7 @@ const Home = () => {
         <div className="flex flex-col justify-between w-full">
           {/* Render the header */}
           <Header currentPage="Tables" />
-          <div className="bg-white min-h-[88vh] mb-7 rounded-[15px] px-[21px] py-7">
+          <div className="bg-white min-h-[88vh] mb-7 rounded-[15px] px-[21px] py-7 relative">
             <div className="flex justify-between items-center mb-7">
               {/* Render the heading and search bar */}
               <Heading text="Authors Table" />
@@ -291,16 +287,22 @@ const Home = () => {
                 <Button variant="secondary" label="Add New Author" onClick={handleAddNewAuthor} />
               </div>
             </div>
-            {/* Show loading spinner while data is being fetched or submitted */}
-            {loading || isSubmitting ? (
-              <LoadingSpinner />
-            ) : filteredAuthors.length > 0 ? (
+            {/* Table wrapper with loading spinner overlay */}
+            <div className="relative">
+              {/* Keep the table visible while loading */}
               <AuthorsTable
                 authors={filteredAuthors}
                 onEditAuthor={handleEditAuthor}
                 onDeleteAuthor={openConfirmModal}
               />
-            ) : (
+              {/* Display loading spinner on top of the table */}
+              {loading && (
+                <div className="absolute inset-0 flex items-center justify-center bg-white/50 z-10">
+                  <LoadingSpinner />
+                </div>
+              )}
+            </div>
+            {filteredAuthors.length === 0 && !loading && (
               <p className="font-helveticaBold font-bold text-center text-[#a0aec0] text-3xl py-14">
                 No search results found.
               </p>
@@ -319,7 +321,7 @@ const Home = () => {
       </div>
       {/* Show the modal if it is open */}
       {isModalOpen && (
-        <Modal className="w-2/4 px-[51px] py-11" onClose={closeModal}>
+        <Modal className="w-2/4 px-9 py-9" onClose={closeModal}>
           <AuthorsForm
             isUpdate={isUpdate}
             selectedAuthor={selectedAuthor}
@@ -329,7 +331,6 @@ const Home = () => {
           />
         </Modal>
       )}
-
       {/* Show the modal confirm when delete Author*/}
       {isConfirmModalOpen && (
         <Modal className="w-[580px] p-5" onClose={handleCancelConfirmModal}>

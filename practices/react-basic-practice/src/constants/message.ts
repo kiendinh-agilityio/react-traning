@@ -14,4 +14,5 @@ export const MESSAGE_ERROR = {
   INVALID_EMAIL: 'Email is invalid',
   INVALID_AVATAR_URL: 'Avatar URL must be a valid URL',
   INVALID_NAME: 'Name must only contain alphabet characters',
+  INVALID_DATE: 'Date is invalid',
 };

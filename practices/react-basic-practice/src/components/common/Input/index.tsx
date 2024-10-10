@@ -7,8 +7,9 @@ interface InputProps {
   placeholder?: string;
   leftIcon?: ReactNode;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-  onBlur?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
   errorMessage?: string;
+  defaultValue?: string;
 }
 
 const Input = ({
@@ -20,6 +21,7 @@ const Input = ({
   onChange,
   onBlur,
   errorMessage,
+  defaultValue,
 }: InputProps) => {
   const className = `flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] ${errorMessage ? 'border-danger' : 'border-input'}`;
 
@@ -29,6 +31,7 @@ const Input = ({
       <input
         type={type}
         value={value}
+        defaultValue={defaultValue}
         name={name}
         className="w-full focus:outline-none text-dark"
         placeholder={placeholder}
