@@ -6,7 +6,12 @@ interface ButtonProps {
 }
 
 const Button = ({ variant = 'primary', isDisabled, onClick, label }: ButtonProps) => {
-  const className = `${variant} w-40 px-[22px] py-2.5 border border-primary font-helveticaBold font-bold rounded-xl`;
+  // Conditional class name based on variant and disabled state
+  const className = `
+    ${isDisabled ? 'primary opacity-50 cursor-not-allowed' : variant} 
+    w-40 px-[22px] py-2.5 border border-primary 
+    font-helveticaBold font-bold rounded-xl
+  `;
 
   return (
     <button className={className} onClick={onClick} disabled={isDisabled}>
