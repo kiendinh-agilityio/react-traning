@@ -29,8 +29,13 @@ const validateField = (
 };
 
 // Dayjs date validation function using arrow function
-const validateDate = (date: string, format: string): boolean =>
-  dayjs(date, format).format(format) === date;
+const validateDate = (date: string, format: string): boolean => {
+  const parsedDate = dayjs(date, format);
+  const year = parsedDate.year();
+
+  // Check if the date is valid and the year is within the valid range (>= 1000)
+  return parsedDate.isValid() && year >= 1000 && parsedDate.format(format) === date;
+};
 
 // Function to validate the entire form using arrow function
 export const validateForm = (formValues: Author): ValidationResult => {
