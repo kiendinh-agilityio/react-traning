@@ -16,3 +16,9 @@ export const MESSAGE_ERROR = {
   INVALID_NAME: 'Name must only contain alphabet characters',
   INVALID_DATE: 'Date is invalid',
 };
+
+export const AUTHOR_MESSAGES = {
+  NO_AUTHORS: 'No Authors at this time',
+  AUTHOR_ADDITION_INFO: 'Authors will appear here once they are added.',
+  NO_SEARCH_RESULTS: 'No search results found.',
+};

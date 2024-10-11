@@ -28,7 +28,7 @@ import { Header, Footer } from '@/layouts';
 import { Author } from '@/types';
 
 // Import constants
-import { MESSAGE_SUCCESS } from '@/constants';
+import { MESSAGE_SUCCESS, AUTHOR_MESSAGES } from '@/constants';
 
 // Import utils
 import { profileAuthor } from '@/utils';
@@ -164,9 +164,19 @@ const Home = () => {
     // Show Loading Spinner
     setLoading(true);
 
+    // Function to update authors in state
+    const updateAuthors = (prevAuthors: Author[]): Author[] =>
+      prevAuthors.map((author: Author) =>
+        author.id === selectedAuthor.id ? selectedAuthor : author,
+      );
+
     if (isUpdate) {
       // Edit author if we are in update mode
       await editAuthor(selectedAuthor.id, selectedAuthor);
+
+      // Update the authors list in state without making an API call
+      setAuthors(updateAuthors);
+      setFilteredAuthors(updateAuthors);
 
       // Set success message for editing
       setToastMessage(MESSAGE_SUCCESS.EDIT_AUTHOR);
@@ -302,10 +312,26 @@ const Home = () => {
                 </div>
               )}
             </div>
-            {filteredAuthors.length === 0 && !loading && (
-              <p className="font-helveticaBold font-bold text-center text-[#a0aec0] text-3xl py-14">
-                No search results found.
-              </p>
+            {/* Show appropriate message based on search results or empty table */}
+            {!loading && (
+              <>
+                {authors.length === 0 ? (
+                  // Display message when no authors exist at all
+                  <div className="flex flex-col justify-center font-helveticaBold font-bold text-center text-[#a0aec0] text-2xl py-14 h-96">
+                    <p>{AUTHOR_MESSAGES.NO_AUTHORS}</p>
+                    <p className="font-helveticaRegular font-regular text-xl">
+                      {AUTHOR_MESSAGES.AUTHOR_ADDITION_INFO}
+                    </p>
+                  </div>
+                ) : (
+                  // Display message when search yields no results
+                  filteredAuthors.length === 0 && (
+                    <p className="font-helveticaBold font-bold text-center text-[#a0aec0] text-2xl py-14">
+                      {AUTHOR_MESSAGES.NO_SEARCH_RESULTS}
+                    </p>
+                  )
+                )}
+              </>
             )}
           </div>
           {/* Render the toast notification */}

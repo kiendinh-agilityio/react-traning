@@ -30,7 +30,7 @@ const Toast = ({ type, message, isOpen: initialIsOpen, onClose }: ToastProps) =>
 
         // Call callback when Toast closes
         onClose && onClose();
-      }, 5000);
+      }, 3000);
     }
 
     // Clean up timeouts when component unmounts or when isOpen changes
