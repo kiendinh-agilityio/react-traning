@@ -312,10 +312,26 @@ const Home = () => {
                 </div>
               )}
             </div>
-            {filteredAuthors.length === 0 && !loading && (
-              <p className="font-helveticaBold font-bold text-center text-[#a0aec0] text-3xl py-14">
-                No search results found.
-              </p>
+            {/* Show appropriate message based on search results or empty table */}
+            {!loading && (
+              <>
+                {authors.length === 0 ? (
+                  // Display message when no authors exist at all
+                  <div className="flex flex-col justify-center font-helveticaBold font-bold text-center text-[#a0aec0] text-2xl py-14 h-96">
+                    <p>No Authors at this time</p>
+                    <p className="font-helveticaRegular font-regular text-xl">
+                      Authors will appear here once they are added.
+                    </p>
+                  </div>
+                ) : (
+                  // Display message when search yields no results
+                  filteredAuthors.length === 0 && (
+                    <p className="font-helveticaBold font-bold text-center text-[#a0aec0] text-2xl py-14">
+                      No search results found.
+                    </p>
+                  )
+                )}
+              </>
             )}
           </div>
           {/* Render the toast notification */}
