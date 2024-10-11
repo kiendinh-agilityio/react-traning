@@ -4,14 +4,14 @@
 
 @font-face {
   font-family: 'Helvetica-Regular';
-  src: url('../public/fonts/Helvetica.ttf') format('truetype');
+  src: url('/fonts/Helvetica.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Helvetica-Bold';
-  src: url('../public/fonts/Helvetica-Bold.ttf') format('truetype');
+  src: url('/fonts/Helvetica-Bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
