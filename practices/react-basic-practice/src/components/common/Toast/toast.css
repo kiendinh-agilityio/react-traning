@@ -24,7 +24,7 @@
   width: 100%;
   bottom: 0px;
   left: 0px;
-  animation: progress 5s linear forwards;
+  animation: progress 3s linear forwards;
 }
 
 @keyframes progress {
