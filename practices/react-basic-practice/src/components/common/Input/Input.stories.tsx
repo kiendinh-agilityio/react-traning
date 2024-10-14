@@ -5,6 +5,9 @@ export default {
   component: Input,
   title: 'Input',
   tags: ['autodocs'],
+  parameters: {
+    layout: 'centered',
+  },
 };
 
 export const InputName = {

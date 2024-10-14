@@ -4,6 +4,9 @@ export default {
   component: Sidebar,
   title: 'Sidebar',
   tags: ['autodocs'],
+  parameters: {
+    layout: 'centered',
+  },
 };
 
 export const SidebarLayout = {
