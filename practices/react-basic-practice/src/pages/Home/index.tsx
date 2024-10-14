@@ -41,25 +41,25 @@ const Home = () => {
   const [authors, setAuthors] = useState<Author[]>([]);
 
   // State to handle loading spinner visibility
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   // State to manage the visibility of the modal
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   // State to differentiate between adding a new author or updating an existing one
-  const [isUpdate, setIsUpdate] = useState(false);
+  const [isUpdate, setIsUpdate] = useState<boolean>(false);
 
   // State to store the selected author data for editing or adding
   const [selectedAuthor, setSelectedAuthor] = useState<Author>(profileAuthor);
 
   // State to manage the toast notification message
-  const [toastMessage, setToastMessage] = useState('');
+  const [toastMessage, setToastMessage] = useState<string>('');
 
   // State to manage the type of toast ('success' or 'failed')
   const [toastType, setToastType] = useState<'success' | 'failed'>('success');
 
   // State to handle the visibility of the toast notification
-  const [isToastOpen, setIsToastOpen] = useState(false);
+  const [isToastOpen, setIsToastOpen] = useState<boolean>(false);
 
   // Declare a state variable 'filteredAuthors' to store the list of authors
   const [filteredAuthors, setFilteredAuthors] = useState<Author[]>([]);
@@ -71,7 +71,7 @@ const Home = () => {
   const debouncedSearchTerm = useDebounce(searchTerm);
 
   // State for modal confirm
-  const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
+  const [isConfirmModalOpen, setIsConfirmModalOpen] = useState<boolean>(false);
 
   // State for author ID to delete
   const [authorIdToDelete, setAuthorToDelete] = useState<string | null>(null);
