@@ -282,7 +282,7 @@ const Home = () => {
           <div className="bg-white min-h-[88vh] mb-7 rounded-[15px] px-[21px] py-7 relative">
             <div className="flex justify-between items-center mb-7">
               {/* Render the heading and search bar */}
-              <Heading text="Authors Table" />
+              <Heading level={1} size="lg" text="Authors Table" />
               <div className="flex gap-5">
                 <div className="w-96">
                   <Input

@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 // Import components
-import { Input, Select, Button } from '@/components/common';
+import { Input, Select, Button, Heading } from '@/components/common';
 
 // Import constants for roles, status, and positions options
 import { ROLES, STATUS, POSITIONS } from '@/constants';
@@ -102,7 +102,12 @@ const AuthorsForm = ({
   return (
     <>
       {/* Display form title based on whether we are adding or editing an author */}
-      <h2 className="text-lg font-helveticaBold font-bold">{isUpdate ? 'EDIT' : 'ADD'} AUTHOR</h2>
+      <Heading
+        level={2}
+        size="xl"
+        text={`${isUpdate ? 'EDIT' : 'ADD'} AUTHOR`}
+        className="text-lg font-helveticaBold font-bold justify-end"
+      />
       <form className="flex flex-col gap-6">
         {/* Name input field */}
         <div className="flex flex-col gap-1.5">
