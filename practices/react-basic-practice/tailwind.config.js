@@ -21,6 +21,15 @@ module.exports = {
         helveticaRegular: ['Helvetica-Regular'],
         helveticaBold: ['Helvetica-Bold'],
       },
+      fontSize: {
+        sm: ['14px', { lineHeight: '20px' }],
+        lg: ['18px', { lineHeight: '25px' }],
+        xl: ['22px', { lineHeight: '30px' }],
+      },
+      lineHeight: {
+        base: '18px',
+        md: '25px',
+      },
     },
   },
   plugins: [
@@ -29,36 +38,48 @@ module.exports = {
         '.primary': {
           backgroundColor: '#4fd1c5',
           color: '#fff',
-        },
-        '.primary:hover': {
-          backgroundColor: '#38b2ac',
+          '&:hover': {
+            backgroundColor: '#38b2ac',
+          },
         },
         '.secondary': {
           backgroundColor: 'transparent',
           color: '#4fd1c5',
-        },
-        '.secondary:hover': {
-          backgroundColor: 'rgba(79, 209, 197, 0.1)',
-          color: '#38b2ac',
+          '&:hover': {
+            backgroundColor: 'rgba(79, 209, 197, 0.1)',
+            color: '#38b2ac',
+          },
         },
         '.tertiary': {
           backgroundColor: 'transparent',
           color: '#a0aec0',
           border: '1px solid #a0aec0',
-        },
-        '.tertiary:hover': {
-          backgroundColor: 'rgba(160, 174, 192, 0.1)',
-          borderColor: '#718096',
-          color: '#718096',
+          '&:hover': {
+            backgroundColor: 'rgba(160, 174, 192, 0.1)',
+            borderColor: '#718096',
+            color: '#718096',
+          },
         },
         '.danger': {
           backgroundColor: '#e53e3e',
           color: '#fff',
           border: '1px solid #e53e3e',
+          '&:hover': {
+            backgroundColor: '#c53030',
+            borderColor: '#c53030',
+          },
         },
-        '.danger:hover': {
-          backgroundColor: '#c53030',
-          borderColor: '#c53030',
+        '.normal': {
+          width: '185px',
+          border: '1px solid #4fd1c5',
+          backgroundColor: '#fff',
+          color: '#2d3748',
+          padding: '10px 48px',
+          borderRadius: '12px',
+          fontSize: '10px',
+          '&:hover': {
+            backgroundColor: '#f7fafc',
+          },
         },
         '.gradient-border': {
           'border-bottom': '1px',

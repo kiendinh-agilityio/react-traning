@@ -63,7 +63,7 @@ const AuthorItem = ({ author, onEdit, onDelete }: AuthorItemProps) => {
       </div>
 
       {/* Actions */}
-      <div className="w-32 flex justify-between items-center font-helveticaBold font-bold text-xs leading-[18px]">
+      <div className="w-32 flex justify-between items-center font-helveticaBold font-bold text-xs leading-base">
         {/* Button Edit */}
         <button className="flex items-center gap-0.5" onClick={handleEditClick}>
           <EditIcon /> <span className="text-[#718096]">Edit</span>

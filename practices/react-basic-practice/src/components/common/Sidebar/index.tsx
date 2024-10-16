@@ -4,8 +4,8 @@ import { SIDEBAR_ITEMS } from '@/constants';
 // Import sidebar item
 import SidebarItem from './SidebarItem';
 
-// Import components
-import { QuestionIcon } from '@/components/common/Icons';
+// Import help box
+import HelpBox from './HelpBox';
 
 interface SidebarItemType {
   icon: React.ReactNode;
@@ -13,11 +13,6 @@ interface SidebarItemType {
   active: boolean;
   group?: string;
 }
-
-const renderSidebarItems = (items: SidebarItemType[]) =>
-  items.map((item) => (
-    <SidebarItem key={item.label} icon={item.icon} label={item.label} active={item.active} />
-  ));
 
 const Sidebar = () => {
   const mainItems: SidebarItemType[] = SIDEBAR_ITEMS.filter((item) => !item.group);
@@ -27,6 +22,12 @@ const Sidebar = () => {
     (item) => item.group === 'ACCOUNT PAGES',
   );
 
+  // Function renderSidebarItems
+  const renderSidebarItems = (items: SidebarItemType[]) =>
+    items.map((item) => (
+      <SidebarItem key={item.label} icon={item.icon} label={item.label} active={item.active} />
+    ));
+
   return (
     <>
       <ul className="px-[30px]">
@@ -34,16 +35,7 @@ const Sidebar = () => {
         <li className="font-bold font-helveticaBold py-6 px-4">ACCOUNT PAGES</li>
         {renderSidebarItems(accountItems)}
       </ul>
-      <div className="bg-primary w-[218px] py-4 px-4 border border-primary rounded-[15px] m-auto mt-16 text-white">
-        <div className="flex items-center justify-center w-[35px] h-[35px] bg-white rounded-xl mb-5">
-          <QuestionIcon />
-        </div>
-        <p className="font-helveticaBold font-bold tracking-wide">Need help?</p>
-        <p className="font-xs leading-[18px]">Please check our docs</p>
-        <button className="border border-primary rounded-xl bg-white text-dark font-helveticaBold font-bold py-2.5 px-[48px] mt-[9px] text-[10px]">
-          DOCUMENTATION
-        </button>
-      </div>
+      <HelpBox />
     </>
   );
 };

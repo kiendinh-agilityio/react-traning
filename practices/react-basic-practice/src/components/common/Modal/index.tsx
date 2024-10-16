@@ -7,10 +7,7 @@ interface ModalProps {
 }
 
 const Modal = ({ children, className, onClose }: ModalProps) => {
-  const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    event.stopPropagation();
-    onClose();
-  };
+  const handleOverlayClick = () => onClose();
 
   const stopPropagation = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
     event.stopPropagation();

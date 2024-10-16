@@ -11,13 +11,11 @@ const SidebarItem = ({ icon, label, active }: SidebarItemProps) => {
     active ? 'bg-primary border-primary' : 'bg-white border-white'
   }`;
 
-  return label === 'SUPPORT' ? (
-    <li className="py-2 px-4 min-w-[180px] text-sm tracking-[1px]">{label}</li>
-  ) : (
+  return (
     <li className={className}>
       <a className="flex items-center gap-4" href="#">
         <span className={iconClassName}>{icon}</span>
-        <span className="text-xs leading-[18px]">{label}</span>
+        <span className="text-xs leading-base">{label}</span>
       </a>
     </li>
   );
