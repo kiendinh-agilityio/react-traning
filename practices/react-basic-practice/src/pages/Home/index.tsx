@@ -122,10 +122,10 @@ const Home = () => {
   }, [debouncedSearchTerm, authors]);
 
   /**
-   * handleAddNewAuthor Function
+   * Function show modal add author
    * Prepares the state for adding a new author and opens the modal.
    */
-  const handleAddNewAuthor = () => {
+  const showAddModal = () => {
     // Set to false because we are adding a new author
     setIsUpdate(false);
 
@@ -137,11 +137,11 @@ const Home = () => {
   };
 
   /**
-   * handleEditAuthor Function
+   * Function show modal edit author
    * Prepares the state for editing an existing author and opens the modal.
    * @param {Author} author - The author object to be edited.
    */
-  const handleEditAuthor = (author: Author) => {
+  const showEditModal = (author: Author) => {
     // Set to true because we are editing an author
     setIsUpdate(true);
 
@@ -205,13 +205,14 @@ const Home = () => {
   };
 
   /**
-   * closeModal Function
    * Closes the modal without making any changes.
    */
-  const closeModal = () => setIsModalOpen(false);
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setIsConfirmModalOpen(false);
+  };
 
   /**
-   * closeToast Function
    * Closes the toast notification.
    */
   const closeToast = () => setIsToastOpen(false);
@@ -257,11 +258,6 @@ const Home = () => {
   };
 
   /**
-   *  Function cancel modal confirm
-   */
-  const handleCancelConfirmModal = () => setIsConfirmModalOpen(false);
-
-  /**
    *  Function for handling search term change
    */
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -294,7 +290,7 @@ const Home = () => {
                     onChange={handleSearchChange}
                   />
                 </div>
-                <Button variant="secondary" label="Add New Author" onClick={handleAddNewAuthor} />
+                <Button variant="secondary" label="Add New Author" onClick={showAddModal} />
               </div>
             </div>
             {/* Table wrapper with loading spinner overlay */}
@@ -302,7 +298,7 @@ const Home = () => {
               {/* Keep the table visible while loading */}
               <AuthorsTable
                 authors={filteredAuthors}
-                onEditAuthor={handleEditAuthor}
+                onEditAuthor={showEditModal}
                 onDeleteAuthor={openConfirmModal}
               />
               {/* Display loading spinner on top of the table */}
@@ -359,8 +355,8 @@ const Home = () => {
       )}
       {/* Show the modal confirm when delete Author*/}
       {isConfirmModalOpen && (
-        <Modal className="w-[580px] p-5" onClose={handleCancelConfirmModal}>
-          <ConfirmModal onSubmit={handleDeleteAuthor} onClose={handleCancelConfirmModal} />
+        <Modal className="w-[580px] p-5" onClose={closeModal}>
+          <ConfirmModal onSubmit={handleDeleteAuthor} onClose={closeModal} />
         </Modal>
       )}
     </>
