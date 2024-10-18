@@ -54,50 +54,55 @@ const AuthorsForm = ({
     }
   }, [selectedAuthor]);
 
-  // Handle input changes in form fields
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
+  // Function to handle both input changes and form submission
+  const handleFormAction = (
+    actionType: 'change' | 'submit',
+    e?:
+      | React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+      | React.FocusEvent<HTMLInputElement>,
+  ) => {
+    if (actionType === 'change' && e) {
+      // Handle input changes
+      const { name, value } = e.target;
 
-    // Mark form as having changes
-    setHasChanges(true);
+      // Update form values
+      const updatedValues = { ...formValues, [name]: value };
+      setFormValues(updatedValues);
 
-    // Update form values
-    setFormValues({ ...formValues, [name]: value });
+      // Check if the new value differs from the initial value
+      const isFormChanged = Object.keys(updatedValues).some(
+        (key) => updatedValues[key as keyof Author] !== initialValues[key as keyof Author],
+      );
+      setHasChanges(isFormChanged);
 
-    // Check if the new value differs from the initial value
-    const isChanged = value !== initialValues[name as keyof Author];
-    setHasChanges(isChanged);
+      // Propagate changes to parent component
+      onChange(updatedValues);
+    } else if (actionType === 'submit') {
+      // Handle form submission
+      const { isValid, errorMessages: validationErrors } = validateForm(formValues);
 
-    // Propagate changes to parent component
-    onChange({ ...formValues, [name]: value });
-
-    // Clear error message for the changed field
-    setErrorMessages({ ...errorMessages, [name]: '' });
+      // If the form is invalid, display all error messages
+      !isValid ? setErrorMessages(validationErrors) : onSubmit();
+    }
   };
 
   // Validate form on blur (when user leaves the field)
   const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     const field = e.target.name;
-    const { isValid, errorMessages: validationErrors } = validateForm(formValues);
+    const { errorMessages: validationErrors } = validateForm(formValues);
 
-    // Only set error message for the current field being interacted with
-    if (!isValid && validationErrors[field]) {
-      setErrorMessages((prevErrors) => ({
-        ...prevErrors,
-        [field]: validationErrors[field],
-      }));
-    }
+    setErrorMessages((prevErrors) => ({
+      ...prevErrors,
+      [field]: validationErrors[field] || '',
+    }));
   };
 
-  // Handle form submission (called when the user submits the form)
-  const handleSubmit = () => {
-    const { isValid, errorMessages: validationErrors } = validateForm(formValues);
+  // Handle input changes in form fields
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
+    handleFormAction('change', e);
 
-    // If the form is invalid, display all error messages
-    !isValid
-      ? setErrorMessages(validationErrors)
-      : (setErrorMessages(validationErrors), onSubmit());
-  };
+  // Handle form submission
+  const handleSubmit = () => handleFormAction('submit');
 
   return (
     <>
@@ -106,7 +111,7 @@ const AuthorsForm = ({
         level={2}
         size="xl"
         text={`${isUpdate ? 'EDIT' : 'ADD'} AUTHOR`}
-        className="text-lg font-helveticaBold font-bold justify-end"
+        className="font-helveticaBold font-bold justify-end"
       />
       <form className="flex flex-col gap-6">
         {/* Name input field */}
@@ -116,7 +121,7 @@ const AuthorsForm = ({
             name="name"
             type="text"
             value={formValues.name}
-            onChange={handleChange}
+            onChange={handleInputChange}
             placeholder="Please enter name"
             onBlur={handleBlur}
             errorMessage={errorMessages.name}
@@ -130,7 +135,7 @@ const AuthorsForm = ({
             name="email"
             type="email"
             value={formValues.email}
-            onChange={handleChange}
+            onChange={handleInputChange}
             placeholder="Please enter email address"
             onBlur={handleBlur}
             errorMessage={errorMessages.email}
@@ -144,7 +149,7 @@ const AuthorsForm = ({
             name="avatarUrl"
             type="text"
             value={formValues.avatarUrl}
-            onChange={handleChange}
+            onChange={handleInputChange}
             placeholder="Please enter link image"
             onBlur={handleBlur}
             errorMessage={errorMessages.avatarUrl}
@@ -158,7 +163,7 @@ const AuthorsForm = ({
             name="date"
             type="date"
             defaultValue={formValues.date || today}
-            onChange={handleChange}
+            onChange={handleInputChange}
             onBlur={handleBlur}
             errorMessage={errorMessages.date}
           />
@@ -172,7 +177,7 @@ const AuthorsForm = ({
               name="roles"
               value={formValues.roles}
               optionsList={ROLES}
-              onChange={handleChange}
+              onChange={handleInputChange}
             />
           </div>
           <div>
@@ -181,7 +186,7 @@ const AuthorsForm = ({
               name="position"
               value={formValues.position}
               optionsList={POSITIONS}
-              onChange={handleChange}
+              onChange={handleInputChange}
             />
           </div>
           <div>
@@ -190,7 +195,7 @@ const AuthorsForm = ({
               name="status"
               value={formValues.status}
               optionsList={STATUS}
-              onChange={handleChange}
+              onChange={handleInputChange}
             />
           </div>
         </div>
