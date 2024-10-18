@@ -205,17 +205,23 @@ const Home = () => {
   };
 
   /**
-   * Closes the modal without making any changes.
+   * Closes the modal and toast without making any changes.
    */
-  const closeModal = () => {
+  const handleDoSomething = () => {
+    // Close add and edit modal
     setIsModalOpen(false);
+
+    // Close confirm modal
     setIsConfirmModalOpen(false);
+
+    // Close toast
+    setIsToastOpen(false);
   };
 
   /**
    * Closes the toast notification.
    */
-  const closeToast = () => setIsToastOpen(false);
+  // const closeToast = () => setIsToastOpen(false);
 
   /**
    * Handle function delete author
@@ -335,7 +341,7 @@ const Home = () => {
             type={toastType}
             message={toastMessage}
             isOpen={isToastOpen}
-            onClose={closeToast}
+            onClose={handleDoSomething}
           />
           {/* Render the footer */}
           <Footer />
@@ -343,11 +349,11 @@ const Home = () => {
       </div>
       {/* Show the modal if it is open */}
       {isModalOpen && (
-        <Modal className="w-2/4 px-9 py-9" onClose={closeModal}>
+        <Modal className="w-2/4 px-9 py-9" onClose={handleDoSomething}>
           <AuthorsForm
             isUpdate={isUpdate}
             selectedAuthor={selectedAuthor}
-            closeModal={closeModal}
+            closeModal={handleDoSomething}
             onChange={setSelectedAuthor}
             onSubmit={handleSubmit}
           />
@@ -355,8 +361,8 @@ const Home = () => {
       )}
       {/* Show the modal confirm when delete Author*/}
       {isConfirmModalOpen && (
-        <Modal className="w-[580px] p-5" onClose={closeModal}>
-          <ConfirmModal onSubmit={handleDeleteAuthor} onClose={closeModal} />
+        <Modal className="w-[580px] p-5" onClose={handleDoSomething}>
+          <ConfirmModal onSubmit={handleDeleteAuthor} onClose={handleDoSomething} />
         </Modal>
       )}
     </>
