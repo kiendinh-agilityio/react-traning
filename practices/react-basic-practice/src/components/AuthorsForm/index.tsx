@@ -56,11 +56,10 @@ const AuthorsForm = ({
 
   // Function to handle both input changes and form submission
   const handleFormAction = (
-    e:
-      | React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-      | React.FocusEvent<HTMLInputElement>
-      | null,
     actionType: 'change' | 'submit',
+    e?:
+      | React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+      | React.FocusEvent<HTMLInputElement>,
   ) => {
     if (actionType === 'change' && e) {
       // Handle input changes
@@ -100,10 +99,10 @@ const AuthorsForm = ({
 
   // Handle input changes in form fields
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
-    handleFormAction(e, 'change');
+    handleFormAction('change', e);
 
   // Handle form submission
-  const handleSubmit = () => handleFormAction(null, 'submit');
+  const handleSubmit = () => handleFormAction('submit');
 
   return (
     <>
