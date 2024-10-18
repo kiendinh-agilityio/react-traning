@@ -9,7 +9,7 @@ interface ModalProps {
 const Modal = ({ children, className, onClose }: ModalProps) => {
   const handleOverlayClick = () => onClose();
 
-  const stopPropagation = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
+  const handleStopPropagation = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
     event.stopPropagation();
 
   return (
@@ -19,7 +19,7 @@ const Modal = ({ children, className, onClose }: ModalProps) => {
     >
       <div
         className={`flex flex-col gap-8 rounded-2xl bg-white shadow z-10 ${className}`}
-        onClick={stopPropagation}
+        onClick={handleStopPropagation}
       >
         {children}
       </div>
