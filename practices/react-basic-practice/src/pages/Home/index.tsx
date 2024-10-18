@@ -125,7 +125,7 @@ const Home = () => {
    * Function show modal add author
    * Prepares the state for adding a new author and opens the modal.
    */
-  const showAddModal = () => {
+  const handleShowAddModal = () => {
     // Set to false because we are adding a new author
     setIsUpdate(false);
 
@@ -141,7 +141,7 @@ const Home = () => {
    * Prepares the state for editing an existing author and opens the modal.
    * @param {Author} author - The author object to be edited.
    */
-  const showEditModal = (author: Author) => {
+  const handleShowEditModal = (author: Author) => {
     // Set to true because we are editing an author
     setIsUpdate(true);
 
@@ -255,7 +255,7 @@ const Home = () => {
   /**
    *Function show modal confirm
    */
-  const openConfirmModal = (id: string) => {
+  const handleShowConfirmModal = (id: string) => {
     setAuthorToDelete(id);
     setIsConfirmModalOpen(true);
   };
@@ -293,7 +293,7 @@ const Home = () => {
                     onChange={handleSearchChange}
                   />
                 </div>
-                <Button variant="secondary" label="Add New Author" onClick={showAddModal} />
+                <Button variant="secondary" label="Add New Author" onClick={handleShowAddModal} />
               </div>
             </div>
             {/* Table wrapper with loading spinner overlay */}
@@ -301,8 +301,8 @@ const Home = () => {
               {/* Keep the table visible while loading */}
               <AuthorsTable
                 authors={filteredAuthors}
-                onEditAuthor={showEditModal}
-                onDeleteAuthor={openConfirmModal}
+                onEditAuthor={handleShowEditModal}
+                onDeleteAuthor={handleShowConfirmModal}
               />
               {/* Display loading spinner on top of the table */}
               {loading && (
