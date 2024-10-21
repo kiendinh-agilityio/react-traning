@@ -30,11 +30,8 @@ import { Author } from '@/types';
 // Import constants
 import { MESSAGE_SUCCESS, AUTHOR_MESSAGES } from '@/constants';
 
-// Import utils
-import { profileAuthor } from '@/utils';
-
 // Import custom hooks
-import { useDebounce } from '@/hooks';
+import { useDebounce, useModal, useToast } from '@/hooks';
 
 const Home = () => {
   // State to store the list of authors
@@ -42,24 +39,6 @@ const Home = () => {
 
   // State to handle loading spinner visibility
   const [loading, setLoading] = useState<boolean>(false);
-
-  // State to manage the visibility of the modal
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-
-  // State to differentiate between adding a new author or updating an existing one
-  const [isUpdate, setIsUpdate] = useState<boolean>(false);
-
-  // State to store the selected author data for editing or adding
-  const [selectedAuthor, setSelectedAuthor] = useState<Author>(profileAuthor);
-
-  // State to manage the toast notification message
-  const [toastMessage, setToastMessage] = useState<string>('');
-
-  // State to manage the type of toast ('success' or 'failed')
-  const [toastType, setToastType] = useState<'success' | 'failed'>('success');
-
-  // State to handle the visibility of the toast notification
-  const [isToastOpen, setIsToastOpen] = useState<boolean>(false);
 
   // Declare a state variable 'filteredAuthors' to store the list of authors
   const [filteredAuthors, setFilteredAuthors] = useState<Author[]>([]);
@@ -70,11 +49,21 @@ const Home = () => {
   // Debounced value of the search term
   const debouncedSearchTerm = useDebounce(searchTerm);
 
-  // State for modal confirm
-  const [isConfirmModalOpen, setIsConfirmModalOpen] = useState<boolean>(false);
+  // Destructure values from custom hooks for modal management
+  const {
+    isModalOpen,
+    isConfirmModalOpen,
+    selectedAuthor,
+    isUpdate,
+    handleShowAddModal,
+    handleShowEditModal,
+    handleCloseModal,
+    handleShowConfirmModal,
+    setSelectedAuthor,
+  } = useModal();
 
-  // State for author ID to delete
-  const [authorIdToDelete, setAuthorToDelete] = useState<string | null>(null);
+  // Destructure values from custom hook for toast management
+  const { toastMessage, toastType, isToastOpen, handleShowToast, handleCloseToast } = useToast();
 
   /**
    * useEffect Hook
@@ -122,64 +111,28 @@ const Home = () => {
   }, [debouncedSearchTerm, authors]);
 
   /**
-   * Function show modal add author
-   * Prepares the state for adding a new author and opens the modal.
-   */
-  const handleShowAddModal = () => {
-    // Set to false because we are adding a new author
-    setIsUpdate(false);
-
-    // Clear selectedAuthor state
-    setSelectedAuthor(profileAuthor);
-
-    // Open the modal
-    setIsModalOpen(true);
-  };
-
-  /**
-   * Function show modal edit author
-   * Prepares the state for editing an existing author and opens the modal.
-   * @param {Author} author - The author object to be edited.
-   */
-  const handleShowEditModal = (author: Author) => {
-    // Set to true because we are editing an author
-    setIsUpdate(true);
-
-    // Set the selectedAuthor state with the author to be edited
-    setSelectedAuthor(author);
-
-    // Open the modal
-    setIsModalOpen(true);
-  };
-
-  /**
    * handleSubmit Function
    * Submits the form to add or edit an author, shows the toast notification,
    * and updates the authors list by fetching the latest data.
    */
   const handleSubmit = async () => {
     // Close the modal after submission
-    setIsModalOpen(false);
+    handleCloseModal();
 
     // Show Loading Spinner
     setLoading(true);
-
-    // Function to update authors in state
-    const updateAuthors = (prevAuthors: Author[]): Author[] =>
-      prevAuthors.map((author: Author) =>
-        author.id === selectedAuthor.id ? selectedAuthor : author,
-      );
 
     if (isUpdate) {
       // Edit author if we are in update mode
       await editAuthor(selectedAuthor.id, selectedAuthor);
 
       // Update the authors list in state without making an API call
-      setAuthors(updateAuthors);
-      setFilteredAuthors(updateAuthors);
+      setAuthors((prevAuthors) =>
+        prevAuthors.map((author) => (author.id === selectedAuthor.id ? selectedAuthor : author)),
+      );
 
       // Set success message for editing
-      setToastMessage(MESSAGE_SUCCESS.EDIT_AUTHOR);
+      handleShowToast(MESSAGE_SUCCESS.EDIT_AUTHOR, 'success');
     } else {
       // Add new author
       const newAuthor = await addNewAuthor(selectedAuthor);
@@ -187,77 +140,36 @@ const Home = () => {
       // Prepend the newly added author to the authors array
       setAuthors((prevAuthors) => [newAuthor, ...prevAuthors]);
 
-      // Update filtered authors as well
-      setFilteredAuthors((prevAuthors) => [newAuthor, ...prevAuthors]);
-
       // Set success message for adding
-      setToastMessage(MESSAGE_SUCCESS.ADD_AUTHOR);
+      handleShowToast(MESSAGE_SUCCESS.ADD_AUTHOR, 'success');
     }
-
-    // Set toast type to success
-    setToastType('success');
 
     // Hide the loading spinner after the process is complete
     setLoading(false);
-
-    // Show the toast notification
-    setIsToastOpen(true);
   };
-
-  /**
-   * Closes the modal without making any changes.
-   */
-  const handleCloseModal = () => {
-    // Close add and edit modal
-    setIsModalOpen(false);
-
-    // Close confirm modal
-    setIsConfirmModalOpen(false);
-  };
-
-  /**
-   * Closes the toast notification.
-   */
-  const handleCloseToast = () => setIsToastOpen(false);
 
   /**
    * Handle function delete author
    * This function is triggered when the user confirms the deletion of an author.
    */
   const handleDeleteAuthor = async () => {
-    if (authorIdToDelete) {
-      // Close modal confirm
-      setIsConfirmModalOpen(false);
+    // Close modal confirm
+    handleCloseModal();
 
-      // Show Loading Spinner
-      setLoading(true);
+    // Show Loading Spinner
+    setLoading(true);
+    // Delete Author
+    await deleteAuthor(selectedAuthor.id);
 
-      // Delete Author
-      await deleteAuthor(authorIdToDelete);
+    // Fetch the updated list of authors to reflect the deletion in the UI
+    const updatedAuthors = await getAllAuthors();
+    setAuthors(updatedAuthors);
 
-      // Show Toast
-      setToastMessage(MESSAGE_SUCCESS.DELETE_AUTHOR);
-      setToastType('success');
+    // Open the toast notification to inform the user about the success
+    handleShowToast(MESSAGE_SUCCESS.DELETE_AUTHOR, 'success');
 
-      // Fetch the updated list of authors to reflect the deletion in the UI
-      const updatedAuthors = await getAllAuthors();
-      setAuthors(updatedAuthors);
-      setFilteredAuthors(updatedAuthors);
-
-      // Hide the loading spinner after the process is complete
-      setLoading(false);
-
-      // Open the toast notification to inform the user about the success
-      setIsToastOpen(true);
-    }
-  };
-
-  /**
-   *Function show modal confirm
-   */
-  const handleShowConfirmModal = (id: string) => {
-    setAuthorToDelete(id);
-    setIsConfirmModalOpen(true);
+    // Hide the loading spinner after the process is complete
+    setLoading(false);
   };
 
   /**
