@@ -171,33 +171,27 @@ const AuthorsForm = ({
         </div>
         {/* Roles and Position dropdowns */}
         <div className="grid grid-cols-3 gap-5">
-          <div>
-            <Select
-              label="Roles"
-              name="roles"
-              value={formValues.roles}
-              optionsList={ROLES}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div>
-            <Select
-              label="Positions"
-              name="position"
-              value={formValues.position}
-              optionsList={POSITIONS}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div>
-            <Select
-              label="Status"
-              name="status"
-              value={formValues.status}
-              optionsList={STATUS}
-              onChange={handleInputChange}
-            />
-          </div>
+          <Select
+            label="Roles"
+            name="roles"
+            value={formValues.roles}
+            optionsList={ROLES}
+            onChange={handleInputChange}
+          />
+          <Select
+            label="Positions"
+            name="position"
+            value={formValues.position}
+            optionsList={POSITIONS}
+            onChange={handleInputChange}
+          />
+          <Select
+            label="Status"
+            name="status"
+            value={formValues.status}
+            optionsList={STATUS}
+            onChange={handleInputChange}
+          />
         </div>
       </form>
       {/* Submit and Cancel buttons */}
