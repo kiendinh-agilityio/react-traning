@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 // Import components
-import { Input, Select, Button, Heading } from '@/components/common';
+import { Select, Button, Heading, InputGroup } from '@/components/common';
 
 // Import constants for roles, status, and positions options
 import { ROLES, STATUS, POSITIONS } from '@/constants';
@@ -114,62 +114,48 @@ const AuthorsForm = ({
         className="font-helveticaBold font-bold justify-end"
       />
       <form className="flex flex-col gap-6">
-        {/* Name input field */}
-        <div className="flex flex-col gap-1.5">
-          <label>Name</label>
-          <Input
-            name="name"
-            type="text"
-            value={formValues.name}
-            onChange={handleInputChange}
-            placeholder="Please enter name"
-            onBlur={handleBlur}
-            errorMessage={errorMessages.name}
-          />
-          {errorMessages.name && <p className="text-danger">{errorMessages.name}</p>}
-        </div>
-        {/* Email input field */}
-        <div className="flex flex-col gap-1.5">
-          <label>Email</label>
-          <Input
-            name="email"
-            type="email"
-            value={formValues.email}
-            onChange={handleInputChange}
-            placeholder="Please enter email address"
-            onBlur={handleBlur}
-            errorMessage={errorMessages.email}
-          />
-          {errorMessages.email && <p className="text-danger">{errorMessages.email}</p>}
-        </div>
-        {/* Avatar URL input field */}
-        <div className="flex flex-col gap-1.5">
-          <label>Avatar</label>
-          <Input
-            name="avatarUrl"
-            type="text"
-            value={formValues.avatarUrl}
-            onChange={handleInputChange}
-            placeholder="Please enter link image"
-            onBlur={handleBlur}
-            errorMessage={errorMessages.avatarUrl}
-          />
-          {errorMessages.avatarUrl && <p className="text-danger">{errorMessages.avatarUrl}</p>}
-        </div>
-        {/* Date fields */}
-        <div className="flex flex-col gap-1.5">
-          <label>Employed</label>
-          <Input
-            name="date"
-            type="date"
-            defaultValue={formValues.date || today}
-            onChange={handleInputChange}
-            onBlur={handleBlur}
-            errorMessage={errorMessages.date}
-          />
-          {errorMessages.date && <p className="text-danger">{errorMessages.date}</p>}
-        </div>
-        {/* Roles and Position dropdowns */}
+        <InputGroup
+          label="Name"
+          name="name"
+          type="text"
+          value={formValues.name}
+          placeholder="Please enter name"
+          errorMessage={errorMessages.name}
+          onChange={handleInputChange}
+          onBlur={handleBlur}
+        />
+        <InputGroup
+          label="Email"
+          name="email"
+          type="email"
+          value={formValues.email}
+          placeholder="Please enter email address"
+          errorMessage={errorMessages.email}
+          onChange={handleInputChange}
+          onBlur={handleBlur}
+        />
+        <InputGroup
+          label="Avatar"
+          name="avatarUrl"
+          type="text"
+          value={formValues.avatarUrl}
+          placeholder="Please enter link image"
+          errorMessage={errorMessages.avatarUrl}
+          onChange={handleInputChange}
+          onBlur={handleBlur}
+        />
+        <InputGroup
+          label="Employed"
+          name="date"
+          type="date"
+          value={formValues.date || today}
+          placeholder=""
+          errorMessage={errorMessages.date}
+          onChange={handleInputChange}
+          onBlur={handleBlur}
+        />
+
+        {/* Roles, Position, Status dropdowns */}
         <div className="grid grid-cols-3 gap-5">
           <Select
             label="Roles"
