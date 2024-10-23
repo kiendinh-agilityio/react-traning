@@ -44,7 +44,7 @@ const AuthorItem = ({ author, onEdit, onDelete }: AuthorItemProps) => {
       {/* Function */}
       <Box>
         <Paragraph text={roles} />
-        <Paragraph variant="regular" size="sm" text={position} className="text-gray" />
+        <Paragraph variant="regular" text={position} className="text-gray" />
       </Box>
 
       {/* Status */}
