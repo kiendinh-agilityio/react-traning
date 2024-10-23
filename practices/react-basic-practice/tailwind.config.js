@@ -22,6 +22,7 @@ module.exports = {
         helveticaBold: ['Helvetica-Bold'],
       },
       fontSize: {
+        xs: ['12px', { lineHeight: '18px' }],
         sm: ['14px', { lineHeight: '20px' }],
         lg: ['18px', { lineHeight: '25px' }],
         xl: ['22px', { lineHeight: '30px' }],
@@ -37,6 +38,7 @@ module.exports = {
       addUtilities({
         '.primary': {
           backgroundColor: '#4fd1c5',
+          border: '1px solid #4fd1c5',
           color: '#fff',
           '&:hover': {
             backgroundColor: '#38b2ac',
@@ -44,6 +46,7 @@ module.exports = {
         },
         '.secondary': {
           backgroundColor: 'transparent',
+          border: '1px solid #4fd1c5',
           color: '#4fd1c5',
           '&:hover': {
             backgroundColor: 'rgba(79, 209, 197, 0.1)',
@@ -69,7 +72,7 @@ module.exports = {
             borderColor: '#c53030',
           },
         },
-        '.normal': {
+        '.link': {
           width: '185px',
           border: '1px solid #4fd1c5',
           backgroundColor: '#fff',
@@ -81,12 +84,28 @@ module.exports = {
             backgroundColor: '#f7fafc',
           },
         },
+        '.transparent': {
+          display: 'flex',
+          'align-items': 'center',
+          'border-style': 'none',
+          backgroundColor: 'transparent',
+          padding: '0',
+          gap: '2px',
+        },
         '.gradient-border': {
           'border-bottom': '1px',
           'border-style': 'solid',
           'border-image-source':
             'linear-gradient(90deg, rgba(224, 225, 226, 0) 0%, #E0E1E2 49.52%, rgba(224, 225, 226, 0.15625) 99.04%)',
           'border-image-slice': '1',
+        },
+        '.bold': {
+          fontFamily: 'Helvetica-Bold',
+          fontWeight: '700',
+        },
+        '.regular': {
+          fontFamily: 'Helvetica-Regular',
+          fontWeight: '400',
         },
       });
     }),

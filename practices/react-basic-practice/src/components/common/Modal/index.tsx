@@ -18,7 +18,7 @@ const Modal = ({ children, className, onClose }: ModalProps) => {
       onClick={handleOverlayClick}
     >
       <div
-        className={`flex flex-col gap-8 rounded-2xl bg-white shadow z-10 ${className}`}
+        className={`modal-content flex flex-col gap-8 rounded-2xl bg-white shadow z-10 ${className}`}
         onClick={handleStopPropagation}
       >
         {children}

@@ -63,3 +63,6 @@ export const PROFILE_AUTHOR = {
 
 // Variables for date format
 export const DATE_FORMAT = 'DD/MM/YY';
+
+// Variable for table titles
+export const TABLE_TITLES = ['Author', 'Function', 'Status', 'Employed'];

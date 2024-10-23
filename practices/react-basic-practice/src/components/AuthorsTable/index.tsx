@@ -1,5 +1,11 @@
+// Import types
 import { Author } from '@/types';
+
+// Import author item
 import AuthorItem from './AuthorItem';
+
+// Import constants
+import { TABLE_TITLES } from '@/constants';
 
 export interface AuthorTableProps {
   authors: Author[];
@@ -11,10 +17,11 @@ const AuthorTable = ({ authors, onEditAuthor, onDeleteAuthor }: AuthorTableProps
   <div className="w-full">
     {/* Header */}
     <ul className="flex border-b border-input font-helveticaBold font-bold text-[#a0aec0]">
-      <li className="flex-1 py-3.5">Author</li>
-      <li className="flex-1 py-3.5">Function</li>
-      <li className="flex-1 py-3.5">Status</li>
-      <li className="flex-1 py-3.5">Employed</li>
+      {TABLE_TITLES.map((title) => (
+        <li key={title} className={`flex-1 py-3.5`}>
+          {title}
+        </li>
+      ))}
       <li className="w-32 py-3.5"></li>
     </ul>
 

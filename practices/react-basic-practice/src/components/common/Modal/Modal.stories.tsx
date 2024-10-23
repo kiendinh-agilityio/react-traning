@@ -1,7 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Modal from './';
-import { AuthorsForm } from '@/components';
-import { Author } from '@/types';
+import { AuthorsForm, ConfirmModal } from '@/components';
+
+// import styles
+import './modal.css';
 
 // Define metadata for the story
 const meta: Meta<typeof Modal> = {
@@ -32,17 +34,18 @@ type Story = StoryObj<typeof Modal>;
 export const ModalUpdateAuthors: Story = {
   render: (args) => {
     const handleClose = () => {
-      console.log('Close modal');
+      // Logic to handle closing the modal
+      alert('Modal closed');
     };
 
-    const handleChange = (author: Author) => {
-      // Logic to handle changes to the author
-      console.log(author);
+    const handleChange = () => {
+      // Simple success alert for any input change
+      alert('Update successful');
     };
 
     const handleSubmit = () => {
       // Logic to handle form submission
-      console.log('Form submitted');
+      alert('Form submitted successfully');
 
       // Optionally close the modal after submission
       handleClose();
@@ -68,6 +71,29 @@ export const ModalUpdateAuthors: Story = {
           onChange={handleChange}
           onSubmit={handleSubmit}
         />
+      </Modal>
+    );
+  },
+};
+
+export const ModalConfirmAuthors: Story = {
+  render: (args) => {
+    const handleClose = () => {
+      // Logic to handle closing the modal
+      alert('Modal closed');
+    };
+
+    const handleDelete = () => {
+      // Logic to handle author deletion
+      alert('Author deleted successfully');
+
+      // Optionally close the modal after submission
+      handleClose();
+    };
+
+    return (
+      <Modal {...args}>
+        <ConfirmModal onClose={handleClose} onSubmit={handleDelete} />
       </Modal>
     );
   },
