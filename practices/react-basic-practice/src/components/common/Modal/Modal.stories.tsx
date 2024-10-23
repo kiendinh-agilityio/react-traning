@@ -1,7 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Modal from './';
-import { AuthorsForm } from '@/components';
+import { AuthorsForm, ConfirmModal } from '@/components';
 import { Author } from '@/types';
+
+// import styles
+import './modal.css';
 
 // Define metadata for the story
 const meta: Meta<typeof Modal> = {
@@ -68,6 +71,28 @@ export const ModalUpdateAuthors: Story = {
           onChange={handleChange}
           onSubmit={handleSubmit}
         />
+      </Modal>
+    );
+  },
+};
+
+export const ModalConfirmAuthors: Story = {
+  render: (args) => {
+    const handleClose = () => {
+      console.log('Close modal');
+    };
+
+    const handleSubmit = () => {
+      // Logic to handle form deleted
+      console.log('Deleted Authors');
+
+      // Optionally close the modal after submission
+      handleClose();
+    };
+
+    return (
+      <Modal {...args}>
+        <ConfirmModal onClose={handleClose} onSubmit={handleSubmit} />
       </Modal>
     );
   },
