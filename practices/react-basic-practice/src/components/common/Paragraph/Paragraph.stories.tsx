@@ -9,15 +9,13 @@ export default {
   },
 };
 
-export const Name = {
+export const Bold = {
   args: {
-    variant: 'bold',
-    size: 'sm',
     text: 'Esthera Jackson',
   },
 };
 
-export const Positions = {
+export const Regular = {
   args: {
     variant: 'regular',
     size: 'xs',

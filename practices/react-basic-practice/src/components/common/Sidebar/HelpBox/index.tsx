@@ -9,7 +9,7 @@ const HelpBox = () => (
     <div className="flex items-center justify-center w-[35px] h-[35px] bg-white rounded-xl mb-5">
       <QuestionIcon />
     </div>
-    <Paragraph variant="bold" size="sm" text="Need help?" />
+    <Paragraph text="Need help?" />
     <Paragraph variant="regular" size="xs" text="Please check our docs" className="mb-[9px]" />
     <Button variant="link" label="DOCUMENTATION" />
   </div>
