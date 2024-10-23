@@ -10,9 +10,12 @@ interface ConfirmModalProps {
 const ConfirmModal = ({ onSubmit, onClose }: ConfirmModalProps) => (
   <div className="flex flex-col gap-8 justify-center items-center py-4 relative">
     <TrashIcon />
-    <button className="absolute right-0 top-0 hover:tertiary hover:rounded-full" onClick={onClose}>
-      <CloseIcon />
-    </button>
+    <Button
+      variant="transparent"
+      className="absolute right-0 top-0 hover:tertiary hover:rounded-full justify-center w-[20px] h-[20px]"
+      icon={<CloseIcon />}
+      onClick={onClose}
+    />
     <Heading
       size="xl"
       level={2}
