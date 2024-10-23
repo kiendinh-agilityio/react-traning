@@ -4,6 +4,9 @@ import { NAVBAR_ITEMS } from '@/constants';
 // Import utils
 import { currentYear } from '@/utils';
 
+// Import components
+import { Link } from '@/components/common';
+
 const Footer = () => (
   <footer className="flex justify-between text-sidebar px-[21px]">
     <p>
@@ -15,9 +18,7 @@ const Footer = () => (
       <ul className="flex gap-11">
         {NAVBAR_ITEMS.map((item) => (
           <li key={item.href}>
-            <a href={item.href} target="_blank" rel="noopener noreferrer">
-              {item.label}
-            </a>
+            <Link href={item.href} target="_blank" text={item.label} />
           </li>
         ))}
       </ul>
