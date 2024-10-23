@@ -2,7 +2,7 @@
 import { EditIcon, DeleteIcon } from '@/components/common/Icons';
 
 // Import common components
-import { Button, Paragraph } from '@/components/common';
+import { Button, Paragraph, Link } from '@/components/common';
 
 // Import types
 import { Author } from '@/types';
@@ -36,9 +36,7 @@ const AuthorItem = ({ author, onEdit, onDelete }: AuthorItemProps) => {
           <img className="w-10 h-10 rounded-[12px] mr-3.5" src={avatarUrl} alt={`${name} avatar`} />
           <div>
             <Paragraph variant="bold" size="sm" text={name} />
-            <a href={`mailto:${email}`} className="text-gray">
-              {email}
-            </a>
+            <Link href={`mailto:${email}`} text={email} className="text-gray" />
           </div>
         </div>
       </div>
