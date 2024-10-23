@@ -10,3 +10,4 @@ export { default as Modal } from './Modal';
 export { default as Paragraph } from './Paragraph';
 export { default as InputGroup } from './InputGroup';
 export { default as Link } from './Link';
+export { default as Box } from './Box';
