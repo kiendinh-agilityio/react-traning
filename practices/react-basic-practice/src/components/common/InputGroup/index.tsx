@@ -21,22 +21,20 @@ const InputGroup = ({
   errorMessage,
   onChange,
   onBlur,
-}: InputGroupProps) => {
-  return (
-    <div className="flex flex-col gap-1.5">
-      <label>{label}</label>
-      <Input
-        name={name}
-        type={type}
-        value={value}
-        placeholder={placeholder}
-        onChange={onChange}
-        onBlur={onBlur}
-        errorMessage={errorMessage}
-      />
-      {errorMessage && <p className="text-danger">{errorMessage}</p>}
-    </div>
-  );
-};
+}: InputGroupProps) => (
+  <div className="flex flex-col gap-1.5">
+    <label>{label}</label>
+    <Input
+      name={name}
+      type={type}
+      value={value}
+      placeholder={placeholder}
+      onChange={onChange}
+      onBlur={onBlur}
+      errorMessage={errorMessage}
+    />
+    {errorMessage && <p className="text-danger">{errorMessage}</p>}
+  </div>
+);
 
 export default InputGroup;
