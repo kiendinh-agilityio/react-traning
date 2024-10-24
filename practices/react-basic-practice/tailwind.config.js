@@ -10,7 +10,7 @@ module.exports = {
         primary: '#4fd1c5',
         dark: '#2d3748',
         input: '#e2e8f0',
-        sidebar: '#a0aec0',
+        base: '#a0aec0',
         gray: '#718096',
         active: '#48bb78',
         inactive: '#cbd5e0',
@@ -30,6 +30,9 @@ module.exports = {
       lineHeight: {
         base: '18px',
         md: '25px',
+      },
+      borderRadius: {
+        base: '12px',
       },
     },
   },
