@@ -1,6 +1,9 @@
 // Import components common icon
 import { NotificationIcon, PinionIcon, UserIcon } from '@/components/common/Icons';
 
+// Import components
+import { Breadcrumb } from '@/components/common';
+
 interface HeaderProps {
   currentPage: string;
 }
@@ -8,9 +11,7 @@ interface HeaderProps {
 const Header = ({ currentPage }: HeaderProps) => (
   <header className="flex justify-between mb-7 px-[21px]">
     <div>
-      <p className="text-[#a0aec0] mb-1.5">
-        Pages / <span className="text-dark">{currentPage}</span>
-      </p>
+      <Breadcrumb currentPage="Tables" />
       <p className="font-helveticaBold font-bold text-dark">{currentPage}</p>
     </div>
     <div className="flex items-center gap-[17px]">
