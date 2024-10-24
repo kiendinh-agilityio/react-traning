@@ -11,3 +11,7 @@ export { default as Paragraph } from './Paragraph';
 export { default as InputGroup } from './InputGroup';
 export { default as Link } from './Link';
 export { default as Box } from './Box';
+export { default as Breadcrumb } from './Breadcrumb';
+export { default as Avatar } from './Avatar';
+export { default as Status } from './Status';
+export { default as IconWrapper } from './IconWrapper';
