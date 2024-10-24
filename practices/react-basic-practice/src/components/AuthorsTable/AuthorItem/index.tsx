@@ -2,7 +2,7 @@
 import { EditIcon, DeleteIcon } from '@/components/common/Icons';
 
 // Import common components
-import { Button, Paragraph, Link, Box } from '@/components/common';
+import { Button, Paragraph, Link, Box, Avatar, Status } from '@/components/common';
 
 // Import types
 import { Author } from '@/types';
@@ -33,7 +33,7 @@ const AuthorItem = ({ author, onEdit, onDelete }: AuthorItemProps) => {
       {/* Author Info */}
       <Box>
         <div className="flex items-center">
-          <img className="w-10 h-10 rounded-[12px] mr-3.5" src={avatarUrl} alt={`${name} avatar`} />
+          <Avatar width="40px" height="40px" src={avatarUrl} alt={`${name} avatar`} />
           <div>
             <Paragraph text={name} />
             <Link href={`mailto:${email}`} text={email} className="text-gray" />
@@ -49,13 +49,7 @@ const AuthorItem = ({ author, onEdit, onDelete }: AuthorItemProps) => {
 
       {/* Status */}
       <Box>
-        <div
-          className={`flex justify-center items-center w-[70px] h-[25px] border rounded-lg font-helveticaBold font-bold text-white ${
-            status === 'Active' ? 'border-active bg-active' : 'border-inactive bg-inactive'
-          }`}
-        >
-          <Paragraph text={status} />
-        </div>
+        <Status value={status} />
       </Box>
 
       {/* Employed Date */}
