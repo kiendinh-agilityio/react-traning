@@ -10,7 +10,7 @@ const Status = ({ value }: StatusProps) => (
       value === 'Active' ? 'border-active bg-active' : 'border-inactive bg-inactive'
     }`}
   >
-    <Paragraph text={value} />
+    <Paragraph value={value} />
   </div>
 );
 
