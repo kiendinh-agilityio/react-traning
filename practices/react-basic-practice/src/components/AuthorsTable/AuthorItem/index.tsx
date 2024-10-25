@@ -2,16 +2,19 @@
 import { EditIcon, DeleteIcon } from '@/components/common/Icons';
 
 // Import common components
-import { Button, Paragraph, Link, Box, Avatar, Status } from '@/components/common';
+import { Button, Paragraph, Link, Avatar, Status } from '@/components/common';
 
 // Import types
-import { Author } from '@/types';
+import { Author, Variant } from '@/types';
 
 // Import utils
 import { formatDate } from '@/utils';
 
 // Import constants
 import { DATE_FORMAT } from '@/constants';
+
+// Import TableCell
+import TableCell from '../TableCell/index';
 
 interface AuthorItemProps {
   author: Author;
@@ -31,37 +34,37 @@ const AuthorItem = ({ author, onEdit, onDelete }: AuthorItemProps) => {
   return (
     <div key={id} className="flex items-center border-b border-input text-sm">
       {/* Author Info */}
-      <Box>
+      <TableCell>
         <div className="flex items-center">
-          <Avatar width="40px" height="40px" src={avatarUrl} alt={`${name} avatar`} />
+          <Avatar src={avatarUrl} alt={`${name} avatar`} />
           <div>
-            <Paragraph text={name} />
+            <Paragraph value={name} />
             <Link href={`mailto:${email}`} text={email} className="text-gray" />
           </div>
         </div>
-      </Box>
+      </TableCell>
 
       {/* Function */}
-      <Box>
-        <Paragraph text={roles} />
-        <Paragraph variant="regular" text={position} className="text-gray" />
-      </Box>
+      <TableCell>
+        <Paragraph value={roles} />
+        <Paragraph variant={Variant.Regular} value={position} className="text-gray" />
+      </TableCell>
 
       {/* Status */}
-      <Box>
+      <TableCell>
         <Status value={status} />
-      </Box>
+      </TableCell>
 
       {/* Employed Date */}
-      <Box>
-        <Paragraph text={formatDate(date, DATE_FORMAT)} />
-      </Box>
+      <TableCell>
+        <Paragraph value={formatDate(date, DATE_FORMAT)} />
+      </TableCell>
 
       {/* Actions */}
       <div className="w-32 flex justify-between items-center font-helveticaBold font-bold text-xs leading-base">
         {/* Button Edit */}
         <Button
-          variant="transparent"
+          variant={Variant.Transparent}
           className="text-gray"
           icon={<EditIcon />}
           label="Edit"
@@ -70,7 +73,7 @@ const AuthorItem = ({ author, onEdit, onDelete }: AuthorItemProps) => {
 
         {/* Button Delete */}
         <Button
-          variant="transparent"
+          variant={Variant.Transparent}
           className="text-danger"
           icon={<DeleteIcon />}
           label="Delete"
