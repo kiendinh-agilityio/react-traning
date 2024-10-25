@@ -8,7 +8,7 @@ import { Select, Button, Heading, InputGroup } from '@/components/common';
 import { ROLES, STATUS, POSITIONS } from '@/constants';
 
 // Import types for Author data model
-import { Author } from '@/types';
+import { Author, Variant, Action } from '@/types';
 
 // Import validation function for form validation
 import { validateForm, today } from '@/utils';
@@ -56,7 +56,7 @@ const AuthorsForm = ({
 
   // Function to handle both input changes and form submission
   const handleFormAction = (
-    actionType: 'change' | 'submit',
+    actionType: Action,
     e?:
       | React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
       | React.FocusEvent<HTMLInputElement>,
@@ -77,7 +77,7 @@ const AuthorsForm = ({
 
       // Propagate changes to parent component
       onChange(updatedValues);
-    } else if (actionType === 'submit') {
+    } else if (actionType === Action.Submit) {
       // Handle form submission
       const { isValid, errorMessages: validationErrors } = validateForm(formValues);
 
@@ -99,18 +99,17 @@ const AuthorsForm = ({
 
   // Handle input changes in form fields
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
-    handleFormAction('change', e);
+    handleFormAction(Action.Change, e);
 
   // Handle form submission
-  const handleSubmit = () => handleFormAction('submit');
+  const handleSubmit = () => handleFormAction(Action.Submit);
 
   return (
     <>
       {/* Display form title based on whether we are adding or editing an author */}
       <Heading
         level={2}
-        size="xl"
-        text={`${isUpdate ? 'EDIT' : 'ADD'} AUTHOR`}
+        value={`${isUpdate ? 'EDIT' : 'ADD'} AUTHOR`}
         className="font-helveticaBold font-bold justify-end"
       />
       <form className="flex flex-col gap-6">
@@ -183,12 +182,11 @@ const AuthorsForm = ({
       {/* Submit and Cancel buttons */}
       <div className="flex justify-center items-center gap-6 mt-6">
         <Button
-          variant="primary"
           label={isUpdate ? 'Save' : 'Submit'}
           onClick={handleSubmit}
           isDisabled={isUpdate && !hasChanges}
         />
-        <Button variant="tertiary" label="Cancel" onClick={closeModal} />
+        <Button variant={Variant.Tertiary} label="Cancel" onClick={closeModal} />
       </div>
     </>
   );
