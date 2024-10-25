@@ -24,6 +24,13 @@ const Select = ({
   errorMessage,
   onBlur,
 }: SelectProps) => {
+  const renderOptions = (options: OptionsType) =>
+    options.map((option) => (
+      <option key={option.value} value={option.value}>
+        {option.text}
+      </option>
+    ));
+
   return (
     <div className="flex flex-col gap-1.5 font-helveticaRegular text-dark font-regular">
       {label && <label>{label}</label>}
@@ -36,11 +43,7 @@ const Select = ({
           onChange={onChange}
           onBlur={onBlur}
         >
-          {optionsList.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.text}
-            </option>
-          ))}
+          {renderOptions(optionsList)}
         </select>
         <span className="absolute bottom-1/2 right-[20px]">
           <ArrowIcon />

@@ -8,7 +8,7 @@ const IconWrapper = ({ icon, active }: IconWrapperProps) => {
     active ? 'bg-primary border-primary' : 'bg-white border-white'
   }`;
 
-  return <span className={iconClassName}>{icon}</span>;
+  return <div className={iconClassName}>{icon}</div>;
 };
 
 export default IconWrapper;

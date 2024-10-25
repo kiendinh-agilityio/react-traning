@@ -1,10 +1,11 @@
 interface BreadcrumbProps {
   currentPage: string;
+  label: string;
 }
 
-const Breadcrumb = ({ currentPage }: BreadcrumbProps) => (
+const Breadcrumb = ({ currentPage, label }: BreadcrumbProps) => (
   <p className="text-base mb-1.5 text-xs">
-    Pages / <span className="text-dark">{currentPage}</span>
+    {label} / <span className="text-dark">{currentPage}</span>
   </p>
 );
 

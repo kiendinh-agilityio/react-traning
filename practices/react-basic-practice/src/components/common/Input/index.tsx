@@ -27,7 +27,7 @@ const Input = ({
 
   return (
     <div className={className}>
-      {leftIcon && <div>{leftIcon}</div>}
+      {leftIcon && leftIcon}
       <input
         type={type}
         value={value}

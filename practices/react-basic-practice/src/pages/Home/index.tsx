@@ -25,7 +25,7 @@ import { getAllAuthors, addNewAuthor, editAuthor, deleteAuthor } from '@/service
 import { Header, Footer } from '@/layouts';
 
 // Import types
-import { Author } from '@/types';
+import { Author, Variant, TextSize, Notification } from '@/types';
 
 // Import constants
 import { MESSAGE_SUCCESS, AUTHOR_MESSAGES } from '@/constants';
@@ -132,7 +132,7 @@ const Home = () => {
       );
 
       // Set success message for editing
-      handleShowToast(MESSAGE_SUCCESS.EDIT_AUTHOR, 'success');
+      handleShowToast(MESSAGE_SUCCESS.EDIT_AUTHOR, Notification.Success);
     } else {
       // Add new author
       const newAuthor = await addNewAuthor(selectedAuthor);
@@ -141,7 +141,7 @@ const Home = () => {
       setAuthors((prevAuthors) => [newAuthor, ...prevAuthors]);
 
       // Set success message for adding
-      handleShowToast(MESSAGE_SUCCESS.ADD_AUTHOR, 'success');
+      handleShowToast(MESSAGE_SUCCESS.ADD_AUTHOR, Notification.Success);
     }
 
     // Hide the loading spinner after the process is complete
@@ -166,7 +166,7 @@ const Home = () => {
     setAuthors(updatedAuthors);
 
     // Open the toast notification to inform the user about the success
-    handleShowToast(MESSAGE_SUCCESS.DELETE_AUTHOR, 'success');
+    handleShowToast(MESSAGE_SUCCESS.DELETE_AUTHOR, Notification.Success);
 
     // Hide the loading spinner after the process is complete
     setLoading(false);
@@ -193,7 +193,7 @@ const Home = () => {
           <div className="bg-white min-h-[88vh] mb-7 rounded-[15px] px-[21px] py-7 relative">
             <div className="flex justify-between items-center mb-7">
               {/* Render the heading and search bar */}
-              <Heading level={1} size="lg" text="Authors Table" />
+              <Heading level={1} size={TextSize.Large} value="Authors Table" />
               <div className="flex gap-5">
                 <div className="w-96">
                   <Input
@@ -205,7 +205,11 @@ const Home = () => {
                     onChange={handleSearchChange}
                   />
                 </div>
-                <Button variant="secondary" label="Add New Author" onClick={handleShowAddModal} />
+                <Button
+                  variant={Variant.Secondary}
+                  label="Add New Author"
+                  onClick={handleShowAddModal}
+                />
               </div>
             </div>
             {/* Table wrapper with loading spinner overlay */}

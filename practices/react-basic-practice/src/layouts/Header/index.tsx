@@ -11,7 +11,7 @@ interface HeaderProps {
 const Header = ({ currentPage }: HeaderProps) => (
   <header className="flex justify-between mb-7 px-[21px]">
     <div>
-      <Breadcrumb currentPage="Tables" />
+      <Breadcrumb label="Pages" currentPage="Tables" />
       <p className="font-helveticaBold font-bold text-dark">{currentPage}</p>
     </div>
     <div className="flex items-center gap-[17px]">

@@ -1,21 +1,24 @@
+import React from 'react';
+
+import { Variant } from '@/types';
+
 interface ButtonProps {
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'link' | 'transparent';
+  variant?: Variant;
   isDisabled?: boolean;
-  onClick?: () => void;
+  onClick: () => void;
   label?: string;
   icon?: React.ReactNode;
   className?: string;
 }
 
 const Button = ({
-  variant = 'primary',
+  variant = Variant.Primary,
   isDisabled,
   onClick,
   label,
   icon,
   className,
 }: ButtonProps) => {
-  // Conditional class name based on variant and disabled state
   const baseClass = ` 
     w-40 px-[22px] py-2.5 
     font-helveticaBold font-bold rounded-xl ${isDisabled ? 'primary opacity-50 cursor-not-allowed' : variant}
@@ -23,8 +26,8 @@ const Button = ({
 
   return (
     <button className={`${baseClass} ${className}`} onClick={onClick} disabled={isDisabled}>
-      {icon && <span>{icon}</span>}
-      {label && <span>{label}</span>}
+      {icon && icon}
+      {label && label}
     </button>
   );
 };

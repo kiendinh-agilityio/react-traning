@@ -1,12 +1,18 @@
+// Import types
+import { Variant, TextSize } from '@/types';
+
 interface ParagraphProps {
-  text: string;
-  variant?: 'regular' | 'bold';
-  size?: 'xs' | 'sm' | 'lg' | 'xl';
+  value: string;
+  variant?: Variant;
+  size?: TextSize;
   className?: string;
 }
 
-const Paragraph = ({ text, variant = 'bold', className = '', size = 'sm' }: ParagraphProps) => (
-  <p className={`text-${size} ${variant} ${className}`}>{text}</p>
-);
+const Paragraph = ({
+  value,
+  variant = Variant.Bold,
+  className = '',
+  size = TextSize.Small,
+}: ParagraphProps) => <p className={`text-${size} ${variant} ${className}`}>{value}</p>;
 
 export default Paragraph;

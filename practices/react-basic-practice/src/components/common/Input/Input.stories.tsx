@@ -10,14 +10,6 @@ export default {
   },
 };
 
-export const InputName = {
-  args: {
-    type: 'text',
-    name: 'name',
-    value: 'Esthera Jackson',
-  },
-};
-
 export const InputSearch = {
   args: {
     type: 'search',

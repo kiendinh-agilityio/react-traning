@@ -1,16 +1,24 @@
+// Import types
+import { TextSize } from '@/types';
+
 interface HeadingProps {
-  text: string;
+  value: string;
   level?: 1 | 2 | 3;
-  size: 'sm' | 'lg' | 'xl';
+  size?: TextSize;
   className?: string;
 }
 
-const Heading = ({ text, level = 1, className = '', size }: HeadingProps) => {
+const Heading = ({
+  value,
+  level = 1,
+  className = '',
+  size = TextSize.ExtraLarge,
+}: HeadingProps) => {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
   return (
     <Tag className={`text-${size} flex justify-center font-helveticaBold font-bold ${className}`}>
-      {text}
+      {value}
     </Tag>
   );
 };
