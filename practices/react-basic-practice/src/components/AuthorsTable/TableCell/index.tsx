@@ -1,10 +1,10 @@
-interface BoxItemProps {
+interface TableCellProps {
   children: React.ReactNode;
   className?: string;
 }
 
-const Box = ({ children, className = '' }: BoxItemProps) => (
+const TableCell = ({ children, className = '' }: TableCellProps) => (
   <div className={`flex-1 py-[11px] ${className}`}>{children}</div>
 );
 
-export default Box;
+export default TableCell;
