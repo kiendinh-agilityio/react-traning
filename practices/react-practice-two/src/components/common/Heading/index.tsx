@@ -11,7 +11,7 @@ const Heading = ({ level = 2, size = TextSize.Large, text, spanContent }: Headin
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
   return (
-    <Tag className={`text-${size} font-bold text-primary`}>
+    <Tag className={`${size} font-bold text-primary`}>
       {spanContent && <span className="font-light">{spanContent}</span>} {text}
     </Tag>
   );

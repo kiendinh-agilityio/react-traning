@@ -1,11 +1,11 @@
 // Create size for text
 export enum TextSize {
-  ExtraSmall = 'xs',
-  Small = 'sm',
-  Base = 'base',
-  Medium = 'md',
-  Large = 'lg',
-  ExtraLarge = 'xl',
+  ExtraSmall = 'text-xs',
+  Small = 'text-sm',
+  Base = 'text-base',
+  Medium = 'text-md',
+  Large = 'text-lg',
+  ExtraLarge = 'text-xl',
 }
 
 // Create variant
