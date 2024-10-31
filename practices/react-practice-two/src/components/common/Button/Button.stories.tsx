@@ -1,5 +1,8 @@
 import Button from '.';
 
+// import icons
+import { LinkIcon, PlayIcon } from '@/components/common/Icons';
+
 export default {
   component: Button,
   title: 'Button',
@@ -9,30 +12,37 @@ export default {
   },
 };
 
-export const Primary = {
+export const ButtonPrimary = {
   args: {
     variant: 'primary',
     label: 'SIGN UP',
   },
 };
 
-export const Secondary = {
+export const ButtonSecondary = {
   args: {
     variant: 'secondary',
     label: 'SIGN IN',
   },
 };
 
-export const Tertiary = {
+export const ButtonTertiary = {
   args: {
     variant: 'tertiary',
     label: 'More Accessories Coming Soon',
   },
 };
 
-export const Link = {
+export const ButtonLink = {
   args: {
     variant: 'link',
-    label: 'Link',
+    icon: <LinkIcon />,
+  },
+};
+
+export const ButtonIcon = {
+  args: {
+    variant: 'transparent',
+    icon: <PlayIcon />,
   },
 };
