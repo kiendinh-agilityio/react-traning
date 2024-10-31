@@ -9,7 +9,7 @@ interface InputProps {
 }
 
 const Input = ({ value, name, placeholder, type, onChange }: InputProps) => (
-  <div className="max-w-[400px] rounded-base bg-secondary text-base">
+  <div className="w-[400px] rounded-base bg-secondary text-base">
     <input
       type={type}
       value={value}
