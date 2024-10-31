@@ -28,6 +28,10 @@ module.exports = {
       padding: {
         base: '14px',
         md: '26px',
+        lg: '38px',
+      },
+      borderRadius: {
+        base: '10px',
       },
     },
   },
