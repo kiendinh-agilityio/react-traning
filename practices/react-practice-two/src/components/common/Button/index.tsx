@@ -1,7 +1,8 @@
-import { Variant } from '@/types';
+// Import types
+import { ButtonVariant } from '@/types';
 
 interface ButtonProps {
-  variant?: Variant;
+  variant?: ButtonVariant;
   isDisabled?: boolean;
   onClick: () => void;
   label?: string;
@@ -10,7 +11,7 @@ interface ButtonProps {
 }
 
 const Button = ({
-  variant = Variant.Primary,
+  variant = ButtonVariant.Primary,
   isDisabled = false,
   onClick,
   label,

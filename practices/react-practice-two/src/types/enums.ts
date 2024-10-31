@@ -9,7 +9,7 @@ export enum TextSize {
 }
 
 // Create variant
-export enum Variant {
+export enum ButtonVariant {
   Primary = 'primary',
   Secondary = 'secondary',
   Tertiary = 'tertiary',
