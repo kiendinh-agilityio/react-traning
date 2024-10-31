@@ -1,24 +1,26 @@
 import { ChangeEvent } from 'react';
 
 interface InputProps {
-  value?: string;
+  value: string;
   name: string;
   type: string;
   placeholder?: string;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onChange: (value: string) => void;
 }
 
-const Input = ({ value, name, placeholder, type, onChange }: InputProps) => (
-  <div className="w-[400px] rounded-base bg-secondary text-base">
+const Input = ({ value, name, placeholder, type, onChange }: InputProps) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => onChange(e.target.value);
+
+  return (
     <input
       type={type}
       value={value}
       name={name}
       placeholder={placeholder}
-      onChange={onChange}
-      className="px-lg py-md w-full bg-transparent w-full focus:outline-none text-primary placeholder:text-primary placeholder:font-regular placeholder:text-base"
+      onChange={handleChange}
+      className="w-[400px] px-lg py-md rounded-base bg-secondary text-base focus:outline-none text-primary placeholder:text-primary placeholder:font-regular placeholder:text-base"
     />
-  </div>
-);
+  );
+};
 
 export default Input;
