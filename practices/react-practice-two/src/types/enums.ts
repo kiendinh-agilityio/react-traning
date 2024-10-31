@@ -16,3 +16,9 @@ export enum ButtonVariant {
   Link = 'link',
   Transparent = 'transparent',
 }
+
+export enum ParagraphVariant {
+  Regular = 'font-regular',
+  Medium = 'font-medium',
+  Bold = 'font-bold',
+}
