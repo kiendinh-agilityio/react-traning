@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
+import plugin from 'tailwindcss/plugin';
+
 module.exports = {
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
@@ -23,7 +25,64 @@ module.exports = {
         lg: ['50px', '60px'],
         xl: ['90px', '95px'],
       },
+      padding: {
+        base: '14px',
+        md: '26px',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities, theme }) {
+      addUtilities({
+        '.primary': {
+          backgroundColor: theme('colors.primary'),
+          border: `1px solid ${theme('colors.primary')}`,
+          color: theme('colors.light'),
+          '&:hover': {
+            backgroundColor: '#2e2f33',
+          },
+        },
+        '.secondary': {
+          backgroundColor: theme('colors.light'),
+          border: `1px solid ${theme('colors.light')}`,
+          color: theme('colors.primary'),
+          boxShadow: '0px 12px 25px -10px #0000000A',
+          '&:hover': {
+            backgroundColor: '#f2f2f2',
+          },
+        },
+        '.tertiary': {
+          width: '570px',
+          backgroundColor: theme('colors.light'),
+          color: theme('colors.primary'),
+          border: `1px solid ${theme('colors.primary')}`,
+          padding: '29px 62px',
+          fontFamily: theme('fontFamily.bold'),
+          fontSize: '30px',
+          lineHeight: '36px',
+          borderRadius: '10px',
+          '&:hover': {
+            backgroundColor: theme('colors.secondary'),
+          },
+        },
+        '.link': {
+          padding: '24px 17px',
+          border: `1px solid ${theme('colors.primary')}`,
+          backgroundColor: theme('colors.primary'),
+          color: theme('colors.light'),
+          borderRadius: 'unset',
+          '&:hover': {
+            backgroundColor: '#2e2f33',
+          },
+        },
+        '.transparent': {
+          display: 'flex',
+          alignItems: 'center',
+          borderStyle: 'none',
+          backgroundColor: 'transparent',
+          padding: '0',
+        },
+      });
+    }),
+  ],
 };
