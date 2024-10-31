@@ -16,14 +16,18 @@ const Button = ({
   onClick,
   label,
   icon,
-  className,
+  className = '',
 }: ButtonProps) => {
   const baseClass = ` 
     px-md py-base font-regular text-xs rounded ${isDisabled ? 'cursor-not-allowed' : ''} ${variant}
   `;
 
   return (
-    <button className={`${baseClass} ${className}`} onClick={onClick} disabled={isDisabled}>
+    <button
+      className={`${baseClass} ${className && className}`}
+      onClick={onClick}
+      disabled={isDisabled}
+    >
       {icon && icon}
       {label && label}
     </button>
