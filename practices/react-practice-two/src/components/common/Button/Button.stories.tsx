@@ -12,27 +12,27 @@ export default {
 export const Primary = {
   args: {
     variant: 'primary',
-    value: 'SIGN UP',
+    label: 'SIGN UP',
   },
 };
 
 export const Secondary = {
   args: {
     variant: 'secondary',
-    value: 'SIGN IN',
+    label: 'SIGN IN',
   },
 };
 
 export const Tertiary = {
   args: {
     variant: 'tertiary',
-    value: 'More Accessories Coming Soon',
+    label: 'More Accessories Coming Soon',
   },
 };
 
 export const Link = {
   args: {
     variant: 'link',
-    value: 'Link',
+    label: 'Link',
   },
 };

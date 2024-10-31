@@ -4,7 +4,7 @@ interface ButtonProps {
   variant?: Variant;
   isDisabled?: boolean;
   onClick: () => void;
-  value?: string;
+  label?: string;
   icon?: React.ReactNode;
   className?: string;
 }
@@ -13,7 +13,7 @@ const Button = ({
   variant = Variant.Primary,
   isDisabled = false,
   onClick,
-  value,
+  label,
   icon,
   className,
 }: ButtonProps) => {
@@ -24,7 +24,7 @@ const Button = ({
   return (
     <button className={`${baseClass} ${className}`} onClick={onClick} disabled={isDisabled}>
       {icon && icon}
-      {value && value}
+      {label && label}
     </button>
   );
 };
