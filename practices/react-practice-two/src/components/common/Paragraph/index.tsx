@@ -5,12 +5,14 @@ interface ParagraphProps {
   text: string;
   variant?: ParagraphVariant;
   size?: TextSize;
+  className?: string;
 }
 
 const Paragraph = ({
   text,
   variant = ParagraphVariant.Regular,
   size = TextSize.Base,
-}: ParagraphProps) => <p className={`${size} ${variant}`}>{text}</p>;
+  className = '',
+}: ParagraphProps) => <p className={`${size} ${className && className} ${variant}`}>{text}</p>;
 
 export default Paragraph;
