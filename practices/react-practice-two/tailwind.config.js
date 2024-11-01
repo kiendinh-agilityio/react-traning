@@ -33,6 +33,9 @@ module.exports = {
       borderRadius: {
         base: '10px',
       },
+      lineHeight: {
+        base: '18px',
+      },
     },
   },
   plugins: [
