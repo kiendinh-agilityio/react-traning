@@ -7,12 +7,12 @@ import { ParagraphVariant, TextSize } from '@/types';
 interface ProfileProps {
   fullName: string;
   position: string;
-  avatarUrl: string;
+  avatarUrl?: string;
 }
 
 const Profile = ({ fullName, position, avatarUrl }: ProfileProps) => (
   <div className="flex items-center gap-5">
-    <Avatar url={avatarUrl} alt={fullName} />
+    <Avatar url={avatarUrl || 'images/DefaultAvatar.png'} alt={fullName || 'Avatar Default'} />
     <div>
       <Paragraph variant={ParagraphVariant.Medium} text={fullName} className="leading-base mb-1" />
       <Paragraph size={TextSize.ExtraSmall} text={position} />

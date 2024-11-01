@@ -15,3 +15,10 @@ export const ProfileUser = {
     position: 'CEO Universal',
   },
 };
+
+export const DefaultAvatar = {
+  args: {
+    fullName: 'Justus Menke',
+    position: 'CEO Eronaman',
+  },
+};
