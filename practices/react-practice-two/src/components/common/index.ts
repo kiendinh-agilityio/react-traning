@@ -8,3 +8,4 @@ export { default as Profile } from './Profile';
 export { default as Navbar } from './Navbar';
 export { default as Link } from './Link';
 export { default as SocialList } from './SocialList';
+export { default as Intro } from './Intro';
