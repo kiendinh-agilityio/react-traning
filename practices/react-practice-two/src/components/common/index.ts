@@ -6,3 +6,5 @@ export { default as Paragraph } from './Paragraph';
 export { default as Avatar } from './Avatar';
 export { default as Profile } from './Profile';
 export { default as Navbar } from './Navbar';
+export { default as Link } from './Link';
+export { default as SocialList } from './SocialList';
