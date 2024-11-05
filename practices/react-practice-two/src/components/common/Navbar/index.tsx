@@ -7,17 +7,9 @@ import { NAVBAR_ITEMS } from '@/constants';
 const Navbar = () => {
   const renderNavbarItems = () =>
     NAVBAR_ITEMS.map((item) => {
-      const { id, label, href, hasDropdown, subNavbar } = item;
+      const { id, label, href, subNavbar } = item;
 
-      return (
-        <NavbarItem
-          key={id}
-          label={label}
-          href={href}
-          hasDropdown={hasDropdown}
-          subNavbar={subNavbar}
-        />
-      );
+      return <NavbarItem key={id} label={label} href={href} subNavbar={subNavbar} />;
     });
 
   return (
