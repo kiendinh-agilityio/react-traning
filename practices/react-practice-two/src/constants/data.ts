@@ -36,3 +36,23 @@ export const FEATURES_LIST = [
     description: 'Hydralic Disc Brakes',
   },
 ];
+
+// Product Info List
+export const PRODUCT_INFO_LIST = [
+  {
+    id: 1,
+    value: 'Material : Aluminium alloy',
+  },
+  {
+    id: 2,
+    value: 'Color : Black',
+  },
+  {
+    id: 3,
+    value: 'Capacity : 45lbs',
+  },
+  {
+    id: 4,
+    value: 'Ease : Quick & adjustable',
+  },
+];
