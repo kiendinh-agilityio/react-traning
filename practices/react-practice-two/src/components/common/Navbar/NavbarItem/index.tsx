@@ -3,37 +3,34 @@ import { useState } from 'react';
 // import common icons
 import { ArrowDownIcon } from '@/components/common/Icons';
 
-// import constants
-import { DROPDOWN_PRODUCTS } from '@/constants';
+interface SubNavbarItem {
+  id: string;
+  label: string;
+  href: string;
+}
 
 interface NavbarItemProps {
   label: string;
   hasDropdown: boolean;
   href?: string;
+  subNavbar?: SubNavbarItem[];
 }
 
-const NavbarItem = ({ label, href = '#', hasDropdown }: NavbarItemProps) => {
+const NavbarItem = ({ label, href = '#', hasDropdown, subNavbar }: NavbarItemProps) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => hasDropdown && setIsDropdownOpen((prev) => !prev);
 
-  // Function to check icon display
-  const shouldShowIcon = () => hasDropdown && label === 'PRODUCTS';
-
-  // function display dropdown for Products
+  // Function to display dropdown for Products
   const renderDropdown = () => (
     <ul className="absolute left-0 mt-2 w-40 bg-white rounded-lg shadow-lg">
-      {DROPDOWN_PRODUCTS.map((item) => {
-        const { id, href, label } = item;
-
-        return (
-          <li key={id}>
-            <a href={href} className="block px-2 py-2 hover:bg-primary hover:text-light">
-              {label}
-            </a>
-          </li>
-        );
-      })}
+      {subNavbar?.map((item) => (
+        <li key={item.id}>
+          <a href={item.href} className="block px-2 py-2 hover:bg-primary hover:text-light">
+            {item.label}
+          </a>
+        </li>
+      ))}
     </ul>
   );
 
@@ -45,7 +42,7 @@ const NavbarItem = ({ label, href = '#', hasDropdown }: NavbarItemProps) => {
         className="flex items-center gap-1.5 px-2 py-2 hover:bg-primary hover:text-light"
       >
         {label}
-        {shouldShowIcon() && <ArrowDownIcon className="fill-primary group-hover:fill-light" />}
+        {subNavbar && <ArrowDownIcon className="fill-primary group-hover:fill-light" />}
       </a>
       {hasDropdown && isDropdownOpen && renderDropdown()}
     </li>
