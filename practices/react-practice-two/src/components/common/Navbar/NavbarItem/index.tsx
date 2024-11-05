@@ -11,15 +11,14 @@ interface SubNavbarItem {
 
 interface NavbarItemProps {
   label: string;
-  hasDropdown: boolean;
   href?: string;
   subNavbar?: SubNavbarItem[];
 }
 
-const NavbarItem = ({ label, href = '#', hasDropdown, subNavbar }: NavbarItemProps) => {
+const NavbarItem = ({ label, href = '#', subNavbar }: NavbarItemProps) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const toggleDropdown = () => hasDropdown && setIsDropdownOpen((prev) => !prev);
+  const toggleDropdown = () => subNavbar && setIsDropdownOpen((prev) => !prev);
 
   // Function to display dropdown for Products
   const renderDropdown = () => (
@@ -44,7 +43,7 @@ const NavbarItem = ({ label, href = '#', hasDropdown, subNavbar }: NavbarItemPro
         {label}
         {subNavbar && <ArrowDownIcon className="fill-primary group-hover:fill-light" />}
       </a>
-      {hasDropdown && isDropdownOpen && renderDropdown()}
+      {isDropdownOpen && renderDropdown()}
     </li>
   );
 };
