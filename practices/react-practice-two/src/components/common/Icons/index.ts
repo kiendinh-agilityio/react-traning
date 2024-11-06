@@ -6,3 +6,6 @@ export { default as FacebookIcon } from './FacebookIcon';
 export { default as TwitterIcon } from './TwitterIcon';
 export { default as InstagramIcon } from './InstagramIcon';
 export { default as ProductIcon } from './ProductIcon';
+export { default as StarIcon } from './StarIcon';
+export { default as PrevPrimaryIcon } from './PrevPrimaryIcon';
+export { default as NextPrimaryIcon } from './NextPrimaryIcon';
