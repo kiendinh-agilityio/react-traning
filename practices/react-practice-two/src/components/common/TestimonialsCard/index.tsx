@@ -5,7 +5,6 @@ import { Profile, Paragraph } from '@/components/common';
 import StarRating from './StarRating';
 
 interface TestimonialsCardProps {
-  id: number;
   rating: number;
   description: string;
   profile: {
