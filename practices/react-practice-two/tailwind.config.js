@@ -97,7 +97,7 @@ module.exports = {
           backgroundColor: 'transparent',
           padding: '0',
         },
-        '.btn-prev-primary': {
+        '.btn-carousel-primary': {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -106,21 +106,19 @@ module.exports = {
           padding: '0',
           borderRadius: '50%',
           border: `1px solid ${theme('colors.primary')}`,
+        },
+        '.btn-prev-primary': {
           backgroundColor: theme('colors.light'),
           '&:hover': {
             backgroundColor: theme('colors.secondary'),
           },
         },
         '.btn-next-primary': {
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          width: '42px',
-          height: '42px',
-          padding: '0',
-          borderRadius: '50%',
           border: `1px solid ${theme('colors.primary')}`,
           backgroundColor: theme('colors.primary'),
+          '&:hover': {
+            backgroundColor: '#2e2f33',
+          },
         },
       });
     }),
