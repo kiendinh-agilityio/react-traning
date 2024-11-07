@@ -67,7 +67,7 @@ export const TESTIMONIALS_LIST = [
     profile: {
       fullName: 'Serhiy Hipskyy',
       position: 'CEO Universal',
-      avatarUrl: 'images/SerhiyHipskyy.png',
+      avatarUrl: 'images/SerhiyHipskyy.svg',
     },
   },
   {
@@ -78,7 +78,7 @@ export const TESTIMONIALS_LIST = [
     profile: {
       fullName: 'Justus Menke',
       position: 'CEO Eronaman',
-      avatarUrl: 'images/JustusMenke.png',
+      avatarUrl: 'images/JustusMenke.svg',
     },
   },
   {
@@ -89,7 +89,7 @@ export const TESTIMONIALS_LIST = [
     profile: {
       fullName: 'Britain Eriksen',
       position: 'CEO Universal',
-      avatarUrl: 'images/BritainEriksen.png',
+      avatarUrl: 'images/BritainEriksen.svg',
     },
   },
 ];
