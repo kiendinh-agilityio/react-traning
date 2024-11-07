@@ -37,6 +37,7 @@ module.exports = {
       },
       lineHeight: {
         base: '18px',
+        md: '34px',
         lg: '54px',
       },
       boxShadow: {
