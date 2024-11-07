@@ -9,6 +9,9 @@ import { TESTIMONIALS_LIST } from '@/constants';
 // Import common icons
 import { PrevPrimaryIcon, NextPrimaryIcon } from '@/components/common/Icons';
 
+// Import types
+import { ButtonVariant } from '@/types';
+
 const TestimonialsSection = () => {
   const [activeId, setActiveId] = useState<number>(1);
 
@@ -23,7 +26,6 @@ const TestimonialsSection = () => {
     TESTIMONIALS_LIST.map((testimonial) => (
       <TestimonialsCard
         key={testimonial.id}
-        id={testimonial.id}
         rating={testimonial.rating}
         description={testimonial.description}
         profile={testimonial.profile}
@@ -38,11 +40,13 @@ const TestimonialsSection = () => {
 
       <div className="flex justify-center gap-6 mt-[43px]">
         <Button
+          variant={ButtonVariant.CarouselPrimary}
           onClick={handleButtonPrev}
           icon={<PrevPrimaryIcon />}
           className="btn-prev-primary"
         />
         <Button
+          variant={ButtonVariant.CarouselPrimary}
           onClick={handleButtonNext}
           icon={<NextPrimaryIcon />}
           className="btn-next-primary"
