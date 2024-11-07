@@ -1,5 +1,8 @@
 import TestimonialsCard from '.';
 
+// import images
+import { BritainEriksen, SerhiyHipskyy } from '@/assets/images/';
+
 export default {
   title: 'TestimonialsCard',
   component: TestimonialsCard,
@@ -11,13 +14,13 @@ export default {
 export const TestimonialsCardActive = {
   args: {
     id: 1,
-    rating: 1,
+    rating: 5,
     description:
       'On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure.',
     profile: {
       fullName: 'Serhiy Hipskyy',
       position: 'CEO Universal',
-      avatarUrl: 'images/SerhiyHipskyy.png',
+      avatarUrl: SerhiyHipskyy,
     },
     isActive: true,
   },
@@ -32,7 +35,7 @@ export const TestimonialsCardInactive = {
     profile: {
       fullName: 'Justus Menkey',
       position: 'CEO Eronaman',
-      avatarUrl: 'images/JustusMenke.png',
+      avatarUrl: BritainEriksen,
     },
     isActive: false,
   },
