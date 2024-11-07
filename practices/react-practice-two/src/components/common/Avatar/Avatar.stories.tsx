@@ -1,5 +1,8 @@
 import Avatar from '.';
 
+// import images
+import { SerhiyHipskyy } from '@/assets/images';
+
 export default {
   component: Avatar,
   title: 'Avatar',
@@ -11,7 +14,7 @@ export default {
 
 export const AvatarProfile = {
   args: {
-    url: 'images/SerhiyHipskyy.png',
+    url: SerhiyHipskyy,
     alt: 'Serhiy Hipskyy',
   },
 };
