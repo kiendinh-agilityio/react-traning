@@ -20,8 +20,10 @@ module.exports = {
       fontSize: {
         xs: ['14px', '16px'],
         sm: ['16px', '18px'],
+        '2sm': ['18px', '18px'],
         base: ['20px', '28px'],
         md: ['22px', '34px'],
+        '2md': ['40px', '40px'],
         lg: ['50px', '60px'],
         xl: ['90px', '95px'],
       },
@@ -36,6 +38,9 @@ module.exports = {
       lineHeight: {
         base: '18px',
         lg: '54px',
+      },
+      boxShadow: {
+        custom: '0px 13.21px 26.42px 0px rgba(0, 0, 0, 0.06)',
       },
     },
   },
