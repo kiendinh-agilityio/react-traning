@@ -12,7 +12,7 @@ interface ProfileProps {
 
 const Profile = ({ fullName, position, avatarUrl }: ProfileProps) => (
   <div className="flex items-center justify-center gap-5 text-left">
-    <Avatar url={avatarUrl || 'images/DefaultAvatar.png'} alt={fullName || 'Avatar Default'} />
+    <Avatar url={avatarUrl || 'images/DefaultAvatar.svg'} alt={fullName || 'Avatar Default'} />
     <div>
       <Paragraph variant={ParagraphVariant.Medium} text={fullName} className="leading-base mb-1" />
       <Paragraph size={TextSize.ExtraSmall} text={position} />
