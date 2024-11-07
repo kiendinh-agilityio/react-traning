@@ -4,14 +4,16 @@ interface StarRatingProps {
   rating: number;
 }
 
-const StarRating = ({ rating }: StarRatingProps) => (
-  <ul className="flex gap-0.5 justify-center">
-    {[...Array(5)].map((_, index) => (
-      <li>
-        <StarIcon key={index} filled={index < rating} />
+const StarRating = ({ rating }: StarRatingProps) => {
+  // Function to create star rating
+  const generateStarsRating = (rating: number) =>
+    [...Array(5)].map((_, item) => (
+      <li key={item}>
+        <StarIcon filled={item < rating} />
       </li>
-    ))}
-  </ul>
-);
+    ));
+
+  return <ul className="flex gap-0.5 justify-center">{generateStarsRating(rating)}</ul>;
+};
 
 export default StarRating;

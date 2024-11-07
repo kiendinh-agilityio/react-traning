@@ -18,21 +18,23 @@ const TestimonialsSection = () => {
   const handleButtonPrev = () =>
     setActiveId((prevId) => (prevId === 1 ? TESTIMONIALS_LIST.length : prevId - 1));
 
+  // Function render testimonials card
+  const renderTestimonialsCard = (activeId: number) =>
+    TESTIMONIALS_LIST.map((testimonial) => (
+      <TestimonialsCard
+        key={testimonial.id}
+        id={testimonial.id}
+        rating={testimonial.rating}
+        description={testimonial.description}
+        profile={testimonial.profile}
+        isActive={activeId === testimonial.id}
+      />
+    ));
+
   return (
     <section className="bg-secondary pt-[82px] pb-[78px] text-center">
       <Heading text="Testimonials" />
-      <div className="flex justify-center gap-9 mt-[41px]">
-        {TESTIMONIALS_LIST.map((testimonial) => (
-          <TestimonialsCard
-            key={testimonial.id}
-            id={testimonial.id}
-            rating={testimonial.rating}
-            description={testimonial.description}
-            profile={testimonial.profile}
-            isActive={activeId === testimonial.id}
-          />
-        ))}
-      </div>
+      <div className="flex justify-center gap-9 mt-[41px]">{renderTestimonialsCard(activeId)}</div>
 
       <div className="flex justify-center gap-6 mt-[43px]">
         <Button
