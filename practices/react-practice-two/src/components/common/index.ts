@@ -12,3 +12,4 @@ export { default as Intro } from './Intro';
 export { default as FeatureItem } from './FeatureItem';
 export { default as List } from './List';
 export { default as TestimonialsCard } from './TestimonialsCard';
+export { default as GalleryItem } from './GalleryItem';
