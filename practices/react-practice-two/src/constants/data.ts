@@ -1,3 +1,5 @@
+import { BritainEriksen, SerhiyHipskyy, JustusMenke } from '@/assets/images/';
+
 // Feature list
 export const FEATURES_LIST = [
   {
@@ -67,7 +69,7 @@ export const TESTIMONIALS_LIST = [
     profile: {
       fullName: 'Serhiy Hipskyy',
       position: 'CEO Universal',
-      avatarUrl: 'images/SerhiyHipskyy.svg',
+      avatarUrl: SerhiyHipskyy,
     },
   },
   {
@@ -78,7 +80,7 @@ export const TESTIMONIALS_LIST = [
     profile: {
       fullName: 'Justus Menke',
       position: 'CEO Eronaman',
-      avatarUrl: 'images/JustusMenke.svg',
+      avatarUrl: JustusMenke,
     },
   },
   {
@@ -89,7 +91,7 @@ export const TESTIMONIALS_LIST = [
     profile: {
       fullName: 'Britain Eriksen',
       position: 'CEO Universal',
-      avatarUrl: 'images/BritainEriksen.svg',
+      avatarUrl: BritainEriksen,
     },
   },
 ];
