@@ -13,9 +13,9 @@ interface ProfileProps {
   avatarUrl?: string;
 }
 
-const Profile = ({ fullName, position, avatarUrl }: ProfileProps) => (
+const Profile = ({ fullName, position, avatarUrl = DefaultAvatar }: ProfileProps) => (
   <div className="flex items-center justify-center gap-5 text-left">
-    <Avatar url={avatarUrl || DefaultAvatar} alt={fullName || 'Avatar Default'} />
+    <Avatar url={avatarUrl} alt={fullName || 'Avatar Default'} />
     <div>
       <Paragraph variant={ParagraphVariant.Medium} text={fullName} className="leading-base mb-1" />
       <Paragraph size={TextSize.ExtraSmall} text={position} />
