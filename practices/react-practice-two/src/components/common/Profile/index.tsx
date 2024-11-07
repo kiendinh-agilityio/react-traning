@@ -4,6 +4,9 @@ import { Avatar, Paragraph } from '@/components/common';
 // import types
 import { ParagraphVariant, TextSize } from '@/types';
 
+// import images
+import { DefaultAvatar } from '@/assets/images';
+
 interface ProfileProps {
   fullName: string;
   position: string;
@@ -12,7 +15,7 @@ interface ProfileProps {
 
 const Profile = ({ fullName, position, avatarUrl }: ProfileProps) => (
   <div className="flex items-center justify-center gap-5 text-left">
-    <Avatar url={avatarUrl || 'images/DefaultAvatar.svg'} alt={fullName || 'Avatar Default'} />
+    <Avatar url={avatarUrl || DefaultAvatar} alt={fullName || 'Avatar Default'} />
     <div>
       <Paragraph variant={ParagraphVariant.Medium} text={fullName} className="leading-base mb-1" />
       <Paragraph size={TextSize.ExtraSmall} text={position} />
