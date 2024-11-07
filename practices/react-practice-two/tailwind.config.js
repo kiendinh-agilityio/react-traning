@@ -41,6 +41,8 @@ module.exports = {
       },
       boxShadow: {
         custom: '0px 13.21px 26.42px 0px rgba(0, 0, 0, 0.06)',
+        'custom-active':
+          '0px 1.85px 3.15px #31313106, 0px 20px 13px #3131310d, 0px 38.52px 25.48px #3131310f',
       },
     },
   },
@@ -94,6 +96,29 @@ module.exports = {
           borderStyle: 'none',
           backgroundColor: 'transparent',
           padding: '0',
+        },
+        '.btn-carousel-primary': {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: '42px',
+          height: '42px',
+          padding: '0',
+          borderRadius: '50%',
+          border: `1px solid ${theme('colors.primary')}`,
+        },
+        '.btn-prev-primary': {
+          backgroundColor: theme('colors.light'),
+          '&:hover': {
+            backgroundColor: theme('colors.secondary'),
+          },
+        },
+        '.btn-next-primary': {
+          border: `1px solid ${theme('colors.primary')}`,
+          backgroundColor: theme('colors.primary'),
+          '&:hover': {
+            backgroundColor: '#2e2f33',
+          },
         },
       });
     }),

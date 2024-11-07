@@ -1,5 +1,8 @@
 import Profile from '.';
 
+// import images
+import { SerhiyHipskyy } from '@/assets/images';
+
 export default {
   title: 'Profile',
   component: Profile,
@@ -10,7 +13,7 @@ export default {
 
 export const ProfileUser = {
   args: {
-    avatarUrl: 'images/SerhiyHipskyy.png',
+    avatarUrl: SerhiyHipskyy,
     fullName: 'Serhiy Hipskyy',
     position: 'CEO Universal',
   },
