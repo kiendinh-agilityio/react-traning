@@ -27,7 +27,7 @@ const TestimonialsSection = () => {
             key={testimonial.id}
             id={testimonial.id}
             rating={testimonial.rating}
-            text={testimonial.text}
+            description={testimonial.description}
             profile={testimonial.profile}
             isActive={activeId === testimonial.id}
           />
