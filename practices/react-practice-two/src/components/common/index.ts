@@ -10,3 +10,4 @@ export { default as Link } from './Link';
 export { default as SocialList } from './SocialList';
 export { default as Intro } from './Intro';
 export { default as FeatureItem } from './FeatureItem';
+export { default as List } from './List';
