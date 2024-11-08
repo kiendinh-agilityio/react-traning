@@ -109,21 +109,21 @@ export const PRODUCT_COLORS_LIST = [
   {
     id: 1,
     label: '01',
-    imageUrl: ProductBlue,
+    image: ProductBlue,
   },
   {
     id: 2,
     label: '02',
-    imageUrl: ProductGreen,
+    image: ProductGreen,
   },
   {
     id: 3,
     label: '03',
-    imageUrl: ProductRed,
+    image: ProductRed,
   },
   {
     id: 4,
     label: '04',
-    imageUrl: ProductBlack,
+    image: ProductBlack,
   },
 ];
