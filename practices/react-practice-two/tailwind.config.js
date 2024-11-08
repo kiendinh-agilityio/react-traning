@@ -25,6 +25,7 @@ module.exports = {
         md: ['22px', '34px'],
         '2md': ['40px', '40px'],
         lg: ['50px', '60px'],
+        '1lg': ['80px', '92px'],
         xl: ['90px', '95px'],
       },
       padding: {
@@ -44,6 +45,7 @@ module.exports = {
         custom: '0px 13.21px 26.42px 0px rgba(0, 0, 0, 0.06)',
         'custom-active':
           '0px 1.85px 3.15px #31313106, 0px 20px 13px #3131310d, 0px 38.52px 25.48px #3131310f',
+        'gallery-item': '0px 15px 70px 0px #a2a9c033',
       },
     },
   },
