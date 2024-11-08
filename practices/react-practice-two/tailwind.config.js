@@ -48,6 +48,15 @@ module.exports = {
           '0px 1.85px 3.15px #31313106, 0px 20px 13px #3131310d, 0px 38.52px 25.48px #3131310f',
         'gallery-item': '0px 15px 70px 0px #a2a9c033',
       },
+      container: {
+        center: true,
+        padding: '50px',
+        screens: {
+          xl: '1280px',
+          '2xl': '1440px',
+          '3xl': '1660px',
+        },
+      },
     },
   },
   plugins: [
