@@ -13,3 +13,4 @@ export { default as FeatureItem } from './FeatureItem';
 export { default as List } from './List';
 export { default as TestimonialsCard } from './TestimonialsCard';
 export { default as GalleryItem } from './GalleryItem';
+export { default as ChooseItem } from './ChooseItem';
