@@ -1,4 +1,12 @@
-import { BritainEriksen, SerhiyHipskyy, JustusMenke } from '@/assets/images/';
+import {
+  BritainEriksen,
+  SerhiyHipskyy,
+  JustusMenke,
+  ProductBlue,
+  ProductRed,
+  ProductBlack,
+  ProductGreen,
+} from '@/assets/images/';
 
 // Feature list
 export const FEATURES_LIST = [
@@ -93,5 +101,29 @@ export const TESTIMONIALS_LIST = [
       position: 'CEO Universal',
       avatarUrl: BritainEriksen,
     },
+  },
+];
+
+// Product Color List
+export const PRODUCT_COLORS_LIST = [
+  {
+    id: 1,
+    label: '01',
+    imageUrl: ProductBlue,
+  },
+  {
+    id: 2,
+    label: '02',
+    imageUrl: ProductGreen,
+  },
+  {
+    id: 3,
+    label: '03',
+    imageUrl: ProductRed,
+  },
+  {
+    id: 4,
+    label: '04',
+    imageUrl: ProductBlack,
   },
 ];
