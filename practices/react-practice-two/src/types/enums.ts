@@ -23,3 +23,13 @@ export enum ParagraphVariant {
   Medium = 'font-medium',
   Bold = 'font-bold',
 }
+
+export enum LabelSize {
+  Base = 'text-1base',
+  Large = 'text-1lg',
+}
+
+export enum LabelColor {
+  Primary = 'text-primary',
+  Secondary = 'text-light text-opacity-60',
+}
