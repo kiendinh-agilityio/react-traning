@@ -1,5 +1,11 @@
+// import components
+import { Label } from '@/components/common';
+
+// import types
+import { LabelSize, LabelColor } from '@/types';
+
 interface ChooseItemProps {
-  imageUrl: string;
+  image: string;
   label: string;
   onClick: (imageUrl: string) => void;
   width?: string;
@@ -7,26 +13,29 @@ interface ChooseItemProps {
 }
 
 const ChooseItem = ({
-  imageUrl,
+  image,
   label,
   onClick,
   width = '264px',
   height = '264px',
 }: ChooseItemProps) => {
-  const handleClick = () => onClick(imageUrl);
+  const handleChooseItem = () => onClick(image);
 
   return (
-    <div onClick={handleClick} className="cursor-pointer relative">
+    <div onClick={handleChooseItem} className="cursor-pointer relative">
       <img
         width={width}
         height={height}
-        src={imageUrl}
+        src={image}
         alt={label}
         className="rounded-base shadow-gallery-item"
       />
-      <p className="absolute right-0 bottom-0 font-bold text-1lg text-light text-opacity-60 pr-2 pb-1">
-        {label}
-      </p>
+      <Label
+        size={LabelSize.Large}
+        color={LabelColor.Secondary}
+        text={label}
+        className="absolute right-0 bottom-0 pr-2 pb-1"
+      />
     </div>
   );
 };
