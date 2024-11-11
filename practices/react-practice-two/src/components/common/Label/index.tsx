@@ -8,11 +8,11 @@ interface LabelProps {
   className?: string;
 }
 
-const Paragraph = ({
+const Label = ({
   text,
   size = LabelSize.Base,
   color = LabelColor.Primary,
   className = '',
 }: LabelProps) => <p className={`${size} ${color} text-bold ${className && className}`}>{text}</p>;
 
-export default Paragraph;
+export default Label;
