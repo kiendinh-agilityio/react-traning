@@ -2,13 +2,20 @@
 import { Header } from '@/layouts/';
 
 // import sections
-import { HeroSection, FeaturesSection } from '@/layouts/Sections';
+import {
+  HeroSection,
+  FeaturesSection,
+  ProductInfoSection,
+  HighEfficiencySection,
+} from '@/layouts/Sections';
 
 const Home = () => (
   <>
     <Header />
     <HeroSection />
     <FeaturesSection />
+    <ProductInfoSection />
+    <HighEfficiencySection />
   </>
 );
 

@@ -11,6 +11,8 @@ import ProductRed from './ProductRed.svg';
 import ProductBlack from './ProductBlack.svg';
 import HeroImage from './HeroImage.svg';
 import NumberImage from './NumberImage.svg';
+import ProductInfo from './ProductInfo.svg';
+import HighEfficiency from './HighEfficiency.svg';
 
 export {
   BritainEriksen,
@@ -26,4 +28,6 @@ export {
   ProductBlack,
   HeroImage,
   NumberImage,
+  ProductInfo,
+  HighEfficiency,
 };
