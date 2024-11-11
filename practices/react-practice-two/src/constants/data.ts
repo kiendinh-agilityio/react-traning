@@ -51,19 +51,27 @@ export const FEATURES_LIST = [
 export const PRODUCT_INFO_LIST = [
   {
     id: 1,
-    value: 'Material : Aluminium alloy',
+    value: 'Lightweight aircraft grade aluminium frame',
   },
   {
     id: 2,
-    value: 'Color : Black',
+    value: 'Car grade lithium battery',
   },
   {
     id: 3,
-    value: 'Capacity : 45lbs',
+    value: 'Self-balanced',
   },
   {
     id: 4,
-    value: 'Ease : Quick & adjustable',
+    value: 'Plug n play',
+  },
+  {
+    id: 5,
+    value: 'Quick release adapter',
+  },
+  {
+    id: 6,
+    value: 'RFID key card',
   },
 ];
 
