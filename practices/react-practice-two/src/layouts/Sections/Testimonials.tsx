@@ -34,7 +34,7 @@ const TestimonialsSection = () => {
     ));
 
   return (
-    <section className="bg-secondary pt-[82px] pb-[78px] text-center">
+    <section className="container bg-secondary pb-[82px] pt-[78px] text-center">
       <Heading text="Testimonials" />
       <div className="flex justify-center gap-9 mt-[41px]">{renderTestimonialsCard(activeId)}</div>
 
