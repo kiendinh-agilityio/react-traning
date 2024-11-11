@@ -43,7 +43,7 @@ const MultipleAccessoriesSection = () => {
         label="More Accessories Coming Soon"
         onClick={handleButtonClick}
         isDisabled={true}
-        className="mx-auto"
+        className="flex mx-auto"
       />
     </section>
   );
