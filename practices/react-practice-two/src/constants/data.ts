@@ -135,3 +135,23 @@ export const PRODUCT_COLORS_LIST = [
     image: ProductBlack,
   },
 ];
+
+// Accessories List
+export const ACCESSORIES_LIST = [
+  {
+    id: 1,
+    value: 'Material : Aluminium alloy',
+  },
+  {
+    id: 2,
+    value: 'Color : Black',
+  },
+  {
+    id: 3,
+    value: 'Capacity : 45lbs',
+  },
+  {
+    id: 4,
+    value: 'Ease : Steady & adjustable',
+  },
+];
