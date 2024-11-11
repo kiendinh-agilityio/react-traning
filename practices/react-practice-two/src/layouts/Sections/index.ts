@@ -5,3 +5,4 @@ export { default as HeroSection } from './Hero';
 export { default as ProductInfoSection } from './ProductInfo';
 export { default as HighEfficiencySection } from './HighEfficiency';
 export { default as MultipleAccessoriesSection } from './MultipleAccessories';
+export { default as GallerySection } from './Gallery';

@@ -8,6 +8,7 @@ import {
   ProductInfoSection,
   HighEfficiencySection,
   MultipleAccessoriesSection,
+  GallerySection,
 } from '@/layouts/Sections';
 
 const Home = () => (
@@ -18,6 +19,7 @@ const Home = () => (
     <ProductInfoSection />
     <HighEfficiencySection />
     <MultipleAccessoriesSection />
+    <GallerySection />
   </>
 );
 
