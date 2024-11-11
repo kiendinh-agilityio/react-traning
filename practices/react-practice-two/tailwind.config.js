@@ -133,6 +133,16 @@ module.exports = {
             backgroundColor: '#2e2f33',
           },
         },
+        '.btn-carousel-secondary': {
+          display: 'flex',
+          alignItems: 'center',
+          borderStyle: 'none',
+          padding: '17px 23px',
+        },
+        '.btn-prev-secondary': {
+          borderRight: `1px solid ${theme('colors.primary')}`,
+          borderRadius: 'initial',
+        },
       });
     }),
   ],

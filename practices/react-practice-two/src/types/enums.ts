@@ -16,6 +16,7 @@ export enum ButtonVariant {
   Link = 'link',
   Transparent = 'transparent',
   CarouselPrimary = 'btn-carousel-primary',
+  CarouselSecondary = 'btn-carousel-secondary',
 }
 
 export enum ParagraphVariant {

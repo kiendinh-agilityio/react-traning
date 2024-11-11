@@ -14,7 +14,7 @@ const FeaturesSection = () => {
     />
   ));
 
-  return <section className="flex justify-between">{renderFeaturesList}</section>;
+  return <section className="container flex justify-between">{renderFeaturesList}</section>;
 };
 
 export default FeaturesSection;

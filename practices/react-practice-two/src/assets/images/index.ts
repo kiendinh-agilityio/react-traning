@@ -9,6 +9,8 @@ import ProductBlue from './ProductBlue.svg';
 import ProductGreen from './ProductGreen.svg';
 import ProductRed from './ProductRed.svg';
 import ProductBlack from './ProductBlack.svg';
+import HeroImage from './HeroImage.svg';
+import NumberImage from './NumberImage.svg';
 
 export {
   BritainEriksen,
@@ -22,4 +24,6 @@ export {
   ProductGreen,
   ProductRed,
   ProductBlack,
+  HeroImage,
+  NumberImage,
 };
