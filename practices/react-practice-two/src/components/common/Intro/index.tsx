@@ -2,7 +2,7 @@
 import { Heading, Paragraph } from '@/components/common';
 
 // import types
-import { TextSize, ParagraphVariant } from '@/types';
+import { TextSize } from '@/types';
 
 interface IntroProps {
   title: string;
@@ -12,7 +12,7 @@ interface IntroProps {
 const Intro = ({ title, description }: IntroProps) => (
   <div className="flex flex-col text-center gap-[34px]">
     <Heading size={TextSize.Large} text={title} />
-    {description && <Paragraph variant={ParagraphVariant.Bold} text={description} />}
+    {description && <Paragraph text={description} />}
   </div>
 );
 
