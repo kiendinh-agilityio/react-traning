@@ -1,4 +1,12 @@
-import { BritainEriksen, SerhiyHipskyy, JustusMenke } from '@/assets/images/';
+import {
+  BritainEriksen,
+  SerhiyHipskyy,
+  JustusMenke,
+  ProductBlue,
+  ProductRed,
+  ProductBlack,
+  ProductGreen,
+} from '@/assets/images/';
 
 // Feature list
 export const FEATURES_LIST = [
@@ -43,19 +51,27 @@ export const FEATURES_LIST = [
 export const PRODUCT_INFO_LIST = [
   {
     id: 1,
-    value: 'Material : Aluminium alloy',
+    value: 'Lightweight aircraft grade aluminium frame',
   },
   {
     id: 2,
-    value: 'Color : Black',
+    value: 'Car grade lithium battery',
   },
   {
     id: 3,
-    value: 'Capacity : 45lbs',
+    value: 'Self-balanced',
   },
   {
     id: 4,
-    value: 'Ease : Quick & adjustable',
+    value: 'Plug n play',
+  },
+  {
+    id: 5,
+    value: 'Quick release adapter',
+  },
+  {
+    id: 6,
+    value: 'RFID key card',
   },
 ];
 
@@ -93,5 +109,29 @@ export const TESTIMONIALS_LIST = [
       position: 'CEO Universal',
       avatarUrl: BritainEriksen,
     },
+  },
+];
+
+// Product Color List
+export const PRODUCT_COLORS_LIST = [
+  {
+    id: 1,
+    label: '01',
+    image: ProductBlue,
+  },
+  {
+    id: 2,
+    label: '02',
+    image: ProductGreen,
+  },
+  {
+    id: 3,
+    label: '03',
+    image: ProductRed,
+  },
+  {
+    id: 4,
+    label: '04',
+    image: ProductBlack,
   },
 ];

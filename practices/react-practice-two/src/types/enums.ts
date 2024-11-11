@@ -16,10 +16,21 @@ export enum ButtonVariant {
   Link = 'link',
   Transparent = 'transparent',
   CarouselPrimary = 'btn-carousel-primary',
+  CarouselSecondary = 'btn-carousel-secondary',
 }
 
 export enum ParagraphVariant {
   Regular = 'font-regular',
   Medium = 'font-medium',
   Bold = 'font-bold',
+}
+
+export enum LabelSize {
+  Base = 'text-1base',
+  Large = 'text-1lg',
+}
+
+export enum LabelColor {
+  Primary = 'text-primary',
+  Secondary = 'text-light text-opacity-60',
 }

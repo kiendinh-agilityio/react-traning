@@ -22,9 +22,11 @@ module.exports = {
         sm: ['16px', '18px'],
         '2sm': ['18px', '18px'],
         base: ['20px', '28px'],
+        '1base': ['30px', '34px'],
         md: ['22px', '34px'],
         '2md': ['40px', '40px'],
         lg: ['50px', '60px'],
+        '1lg': ['80px', '92px'],
         xl: ['90px', '95px'],
       },
       padding: {
@@ -44,6 +46,16 @@ module.exports = {
         custom: '0px 13.21px 26.42px 0px rgba(0, 0, 0, 0.06)',
         'custom-active':
           '0px 1.85px 3.15px #31313106, 0px 20px 13px #3131310d, 0px 38.52px 25.48px #3131310f',
+        'gallery-item': '0px 15px 70px 0px #a2a9c033',
+      },
+      container: {
+        center: true,
+        padding: '50px',
+        screens: {
+          xl: '1280px',
+          '2xl': '1440px',
+          '3xl': '1660px',
+        },
       },
     },
   },
@@ -120,6 +132,16 @@ module.exports = {
           '&:hover': {
             backgroundColor: '#2e2f33',
           },
+        },
+        '.btn-carousel-secondary': {
+          display: 'flex',
+          alignItems: 'center',
+          borderStyle: 'none',
+          padding: '17px 23px',
+        },
+        '.btn-prev-secondary': {
+          borderRight: `1px solid ${theme('colors.primary')}`,
+          borderRadius: 'initial',
         },
       });
     }),

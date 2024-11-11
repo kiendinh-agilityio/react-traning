@@ -1,10 +1,21 @@
-import { Heading } from '@/components/common';
+// import layouts
+import { Header } from '@/layouts/';
 
-import { TextSize } from '@/types';
+// import sections
+import {
+  HeroSection,
+  FeaturesSection,
+  ProductInfoSection,
+  HighEfficiencySection,
+} from '@/layouts/Sections';
 
 const Home = () => (
   <>
-    <Heading level={1} size={TextSize.ExtraLarge} spanContent="LET'S RIDE" text="THE FUTURE." />
+    <Header />
+    <HeroSection />
+    <FeaturesSection />
+    <ProductInfoSection />
+    <HighEfficiencySection />
   </>
 );
 

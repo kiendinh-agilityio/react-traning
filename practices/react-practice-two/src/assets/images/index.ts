@@ -5,5 +5,29 @@ import DefaultAvatar from './DefaultAvatar.svg';
 import BuiltQuality from './BuiltQuality.svg';
 import Scooter from './Scooter.svg';
 import Parts from './Parts.svg';
+import ProductBlue from './ProductBlue.svg';
+import ProductGreen from './ProductGreen.svg';
+import ProductRed from './ProductRed.svg';
+import ProductBlack from './ProductBlack.svg';
+import HeroImage from './HeroImage.svg';
+import NumberImage from './NumberImage.svg';
+import ProductInfo from './ProductInfo.svg';
+import HighEfficiency from './HighEfficiency.svg';
 
-export { BritainEriksen, SerhiyHipskyy, JustusMenke, DefaultAvatar, BuiltQuality, Scooter, Parts };
+export {
+  BritainEriksen,
+  SerhiyHipskyy,
+  JustusMenke,
+  DefaultAvatar,
+  BuiltQuality,
+  Scooter,
+  Parts,
+  ProductBlue,
+  ProductGreen,
+  ProductRed,
+  ProductBlack,
+  HeroImage,
+  NumberImage,
+  ProductInfo,
+  HighEfficiency,
+};
