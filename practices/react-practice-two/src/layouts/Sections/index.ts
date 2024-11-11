@@ -4,3 +4,4 @@ export { default as ProductColorsSection } from './ProductColors';
 export { default as HeroSection } from './Hero';
 export { default as ProductInfoSection } from './ProductInfo';
 export { default as HighEfficiencySection } from './HighEfficiency';
+export { default as MultipleAccessoriesSection } from './MultipleAccessories';
