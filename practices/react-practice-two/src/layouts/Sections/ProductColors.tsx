@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { PRODUCT_COLORS_LIST } from '@/constants';
 
 // import components
-import { ChooseItem } from '@/components/common';
+import { ChooseItem, Intro } from '@/components/common';
 
 const ProductColorsSection = () => {
   const [selectedImage, setSelectedImage] = useState(PRODUCT_COLORS_LIST[0].image);
@@ -18,10 +18,13 @@ const ProductColorsSection = () => {
     ));
 
   return (
-    <section className="relative">
-      <img className="w-full h-[837px]" src={selectedImage} alt="Product Colors Selected" />
-      <div className="flex justify-center gap-[95px] absolute right-0 left-0 top-[80%]">
-        {renderProductColorsList()}
+    <section className="container pt-16 pb-72">
+      <Intro title="Colors" description="Checkout our products colors." />
+      <div className="relative">
+        <img className="w-full h-[837px] mt-28" src={selectedImage} alt="Product Colors Selected" />
+        <div className="flex justify-center gap-[95px] absolute right-0 left-0 top-[80%]">
+          {renderProductColorsList()}
+        </div>
       </div>
     </section>
   );
