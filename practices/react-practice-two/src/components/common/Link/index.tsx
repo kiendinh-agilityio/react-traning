@@ -9,7 +9,7 @@ interface LinkProps {
 const Link = ({ text, href, className = '', target = '_self', icon }: LinkProps) => (
   <a
     href={href}
-    className={`font-regular text-sm leading ${className && className}`}
+    className={`font-regular text-sm leading-[54px] ${className && className}`}
     target={target}
   >
     {text && text}
