@@ -155,3 +155,25 @@ export const ACCESSORIES_LIST = [
     value: 'Ease : Steady & adjustable',
   },
 ];
+
+// About List
+export const ABOUT_LIST = [
+  { text: 'Company', href: '/company' },
+  { text: 'Teams', href: '/teams' },
+  { text: 'Profile', href: '/profile' },
+  { text: 'Careers', href: '/careers' },
+];
+
+// Resources List
+export const RESOURCES_LIST = [
+  { text: 'Contact', href: '/contact' },
+  { text: 'Application', href: '/application' },
+  { text: 'FQA Features', href: '/features' },
+];
+
+// Legals List
+export const LEGALS_LIST = [
+  { text: 'Copyright Privacy', href: '/copyright-privacy' },
+  { text: 'Policy Disclaimer', href: '/policy-disclaimer' },
+  { text: 'Terms', href: '/terms' },
+];
