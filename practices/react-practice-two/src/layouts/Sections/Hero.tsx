@@ -21,7 +21,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="container flex pt-[87px] pb-60">
+    <section className="container flex pt-[87px] pb-60 relative">
       <div className="text-primary max-w-[586px]">
         <Heading level={1} size={TextSize.ExtraLarge} spanContent="LET'S RIDE" text="THE FUTURE." />
         <Paragraph
