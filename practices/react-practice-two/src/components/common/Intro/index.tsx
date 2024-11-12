@@ -12,7 +12,7 @@ interface IntroProps {
 const Intro = ({ title, description }: IntroProps) => (
   <div className="flex flex-col text-center gap-[34px]">
     <Heading size={TextSize.Large} text={title} />
-    {description && <Paragraph text={description} />}
+    {description && <Paragraph className="text-primary" text={description} />}
   </div>
 );
 

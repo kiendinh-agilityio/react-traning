@@ -2,7 +2,7 @@
 import { Paragraph } from '@/components/common';
 
 interface ListItem {
-  id: number;
+  id: string;
   value: string;
 }
 

@@ -15,6 +15,7 @@ import ProductInfo from './ProductInfo.svg';
 import HighEfficiency from './HighEfficiency.svg';
 import GolfBagRock from './GolfBagRock.svg';
 import ShoppingRack from './ShoppingRack.svg';
+import FooterImage from './FooterImage.svg';
 
 export {
   BritainEriksen,
@@ -34,4 +35,5 @@ export {
   HighEfficiency,
   GolfBagRock,
   ShoppingRack,
+  FooterImage,
 };
