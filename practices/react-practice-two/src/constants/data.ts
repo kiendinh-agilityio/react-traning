@@ -158,22 +158,22 @@ export const ACCESSORIES_LIST = [
 
 // About List
 export const ABOUT_LIST = [
-  { text: 'Company', href: '/company' },
-  { text: 'Teams', href: '/teams' },
-  { text: 'Profile', href: '/profile' },
-  { text: 'Careers', href: '/careers' },
+  { id: 'company', label: 'Company', href: '/company' },
+  { id: 'teams', label: 'Teams', href: '/teams' },
+  { id: 'profile', label: 'Profile', href: '/profile' },
+  { id: 'careers', label: 'Careers', href: '/careers' },
 ];
 
 // Resources List
 export const RESOURCES_LIST = [
-  { text: 'Contact', href: '/contact' },
-  { text: 'Application', href: '/application' },
-  { text: 'FQA Features', href: '/features' },
+  { id: 'contact', label: 'Contact', href: '/contact' },
+  { id: 'application', label: 'Application', href: '/application' },
+  { id: 'features', label: 'FQA Features', href: '/features' },
 ];
 
 // Legals List
 export const LEGALS_LIST = [
-  { text: 'Copyright Privacy', href: '/copyright-privacy' },
-  { text: 'Policy Disclaimer', href: '/policy-disclaimer' },
-  { text: 'Terms', href: '/terms' },
+  { id: 'privacy', label: 'Copyright Privacy', href: '/copyright-privacy' },
+  { id: 'policy', label: 'Policy Disclaimer', href: '/policy-disclaimer' },
+  { id: 'terms', label: 'Terms', href: '/terms' },
 ];
