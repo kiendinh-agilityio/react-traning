@@ -1,5 +1,5 @@
 // import layouts
-import { Header } from '@/layouts/';
+import { Header, Footer } from '@/layouts/';
 
 // import sections
 import {
@@ -8,6 +8,10 @@ import {
   ProductInfoSection,
   HighEfficiencySection,
   MultipleAccessoriesSection,
+  GallerySection,
+  ProductColorsSection,
+  TestimonialsSection,
+  NewsletterSection,
 } from '@/layouts/Sections';
 
 const Home = () => (
@@ -18,6 +22,11 @@ const Home = () => (
     <ProductInfoSection />
     <HighEfficiencySection />
     <MultipleAccessoriesSection />
+    <GallerySection />
+    <ProductColorsSection />
+    <TestimonialsSection />
+    <NewsletterSection />
+    <Footer />
   </>
 );
 
