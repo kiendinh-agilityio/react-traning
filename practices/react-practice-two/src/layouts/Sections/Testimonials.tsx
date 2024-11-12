@@ -13,16 +13,29 @@ import { PrevPrimaryIcon, NextPrimaryIcon } from '@/components/common/Icons';
 import { ButtonVariant } from '@/types';
 
 const TestimonialsSection = () => {
-  const [activeId, setActiveId] = useState<number>(1);
+  // Set the initial activeId to the id of the first testimonial
+  const [activeId, setActiveId] = useState<string>(TESTIMONIALS_LIST[0].id);
 
-  const handleButtonNext = () =>
-    setActiveId((prevId) => (prevId === TESTIMONIALS_LIST.length ? 1 : prevId + 1));
+  // Helper function to update the active testimonial based on an index offset
+  const setActiveTestimonialsCard = (items: number) => {
+    const currentTestimonialsCard = TESTIMONIALS_LIST.findIndex(
+      (testimonial) => testimonial.id === activeId,
+    );
 
-  const handleButtonPrev = () =>
-    setActiveId((prevId) => (prevId === 1 ? TESTIMONIALS_LIST.length : prevId - 1));
+    const TestimonialsCard =
+      (currentTestimonialsCard + items + TESTIMONIALS_LIST.length) % TESTIMONIALS_LIST.length;
 
-  // Function render testimonials card
-  const renderTestimonialsCard = (activeId: number) =>
+    setActiveId(TESTIMONIALS_LIST[TestimonialsCard].id);
+  };
+
+  // Function move to the next testimonial
+  const handleButtonNext = () => setActiveTestimonialsCard(1);
+
+  // Function move to the previous testimonial
+  const handleButtonPrev = () => setActiveTestimonialsCard(-1);
+
+  // Function to render testimonials card
+  const renderTestimonialsCard = (activeId: string) =>
     TESTIMONIALS_LIST.map((testimonial) => (
       <TestimonialsCard
         key={testimonial.id}
