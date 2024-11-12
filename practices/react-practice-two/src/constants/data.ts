@@ -160,10 +160,10 @@ export const ACCESSORIES_LIST = [
 
 // About List
 export const ABOUT_LIST = [
-  { id: 'company', label: 'Company', href: '/company' },
-  { id: 'teams', label: 'Teams', href: '/teams' },
-  { id: 'profile', label: 'Profile', href: '/profile' },
-  { id: 'careers', label: 'Careers', href: '/careers' },
+  { id: uuidv4(), label: 'Company', href: '/company' },
+  { id: uuidv4(), label: 'Teams', href: '/teams' },
+  { id: uuidv4(), label: 'Profile', href: '/profile' },
+  { id: uuidv4(), label: 'Careers', href: '/careers' },
 ];
 
 // Resources List
