@@ -5,8 +5,9 @@ import { Link, Paragraph } from '@/components/common';
 import { ParagraphVariant, TextSize } from '@/types';
 
 interface LinkItem {
+  id: string;
   href: string;
-  text: string;
+  label: string;
 }
 
 interface FooterLinkGroupProps {
@@ -16,8 +17,8 @@ interface FooterLinkGroupProps {
 
 const FooterLinkGroup = ({ title, items }: FooterLinkGroupProps) => {
   const renderFooterLinkGroup = items.map((item) => (
-    <li key={item.href}>
-      <Link href={item.href} target="_blank" text={item.text} />
+    <li key={item.id}>
+      <Link href={item.href} target="_blank" text={item.label} />
     </li>
   ));
 
