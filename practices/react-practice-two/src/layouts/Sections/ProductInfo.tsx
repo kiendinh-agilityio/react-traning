@@ -1,5 +1,8 @@
+// import common components
+import { List } from '@/components/common';
+
 // import components
-import { Intro, List } from '@/components/common';
+import { Intro } from '@/components';
 
 // import common icons
 import { ProductIcon } from '@/components/common/Icons';
