@@ -1,5 +1,8 @@
+// import common components
+import { Logo, Button } from '@/components/common';
+
 // import components
-import { Logo, Navbar, Button } from '@/components/common';
+import { Navbar } from '@/components';
 
 // import types
 import { ButtonVariant } from '@/types';
