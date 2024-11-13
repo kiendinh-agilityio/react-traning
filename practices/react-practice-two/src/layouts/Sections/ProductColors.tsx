@@ -3,8 +3,11 @@ import { useState } from 'react';
 // import constants
 import { PRODUCT_COLORS_LIST } from '@/constants';
 
+// import common components
+import { Intro } from '@/components';
+
 // import components
-import { ChooseItem, Intro } from '@/components/common';
+import { ChooseItem } from '@/components';
 
 const ProductColorsSection = () => {
   const [selectedImage, setSelectedImage] = useState(PRODUCT_COLORS_LIST[0].image);
