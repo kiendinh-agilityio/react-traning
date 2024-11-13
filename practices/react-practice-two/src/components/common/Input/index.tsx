@@ -18,7 +18,7 @@ const Input = ({ value, name, placeholder, type, onChange }: InputProps) => {
       name={name}
       placeholder={placeholder}
       onChange={handleChange}
-      className="w-[400px] px-lg py-md rounded-base bg-secondary text-base focus:outline-none text-primary placeholder:text-primary placeholder:font-regular placeholder:text-base"
+      className="w-[400px] px-lg py-md rounded-base bg-secondary text-base border-[1.5px] border-input focus:outline-none text-primary placeholder:text-primary placeholder:font-regular placeholder:text-base"
     />
   );
 };
