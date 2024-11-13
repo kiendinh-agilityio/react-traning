@@ -1,7 +1,10 @@
 import { useState } from 'react';
 
+// import common components
+import { Button, Input } from '@/components/common';
+
 // import components
-import { Button, Input, Intro } from '@/components/common';
+import { Intro } from '@/components';
 
 const NewsletterSection = () => {
   const [email, setEmail] = useState('');
