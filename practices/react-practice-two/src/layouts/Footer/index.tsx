@@ -1,8 +1,11 @@
 // import FooterLinkGroup
 import FooterLinkGroup from './FooterLinkGroup';
 
+// import common components
+import { Paragraph } from '@/components/common';
+
 // import components
-import { SocialList, Paragraph } from '@/components/common';
+import { SocialList } from '@/components';
 
 // import image
 import { FooterImage } from '@/assets/images';
