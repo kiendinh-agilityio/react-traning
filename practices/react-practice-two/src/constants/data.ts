@@ -103,7 +103,7 @@ export const TESTIMONIALS_LIST = [
   },
   {
     id: uuidv4(),
-    rating: 3,
+    rating: 5,
     description:
       'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.',
     profile: {

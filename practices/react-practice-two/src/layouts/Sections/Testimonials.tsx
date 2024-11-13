@@ -50,7 +50,6 @@ const TestimonialsSection = () => {
     <section className="container bg-secondary pb-[82px] pt-[78px] text-center">
       <Heading text="Testimonials" />
       <div className="flex justify-center gap-9 mt-[41px]">{renderTestimonialsCard(activeId)}</div>
-
       <div className="flex justify-center gap-6 mt-[43px]">
         <Button
           variant={ButtonVariant.CarouselPrimary}
