@@ -18,7 +18,7 @@ const ProductColorsSection = () => {
     ));
 
   return (
-    <section className="container pt-16 pb-72">
+    <section className="container pt-16 pb-64">
       <Intro title="Colors" description="Checkout our products colors." />
       <div className="relative">
         <img className="w-full h-[837px] mt-28" src={selectedImage} alt="Product Colors Selected" />
