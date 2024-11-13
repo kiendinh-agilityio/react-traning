@@ -21,7 +21,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="container flex pt-[87px] pb-60 relative">
+    <section className="container flex pt-[87px] pb-52 relative">
       <div className="text-primary max-w-[586px]">
         <Heading level={1} size={TextSize.ExtraLarge} spanContent="LET'S RIDE" text="THE FUTURE." />
         <Paragraph
@@ -29,7 +29,7 @@ const HeroSection = () => {
           text="Simple and sleek design with users in mind."
           className="max-w-[353px] mt-[93px] border-t-4 border-primary pt-[62px]"
         />
-        <div className="flex flex-row mt-[62px]">
+        <div className="flex flex-row mt-[50px]">
           <div className="flex flex-row items-center gap-[22px] mr-20">
             <Button
               variant={ButtonVariant.Link}
@@ -45,10 +45,9 @@ const HeroSection = () => {
               className="leading-[32px]"
             />
           </div>
-          <div className="flex flex-row items-center gap-[21px]">
+          <div className="flex flex-row items-center gap-[3px]">
             <Paragraph
               variant={ParagraphVariant.Medium}
-              size={TextSize.Medium}
               text="Watch our video how it works"
               className="text-[18px] leading-[25px] max-w-[110px]"
             />
@@ -61,7 +60,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      <div className="absolute right-0">
+      <div className="absolute right-0 top-[30px]">
         <img src={HeroImage} alt="Hero Banner" />
         <div className="flex justify-end items-center pr-[50px]">
           <img src={NumberImage} alt="Number 01" />
