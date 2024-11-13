@@ -1,5 +1,5 @@
 // import component
-import { FeatureItem } from '@/components/common';
+import { FeatureItem } from '@/components';
 
 // import constants
 import { FEATURES_LIST } from '@/constants';
