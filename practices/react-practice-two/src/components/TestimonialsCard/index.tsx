@@ -1,5 +1,8 @@
+// Import common components
+import { Paragraph } from '@/components/common';
+
 // Import components
-import { Profile, Paragraph } from '@/components/common';
+import { Profile } from '@/components';
 
 // Import StarRating
 import StarRating from './StarRating';
