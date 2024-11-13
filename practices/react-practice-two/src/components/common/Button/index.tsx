@@ -4,10 +4,10 @@ import { ButtonVariant } from '@/types';
 interface ButtonProps {
   variant?: ButtonVariant;
   isDisabled?: boolean;
-  onClick: () => void;
   label?: string;
   icon?: React.ReactNode;
   className?: string;
+  onClick: () => void;
 }
 
 const Button = ({
