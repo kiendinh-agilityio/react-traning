@@ -31,7 +31,7 @@ const NewsletterSection = () => {
           label="Get start"
           onClick={handleButtonClick}
           isDisabled={true}
-          className="w-[196px] text-[20px] leading-[28px] rounded-base"
+          className="w-[196px] text-base rounded-base"
         />
       </div>
     </section>

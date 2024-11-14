@@ -19,7 +19,7 @@ const Button = ({
   className = '',
 }: ButtonProps) => {
   const baseClass = ` 
-    px-md py-base font-regular text-xs rounded ${isDisabled ? 'cursor-not-allowed' : ''} ${variant}
+    px-md py-base font-regular rounded ${isDisabled ? 'cursor-not-allowed' : ''} ${variant}
   `;
 
   return (
