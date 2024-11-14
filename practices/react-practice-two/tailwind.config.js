@@ -84,10 +84,10 @@ module.exports = {
           },
         },
         '.tertiary': {
-          width: '570px',
+          width: '572px',
           backgroundColor: theme('colors.light'),
           color: theme('colors.primary'),
-          border: `1px solid ${theme('colors.primary')}`,
+          border: `2px solid ${theme('colors.primary')}`,
           padding: '29px 62px',
           fontFamily: theme('fontFamily.bold'),
           fontSize: '30px',
