@@ -1,7 +1,10 @@
 import { useState } from 'react';
 
+// import common components
+import { Button, Input } from '@/components/common';
+
 // import components
-import { Button, Input, Intro } from '@/components/common';
+import { Intro } from '@/components';
 
 const NewsletterSection = () => {
   const [email, setEmail] = useState('');
@@ -28,7 +31,7 @@ const NewsletterSection = () => {
           label="Get start"
           onClick={handleButtonClick}
           isDisabled={true}
-          className="w-[196px] text-[20px] leading-[28px] rounded-base"
+          className="w-[196px] text-base rounded-base"
         />
       </div>
     </section>

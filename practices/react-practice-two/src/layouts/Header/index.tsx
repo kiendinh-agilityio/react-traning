@@ -1,5 +1,8 @@
+// import common components
+import { Logo, Button } from '@/components/common';
+
 // import components
-import { Logo, Navbar, Button } from '@/components/common';
+import { Navbar } from '@/components';
 
 // import types
 import { ButtonVariant } from '@/types';
@@ -13,7 +16,7 @@ const Header = () => {
     <header className="container flex justify-between items-center py-[27px] border-b border-[#eae8f3]">
       <Logo />
       <Navbar />
-      <div className="flex flex-row gap-[15px]">
+      <div className="flex flex-row gap-[15px] text-xs ">
         <Button
           variant={ButtonVariant.Secondary}
           label="LOG IN"

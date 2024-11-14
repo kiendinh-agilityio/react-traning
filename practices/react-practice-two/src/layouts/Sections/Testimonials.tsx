@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-// Import components
-import { TestimonialsCard, Heading, Button } from '@/components/common';
+// Import common components
+import { Heading, Button } from '@/components/common';
 
 // Import constants
 import { TESTIMONIALS_LIST } from '@/constants';
@@ -11,6 +11,9 @@ import { PrevPrimaryIcon, NextPrimaryIcon } from '@/components/common/Icons';
 
 // Import types
 import { ButtonVariant } from '@/types';
+
+// Import components
+import { TestimonialsCard } from '@/components';
 
 const TestimonialsSection = () => {
   // Set the initial activeId to the id of the first testimonial

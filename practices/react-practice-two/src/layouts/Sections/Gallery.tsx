@@ -1,11 +1,14 @@
-// import components
-import { Intro, GalleryItem, Button } from '@/components/common';
+// import common components
+import { Button } from '@/components/common';
 
 // import types
 import { ButtonVariant } from '@/types';
 
 // import images
 import { Scooter, BuiltQuality, Parts } from '@/assets/images';
+
+// import components
+import { GalleryItem, Intro } from '@/components';
 
 const GallerySection = () => {
   const handleButtonClick = () => {

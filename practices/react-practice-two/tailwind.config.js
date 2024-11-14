@@ -10,6 +10,7 @@ module.exports = {
         primary: '#42454a',
         secondary: '#fafafa',
         light: '#fff',
+        input: '#f5f5f5',
       },
       fontFamily: {
         light: ['Ubuntu-light'],
@@ -56,6 +57,9 @@ module.exports = {
           '2xl': '1440px',
           '3xl': '1660px',
         },
+      },
+      width: {
+        navbar: 'calc(100% - 1100px)',
       },
     },
   },
