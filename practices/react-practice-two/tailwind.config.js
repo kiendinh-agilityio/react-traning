@@ -78,7 +78,7 @@ module.exports = {
           backgroundColor: theme('colors.light'),
           border: `1px solid ${theme('colors.light')}`,
           color: theme('colors.primary'),
-          boxShadow: '0px 12px 25px -10px #0000000A',
+          boxShadow: '0px 12px 25px -10px #0000000a',
           '&:hover': {
             backgroundColor: '#f2f2f2',
           },
