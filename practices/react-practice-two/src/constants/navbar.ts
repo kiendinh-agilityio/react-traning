@@ -1,12 +1,14 @@
+import { v4 as uuidv4 } from 'uuid';
+
 export const NAVBAR_ITEMS = [
   {
-    id: 'products',
+    id: uuidv4(),
     label: 'PRODUCTS',
     subNavbar: [
-      { id: 'info', label: 'INFO', href: '/info' },
-      { id: 'colors', label: 'COLORS', href: '/colors' },
+      { id: uuidv4(), label: 'INFO', href: '/info' },
+      { id: uuidv4(), label: 'COLORS', href: '/colors' },
     ],
   },
-  { id: 'gallery', label: 'GALLERY', href: '/gallery' },
-  { id: 'contact', label: 'CONTACT', href: '/contact' },
+  { id: uuidv4(), label: 'GALLERY', href: '/gallery' },
+  { id: uuidv4(), label: 'CONTACT', href: '/contact' },
 ];
