@@ -24,8 +24,8 @@ const ProductColorsSection = () => {
     <section className="container pt-16 pb-64">
       <Intro title="Colors" description="Checkout our products colors." />
       <div className="relative">
-        <img className="w-full h-[837px] mt-28" src={selectedImage} alt="Product Colors Selected" />
-        <div className="flex justify-center gap-[95px] absolute right-0 left-0 top-[80%]">
+        <img className="w-full h-[873px] mt-28" src={selectedImage} alt="Product Colors Selected" />
+        <div className="flex justify-center gap-[95px] absolute right-0 left-0 top-[88%]">
           {renderProductColorsList()}
         </div>
       </div>
