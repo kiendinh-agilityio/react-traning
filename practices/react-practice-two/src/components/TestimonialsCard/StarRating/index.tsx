@@ -7,9 +7,9 @@ interface StarRatingProps {
 const StarRating = ({ rating }: StarRatingProps) => {
   // Function to create star rating
   const generateStarsRating = (rating: number) =>
-    [...Array(5)].map((_, item) => (
-      <li key={item}>
-        <StarIcon filled={item < rating} />
+    [...Array(5)].map((_, index) => (
+      <li key={index}>
+        <StarIcon filled={index < rating} />
       </li>
     ));
 
