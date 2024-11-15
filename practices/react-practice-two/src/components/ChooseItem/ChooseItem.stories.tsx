@@ -1,11 +1,11 @@
-import ChoseItem from '.';
+import ChooseItem from '.';
 
 // import images
 import { ProductRed } from '@/assets/images';
 
 export default {
-  component: ChoseItem,
-  title: 'ChoseItem',
+  component: ChooseItem,
+  title: 'ChooseItem',
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
@@ -14,7 +14,7 @@ export default {
 
 export const ProductRedColor = {
   args: {
-    imageUrl: ProductRed,
+    image: ProductRed,
     label: '03',
   },
 };
