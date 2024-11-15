@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-navbar">
-      <ul className="flex w-full gap-12">{renderNavbarItems()}</ul>
+      <ul className="flex w-full gap-[60px]">{renderNavbarItems()}</ul>
     </nav>
   );
 };
