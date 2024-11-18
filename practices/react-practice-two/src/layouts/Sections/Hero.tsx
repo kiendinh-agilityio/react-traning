@@ -16,7 +16,19 @@ import {
 import { HeroImage, NumberImage } from '@/assets/images';
 
 const HeroSection = () => {
-  const handleButtonClick = () => {
+  const handleButtonLink = () => {
+    // TODO: Add button click handling logic here when buttons are enabled
+  };
+
+  const handleButtonPlay = () => {
+    // TODO: Add button click handling logic here when buttons are enabled
+  };
+
+  const handleButtonPrev = () => {
+    // TODO: Add button click handling logic here when buttons are enabled
+  };
+
+  const handleButtonNext = () => {
     // TODO: Add button click handling logic here when buttons are enabled
   };
 
@@ -40,7 +52,7 @@ const HeroSection = () => {
               <Button
                 variant={ButtonVariant.Link}
                 icon={<LinkIcon />}
-                onClick={handleButtonClick}
+                onClick={handleButtonLink}
                 isDisabled={true}
                 className="w-[58px] h-[58px]"
               />
@@ -60,7 +72,7 @@ const HeroSection = () => {
               <Button
                 variant={ButtonVariant.Transparent}
                 icon={<PlayIcon />}
-                onClick={handleButtonClick}
+                onClick={handleButtonPlay}
                 isDisabled={true}
               />
             </div>
@@ -74,14 +86,14 @@ const HeroSection = () => {
               <Button
                 variant={ButtonVariant.CarouselSecondary}
                 icon={<PrevSecondaryIcon />}
-                onClick={handleButtonClick}
+                onClick={handleButtonPrev}
                 isDisabled={true}
                 className="btn-prev-secondary"
               />
               <Button
                 variant={ButtonVariant.CarouselSecondary}
                 icon={<NextSecondaryIcon />}
-                onClick={handleButtonClick}
+                onClick={handleButtonNext}
                 isDisabled={true}
               />
             </div>
