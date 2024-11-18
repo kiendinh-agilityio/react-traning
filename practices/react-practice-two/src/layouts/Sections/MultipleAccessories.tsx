@@ -17,7 +17,7 @@ import { ACCESSORIES_LIST } from '@/constants';
 import { ButtonVariant } from '@/types';
 
 const MultipleAccessoriesSection = () => {
-  const handleButtonClick = () => {
+  const handleButtonLearnMore = () => {
     // TODO: Add button click handling logic here when buttons are enabled
   };
 
@@ -45,8 +45,7 @@ const MultipleAccessoriesSection = () => {
         <Button
           variant={ButtonVariant.Tertiary}
           label="More Accessories Coming Soon"
-          onClick={handleButtonClick}
-          isDisabled={true}
+          onClick={handleButtonLearnMore}
           className="flex mx-auto"
         />
       </div>
