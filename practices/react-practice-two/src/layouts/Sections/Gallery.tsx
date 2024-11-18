@@ -11,7 +11,7 @@ import { Scooter, BuiltQuality, Parts } from '@/assets/images';
 import { GalleryItem, Intro } from '@/components';
 
 const GallerySection = () => {
-  const handleButtonClick = () => {
+  const handleButtonSubmit = () => {
     // TODO: Add button click handling logic here when buttons are enabled
   };
 
@@ -29,20 +29,17 @@ const GallerySection = () => {
               <Button
                 variant={ButtonVariant.Tertiary}
                 label="Battery Images"
-                onClick={handleButtonClick}
-                isDisabled={true}
+                onClick={handleButtonSubmit}
               />
               <Button
                 variant={ButtonVariant.Tertiary}
                 label="Spare Parts Images"
-                onClick={handleButtonClick}
-                isDisabled={true}
+                onClick={handleButtonSubmit}
               />
               <Button
                 variant={ButtonVariant.Tertiary}
                 label="Charging Cable Images"
-                onClick={handleButtonClick}
-                isDisabled={true}
+                onClick={handleButtonSubmit}
               />
             </div>
           </div>
