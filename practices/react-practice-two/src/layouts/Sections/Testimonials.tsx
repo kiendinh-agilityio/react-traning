@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Heading, Button } from '@/components/common';
 
 // Import constants
-import { TESTIMONIALS_LIST } from '@/constants';
+import { TESTIMONIALS_LIST, HOVER_BUTTON_CAROUSEL, DISABLED_BUTTON_CAROUSEL } from '@/constants';
 
 // Import common icons
 import { PrevPrimaryIcon, NextPrimaryIcon } from '@/components/common/Icons';
@@ -50,11 +50,6 @@ const TestimonialsSection = () => {
       />
     ));
 
-  const getButtonClassName = (isDisabled: boolean) =>
-    `btn-carousel-primary ${
-      isDisabled ? 'cursor-not-allowed opacity-50' : 'hover:bg-primary hover:text-light'
-    }`;
-
   return (
     <section className="bg-secondary pb-[82px] pt-[78px]">
       <div className="container text-center">
@@ -67,14 +62,14 @@ const TestimonialsSection = () => {
             variant={ButtonVariant.CarouselPrimary}
             onClick={handleButtonPrev}
             icon={<PrevPrimaryIcon />}
-            className={getButtonClassName(isPrevDisabled)}
+            className={`${isPrevDisabled ? DISABLED_BUTTON_CAROUSEL : HOVER_BUTTON_CAROUSEL}`}
             isDisabled={isPrevDisabled}
           />
           <Button
             variant={ButtonVariant.CarouselPrimary}
             onClick={handleButtonNext}
             icon={<NextPrimaryIcon />}
-            className={getButtonClassName(isNextDisabled)}
+            className={`${isNextDisabled ? DISABLED_BUTTON_CAROUSEL : HOVER_BUTTON_CAROUSEL}`}
             isDisabled={isNextDisabled}
           />
         </div>
