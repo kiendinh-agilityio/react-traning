@@ -13,17 +13,12 @@ const Header = () => {
   };
 
   return (
-    <header className="container flex justify-between items-center py-[27px] border-b border-[#eae8f3]">
+    <header className="flex justify-between items-center px-[50px] py-[27px] border-b border-[#eae8f3]">
       <Logo />
       <Navbar />
       <div className="flex flex-row gap-[15px] text-xs ">
-        <Button
-          variant={ButtonVariant.Secondary}
-          label="LOG IN"
-          onClick={handleButtonClick}
-          isDisabled={true}
-        />
-        <Button label="SIGN UP" onClick={handleButtonClick} isDisabled={true} />
+        <Button variant={ButtonVariant.Secondary} label="LOG IN" onClick={handleButtonClick} />
+        <Button label="SIGN UP" onClick={handleButtonClick} />
       </div>
     </header>
   );
