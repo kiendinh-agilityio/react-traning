@@ -9,7 +9,7 @@ import { Intro } from '@/components';
 const NewsletterSection = () => {
   const [email, setEmail] = useState('');
 
-  const handleButtonClick = () => {
+  const handleButtonSubmit = () => {
     // TODO: Add button click handling logic here when buttons are enabled
   };
 
@@ -29,7 +29,7 @@ const NewsletterSection = () => {
         />
         <Button
           label="Get start"
-          onClick={handleButtonClick}
+          onClick={handleButtonSubmit}
           className="w-[196px] text-base rounded-base"
         />
       </div>
