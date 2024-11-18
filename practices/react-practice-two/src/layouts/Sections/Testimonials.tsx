@@ -19,12 +19,13 @@ const TestimonialsSection = () => {
   // Set the initial activeId to the id of the first testimonial
   const [activeId, setActiveId] = useState<string>(TESTIMONIALS_LIST[0].id);
 
+  const currentTestimonialsCard = TESTIMONIALS_LIST.findIndex((item) => item.id === activeId);
+
+  const isPrevDisabled = currentTestimonialsCard === 0;
+  const isNextDisabled = currentTestimonialsCard === TESTIMONIALS_LIST.length - 1;
+
   // Helper function to update the active testimonial based on an index offset
   const setActiveTestimonialsCard = (items: number) => {
-    const currentTestimonialsCard = TESTIMONIALS_LIST.findIndex(
-      (testimonial) => testimonial.id === activeId,
-    );
-
     const TestimonialsCard =
       (currentTestimonialsCard + items + TESTIMONIALS_LIST.length) % TESTIMONIALS_LIST.length;
 
@@ -49,23 +50,34 @@ const TestimonialsSection = () => {
       />
     ));
 
+  const getButtonClassName = (isDisabled: boolean) =>
+    `btn-carousel-primary ${
+      isDisabled ? 'cursor-not-allowed opacity-50' : 'hover:bg-primary hover:text-light'
+    }`;
+
   return (
-    <section className="container bg-secondary pb-[82px] pt-[78px] text-center">
-      <Heading text="Testimonials" />
-      <div className="flex justify-center gap-9 mt-[41px]">{renderTestimonialsCard(activeId)}</div>
-      <div className="flex justify-center gap-6 mt-[43px]">
-        <Button
-          variant={ButtonVariant.CarouselPrimary}
-          onClick={handleButtonPrev}
-          icon={<PrevPrimaryIcon />}
-          className="btn-prev-primary"
-        />
-        <Button
-          variant={ButtonVariant.CarouselPrimary}
-          onClick={handleButtonNext}
-          icon={<NextPrimaryIcon />}
-          className="btn-next-primary"
-        />
+    <section className="bg-secondary pb-[82px] pt-[78px]">
+      <div className="container text-center">
+        <Heading text="Testimonials" />
+        <div className="flex justify-center gap-9 mt-[41px]">
+          {renderTestimonialsCard(activeId)}
+        </div>
+        <div className="flex justify-center gap-6 mt-[43px]">
+          <Button
+            variant={ButtonVariant.CarouselPrimary}
+            onClick={handleButtonPrev}
+            icon={<PrevPrimaryIcon />}
+            className={getButtonClassName(isPrevDisabled)}
+            isDisabled={isPrevDisabled}
+          />
+          <Button
+            variant={ButtonVariant.CarouselPrimary}
+            onClick={handleButtonNext}
+            icon={<NextPrimaryIcon />}
+            className={getButtonClassName(isNextDisabled)}
+            isDisabled={isNextDisabled}
+          />
+        </div>
       </div>
     </section>
   );
