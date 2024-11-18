@@ -14,7 +14,7 @@ const NewsletterSection = () => {
   };
 
   return (
-    <section className="container flex flex-col justify-center py-32">
+    <section className="container flex flex-col justify-center pt-32 pb-24">
       <Intro
         title="Subscribe To Newsletter"
         description="Subscribe to our newsletter to get amazing offers in future."
@@ -30,7 +30,6 @@ const NewsletterSection = () => {
         <Button
           label="Get start"
           onClick={handleButtonClick}
-          isDisabled={true}
           className="w-[196px] text-base rounded-base"
         />
       </div>
