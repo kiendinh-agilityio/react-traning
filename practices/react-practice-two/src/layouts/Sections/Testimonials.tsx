@@ -62,14 +62,14 @@ const TestimonialsSection = () => {
             variant={ButtonVariant.CarouselPrimary}
             onClick={handleButtonPrev}
             icon={<PrevPrimaryIcon />}
-            className={`${isPrevDisabled ? DISABLED_BUTTON_CAROUSEL : HOVER_BUTTON_CAROUSEL}`}
+            className={isPrevDisabled ? DISABLED_BUTTON_CAROUSEL : HOVER_BUTTON_CAROUSEL}
             isDisabled={isPrevDisabled}
           />
           <Button
             variant={ButtonVariant.CarouselPrimary}
             onClick={handleButtonNext}
             icon={<NextPrimaryIcon />}
-            className={`${isNextDisabled ? DISABLED_BUTTON_CAROUSEL : HOVER_BUTTON_CAROUSEL}`}
+            className={isNextDisabled ? DISABLED_BUTTON_CAROUSEL : HOVER_BUTTON_CAROUSEL}
             isDisabled={isNextDisabled}
           />
         </div>
