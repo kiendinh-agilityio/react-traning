@@ -33,7 +33,7 @@ const MultipleAccessoriesSection = () => {
             <Heading level={3} text="Golf Bag Rock" />
             <List icon={<ProductIcon />} items={ACCESSORIES_LIST} />
           </div>
-          <img src={GolfBagRock} alt="Golf Bag Rock" />
+          <img src={GolfBagRock} alt="Golf Bag Rock" className="absolute right-0" />
         </div>
         <div className="flex justify-end mb-16">
           <img src={ShoppingRack} alt="Shopping Rack" className="absolute left-0" />
