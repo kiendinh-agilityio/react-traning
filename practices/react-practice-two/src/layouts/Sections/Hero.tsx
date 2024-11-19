@@ -53,7 +53,6 @@ const HeroSection = () => {
                 variant={ButtonVariant.Link}
                 icon={<LinkIcon />}
                 onClick={handleButtonLink}
-                isDisabled={true}
                 className="w-[58px] h-[58px]"
               />
               <Paragraph
@@ -73,7 +72,6 @@ const HeroSection = () => {
                 variant={ButtonVariant.Transparent}
                 icon={<PlayIcon />}
                 onClick={handleButtonPlay}
-                isDisabled={true}
               />
             </div>
           </div>
@@ -87,14 +85,12 @@ const HeroSection = () => {
                 variant={ButtonVariant.CarouselSecondary}
                 icon={<PrevSecondaryIcon />}
                 onClick={handleButtonPrev}
-                isDisabled={true}
                 className="btn-prev-secondary"
               />
               <Button
                 variant={ButtonVariant.CarouselSecondary}
                 icon={<NextSecondaryIcon />}
                 onClick={handleButtonNext}
-                isDisabled={true}
               />
             </div>
           </div>
