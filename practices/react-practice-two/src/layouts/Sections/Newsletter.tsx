@@ -27,11 +27,9 @@ const NewsletterSection = () => {
           placeholder="Enter your email."
           onChange={setEmail}
         />
-        <Button
-          label="Get start"
-          onClick={handleButtonSubmit}
-          className="w-[196px] text-base rounded-base"
-        />
+        <Button onClick={handleButtonSubmit} className="w-[196px] text-base rounded-base">
+          Get start
+        </Button>
       </div>
     </section>
   );
