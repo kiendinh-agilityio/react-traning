@@ -1,20 +1,25 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useRef } from 'react';
 
 interface InputProps {
-  value: string;
   name: string;
   type: string;
+  value?: string;
+  defaultValue?: string;
   placeholder?: string;
-  onChange: (value: string) => void;
+  onChange?: (value: string) => void;
 }
 
-const Input = ({ value, name, placeholder, type, onChange }: InputProps) => {
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => onChange(e.target.value);
+const Input = ({ value, defaultValue, name, type, placeholder, onChange }: InputProps) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => onChange?.(e.target.value);
 
   return (
     <input
       type={type}
-      value={value}
+      value={value && value}
+      ref={value && inputRef}
+      defaultValue={value && defaultValue}
       name={name}
       placeholder={placeholder}
       onChange={handleChange}
