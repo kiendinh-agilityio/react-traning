@@ -36,12 +36,9 @@ const HeroSection = () => {
     <section className="pt-[87px] pb-52 relative">
       <div className="container flex">
         <div className="text-primary max-w-[586px]">
-          <Heading
-            level={1}
-            size={TextSize.ExtraLarge}
-            spanContent="LET'S RIDE"
-            text="THE FUTURE."
-          />
+          <Heading level={1} size={TextSize.ExtraLarge}>
+            <span className="font-light">LET'S RIDE</span> THE FUTURE.
+          </Heading>
           <Paragraph
             size={TextSize.Medium}
             text="Simple and sleek design with users in mind."
@@ -51,10 +48,11 @@ const HeroSection = () => {
             <div className="flex flex-row items-center gap-[22px] mr-20">
               <Button
                 variant={ButtonVariant.Link}
-                icon={<LinkIcon />}
                 onClick={handleButtonLink}
                 className="w-[58px] h-[58px]"
-              />
+              >
+                <LinkIcon />
+              </Button>
               <Paragraph
                 variant={ParagraphVariant.Medium}
                 size={TextSize.Base}
@@ -68,11 +66,9 @@ const HeroSection = () => {
                 text="Watch our video how it works"
                 className="text-[18px] leading-[25px] max-w-[110px]"
               />
-              <Button
-                variant={ButtonVariant.Transparent}
-                icon={<PlayIcon />}
-                onClick={handleButtonPlay}
-              />
+              <Button variant={ButtonVariant.Transparent} onClick={handleButtonPlay}>
+                <PlayIcon />
+              </Button>
             </div>
           </div>
         </div>
@@ -83,15 +79,14 @@ const HeroSection = () => {
             <div className="flex w-[104px] h-[46px] border border-primary rounded-[23px] ml-[37px]">
               <Button
                 variant={ButtonVariant.CarouselSecondary}
-                icon={<PrevSecondaryIcon />}
                 onClick={handleButtonPrev}
                 className="btn-prev-secondary"
-              />
-              <Button
-                variant={ButtonVariant.CarouselSecondary}
-                icon={<NextSecondaryIcon />}
-                onClick={handleButtonNext}
-              />
+              >
+                <PrevSecondaryIcon />
+              </Button>
+              <Button variant={ButtonVariant.CarouselSecondary} onClick={handleButtonNext}>
+                <NextSecondaryIcon />
+              </Button>
             </div>
           </div>
         </div>
