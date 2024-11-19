@@ -21,8 +21,10 @@ const Header = () => {
       <Logo />
       <Navbar />
       <div className="flex flex-row gap-[15px] text-xs ">
-        <Button variant={ButtonVariant.Secondary} label="LOG IN" onClick={handleButtonLogIn} />
-        <Button label="SIGN UP" onClick={handleButtonSignUp} />
+        <Button variant={ButtonVariant.Secondary} onClick={handleButtonLogIn}>
+          LOG IN
+        </Button>
+        <Button onClick={handleButtonSignUp}>SIGN UP</Button>
       </div>
     </header>
   );
