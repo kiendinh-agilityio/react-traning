@@ -34,21 +34,15 @@ const GallerySection = () => {
           <div className="flex flex-col pt-48">
             <GalleryItem label="Scooter" url={Scooter} />
             <div className="flex flex-col gap-[27px] mt-[55px]">
-              <Button
-                variant={ButtonVariant.Tertiary}
-                label="Battery Images"
-                onClick={handleButtonBatteryDetails}
-              />
-              <Button
-                variant={ButtonVariant.Tertiary}
-                label="Spare Parts Images"
-                onClick={handleButtonSparePartsDetails}
-              />
-              <Button
-                variant={ButtonVariant.Tertiary}
-                label="Charging Cable Images"
-                onClick={handleButtonChargingCableDetails}
-              />
+              <Button variant={ButtonVariant.Tertiary} onClick={handleButtonBatteryDetails}>
+                Battery Images
+              </Button>
+              <Button variant={ButtonVariant.Tertiary} onClick={handleButtonSparePartsDetails}>
+                Spare Parts Images
+              </Button>
+              <Button variant={ButtonVariant.Tertiary} onClick={handleButtonChargingCableDetails}>
+                Charging Cable Images
+              </Button>
             </div>
           </div>
           <div className="flex flex-col gap-24">
