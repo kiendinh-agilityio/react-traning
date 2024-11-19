@@ -15,34 +15,34 @@ export default {
 export const ButtonPrimary = {
   args: {
     variant: 'primary',
-    label: 'SIGN UP',
+    children: 'SIGN UP',
   },
 };
 
 export const ButtonSecondary = {
   args: {
     variant: 'secondary',
-    label: 'SIGN IN',
+    children: 'SIGN IN',
   },
 };
 
 export const ButtonTertiary = {
   args: {
     variant: 'tertiary',
-    label: 'More Accessories Coming Soon',
+    children: 'More Accessories Coming Soon',
   },
 };
 
 export const ButtonLink = {
   args: {
     variant: 'link',
-    icon: <LinkIcon />,
+    children: <LinkIcon />,
   },
 };
 
 export const ButtonIcon = {
   args: {
     variant: 'transparent',
-    icon: <PlayIcon />,
+    children: <PlayIcon />,
   },
 };
