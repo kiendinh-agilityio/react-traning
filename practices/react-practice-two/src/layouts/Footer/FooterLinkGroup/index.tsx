@@ -22,7 +22,9 @@ interface FooterLinkGroupProps {
 const FooterLinkGroup = ({ title, items, hasSocialLinks = false }: FooterLinkGroupProps) => {
   const renderFooterLinkGroup = items.map((item) => (
     <li key={item.id}>
-      <Link href={item.href} target="_blank" text={item.label} />
+      <Link href={item.href} target="_blank">
+        {item.label}
+      </Link>
     </li>
   ));
 
