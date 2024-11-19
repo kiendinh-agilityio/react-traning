@@ -34,3 +34,8 @@ export enum LabelColor {
   Primary = 'text-primary',
   Secondary = 'text-light text-opacity-60',
 }
+
+export enum AvatarSize {
+  md = 'w-md',
+  lg = 'w-lg',
+}
