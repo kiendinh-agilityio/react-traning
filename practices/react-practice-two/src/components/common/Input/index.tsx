@@ -17,9 +17,9 @@ const Input = ({ value, defaultValue, name, type, placeholder, onChange }: Input
   return (
     <input
       type={type}
-      value={value && value}
-      ref={value && inputRef}
-      defaultValue={value && defaultValue}
+      value={value}
+      ref={value === undefined ? inputRef : undefined}
+      defaultValue={value === undefined ? defaultValue : undefined}
       name={name}
       placeholder={placeholder}
       onChange={handleChange}
