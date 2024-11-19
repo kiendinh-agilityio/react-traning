@@ -53,7 +53,7 @@ const TestimonialsSection = () => {
   return (
     <section className="bg-secondary pb-[82px] pt-[78px]">
       <div className="container text-center">
-        <Heading text="Testimonials" />
+        <Heading>Testimonials</Heading>
         <div className="flex justify-center gap-9 mt-[41px]">
           {renderTestimonialsCard(activeId)}
         </div>
@@ -61,17 +61,19 @@ const TestimonialsSection = () => {
           <Button
             variant={ButtonVariant.CarouselPrimary}
             onClick={handleButtonPrev}
-            icon={<PrevPrimaryIcon />}
             className={isPrevDisabled ? DISABLED_BUTTON_CAROUSEL : HOVER_BUTTON_CAROUSEL}
             isDisabled={isPrevDisabled}
-          />
+          >
+            <PrevPrimaryIcon />
+          </Button>
           <Button
             variant={ButtonVariant.CarouselPrimary}
             onClick={handleButtonNext}
-            icon={<NextPrimaryIcon />}
             className={isNextDisabled ? DISABLED_BUTTON_CAROUSEL : HOVER_BUTTON_CAROUSEL}
             isDisabled={isNextDisabled}
-          />
+          >
+            <NextPrimaryIcon />
+          </Button>
         </div>
       </div>
     </section>
