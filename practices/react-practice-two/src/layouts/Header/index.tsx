@@ -8,22 +8,21 @@ import { Navbar } from '@/components';
 import { ButtonVariant } from '@/types';
 
 const Header = () => {
-  const handleButtonClick = () => {
+  const handleButtonLogIn = () => {
+    // TODO: Add button click handling logic here when buttons are enabled
+  };
+
+  const handleButtonSignUp = () => {
     // TODO: Add button click handling logic here when buttons are enabled
   };
 
   return (
-    <header className="container flex justify-between items-center py-[27px] border-b border-[#eae8f3]">
+    <header className="flex justify-between items-center px-[50px] py-[27px] border-b border-[#eae8f3]">
       <Logo />
       <Navbar />
       <div className="flex flex-row gap-[15px] text-xs ">
-        <Button
-          variant={ButtonVariant.Secondary}
-          label="LOG IN"
-          onClick={handleButtonClick}
-          isDisabled={true}
-        />
-        <Button label="SIGN UP" onClick={handleButtonClick} isDisabled={true} />
+        <Button variant={ButtonVariant.Secondary} label="LOG IN" onClick={handleButtonLogIn} />
+        <Button label="SIGN UP" onClick={handleButtonSignUp} />
       </div>
     </header>
   );

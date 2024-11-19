@@ -17,37 +17,38 @@ import { ACCESSORIES_LIST } from '@/constants';
 import { ButtonVariant } from '@/types';
 
 const MultipleAccessoriesSection = () => {
-  const handleButtonClick = () => {
+  const handleButtonLearnMore = () => {
     // TODO: Add button click handling logic here when buttons are enabled
   };
 
   return (
-    <section className="container pt-10 pb-16 relative">
-      <Intro
-        title="Multiple Accessories"
-        description="There are multiple modes for the scooter for your multiple needs."
-      />
-      <div className="flex justify-between my-28">
-        <div className="flex flex-col gap-[33px] py-12">
-          <Heading level={3} text="Golf Bag Rock" />
-          <List icon={<ProductIcon />} items={ACCESSORIES_LIST} />
+    <section className="pt-10 pb-16 relative">
+      <div className="container">
+        <Intro
+          title="Multiple Accessories"
+          description="There are multiple modes for the scooter for your multiple needs."
+        />
+        <div className="flex justify-between my-28">
+          <div className="flex flex-col gap-[33px] py-12">
+            <Heading level={3} text="Golf Bag Rock" />
+            <List icon={<ProductIcon />} items={ACCESSORIES_LIST} />
+          </div>
+          <img src={GolfBagRock} alt="Golf Bag Rock" />
         </div>
-        <img src={GolfBagRock} alt="Golf Bag Rock" />
-      </div>
-      <div className="flex justify-end mb-16">
-        <img src={ShoppingRack} alt="Shopping Rack" className="absolute left-0" />
-        <div className="flex flex-col gap-[33px] py-[22px] px-28">
-          <Heading level={3} text="Shopping Rack" />
-          <List icon={<ProductIcon />} items={ACCESSORIES_LIST} />
+        <div className="flex justify-end mb-16">
+          <img src={ShoppingRack} alt="Shopping Rack" className="absolute left-0" />
+          <div className="flex flex-col gap-[33px] py-[22px] px-28">
+            <Heading level={3} text="Shopping Rack" />
+            <List icon={<ProductIcon />} items={ACCESSORIES_LIST} />
+          </div>
         </div>
+        <Button
+          variant={ButtonVariant.Tertiary}
+          label="More Accessories Coming Soon"
+          onClick={handleButtonLearnMore}
+          className="flex mx-auto"
+        />
       </div>
-      <Button
-        variant={ButtonVariant.Tertiary}
-        label="More Accessories Coming Soon"
-        onClick={handleButtonClick}
-        isDisabled={true}
-        className="flex mx-auto"
-      />
     </section>
   );
 };

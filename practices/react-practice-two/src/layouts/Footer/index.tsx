@@ -4,9 +4,6 @@ import FooterLinkGroup from './FooterLinkGroup';
 // import common components
 import { Paragraph } from '@/components/common';
 
-// import components
-import { SocialList } from '@/components';
-
 // import image
 import { FooterImage } from '@/assets/images';
 
@@ -20,20 +17,19 @@ import { currentYear } from '@/utils';
 import { TextSize } from '@/types';
 
 const Footer = () => (
-  <footer className="container bg-primary pt-[99px] px-[196px] pb-[30px] relative flex flex-col justify-end">
-    <img src={FooterImage} alt="Footer Banner" className="absolute left-0 bottom-16" />
+  <footer className="bg-primary pt-[100px] px-[196px] pb-[30px] relative flex flex-col justify-end">
+    <img src={FooterImage} alt="Footer Banner" className="absolute left-0 bottom-[38px]" />
     <div className="flex flex-col items-end">
-      <div className="flex justify-between gap-[113px]">
+      <div className="flex justify-between gap-[117px] pr-2.5">
         <FooterLinkGroup title="About" items={ABOUT_LIST} />
         <FooterLinkGroup title="Resources" items={RESOURCES_LIST} />
-        <FooterLinkGroup title="Legals" items={LEGALS_LIST} />
+        <FooterLinkGroup title="Legals" items={LEGALS_LIST} hasSocialLinks />
       </div>
-      <SocialList />
     </div>
     <Paragraph
       size={TextSize.Small}
       text={`© Copyright ${currentYear}. All rights reserved.`}
-      className="text-light leading-[24px] text-center mt-[71px]"
+      className="text-light leading-[24px] text-center mt-[71px] tracking-wide"
     />
   </footer>
 );

@@ -25,7 +25,10 @@ const NavbarItem = ({ label, href = '#', subNavbar }: NavbarItemProps) => {
     <ul className="absolute left-0 mt-2 w-40 bg-white rounded-lg shadow-lg">
       {subNavbar?.map((item) => (
         <li key={item.id}>
-          <a href={item.href} className="block px-2 py-2 hover:bg-primary hover:text-light">
+          <a
+            href={item.href}
+            className="block px-2 py-2 hover:bg-primary hover:text-light relative"
+          >
             {item.label}
           </a>
         </li>
@@ -41,7 +44,9 @@ const NavbarItem = ({ label, href = '#', subNavbar }: NavbarItemProps) => {
         className="flex items-center gap-1.5 px-2 py-2 hover:bg-primary hover:text-light"
       >
         {label}
-        {subNavbar && <ArrowDownIcon className="fill-primary group-hover:fill-light" />}
+        {subNavbar && (
+          <ArrowDownIcon className="fill-primary group-hover:fill-light absolute right-[-8px] bottom-[13px]" />
+        )}
       </a>
       {isDropdownOpen && renderDropdown()}
     </li>

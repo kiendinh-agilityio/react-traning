@@ -124,19 +124,6 @@ module.exports = {
           borderRadius: '50%',
           border: `1px solid ${theme('colors.primary')}`,
         },
-        '.btn-prev-primary': {
-          backgroundColor: theme('colors.light'),
-          '&:hover': {
-            backgroundColor: theme('colors.secondary'),
-          },
-        },
-        '.btn-next-primary': {
-          border: `1px solid ${theme('colors.primary')}`,
-          backgroundColor: theme('colors.primary'),
-          '&:hover': {
-            backgroundColor: '#2e2f33',
-          },
-        },
         '.btn-carousel-secondary': {
           display: 'flex',
           alignItems: 'center',
