@@ -23,7 +23,7 @@ const Footer = () => (
       <div className="flex justify-between gap-[117px] pr-2.5">
         <FooterLinkGroup title="About" items={ABOUT_LIST} />
         <FooterLinkGroup title="Resources" items={RESOURCES_LIST} />
-        <FooterLinkGroup title="Legals" items={LEGALS_LIST} hasSocialLinks={true} />
+        <FooterLinkGroup title="Legals" items={LEGALS_LIST} hasSocialLinks />
       </div>
     </div>
     <Paragraph
