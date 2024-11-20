@@ -15,8 +15,6 @@ export enum ButtonVariant {
   Tertiary = 'tertiary',
   Link = 'link',
   Transparent = 'transparent',
-  CarouselPrimary = 'btn-carousel-primary',
-  CarouselSecondary = 'btn-carousel-secondary',
 }
 
 export enum ParagraphVariant {
@@ -38,4 +36,9 @@ export enum LabelColor {
 export enum AvatarSize {
   md = 'w-md',
   lg = 'w-lg',
+}
+
+export enum CarouselButtonVariant {
+  Primary = 'btn-carousel-primary',
+  Secondary = 'btn-carousel-secondary',
 }
