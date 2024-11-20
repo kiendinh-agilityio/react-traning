@@ -1,16 +1,20 @@
+import { useState } from 'react';
+
 // import common components
-import { Logo, Button } from '@/components/common';
+import { Logo, Button, Modal } from '@/components/common';
 
 // import components
-import { Navbar } from '@/components';
+import { Navbar, LoginForm } from '@/components';
 
 // import types
 import { ButtonVariant } from '@/types';
 
 const Header = () => {
-  const handleButtonLogIn = () => {
-    // TODO: Add button click handling logic here when buttons are enabled
-  };
+  const [isLoginModalOpen, setLoginModalOpen] = useState(false);
+
+  const handleButtonLogIn = () => setLoginModalOpen(true);
+
+  const handleModalClose = () => setLoginModalOpen(false);
 
   const handleButtonSignUp = () => {
     // TODO: Add button click handling logic here when buttons are enabled
@@ -26,6 +30,9 @@ const Header = () => {
         </Button>
         <Button onClick={handleButtonSignUp}>SIGN UP</Button>
       </div>
+      <Modal isOpen={isLoginModalOpen} onClose={handleModalClose}>
+        <LoginForm />
+      </Modal>
     </header>
   );
 };
