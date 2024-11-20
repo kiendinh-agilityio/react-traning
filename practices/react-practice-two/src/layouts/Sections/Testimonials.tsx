@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 // Import common components
-import { Heading, Button } from '@/components/common';
+import { Heading } from '@/components/common';
 
 // Import constants
 import { TESTIMONIALS_LIST, HOVER_BUTTON_CAROUSEL, DISABLED_BUTTON_CAROUSEL } from '@/constants';
@@ -9,11 +9,11 @@ import { TESTIMONIALS_LIST, HOVER_BUTTON_CAROUSEL, DISABLED_BUTTON_CAROUSEL } fr
 // Import common icons
 import { PrevPrimaryIcon, NextPrimaryIcon } from '@/components/common/Icons';
 
-// Import types
-import { ButtonVariant } from '@/types';
-
 // Import components
-import { TestimonialsCard } from '@/components';
+import { TestimonialsCard, CarouselButton } from '@/components';
+
+// import types
+import { CarouselButtonVariant } from '@/types';
 
 const TestimonialsSection = () => {
   // Set the initial activeId to the id of the first testimonial
@@ -58,22 +58,20 @@ const TestimonialsSection = () => {
           {renderTestimonialsCard(activeId)}
         </div>
         <div className="flex justify-center gap-6 mt-[43px]">
-          <Button
-            variant={ButtonVariant.CarouselPrimary}
+          <CarouselButton
+            variant={CarouselButtonVariant.Primary}
             onClick={handleButtonPrev}
             className={isPrevDisabled ? DISABLED_BUTTON_CAROUSEL : HOVER_BUTTON_CAROUSEL}
             isDisabled={isPrevDisabled}
-          >
-            <PrevPrimaryIcon />
-          </Button>
-          <Button
-            variant={ButtonVariant.CarouselPrimary}
+            icon={<PrevPrimaryIcon />}
+          />
+          <CarouselButton
+            variant={CarouselButtonVariant.Primary}
             onClick={handleButtonNext}
-            className={isNextDisabled ? DISABLED_BUTTON_CAROUSEL : HOVER_BUTTON_CAROUSEL}
+            className={`btn-carousel-primary ${isNextDisabled ? DISABLED_BUTTON_CAROUSEL : HOVER_BUTTON_CAROUSEL}`}
             isDisabled={isNextDisabled}
-          >
-            <NextPrimaryIcon />
-          </Button>
+            icon={<NextPrimaryIcon />}
+          />
         </div>
       </div>
     </section>
