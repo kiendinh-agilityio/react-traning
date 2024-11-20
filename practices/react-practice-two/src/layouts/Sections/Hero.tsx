@@ -1,8 +1,8 @@
-// import components
+// import common components
 import { Heading, Button, Paragraph } from '@/components/common';
 
 // import types
-import { TextSize, ButtonVariant, ParagraphVariant } from '@/types';
+import { TextSize, ButtonVariant, ParagraphVariant, CarouselButtonVariant } from '@/types';
 
 // import common icons
 import {
@@ -14,6 +14,9 @@ import {
 
 // import image
 import { HeroImage, NumberImage } from '@/assets/images';
+
+// import components
+import { CarouselButton } from '@/components';
 
 const HeroSection = () => {
   const handleButtonLink = () => {
@@ -77,16 +80,17 @@ const HeroSection = () => {
           <div className="flex justify-end items-center pr-[50px]">
             <img src={NumberImage} alt="Number 01" />
             <div className="flex w-[104px] h-[46px] border border-primary rounded-[23px] ml-[37px]">
-              <Button
-                variant={ButtonVariant.CarouselSecondary}
+              <CarouselButton
+                variant={CarouselButtonVariant.Secondary}
                 onClick={handleButtonPrev}
                 className="btn-prev-secondary"
-              >
-                <PrevSecondaryIcon />
-              </Button>
-              <Button variant={ButtonVariant.CarouselSecondary} onClick={handleButtonNext}>
-                <NextSecondaryIcon />
-              </Button>
+                icon={<PrevSecondaryIcon />}
+              />
+              <CarouselButton
+                variant={CarouselButtonVariant.Secondary}
+                onClick={handleButtonNext}
+                icon={<NextSecondaryIcon />}
+              />
             </div>
           </div>
         </div>
