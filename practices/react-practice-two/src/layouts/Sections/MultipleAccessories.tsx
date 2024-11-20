@@ -22,7 +22,7 @@ const MultipleAccessoriesSection = () => {
   };
 
   return (
-    <section className="pt-10 pb-16 relative">
+    <section className="pb-16 relative">
       <div className="container">
         <Intro
           title="Multiple Accessories"

@@ -33,7 +33,7 @@ const GallerySection = () => {
         <div className="flex justify-between mt-28">
           <div className="flex flex-col pt-48">
             <GalleryItem label="Scooter" url={Scooter} />
-            <div className="flex flex-col gap-[27px] mt-[55px]">
+            <div className="flex flex-col gap-[23px] mt-[53px]">
               <Button variant={ButtonVariant.Tertiary} onClick={handleButtonBatteryDetails}>
                 Battery Images
               </Button>
