@@ -26,6 +26,7 @@ const NewsletterSection = () => {
           type="email"
           placeholder="Enter your email."
           onChange={setEmail}
+          className="w-[400px]"
         />
         <Button onClick={handleButtonSubmit} className="w-[196px] text-base rounded-base">
           Get start
