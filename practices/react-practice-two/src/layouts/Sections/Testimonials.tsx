@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 // Import common components
-import { Heading, Button } from '@/components/common';
+import { Heading } from '@/components/common';
 
 // Import constants
 import { TESTIMONIALS_LIST, HOVER_BUTTON_CAROUSEL, DISABLED_BUTTON_CAROUSEL } from '@/constants';
@@ -9,11 +9,11 @@ import { TESTIMONIALS_LIST, HOVER_BUTTON_CAROUSEL, DISABLED_BUTTON_CAROUSEL } fr
 // Import common icons
 import { PrevPrimaryIcon, NextPrimaryIcon } from '@/components/common/Icons';
 
-// Import types
-import { ButtonVariant } from '@/types';
-
 // Import components
-import { TestimonialsCard } from '@/components';
+import { TestimonialsCard, CarouselButton } from '@/components';
+
+// import types
+import { CarouselButtonVariant } from '@/types';
 
 const TestimonialsSection = () => {
   // Set the initial activeId to the id of the first testimonial
@@ -53,24 +53,24 @@ const TestimonialsSection = () => {
   return (
     <section className="bg-secondary pb-[82px] pt-[78px]">
       <div className="container text-center">
-        <Heading text="Testimonials" />
+        <Heading>Testimonials</Heading>
         <div className="flex justify-center gap-9 mt-[41px]">
           {renderTestimonialsCard(activeId)}
         </div>
         <div className="flex justify-center gap-6 mt-[43px]">
-          <Button
-            variant={ButtonVariant.CarouselPrimary}
+          <CarouselButton
+            variant={CarouselButtonVariant.Primary}
             onClick={handleButtonPrev}
-            icon={<PrevPrimaryIcon />}
             className={isPrevDisabled ? DISABLED_BUTTON_CAROUSEL : HOVER_BUTTON_CAROUSEL}
             isDisabled={isPrevDisabled}
+            icon={<PrevPrimaryIcon />}
           />
-          <Button
-            variant={ButtonVariant.CarouselPrimary}
+          <CarouselButton
+            variant={CarouselButtonVariant.Primary}
             onClick={handleButtonNext}
-            icon={<NextPrimaryIcon />}
-            className={isNextDisabled ? DISABLED_BUTTON_CAROUSEL : HOVER_BUTTON_CAROUSEL}
+            className={`btn-carousel-primary ${isNextDisabled ? DISABLED_BUTTON_CAROUSEL : HOVER_BUTTON_CAROUSEL}`}
             isDisabled={isNextDisabled}
+            icon={<NextPrimaryIcon />}
           />
         </div>
       </div>

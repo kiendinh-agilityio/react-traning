@@ -1,20 +1,15 @@
 import { TextSize } from '@/types';
 
 interface HeadingProps {
-  text: string;
+  children: React.ReactNode;
   level?: 1 | 2 | 3;
   size?: TextSize;
-  spanContent?: string;
 }
 
-const Heading = ({ level = 2, size = TextSize.Large, text, spanContent }: HeadingProps) => {
+const Heading = ({ children, level = 2, size = TextSize.Large }: HeadingProps) => {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
-  return (
-    <Tag className={`${size} font-bold text-primary`}>
-      {spanContent && <span className="font-light">{spanContent}</span>} {text}
-    </Tag>
-  );
+  return <Tag className={`${size} font-bold text-primary`}>{children}</Tag>;
 };
 
 export default Heading;

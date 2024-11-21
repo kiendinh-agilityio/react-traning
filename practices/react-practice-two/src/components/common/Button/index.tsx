@@ -2,20 +2,18 @@
 import { ButtonVariant } from '@/types';
 
 interface ButtonProps {
+  children: React.ReactNode;
   variant?: ButtonVariant;
   isDisabled?: boolean;
-  label?: string;
-  icon?: React.ReactNode;
   className?: string;
   onClick: () => void;
 }
 
 const Button = ({
+  children,
   variant = ButtonVariant.Primary,
   isDisabled = false,
   onClick,
-  label,
-  icon,
   className = '',
 }: ButtonProps) => {
   const baseClass = ` 
@@ -28,8 +26,7 @@ const Button = ({
       onClick={onClick}
       disabled={isDisabled}
     >
-      {icon && icon}
-      {label && label}
+      {children}
     </button>
   );
 };

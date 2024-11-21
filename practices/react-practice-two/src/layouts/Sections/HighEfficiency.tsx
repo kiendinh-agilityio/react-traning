@@ -5,7 +5,7 @@ import { Intro } from '@/components';
 import { HighEfficiency } from '@/assets/images';
 
 const HighEfficiencySection = () => (
-  <section className="pt-[56px] pb-16 flex flex-col justify-center">
+  <section className="pt-[56px] pb-[54px] flex flex-col justify-center">
     <div className="container">
       <Intro
         title="High Efficiency Motor"

@@ -21,7 +21,7 @@ const ProductColorsSection = () => {
     ));
 
   return (
-    <section className="pt-16 pb-64">
+    <section className="pt-[60px] pb-72">
       <div className="container">
         <Intro title="Colors" description="Checkout our products colors." />
         <div className="relative">

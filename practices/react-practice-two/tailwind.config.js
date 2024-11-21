@@ -60,6 +60,8 @@ module.exports = {
       },
       width: {
         navbar: 'calc(100% - 1100px)',
+        md: '48px',
+        lg: '58px',
       },
     },
   },
