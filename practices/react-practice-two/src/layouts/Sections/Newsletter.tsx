@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 // import common components
 import { Button, Input } from '@/components/common';
 
@@ -7,8 +5,6 @@ import { Button, Input } from '@/components/common';
 import { Intro } from '@/components';
 
 const NewsletterSection = () => {
-  const [email, setEmail] = useState('');
-
   const handleButtonSubmit = () => {
     // TODO: Add button click handling logic here when buttons are enabled
   };
@@ -20,14 +16,7 @@ const NewsletterSection = () => {
         description="Subscribe to our newsletter to get amazing offers in future."
       />
       <div className="flex justify-center gap-5 mt-[36px]">
-        <Input
-          value={email}
-          name="email"
-          type="email"
-          placeholder="Enter your email."
-          onChange={setEmail}
-          className="w-[400px]"
-        />
+        <Input name="email" type="email" placeholder="Enter your email." className="w-[400px]" />
         <Button onClick={handleButtonSubmit} className="w-[196px] text-base rounded-base">
           Get start
         </Button>
