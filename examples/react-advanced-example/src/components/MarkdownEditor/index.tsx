@@ -1,5 +1,5 @@
 import { useState, Suspense, lazy } from 'react';
-import Loading from './Loading';
+import { Loading } from '@/components';
 
 // Lazy load MarkdownPreview with a delay
 const MarkdownPreview = lazy(() => delayForDemo(import('./MarkdownPreview')));

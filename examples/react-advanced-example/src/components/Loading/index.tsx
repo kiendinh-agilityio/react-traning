@@ -1,6 +1,6 @@
 const Loading = () => (
   <p>
-    <i>Loading...</i>
+    <h2>Loading...</h2>
   </p>
 );
 
