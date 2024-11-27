@@ -5,3 +5,7 @@ export {
   default as LanguageProvider,
   LanguageSwitcher,
 } from './LanguageProvider';
+export { default as BuggyCounter } from './BuggyCounter';
+export { default as Fallback } from './Fallback';
+export { default as CarItem } from './CarItem';
+export { default as Cart } from './Cart';
