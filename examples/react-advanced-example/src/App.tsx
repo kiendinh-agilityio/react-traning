@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, Profiler } from 'react';
 
 import { ErrorBoundary } from 'react-error-boundary';
 
@@ -14,6 +14,7 @@ import {
   BuggyCounter,
   CarItem,
   Cart,
+  StudentList,
 } from '@/components';
 
 interface Car {
@@ -22,6 +23,12 @@ interface Car {
   price: number;
   inCart: boolean;
 }
+
+const onRenderCallback: React.ProfilerOnRenderCallback = (
+  id,
+  phase,
+  actualDuration
+) => console.log(`Profiler ${id} - ${phase}: Rendered in ${actualDuration}ms`);
 
 const App = () => {
   const [key, setKey] = useState(0);
@@ -72,6 +79,11 @@ const App = () => {
         </div>
         <Cart cartItems={cartItems} />
       </div>
+
+      <h1>Student List</h1>
+      <Profiler id='StudentListProfiler' onRender={onRenderCallback}>
+        <StudentList />
+      </Profiler>
     </>
   );
 };

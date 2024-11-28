@@ -19,8 +19,17 @@ const CarItem = memo(({ car, onToggleCart }: CarItemProps) => {
     <div style={{ border: '1px solid #ccc', padding: '10px', margin: '10px' }}>
       <h3>{car.name}</h3>
       <p>Price: ${car.price}</p>
-      <button onClick={handleButtonCart}>
-        {car.inCart ? 'Remove from Cart' : 'Add to Cart'}
+      <button
+        onClick={handleButtonCart}
+        style={{
+          backgroundColor: car.inCart ? '#e41616' : '#281cdf',
+          color: '#fff',
+          border: 'none',
+          padding: '10px 15px',
+          cursor: 'pointer',
+        }}
+      >
+        {car.inCart ? 'Remove Cart' : 'Add to Cart'}
       </button>
     </div>
   );
