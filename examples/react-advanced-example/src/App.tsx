@@ -1,4 +1,4 @@
-import { useState, useCallback, Profiler } from 'react';
+import { useState, useCallback, Profiler, useRef } from 'react';
 
 import { ErrorBoundary } from 'react-error-boundary';
 
@@ -15,6 +15,8 @@ import {
   CarItem,
   Cart,
   StudentList,
+  Input,
+  Select,
 } from '@/components';
 
 interface Car {
@@ -31,6 +33,15 @@ const onRenderCallback: React.ProfilerOnRenderCallback = (
 ) => console.log(`Profiler ${id} - ${phase}: Rendered in ${actualDuration}ms`);
 
 const App = () => {
+  // State manages input value
+  const [value, setValue] = useState<string>('');
+
+  // State select value
+  const [selectedValue, setSelectedValue] = useState('apple');
+
+  // Ref to access input value
+  const inputRef = useRef<HTMLInputElement>(null);
+
   const [key, setKey] = useState(0);
 
   const [cars, setCars] = useState<Car[]>([
@@ -52,6 +63,24 @@ const App = () => {
   const cartItems = cars.filter((car) => car.inCart);
 
   const handleResetKey = () => setKey((prev) => prev + 1);
+
+  const handleSubmit = () => {
+    if (inputRef.current) {
+      alert(`Uncontrolled Input Value: ${inputRef.current.value}`);
+    }
+  };
+
+  // Ref to access select value
+  const selectRef = useRef<HTMLSelectElement>(null);
+
+  const handleSelectSubmit = () => {
+    if (selectRef.current) {
+      alert(`You selected: ${selectRef.current.value}`);
+    }
+  };
+
+  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) =>
+    setSelectedValue(event.target.value);
 
   return (
     <>
@@ -84,6 +113,62 @@ const App = () => {
       <Profiler id='StudentListProfiler' onRender={onRenderCallback}>
         <StudentList />
       </Profiler>
+
+      <div>
+        <h3>Controlled Input</h3>
+        <Input
+          name='controlled-input'
+          type='text'
+          value={value}
+          placeholder='Enter value'
+          onChange={setValue}
+        />
+        <p>Current Value: {value}</p>
+      </div>
+
+      <div>
+        <h3>Uncontrolled Input</h3>
+        <Input
+          name='uncontrolled-input'
+          type='text'
+          defaultValue='Abcd'
+          placeholder='Enter value'
+          ref={inputRef}
+        />
+        <button className='btn-primary' onClick={handleSubmit}>
+          Submit
+        </button>
+      </div>
+
+      <div>
+        <h3>Controlled Select</h3>
+        <Select
+          options={[
+            { value: 'apple', label: 'Apple' },
+            { value: 'banana', label: 'Banana' },
+            { value: 'cherry', label: 'Cherry' },
+          ]}
+          value={selectedValue}
+          onChange={handleSelectChange}
+        />
+        <p>You selected: {selectedValue}</p>
+      </div>
+
+      <div>
+        <h3>Uncontrolled Select</h3>
+        <Select
+          options={[
+            { value: 'apple', label: 'Apple' },
+            { value: 'banana', label: 'Banana' },
+            { value: 'cherry', label: 'Cherry' },
+          ]}
+          defaultValue='banana'
+          ref={selectRef}
+        />
+        <button className='btn-primary' onClick={handleSelectSubmit}>
+          Submit
+        </button>
+      </div>
     </>
   );
 };

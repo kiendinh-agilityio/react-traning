@@ -10,3 +10,5 @@ export { default as Fallback } from './Fallback';
 export { default as CarItem } from './CarItem';
 export { default as Cart } from './Cart';
 export { default as StudentList } from './StudentList';
+export { default as Input } from './Input';
+export { default as Select } from './Select';

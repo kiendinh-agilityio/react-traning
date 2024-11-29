@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.btn-primary {
+  background-color: aqua;
+  margin-left: 10px;
+}
