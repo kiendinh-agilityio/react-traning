@@ -17,6 +17,8 @@ import {
   StudentList,
   Input,
   Select,
+  TimerDisplay,
+  ProductList,
 } from '@/components';
 
 interface Car {
@@ -85,6 +87,8 @@ const App = () => {
   return (
     <>
       <h1>React Advanced Examples</h1>
+      <TimerDisplay />
+
       <MarkdownEditor />
 
       <ThemeProvider>
@@ -168,6 +172,8 @@ const App = () => {
         <button className='btn-primary' onClick={handleSelectSubmit}>
           Submit
         </button>
+
+        <ProductList />
       </div>
     </>
   );
