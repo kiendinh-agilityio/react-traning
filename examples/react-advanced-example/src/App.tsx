@@ -1,3 +1,13 @@
+import {
+  Theme,
+  Card,
+  Box,
+  Flex,
+  Avatar,
+  Text,
+  Heading,
+} from '@radix-ui/themes';
+
 import { useState, useCallback, Profiler, useRef } from 'react';
 
 import { ErrorBoundary } from 'react-error-boundary';
@@ -19,6 +29,8 @@ import {
   Select,
   TimerDisplay,
   ProductList,
+  Button,
+  TableStudent,
 } from '@/components';
 
 interface Car {
@@ -85,8 +97,32 @@ const App = () => {
     setSelectedValue(event.target.value);
 
   return (
-    <>
-      <h1>React Advanced Examples</h1>
+    <Theme>
+      <Heading as='h1'>React Advanced Examples</Heading>
+
+      <Box maxWidth='240px'>
+        <Card>
+          <Flex gap='3' align='center'>
+            <Avatar
+              size='3'
+              src='https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?&w=64&h=64&dpr=2&q=70&crop=focalpoint&fp-x=0.67&fp-y=0.5&fp-z=1.4&fit=crop'
+              radius='full'
+              fallback='T'
+            />
+            <Box>
+              <Text as='div' size='2' weight='bold'>
+                Teodros Girmay
+              </Text>
+              <Text as='div' size='2' color='gray'>
+                Engineering
+              </Text>
+            </Box>
+          </Flex>
+        </Card>
+      </Box>
+
+      <TableStudent />
+
       <TimerDisplay />
 
       <MarkdownEditor />
@@ -139,9 +175,7 @@ const App = () => {
           placeholder='Enter value'
           ref={inputRef}
         />
-        <button className='btn-primary' onClick={handleSubmit}>
-          Submit
-        </button>
+        <Button onClick={handleSubmit} label='Submit' />
       </div>
 
       <div>
@@ -175,7 +209,7 @@ const App = () => {
 
         <ProductList />
       </div>
-    </>
+    </Theme>
   );
 };
 

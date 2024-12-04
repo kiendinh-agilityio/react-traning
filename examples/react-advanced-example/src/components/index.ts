@@ -15,3 +15,5 @@ export { default as Select } from './Select';
 export { default as TimerDisplay } from './TimerDisplay';
 export { default as ToastContainer } from './Toast';
 export { default as ProductList } from './ProductList';
+export { default as Button } from './Button';
+export { default as TableStudent } from './TableStudent';
