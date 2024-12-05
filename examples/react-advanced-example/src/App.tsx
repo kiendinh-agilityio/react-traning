@@ -1,3 +1,5 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
 import {
   Theme,
   Card,
@@ -32,6 +34,8 @@ import {
   Button,
   TableStudent,
 } from '@/components';
+
+const queryClient = new QueryClient();
 
 interface Car {
   id: number;
@@ -121,7 +125,9 @@ const App = () => {
         </Card>
       </Box>
 
-      <TableStudent />
+      <QueryClientProvider client={queryClient}>
+        <TableStudent />
+      </QueryClientProvider>
 
       <TimerDisplay />
 
