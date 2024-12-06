@@ -17,3 +17,4 @@ export { default as ToastContainer } from './Toast';
 export { default as ProductList } from './ProductList';
 export { default as Button } from './Button';
 export { default as TableStudent } from './TableStudent';
+export { default as Counter } from './Counter';

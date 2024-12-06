@@ -33,6 +33,7 @@ import {
   ProductList,
   Button,
   TableStudent,
+  Counter,
 } from '@/components';
 
 const queryClient = new QueryClient();
@@ -103,6 +104,8 @@ const App = () => {
   return (
     <Theme>
       <Heading as='h1'>React Advanced Examples</Heading>
+
+      <Counter />
 
       <Box maxWidth='240px'>
         <Card>
