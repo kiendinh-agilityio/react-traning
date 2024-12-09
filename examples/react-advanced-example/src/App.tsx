@@ -34,6 +34,8 @@ import {
   Button,
   TableStudent,
   Counter,
+  Subscription,
+  Tab,
 } from '@/components';
 
 const queryClient = new QueryClient();
@@ -104,6 +106,10 @@ const App = () => {
   return (
     <Theme>
       <Heading as='h1'>React Advanced Examples</Heading>
+
+      <Tab />
+
+      <Subscription />
 
       <Counter />
 
