@@ -1,0 +1,88 @@
+/* Form container */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Select styles */
+.select-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.select-label {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.select-trigger {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.select-content {
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.select-item {
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.select-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Slider styles */
+.slider-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.slider-label {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.slider {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.slider-track {
+  background-color: #ddd;
+  height: 8px;
+  border-radius: 5px;
+}
+
+.slider-range {
+  background-color: #007bff;
+  height: 100%;
+  border-radius: 5px;
+}
+
+/* Submit button styles */
+.submit-button {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+}
