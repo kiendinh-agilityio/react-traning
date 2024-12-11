@@ -1,5 +1,4 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-
 import {
   Theme,
   Card,
@@ -37,6 +36,12 @@ import {
   Subscription,
   Tab,
 } from '@/components';
+
+import {
+  FormWithCheckbox,
+  FormWithSlider,
+  FormWithInput,
+} from '@/components/Form';
 
 const queryClient = new QueryClient();
 
@@ -106,6 +111,12 @@ const App = () => {
   return (
     <Theme>
       <Heading as='h1'>React Advanced Examples</Heading>
+
+      <FormWithInput />
+
+      <FormWithSlider />
+
+      <FormWithCheckbox />
 
       <Tab />
 
