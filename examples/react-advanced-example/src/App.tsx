@@ -35,6 +35,8 @@ import {
   Counter,
   Subscription,
   Tab,
+  WizardForm,
+  ProfileForm,
 } from '@/components';
 
 import {
@@ -111,6 +113,10 @@ const App = () => {
   return (
     <Theme>
       <Heading as='h1'>React Advanced Examples</Heading>
+
+      <ProfileForm />
+
+      <WizardForm />
 
       <FormWithInput />
 

@@ -20,3 +20,5 @@ export { default as TableStudent } from './TableStudent';
 export { default as Counter } from './Counter';
 export { default as Subscription } from './Subscription';
 export { default as Tab } from './Tab';
+export { default as WizardForm } from './WizardForm';
+export { default as ProfileForm } from './ControlledAndUncontrolled';
