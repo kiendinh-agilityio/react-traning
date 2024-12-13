@@ -1,4 +1,6 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { AuthPage, ProductPage } from '@/pages';
+
 import {
   Theme,
   Card,
@@ -31,7 +33,6 @@ import {
   TimerDisplay,
   ProductList,
   Button,
-  TableStudent,
   Counter,
   Subscription,
   Tab,
@@ -44,8 +45,6 @@ import {
   FormWithSlider,
   FormWithInput,
 } from '@/components/Form';
-
-const queryClient = new QueryClient();
 
 interface Car {
   id: number;
@@ -110,8 +109,54 @@ const App = () => {
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) =>
     setSelectedValue(event.target.value);
 
+  const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>) =>
+    ((e.target as HTMLAnchorElement).style.textDecoration = 'underline');
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLAnchorElement>) =>
+    ((e.target as HTMLAnchorElement).style.textDecoration = 'none');
+
   return (
     <Theme>
+      <Router>
+        <div>
+          <nav
+            style={{
+              display: 'flex',
+              gap: '16px',
+              padding: '16px',
+              backgroundColor: '#f5f5f5',
+            }}
+          >
+            <Link
+              to='/auth'
+              style={{
+                color: '#007BFF',
+                textDecoration: 'none',
+              }}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              Auth Page
+            </Link>
+            <Link
+              to='/product'
+              style={{
+                color: '#007BFF',
+                textDecoration: 'none',
+              }}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              Product Page
+            </Link>
+          </nav>
+
+          <Routes>
+            <Route path='/auth' element={<AuthPage />} />
+            <Route path='/product' element={<ProductPage />} />
+          </Routes>
+        </div>
+      </Router>
       <Heading as='h1'>React Advanced Examples</Heading>
 
       <ProfileForm />
@@ -150,10 +195,6 @@ const App = () => {
           </Flex>
         </Card>
       </Box>
-
-      <QueryClientProvider client={queryClient}>
-        <TableStudent />
-      </QueryClientProvider>
 
       <TimerDisplay />
 
