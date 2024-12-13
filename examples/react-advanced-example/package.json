@@ -25,6 +25,7 @@
     "react-error-boundary": "^4.1.2",
     "react-hook-form": "^7.54.0",
     "react-query": "^3.39.3",
+    "react-router-dom": "^7.0.2",
     "remarkable": "^2.0.1",
     "zustand": "^5.0.2"
   },
