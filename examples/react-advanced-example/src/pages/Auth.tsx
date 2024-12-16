@@ -1,22 +1,23 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { authSchema } from '@/utils';
 
-type AuthFormInputs = {
-  email: string;
-  password: string;
-};
+type AuthFormInputs = z.infer<typeof authSchema>;
 
-const AuthPage: React.FC = () => {
+const AuthPage = () => {
   const navigate = useNavigate();
   const {
-    register,
+    control,
     handleSubmit,
     formState: { errors },
-  } = useForm<AuthFormInputs>();
+  } = useForm<AuthFormInputs>({
+    resolver: zodResolver(authSchema),
+  });
 
   const onSubmit = (data: AuthFormInputs) => {
-    console.log('Form Data:', data);
+    alert(`Login successful!\nEmail: ${data.email}`);
     navigate('/product');
   };
 
@@ -54,18 +55,24 @@ const AuthPage: React.FC = () => {
           >
             Email
           </label>
-          <input
-            type='email'
-            {...register('email', { required: 'Email is required' })}
-            style={{
-              border: '1px solid #ccc',
-              padding: '8px',
-              borderRadius: '4px',
-              width: '100%',
-              outline: 'none',
-              fontSize: '14px',
-              boxSizing: 'border-box',
-            }}
+          <Controller
+            name='email'
+            control={control}
+            render={({ field }) => (
+              <input
+                type='email'
+                {...field}
+                style={{
+                  border: '1px solid #ccc',
+                  padding: '8px',
+                  borderRadius: '4px',
+                  width: '100%',
+                  outline: 'none',
+                  fontSize: '14px',
+                  boxSizing: 'border-box',
+                }}
+              />
+            )}
           />
           {errors.email && (
             <span style={{ color: 'red', fontSize: '12px' }}>
@@ -84,18 +91,24 @@ const AuthPage: React.FC = () => {
           >
             Password
           </label>
-          <input
-            type='password'
-            {...register('password', { required: 'Password is required' })}
-            style={{
-              border: '1px solid #ccc',
-              padding: '8px',
-              borderRadius: '4px',
-              width: '100%',
-              outline: 'none',
-              fontSize: '14px',
-              boxSizing: 'border-box',
-            }}
+          <Controller
+            name='password'
+            control={control}
+            render={({ field }) => (
+              <input
+                type='password'
+                {...field}
+                style={{
+                  border: '1px solid #ccc',
+                  padding: '8px',
+                  borderRadius: '4px',
+                  width: '100%',
+                  outline: 'none',
+                  fontSize: '14px',
+                  boxSizing: 'border-box',
+                }}
+              />
+            )}
           />
           {errors.password && (
             <span style={{ color: 'red', fontSize: '12px' }}>
