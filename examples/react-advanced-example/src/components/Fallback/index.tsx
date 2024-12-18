@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface FallbackProps {
   error: Error;
   resetErrorBoundary: () => void;
