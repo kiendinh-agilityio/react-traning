@@ -38,6 +38,7 @@ import {
   Tab,
   WizardForm,
   ProfileForm,
+  Sidebar,
 } from '@/components';
 
 import {
@@ -52,12 +53,6 @@ interface Car {
   price: number;
   inCart: boolean;
 }
-
-const onRenderCallback: React.ProfilerOnRenderCallback = (
-  id,
-  phase,
-  actualDuration
-) => console.log(`Profiler ${id} - ${phase}: Rendered in ${actualDuration}ms`);
 
 const App = () => {
   // State manages input value
@@ -115,6 +110,13 @@ const App = () => {
   const handleMouseLeave = (e: React.MouseEvent<HTMLAnchorElement>) =>
     ((e.target as HTMLAnchorElement).style.textDecoration = 'none');
 
+  const handleRenderCallback: React.ProfilerOnRenderCallback = (
+    id,
+    phase,
+    actualDuration
+  ) =>
+    console.log(`Profiler ${id} - ${phase}: Rendered in ${actualDuration}ms`);
+
   return (
     <Theme>
       <Router>
@@ -158,6 +160,14 @@ const App = () => {
         </div>
       </Router>
       <Heading as='h1'>React Advanced Examples</Heading>
+
+      <ErrorBoundary
+        fallback={
+          <h2>Sidebar encountered an error. Please try again later.</h2>
+        }
+      >
+        <Sidebar />
+      </ErrorBoundary>
 
       <ProfileForm />
 
@@ -223,7 +233,7 @@ const App = () => {
       </div>
 
       <h1>Student List</h1>
-      <Profiler id='StudentListProfiler' onRender={onRenderCallback}>
+      <Profiler id='StudentListProfiler' onRender={handleRenderCallback}>
         <StudentList />
       </Profiler>
 

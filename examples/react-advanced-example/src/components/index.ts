@@ -22,3 +22,4 @@ export { default as Subscription } from './Subscription';
 export { default as Tab } from './Tab';
 export { default as WizardForm } from './WizardForm';
 export { default as ProfileForm } from './ControlledAndUncontrolled';
+export { default as Sidebar } from './Sidebar';
