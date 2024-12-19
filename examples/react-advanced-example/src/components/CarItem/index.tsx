@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 
 interface Car {
   id: number;
@@ -13,7 +13,9 @@ interface CarItemProps {
 }
 
 const CarItem = memo(({ car, onToggleCart }: CarItemProps) => {
-  const handleButtonCart = () => onToggleCart(car.id);
+  const handleButtonCart = useCallback(() => {
+    onToggleCart(car.id);
+  }, [car.id, onToggleCart]);
 
   return (
     <div style={{ border: '1px solid #ccc', padding: '10px', margin: '10px' }}>
