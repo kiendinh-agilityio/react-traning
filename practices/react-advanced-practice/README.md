@@ -10,7 +10,7 @@
 
 ## TIMELINE
 
-- 9 days (Dec 25, 2024 - Jan 7, 2025)
+- 9 days (Jan 7, 2024 - Jan 17, 2025)
 
 ## TECH STACKS
 
