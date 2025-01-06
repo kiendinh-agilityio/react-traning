@@ -1,10 +1,10 @@
-import { Heading } from '@radix-ui/themes';
+// import common components
+import { Logo, Heading } from '@/components/common';
 
 const Home = () => (
   <>
-    <Heading as="h1" className="font-bold text-dark">
-      Authors Table
-    </Heading>
+    <Logo href="/" />
+    <Heading text="Authors Table" />
   </>
 );
 
