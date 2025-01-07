@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select Component - Render renders correctly with label and options 1`] = `
+<DocumentFragment>
+  <div
+    class="rt-Flex flex-col gap-1.5 text-dark font-regular"
+  >
+    <label>
+      Select an option
+    </label>
+    <div
+      class="rt-Flex relative"
+    >
+      <select
+        class="appearance-none px-5 py-[15px] border w-full rounded-[15px] focus:outline-none mb-1.5 border-input"
+        id="select-option"
+        name="select-option"
+      >
+        <option
+          value="Manager"
+        >
+          Manager
+        </option>
+        <option
+          value="Programmer"
+        >
+          Programmer
+        </option>
+        <option
+          value="Executive"
+        >
+          Executive
+        </option>
+        <option
+          value="Designer"
+        >
+          Designer
+        </option>
+      </select>
+      <span
+        class="absolute bottom-1/2 right-[20px]"
+      >
+        <span>
+          ▼
+        </span>
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Select Component - Render renders without label 1`] = `
+<DocumentFragment>
+  <div
+    class="rt-Flex flex-col gap-1.5 text-dark font-regular"
+  >
+    <div
+      class="rt-Flex relative"
+    >
+      <select
+        class="appearance-none px-5 py-[15px] border w-full rounded-[15px] focus:outline-none mb-1.5 border-input"
+        id="select-option"
+        name="select-option"
+      >
+        <option
+          value="Manager"
+        >
+          Manager
+        </option>
+        <option
+          value="Programmer"
+        >
+          Programmer
+        </option>
+        <option
+          value="Executive"
+        >
+          Executive
+        </option>
+        <option
+          value="Designer"
+        >
+          Designer
+        </option>
+      </select>
+      <span
+        class="absolute bottom-1/2 right-[20px]"
+      >
+        <span>
+          ▼
+        </span>
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
