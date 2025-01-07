@@ -16,17 +16,15 @@ const Heading = memo(
     weight = 'bold',
     size = TextSize.Large,
     className = '',
-  }: HeadingBaseProps) => {
-    return (
-      <HeadingBase
-        as={as}
-        weight={weight}
-        className={`text-${size} font-bold text-dark ${className}`}
-      >
-        {text}
-      </HeadingBase>
-    );
-  },
+  }: HeadingBaseProps) => (
+    <HeadingBase
+      as={as}
+      weight={weight}
+      className={`text-${size} font-bold text-dark ${className}`}
+    >
+      {text}
+    </HeadingBase>
+  ),
 );
 
 export default Heading;
