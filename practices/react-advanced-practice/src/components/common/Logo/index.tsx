@@ -1,4 +1,4 @@
-import { PurityPrimaryIcon, PuritySecondaryIcon } from '@/components/common/Icons';
+import { PurityIcon } from '@/components/common/Icons';
 
 interface LogoProps {
   href: string;
@@ -6,11 +6,9 @@ interface LogoProps {
 }
 
 const Logo = ({ href, type = 'primary' }: LogoProps) => {
-  const Icons = type === 'primary' ? PurityPrimaryIcon : PuritySecondaryIcon;
-
   return (
     <a href={href}>
-      <Icons />
+      <PurityIcon variant={type} />
     </a>
   );
 };
