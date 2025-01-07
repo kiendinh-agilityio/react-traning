@@ -11,14 +11,14 @@ export default {
 
 export const LogoPurityPrimary: StoryObj = {
   args: {
-    type: 'primary',
+    color: 'primary',
     href: '/',
   },
 };
 
 export const LogoPuritySecondary: StoryObj = {
   args: {
-    type: 'secondary',
+    color: 'secondary',
     href: '/',
   },
   decorators: [

@@ -5,7 +5,7 @@ import Logo from '.';
 
 describe('Logo Component', () => {
   it('renders with the correct href', () => {
-    const { asFragment } = render(<Logo href="/test" type="primary" />);
+    const { asFragment } = render(<Logo href="/test" color="primary" />);
 
     expect(asFragment()).toMatchSnapshot();
   });
@@ -17,7 +17,7 @@ describe('Logo Component', () => {
   });
 
   it('renders the secondary icon when type is secondary', () => {
-    const { asFragment } = render(<Logo href="/" type="secondary" />);
+    const { asFragment } = render(<Logo href="/" color="secondary" />);
 
     expect(asFragment()).toMatchSnapshot();
   });

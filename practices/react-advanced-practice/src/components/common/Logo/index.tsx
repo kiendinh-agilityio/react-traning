@@ -1,14 +1,19 @@
 import { PurityIcon } from '@/components/common/Icons';
 
+// import constants
+import { COLORS_LOGO } from '@/constants';
+
 interface LogoProps {
   href: string;
-  type?: 'primary' | 'secondary';
+  color?: 'primary' | 'secondary';
 }
 
-const Logo = ({ href, type = 'primary' }: LogoProps) => {
+const Logo = ({ href, color = 'primary' }: LogoProps) => {
+  const fillColor = color === 'primary' ? COLORS_LOGO.PRIMARY : COLORS_LOGO.SECONDARY;
+
   return (
     <a href={href}>
-      <PurityIcon variant={type} />
+      <PurityIcon fillColor={fillColor} />
     </a>
   );
 };
