@@ -1,5 +1,3 @@
-import { memo } from 'react';
-
 // Import radix ui
 import { Flex } from '@radix-ui/themes';
 
@@ -10,7 +8,7 @@ interface StatusProps {
   value: string;
 }
 
-const Status = memo(({ value }: StatusProps) => (
+const Status = ({ value }: StatusProps) => (
   <Flex
     justify="center"
     align="center"
@@ -20,6 +18,6 @@ const Status = memo(({ value }: StatusProps) => (
   >
     <Text weight="bold" className="font-bold text-white" content={value} />
   </Flex>
-));
+);
 
 export default Status;
