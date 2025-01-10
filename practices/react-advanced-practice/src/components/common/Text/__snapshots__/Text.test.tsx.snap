@@ -3,7 +3,7 @@
 exports[`Text Component should match with snapshot 1`] = `
 <div>
   <p
-    class="rt-Text rt-r-weight-regular text-sm font-regular font-regular"
+    class="rt-Text rt-r-weight-regular text-sm font-regular"
   >
     This is a text
   </p>

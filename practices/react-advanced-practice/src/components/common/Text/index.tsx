@@ -16,7 +16,7 @@ const Text = ({
   weight = 'regular',
   className = '',
 }: TextBaseProps) => (
-  <TextBase as={as} weight={weight} className={`${size} font-regular ${className}`}>
+  <TextBase as={as} weight={weight} className={`${size} ${className}`}>
     {content}
   </TextBase>
 );
