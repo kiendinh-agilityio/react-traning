@@ -10,3 +10,5 @@ export { default as SettingIcon } from './SettingIcon';
 export { default as ProfileIcon } from './ProfileIcon';
 export { default as SigninIcon } from './SigninIcon';
 export { default as SignupIcon } from './SignupIcon';
+export { default as DeleteIcon } from './DeleteIcon';
+export { default as EditIcon } from './EditIcon';
