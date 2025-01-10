@@ -17,14 +17,14 @@ export interface AuthorTableProps {
 }
 
 const AuthorTable = ({ authors, onEditAuthor, onDeleteAuthor }: AuthorTableProps) => {
-  const renderTableHeader = () =>
+  const renderTableHeaderContent = () =>
     TABLE_TITLES.map((title) => (
       <Table.ColumnHeaderCell key={title} className="py-3.5 text-sm">
         {title}
       </Table.ColumnHeaderCell>
     ));
 
-  const renderTableBody = (
+  const renderTableBodyContent = (
     authors: Author[],
     onEditAuthor: (updatedAuthor: Author) => void,
     onDeleteAuthor: (id: string) => void,
@@ -43,13 +43,15 @@ const AuthorTable = ({ authors, onEditAuthor, onDeleteAuthor }: AuthorTableProps
       {/* Header */}
       <Table.Header>
         <Table.Row className="font-bold text-base">
-          {renderTableHeader()}
+          {renderTableHeaderContent()}
           <Table.ColumnHeaderCell className="w-32 py-3.5"></Table.ColumnHeaderCell>
         </Table.Row>
       </Table.Header>
 
       {/* Body */}
-      <Table.Body>{renderTableBody(authors, onEditAuthor, onDeleteAuthor)}</Table.Body>
+      <Table.Body>
+        {renderTableBodyContent(authors, onEditAuthor, onDeleteAuthor)}
+      </Table.Body>
     </Table.Root>
   );
 };
