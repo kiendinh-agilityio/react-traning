@@ -6,3 +6,4 @@ export { default as IconWrapper } from './IconWrapper';
 export { default as Avatar } from './Avatar';
 export { default as Text } from './Text';
 export { default as Status } from './Status';
+export { default as Button } from './Button';
