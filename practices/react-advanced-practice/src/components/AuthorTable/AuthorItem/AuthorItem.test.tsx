@@ -28,7 +28,7 @@ describe('AuthorItem Component', () => {
   const mockOnDelete = jest.fn();
 
   it('renders correctly', () => {
-    const { getByText } = render(
+    const { getByText, container } = render(
       <table>
         <tbody>
           <AuthorItem author={mockAuthor} onEdit={mockOnEdit} onDelete={mockOnDelete} />
@@ -53,10 +53,13 @@ describe('AuthorItem Component', () => {
     // Verify Actions
     expect(getByText('Edit')).toBeInTheDocument();
     expect(getByText('Delete')).toBeInTheDocument();
+
+    // Snapshot test
+    expect(container).toMatchSnapshot();
   });
 
   it('calls onEdit when the Edit button is clicked', () => {
-    const { getByText } = render(
+    const { getByText, container } = render(
       <table>
         <tbody>
           <AuthorItem author={mockAuthor} onEdit={mockOnEdit} onDelete={mockOnDelete} />
@@ -70,10 +73,13 @@ describe('AuthorItem Component', () => {
     // Verify the onEdit function is called
     expect(mockOnEdit).toHaveBeenCalledTimes(1);
     expect(mockOnEdit).toHaveBeenCalledWith(mockAuthor);
+
+    // Snapshot test
+    expect(container).toMatchSnapshot();
   });
 
   it('calls onDelete when the Delete button is clicked', () => {
-    const { getByText } = render(
+    const { getByText, container } = render(
       <table>
         <tbody>
           <AuthorItem author={mockAuthor} onEdit={mockOnEdit} onDelete={mockOnDelete} />
@@ -87,17 +93,8 @@ describe('AuthorItem Component', () => {
     // Verify the onDelete function is called
     expect(mockOnDelete).toHaveBeenCalledTimes(1);
     expect(mockOnDelete).toHaveBeenCalledWith(mockAuthor.id);
-  });
 
-  it('matches snapshot', () => {
-    const { container } = render(
-      <table>
-        <tbody>
-          <AuthorItem author={mockAuthor} onEdit={mockOnEdit} onDelete={mockOnDelete} />
-        </tbody>
-      </table>,
-    );
-
+    // Snapshot test
     expect(container).toMatchSnapshot();
   });
 });

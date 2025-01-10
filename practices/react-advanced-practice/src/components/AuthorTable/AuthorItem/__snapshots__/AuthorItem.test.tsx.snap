@@ -1,6 +1,314 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AuthorItem Component matches snapshot 1`] = `
+exports[`AuthorItem Component calls onDelete when the Delete button is clicked 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="rt-TableRow text-sm"
+      >
+        <th
+          class="rt-TableCell rt-TableRowHeaderCell py-[11px]"
+          scope="row"
+        >
+          <div
+            class="rt-Flex gap-[15px] text-left"
+          >
+            <span
+              class="rt-reset rt-AvatarRoot rt-r-size-3 rt-variant-soft rounded-base w-[40px] h-[40px] "
+              data-accent-color=""
+            >
+              <span
+                class="rt-AvatarFallback"
+              />
+            </span>
+            <div
+              class="rt-Flex rt-r-fd-column"
+            >
+              <p
+                class="rt-Text rt-r-weight-bold text-sm font-bold leading-base"
+              >
+                John Doe
+              </p>
+              <p
+                class="rt-Text rt-r-weight-regular text-sm text-gray"
+              >
+                john.doe@example.com
+              </p>
+            </div>
+          </div>
+        </th>
+        <td
+          class="rt-TableCell py-[13px]"
+        >
+          <p
+            class="rt-Text rt-r-weight-bold text-sm font-bold text-dark"
+          >
+            Admin
+          </p>
+          <p
+            class="rt-Text rt-r-weight-regular text-sm font-regular text-gray"
+          >
+            Manager
+          </p>
+        </td>
+        <td
+          class="rt-TableCell py-[18px]"
+        >
+          <div
+            class="rt-Flex rt-r-ai-center rt-r-jc-center w-[70px] h-[25px] border rounded-lg border-active bg-active"
+          >
+            <p
+              class="rt-Text rt-r-weight-bold text-sm font-bold text-white"
+            >
+              Active
+            </p>
+          </div>
+        </td>
+        <td
+          class="rt-TableCell py-[22px]"
+        >
+          <p
+            class="rt-Text rt-r-weight-bold text-sm font-bold"
+          >
+            01/01/25
+          </p>
+        </td>
+        <td
+          class="rt-TableCell py-[22px] font-bold text-xs leading-base"
+        >
+          <div
+            class="rt-Flex gap-5"
+          >
+            <button
+              class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+   text-gray"
+              data-accent-color=""
+            >
+              <svg
+                fill="none"
+                height="13"
+                width="13"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  clip-path="url(#a)"
+                >
+                  <path
+                    d="M2 9.23v1.52c0 .14.11.25.25.25h1.52c.065 0 .13-.026.175-.076l5.46-5.455L7.53 3.594 2.075 9.05A.245.245 0 0 0 2 9.23Zm8.855-5.21a.498.498 0 0 0 0-.706l-1.17-1.17a.498.498 0 0 0-.705 0l-.915.915L9.94 4.934l.915-.915Z"
+                    fill="#2D3748"
+                  />
+                </g>
+                <defs>
+                  <clippath
+                    id="a"
+                  >
+                    <path
+                      d="M.5.5h12v12H.5z"
+                      fill="#fff"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+               Edit
+            </button>
+            <button
+              class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+   text-danger"
+              data-accent-color=""
+            >
+              <svg
+                fill="none"
+                height="16"
+                width="15"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  clip-path="url(#a)"
+                >
+                  <path
+                    d="M3.75 12.375c0 .688.563 1.25 1.25 1.25h5c.688 0 1.25-.563 1.25-1.25v-6.25c0-.688-.563-1.25-1.25-1.25H5c-.688 0-1.25.563-1.25 1.25v6.25ZM11.25 3H9.687l-.443-.444a.63.63 0 0 0-.438-.181H6.194a.63.63 0 0 0-.438.181L5.312 3H3.75a.627.627 0 0 0-.625.625c0 .344.281.625.625.625h7.5a.627.627 0 0 0 .625-.625A.627.627 0 0 0 11.25 3Z"
+                    fill="#E53E3E"
+                  />
+                </g>
+                <defs>
+                  <clippath
+                    id="a"
+                  >
+                    <path
+                      d="M0 .5h15v15H0z"
+                      fill="#fff"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+               Delete
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`AuthorItem Component calls onEdit when the Edit button is clicked 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="rt-TableRow text-sm"
+      >
+        <th
+          class="rt-TableCell rt-TableRowHeaderCell py-[11px]"
+          scope="row"
+        >
+          <div
+            class="rt-Flex gap-[15px] text-left"
+          >
+            <span
+              class="rt-reset rt-AvatarRoot rt-r-size-3 rt-variant-soft rounded-base w-[40px] h-[40px] "
+              data-accent-color=""
+            >
+              <span
+                class="rt-AvatarFallback"
+              />
+            </span>
+            <div
+              class="rt-Flex rt-r-fd-column"
+            >
+              <p
+                class="rt-Text rt-r-weight-bold text-sm font-bold leading-base"
+              >
+                John Doe
+              </p>
+              <p
+                class="rt-Text rt-r-weight-regular text-sm text-gray"
+              >
+                john.doe@example.com
+              </p>
+            </div>
+          </div>
+        </th>
+        <td
+          class="rt-TableCell py-[13px]"
+        >
+          <p
+            class="rt-Text rt-r-weight-bold text-sm font-bold text-dark"
+          >
+            Admin
+          </p>
+          <p
+            class="rt-Text rt-r-weight-regular text-sm font-regular text-gray"
+          >
+            Manager
+          </p>
+        </td>
+        <td
+          class="rt-TableCell py-[18px]"
+        >
+          <div
+            class="rt-Flex rt-r-ai-center rt-r-jc-center w-[70px] h-[25px] border rounded-lg border-active bg-active"
+          >
+            <p
+              class="rt-Text rt-r-weight-bold text-sm font-bold text-white"
+            >
+              Active
+            </p>
+          </div>
+        </td>
+        <td
+          class="rt-TableCell py-[22px]"
+        >
+          <p
+            class="rt-Text rt-r-weight-bold text-sm font-bold"
+          >
+            01/01/25
+          </p>
+        </td>
+        <td
+          class="rt-TableCell py-[22px] font-bold text-xs leading-base"
+        >
+          <div
+            class="rt-Flex gap-5"
+          >
+            <button
+              class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+   text-gray"
+              data-accent-color=""
+            >
+              <svg
+                fill="none"
+                height="13"
+                width="13"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  clip-path="url(#a)"
+                >
+                  <path
+                    d="M2 9.23v1.52c0 .14.11.25.25.25h1.52c.065 0 .13-.026.175-.076l5.46-5.455L7.53 3.594 2.075 9.05A.245.245 0 0 0 2 9.23Zm8.855-5.21a.498.498 0 0 0 0-.706l-1.17-1.17a.498.498 0 0 0-.705 0l-.915.915L9.94 4.934l.915-.915Z"
+                    fill="#2D3748"
+                  />
+                </g>
+                <defs>
+                  <clippath
+                    id="a"
+                  >
+                    <path
+                      d="M.5.5h12v12H.5z"
+                      fill="#fff"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+               Edit
+            </button>
+            <button
+              class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+   text-danger"
+              data-accent-color=""
+            >
+              <svg
+                fill="none"
+                height="16"
+                width="15"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  clip-path="url(#a)"
+                >
+                  <path
+                    d="M3.75 12.375c0 .688.563 1.25 1.25 1.25h5c.688 0 1.25-.563 1.25-1.25v-6.25c0-.688-.563-1.25-1.25-1.25H5c-.688 0-1.25.563-1.25 1.25v6.25ZM11.25 3H9.687l-.443-.444a.63.63 0 0 0-.438-.181H6.194a.63.63 0 0 0-.438.181L5.312 3H3.75a.627.627 0 0 0-.625.625c0 .344.281.625.625.625h7.5a.627.627 0 0 0 .625-.625A.627.627 0 0 0 11.25 3Z"
+                    fill="#E53E3E"
+                  />
+                </g>
+                <defs>
+                  <clippath
+                    id="a"
+                  >
+                    <path
+                      d="M0 .5h15v15H0z"
+                      fill="#fff"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+               Delete
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`AuthorItem Component renders correctly 1`] = `
 <div>
   <table>
     <tbody>
