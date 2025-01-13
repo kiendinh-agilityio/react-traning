@@ -20,7 +20,7 @@ const Heading = memo(
     <HeadingBase
       as={as}
       weight={weight}
-      className={`text-${size} font-bold text-dark ${className}`}
+      className={`${size} font-bold text-dark ${className}`}
     >
       {text}
     </HeadingBase>

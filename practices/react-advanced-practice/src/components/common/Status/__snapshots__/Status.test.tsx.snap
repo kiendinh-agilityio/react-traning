@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Status Component renders correctly with "Active" value 1`] = `
+<div>
+  <div
+    class="rt-Flex rt-r-ai-center rt-r-jc-center w-[70px] h-[25px] border rounded-lg border-active bg-active"
+  >
+    <p
+      class="rt-Text rt-r-weight-bold text-sm font-regular font-bold text-white"
+    >
+      Active
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Status Component renders correctly with "Inactive" value 1`] = `
+<div>
+  <div
+    class="rt-Flex rt-r-ai-center rt-r-jc-center w-[70px] h-[25px] border rounded-lg border-inactive bg-inactive"
+  >
+    <p
+      class="rt-Text rt-r-weight-bold text-sm font-regular font-bold text-white"
+    >
+      Inactive
+    </p>
+  </div>
+</div>
+`;
