@@ -16,6 +16,7 @@ module.exports = {
         inactive: '#cbd5e0',
         danger: '#e53e3e',
         overlay: 'rgba(0, 0, 0, 0.5)',
+        light: '#fff',
       },
       fontFamily: {
         regular: ['Helvetica-Regular'],
