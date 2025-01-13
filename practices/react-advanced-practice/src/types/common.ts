@@ -14,4 +14,5 @@ export enum ButtonVariant {
   Danger = 'danger',
   Link = 'link',
   Transparent = 'transparent',
+  Download = 'download',
 }
