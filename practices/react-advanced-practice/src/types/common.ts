@@ -1,7 +1,7 @@
 // Create size for text
 export enum TextSize {
-  ExtraSmall = 'xs',
-  Small = 'sm',
-  Large = 'lg',
-  ExtraLarge = 'xl',
+  ExtraSmall = 'text-xs',
+  Small = 'text-sm',
+  Large = 'text-lg',
+  ExtraLarge = 'text-xl',
 }

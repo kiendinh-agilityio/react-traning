@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar component should render with A fallback 1`] = `
+<div>
+  <span
+    class="rt-reset rt-AvatarRoot rt-r-size-3 rt-variant-soft rounded-base w-[40px] h-[40px] "
+    data-accent-color=""
+  />
+</div>
+`;

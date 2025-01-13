@@ -1,1 +1,12 @@
 export { default as PurityIcon } from './PurityLogo';
+export { default as SearchIcon } from './SearchIcon';
+export { default as ShowPasswordIcon } from './ShowPassword';
+export { default as HidePasswordIcon } from './HidePassword';
+export { default as ArrowSelectIcon } from './ArrowSelect';
+export { default as HomeIcon } from './HomeIcon';
+export { default as ChartIcon } from './ChartIcon';
+export { default as BillingIcon } from './BillingIcon';
+export { default as SettingIcon } from './SettingIcon';
+export { default as ProfileIcon } from './ProfileIcon';
+export { default as SigninIcon } from './SigninIcon';
+export { default as SignupIcon } from './SignupIcon';
