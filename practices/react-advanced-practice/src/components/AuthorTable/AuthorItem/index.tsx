@@ -1,5 +1,5 @@
 // Import radix-ui
-import { Flex, Table } from '@radix-ui/themes';
+import { Box, Table } from '@radix-ui/themes';
 
 // Import icons
 import { EditIcon, DeleteIcon } from '@/components/common/Icons';
@@ -63,7 +63,7 @@ const AuthorItem = ({ author, onEdit, onDelete }: AuthorItemProps) => {
 
       {/* Actions */}
       <Table.Cell className="py-[22px] font-bold text-xs leading-base">
-        <Flex className="gap-5">
+        <Box className="flex gap-5">
           {/* Button Edit */}
           <Button
             variant={ButtonVariant.Transparent}
@@ -81,7 +81,7 @@ const AuthorItem = ({ author, onEdit, onDelete }: AuthorItemProps) => {
           >
             <DeleteIcon /> Delete
           </Button>
-        </Flex>
+        </Box>
       </Table.Cell>
     </Table.Row>
   );
