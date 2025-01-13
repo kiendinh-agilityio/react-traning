@@ -95,6 +95,18 @@ module.exports = {
           padding: '0',
           gap: '2px',
         },
+        '.download': {
+          width: '150px',
+          border: '1px solid #313860',
+          background: 'linear-gradient(90deg, #313860 0%, #151928 100%)',
+          color: '#fff',
+          padding: '10px 30px',
+          borderRadius: '34px',
+          fontSize: '10px',
+          '&:hover': {
+            background: 'linear-gradient(90deg, #151928 0%, #313860 100%)',
+          },
+        },
         '.gradient-border': {
           'border-bottom': '1px',
           'border-style': 'solid',
