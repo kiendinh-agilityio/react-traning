@@ -12,7 +12,7 @@ exports[`AuthorItem Component calls onDelete when the Delete button is clicked 1
           scope="row"
         >
           <div
-            class="rt-Flex gap-[15px] text-left"
+            class="rt-Box flex gap-[15px] text-left"
           >
             <span
               class="rt-reset rt-AvatarRoot rt-r-size-3 rt-variant-soft rounded-base w-[40px] h-[40px] "
@@ -78,7 +78,7 @@ exports[`AuthorItem Component calls onDelete when the Delete button is clicked 1
           class="rt-TableCell py-[22px] font-bold text-xs leading-base"
         >
           <div
-            class="rt-Flex gap-5"
+            class="rt-Box flex gap-5"
           >
             <button
               class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
@@ -166,7 +166,7 @@ exports[`AuthorItem Component calls onEdit when the Edit button is clicked 1`] =
           scope="row"
         >
           <div
-            class="rt-Flex gap-[15px] text-left"
+            class="rt-Box flex gap-[15px] text-left"
           >
             <span
               class="rt-reset rt-AvatarRoot rt-r-size-3 rt-variant-soft rounded-base w-[40px] h-[40px] "
@@ -232,7 +232,7 @@ exports[`AuthorItem Component calls onEdit when the Edit button is clicked 1`] =
           class="rt-TableCell py-[22px] font-bold text-xs leading-base"
         >
           <div
-            class="rt-Flex gap-5"
+            class="rt-Box flex gap-5"
           >
             <button
               class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
@@ -320,7 +320,7 @@ exports[`AuthorItem Component renders correctly 1`] = `
           scope="row"
         >
           <div
-            class="rt-Flex gap-[15px] text-left"
+            class="rt-Box flex gap-[15px] text-left"
           >
             <span
               class="rt-reset rt-AvatarRoot rt-r-size-3 rt-variant-soft rounded-base w-[40px] h-[40px] "
@@ -386,7 +386,7 @@ exports[`AuthorItem Component renders correctly 1`] = `
           class="rt-TableCell py-[22px] font-bold text-xs leading-base"
         >
           <div
-            class="rt-Flex gap-5"
+            class="rt-Box flex gap-5"
           >
             <button
               class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
