@@ -17,6 +17,7 @@ module.exports = {
         danger: '#e53e3e',
         overlay: 'rgba(0, 0, 0, 0.5)',
         light: '#fff',
+        'light-opacity': 'rgba(255, 255, 255, 0.82)',
       },
       fontFamily: {
         regular: ['Helvetica-Regular'],
@@ -27,6 +28,7 @@ module.exports = {
         sm: ['14px', { lineHeight: '20px' }],
         lg: ['18px', { lineHeight: '25px' }],
         xl: ['22px', { lineHeight: '30px' }],
+        '2xl': ['32px', { lineHeight: '41px' }],
       },
       lineHeight: {
         base: '18px',
@@ -34,6 +36,10 @@ module.exports = {
       },
       borderRadius: {
         base: '12px',
+      },
+      backgroundImage: {
+        'light-gradient':
+          'linear-gradient(180deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.80) 100%)',
       },
     },
   },
