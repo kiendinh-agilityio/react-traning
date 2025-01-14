@@ -8,7 +8,7 @@ import { currentYear } from '@/utils';
 import { Link } from '@/components/common';
 
 const Footer = () => (
-  <footer className="flex justify-between text-base px-[21px]">
+  <footer className="flex justify-between text-xs text-base px-[21px]">
     <p>
       @ {currentYear}, Made with ❤️ by{' '}
       <span className="text-primary font-bold">Creative Tim</span> &{' '}
