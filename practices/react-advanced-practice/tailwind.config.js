@@ -102,6 +102,17 @@ module.exports = {
           padding: '0',
           gap: '2px',
         },
+        '.light': {
+          backgroundColor: '#fff',
+          border: '1px solid #4fd1c5',
+          color: '#2d3748',
+          padding: '10px 30px',
+          borderRadius: '34px',
+          fontSize: '10px',
+          '&:hover': {
+            backgroundColor: '#f7fafc',
+          },
+        },
         '.download': {
           width: '150px',
           border: '1px solid #313860',
