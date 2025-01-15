@@ -16,3 +16,6 @@ export { default as DashboardIcon } from './DashboardIcon';
 export { default as UserIcon } from './UserIcon';
 export { default as LoginIcon } from './LoginIcon';
 export { default as RegisterIcon } from './RegisterIcon';
+export { default as AppleIcon } from './AppleIcon';
+export { default as FacebookIcon } from './FacebookIcon';
+export { default as GoogleIcon } from './GoogleIcon';
