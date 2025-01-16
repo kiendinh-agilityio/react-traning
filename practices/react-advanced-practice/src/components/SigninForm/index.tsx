@@ -1,5 +1,5 @@
 // Import react hook form
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 
 // Import radix ui
 import { Box } from '@radix-ui/themes';
@@ -27,7 +27,8 @@ const SigninForm = () => {
     useSigninStore();
 
   const {
-    register,
+    control,
+    trigger,
     handleSubmit,
     formState: { errors },
   } = useForm<SigninFormInputs>();
@@ -37,60 +38,94 @@ const SigninForm = () => {
     setPassword(data.password);
   };
 
+  /**
+   * Creates an event handler for the blur event to validate a specific field.
+   * @param fieldName - The name of the field to validate.
+   * @param trigger - The react-hook-form trigger function.
+   * @returns A function that triggers validation for the specified field.
+   */
+  const handleFieldBlur =
+    (
+      fieldName: keyof SigninFormInputs,
+      trigger: (fieldName: keyof SigninFormInputs) => void,
+    ) =>
+    () =>
+      trigger(fieldName);
+
+  /**
+   * Handles the onChange event for form inputs and triggers validation.
+   * @param fieldName - The name of the field to validate.
+   * @param fieldOnChange - The react-hook-form onChange handler for the field.
+   * @returns A function that handles the input's onChange event.
+   */
+  const handleFieldChange =
+    (fieldName: keyof SigninFormInputs, fieldOnChange: (value: string) => void) =>
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      fieldOnChange(e.target.value);
+      trigger(fieldName);
+    };
+
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col gap-4 w-full max-w-md"
-    >
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col max-w-[350px]">
       {/* Email Input */}
-      <Box className="flex flex-col gap-[6px] mb-6 w-[350px]">
+      <Box className="flex flex-col mb-6 gap-[5px]">
         <Text content="Email" />
-        <Input
-          {...register('email', {
+        <Controller
+          name="email"
+          control={control}
+          rules={{
             required: MESSAGE_ERROR.REQUIRED_ERROR('Email'),
             pattern: {
               value: REGEX.EMAIL,
               message: MESSAGE_ERROR.INVALID_EMAIL,
             },
-          })}
-          name="email"
-          placeholder="Your email address"
-          type="email"
-          errorMessage={errors.email?.message}
+          }}
+          render={({ field }) => (
+            <Input
+              {...field}
+              placeholder="Your email address"
+              type="email"
+              errorMessage={errors.email?.message}
+              onChange={handleFieldChange('email', field.onChange)}
+              onBlur={handleFieldBlur('email', trigger)}
+            />
+          )}
         />
-        {errors.email && (
-          <p className="text-danger mt-1 text-sm">{errors.email.message}</p>
-        )}
       </Box>
 
       {/* Password Input */}
-      <Box className="flex flex-col gap-[6px] w-[350px]">
+      <Box className="flex flex-col gap-[5px]">
         <Text content="Password" />
-        <Input
-          {...register('password', {
+        <Controller
+          name="password"
+          control={control}
+          rules={{
             required: MESSAGE_ERROR.REQUIRED_ERROR('Password'),
             pattern: {
               value: REGEX.PASSWORD,
               message: MESSAGE_ERROR.INVALID_PASSWORD,
             },
-          })}
-          name="password"
-          placeholder="Your password"
-          type={showPassword ? 'text' : 'password'}
-          errorMessage={errors.password?.message}
-          rightIcon={
-            <button
-              type="button"
-              onClick={togglePasswordVisibility}
-              aria-label={showPassword ? 'Hide password' : 'Show password'}
-            >
-              {showPassword ? <ShowPasswordIcon /> : <HidePasswordIcon />}
-            </button>
-          }
+          }}
+          render={({ field }) => (
+            <Input
+              {...field}
+              placeholder="Your password"
+              type={showPassword ? 'text' : 'password'}
+              errorMessage={errors.password?.message}
+              onChange={handleFieldChange('password', field.onChange)}
+              onBlur={handleFieldBlur('password', trigger)}
+              rightIcon={
+                <button
+                  type="button"
+                  onClick={togglePasswordVisibility}
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
+                >
+                  {showPassword ? <ShowPasswordIcon /> : <HidePasswordIcon />}
+                </button>
+              }
+            />
+          )}
         />
-        {errors.password && (
-          <p className="text-danger mt-1 text-sm">{errors.password.message}</p>
-        )}
       </Box>
 
       {/* Submit Button */}
