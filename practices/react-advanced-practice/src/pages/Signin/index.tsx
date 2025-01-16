@@ -20,7 +20,7 @@ import { TextSize } from '@/types';
 import { BgSignin } from '@/assets/images';
 
 const Signin = () => {
-  const handleButtonDownload = () => {
+  const handleDownload = () => {
     // TODO: Add button click handling logic here when buttons are enabled
   };
 
@@ -30,7 +30,7 @@ const Signin = () => {
         <Box className="flex items-center justify-between py-4 px-6 border-[1.5px] rounded-[15px] border-light-opacity bg-light-gradient shadow-[0px_4px_10px_rgba(0,0,0,0.05)] backdrop-blur-[21px] mb-48">
           <Logo href="/" />
           <Navbar />
-          <Button variant={ButtonVariant.Download} onClick={handleButtonDownload}>
+          <Button variant={ButtonVariant.Download} onClick={handleDownload}>
             Free Download
           </Button>
         </Box>
