@@ -64,6 +64,19 @@ const SignupForm = () => {
     setPassword(data.password);
   };
 
+  /**
+   * Handles the onChange event for form inputs and triggers validation.
+   * @param fieldName - The name of the field to validate.
+   * @param fieldOnChange - The react-hook-form onChange handler for the field.
+   * @returns A function that handles the input's onChange event.
+   */
+  const handleFieldChange =
+    (fieldName: keyof SignupFormInputs, fieldOnChange: (value: string) => void) =>
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      fieldOnChange(e.target.value);
+      trigger(fieldName);
+    };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-full">
       {/* Name Input */}
@@ -85,11 +98,11 @@ const SignupForm = () => {
               placeholder="Your full name"
               type="text"
               errorMessage={errors.name?.message}
+              onChange={handleFieldChange('name', field.onChange)}
               onBlur={handleFieldBlur('name', trigger)}
             />
           )}
         />
-        {errors.name && <p className="text-danger mt-1 text-sm">{errors.name.message}</p>}
       </Box>
 
       {/* Email Input */}
@@ -111,13 +124,11 @@ const SignupForm = () => {
               placeholder="Your email address"
               type="email"
               errorMessage={errors.email?.message}
+              onChange={handleFieldChange('email', field.onChange)}
               onBlur={handleFieldBlur('email', trigger)}
             />
           )}
         />
-        {errors.email && (
-          <p className="text-danger mt-1 text-sm">{errors.email.message}</p>
-        )}
       </Box>
 
       {/* Password Input */}
@@ -139,6 +150,7 @@ const SignupForm = () => {
               placeholder="Your password"
               type={showPassword ? 'text' : 'password'}
               errorMessage={errors.password?.message}
+              onChange={handleFieldChange('password', field.onChange)}
               onBlur={handleFieldBlur('password', trigger)}
               rightIcon={
                 <button
@@ -152,9 +164,6 @@ const SignupForm = () => {
             />
           )}
         />
-        {errors.password && (
-          <p className="text-danger mt-1 text-sm">{errors.password.message}</p>
-        )}
       </Box>
 
       {/* Submit Button */}
