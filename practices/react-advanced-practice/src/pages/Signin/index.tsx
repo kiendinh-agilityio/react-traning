@@ -28,7 +28,7 @@ const Signin = () => {
     <Box className="flex flex-col min-h-screen mx-auto max-w-[987px] pt-6 pb-10">
       <Box className="flex-1 mb-64">
         <Box className="flex items-center justify-between py-4 px-6 border-[1.5px] rounded-[15px] border-light-opacity bg-light-gradient shadow-[0px_4px_10px_rgba(0,0,0,0.05)] backdrop-blur-[21px] mb-48">
-          <Logo href="/" />
+          <Logo href="/signin" />
           <Navbar />
           <Button variant={ButtonVariant.Download} onClick={handleDownload}>
             Free Download
