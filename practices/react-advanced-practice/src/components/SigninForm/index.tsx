@@ -1,3 +1,12 @@
+// Import axios for API calls
+import axios from 'axios';
+
+// import react router dom
+import { useNavigate } from 'react-router-dom';
+
+// Import state
+import { useState } from 'react';
+
 // Import react hook form
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 
@@ -8,10 +17,14 @@ import { Box } from '@radix-ui/themes';
 import { Input, Button, Text } from '@/components/common';
 
 // Import constants
-import { REGEX, MESSAGE_ERROR } from '@/constants';
+import { REGEX, MESSAGE_ERROR, API_AUTH_URL, END_POINTS } from '@/constants';
 
 // Import icons
-import { ShowPasswordIcon, HidePasswordIcon } from '@/components/common/Icons';
+import {
+  ShowPasswordIcon,
+  HidePasswordIcon,
+  LoadingIcon,
+} from '@/components/common/Icons';
 
 // Import stores
 import { useSigninStore } from '@/stores';
@@ -23,8 +36,15 @@ interface SigninFormInputs {
 }
 
 const SigninForm = () => {
-  const { showPassword, togglePasswordVisibility, setEmail, setPassword } =
-    useSigninStore();
+  const { showPassword, togglePasswordVisibility } = useSigninStore();
+
+  const navigate = useNavigate();
+
+  // State to handle loading
+  const [isLoading, setIsLoading] = useState(false);
+
+  // State to handle error message
+  const [errorMessage, setErrorMessage] = useState('');
 
   const {
     control,
@@ -33,9 +53,36 @@ const SigninForm = () => {
     formState: { errors },
   } = useForm<SigninFormInputs>();
 
-  const onSubmit: SubmitHandler<SigninFormInputs> = (data) => {
-    setEmail(data.email);
-    setPassword(data.password);
+  const onSubmit: SubmitHandler<SigninFormInputs> = async (data) => {
+    // Set loading to true
+    setIsLoading(true);
+
+    // Set error
+    setErrorMessage('');
+
+    try {
+      // Simulate API call
+      const response = await axios.get(`${API_AUTH_URL}/${END_POINTS.USERS}`);
+      const users = response.data;
+
+      // Check if a user with the provided email and password exists
+      const user = users.find(
+        (u: { email: string; password: string }) =>
+          u.email === data.email && u.password === data.password,
+      );
+
+      if (user) {
+        // Simulate a delay before navigating
+        setTimeout(() => {
+          navigate('/home');
+        }, 1500);
+      } else {
+        setErrorMessage(MESSAGE_ERROR.INVALID_SIGNIN);
+        setIsLoading(false);
+      }
+    } catch (error) {
+      setErrorMessage(MESSAGE_ERROR.SIGNIN_FAILED);
+    }
   };
 
   /**
@@ -128,9 +175,18 @@ const SigninForm = () => {
         />
       </Box>
 
+      {/* Error Message */}
+      {errorMessage && (
+        <Text content={errorMessage} className="text-danger mt-3 text-sm" />
+      )}
+
       {/* Submit Button */}
-      <Button onClick={handleSubmit(onSubmit)} className="mt-9 w-[350px]">
-        Sign In
+      <Button
+        onClick={handleSubmit(onSubmit)}
+        className="mt-9 w-[350px]"
+        isDisabled={isLoading}
+      >
+        {isLoading ? <LoadingIcon /> : 'Sign In'}
       </Button>
     </form>
   );
