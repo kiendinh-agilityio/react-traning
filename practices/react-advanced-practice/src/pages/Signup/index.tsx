@@ -27,11 +27,11 @@ const Signup = () => {
   return (
     <Box className="px-6 pt-6 pb-[52px]">
       <Container className="relative">
-        <img src={BgSignup} alt="Background" className="absolute top-0 -z-10" />
+        <img src={BgSignup} alt="Background" className="absolute top-0 -z-10 w-full" />
         <Box className="flex flex-col min-h-screen mx-auto max-w-[939px]">
           <Box className="flex-1 mb-64">
             <Box className="flex items-center justify-between py-4 px-6">
-              <Logo href="/" color="secondary" />
+              <Logo href="/signup" color="secondary" />
               <Navbar iconColor="#fff" textColor="text-light" />
               <Button
                 variant={ButtonVariant.Light}
