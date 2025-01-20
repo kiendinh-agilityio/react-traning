@@ -3,10 +3,10 @@
 exports[`LoadingSpinner component matches the snapshot 1`] = `
 <div>
   <div
-    class="loading-container"
+    class="rt-Box loading-container"
   >
     <span
-      class="loading-indicator"
+      class="rt-Box loading-indicator"
     />
   </div>
 </div>
