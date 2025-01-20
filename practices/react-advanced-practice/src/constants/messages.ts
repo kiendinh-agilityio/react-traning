@@ -8,4 +8,8 @@ export const MESSAGE_ERROR = {
     "The email ord password that you've entered is incorrect. Please try again.",
   SIGNIN_FAILED: 'An error occurred while signing in. Please try again later.',
   SIGNUP_FAILED: 'Something went wrong. Please try again.',
+  ADD_AUTHOR: 'Can not add new author',
+  EDIT_AUTHOR: 'Can not update author',
+  DELETE_AUTHOR: 'Can not delete author',
+  GET_ALL_AUTHOR: 'Can not get all authors information',
 };
