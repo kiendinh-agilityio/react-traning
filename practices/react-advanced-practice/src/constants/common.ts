@@ -29,3 +29,8 @@ export const DATE_FORMAT = 'DD/MM/YY';
 
 // Variable for table titles
 export const TABLE_TITLES = ['Author', 'Function', 'Status', 'Employed'];
+
+// Variable Endpoints
+export const END_POINTS = {
+  USERS: 'users',
+};

@@ -1,3 +1,10 @@
+// Import axios for API calls
+import axios from 'axios';
+
+// import react router dom
+import { useNavigate } from 'react-router-dom';
+
+// Import state
 import { useState } from 'react';
 
 // Import react hook form
@@ -10,13 +17,17 @@ import { Box } from '@radix-ui/themes';
 import { Input, Button, Text } from '@/components/common';
 
 // Import icons
-import { ShowPasswordIcon, HidePasswordIcon } from '@/components/common/Icons';
+import {
+  ShowPasswordIcon,
+  HidePasswordIcon,
+  LoadingIcon,
+} from '@/components/common/Icons';
 
 // Import stores
 import { useSignupStore } from '@/stores';
 
 // Import constants
-import { REGEX, MESSAGE_ERROR } from '@/constants';
+import { REGEX, MESSAGE_ERROR, API_AUTH_URL, END_POINTS } from '@/constants';
 
 interface SignupFormInputs {
   name: string;
@@ -27,6 +38,8 @@ interface SignupFormInputs {
 const SignupForm = () => {
   const { setName, setEmail, setPassword } = useSignupStore();
 
+  const navigate = useNavigate();
+
   const {
     control,
     handleSubmit,
@@ -36,6 +49,9 @@ const SignupForm = () => {
 
   // State to toggle password visibility
   const [showPassword, setShowPassword] = useState(false);
+
+  // State to handle loading
+  const [isLoading, setIsLoading] = useState(false);
 
   // Toggles the visibility of the password field between text and password.
   const togglePasswordVisibility = () => setShowPassword((prev) => !prev);
@@ -58,10 +74,28 @@ const SignupForm = () => {
    * Handles form submission by updating the signup store with user input values.
    * @param data - The form input values.
    */
-  const onSubmit: SubmitHandler<SignupFormInputs> = (data) => {
-    setName(data.name);
-    setEmail(data.email);
-    setPassword(data.password);
+  const onSubmit: SubmitHandler<SignupFormInputs> = async (data) => {
+    // Set loading to true
+    setIsLoading(true);
+
+    try {
+      setName(data.name);
+      setEmail(data.email);
+      setPassword(data.password);
+
+      await axios.post(`${API_AUTH_URL}/${END_POINTS.USERS}`, {
+        name: data.name,
+        email: data.email,
+        password: data.password,
+      });
+
+      setTimeout(() => {
+        navigate('/home');
+      }, 1500);
+    } catch (error) {
+      setIsLoading(false);
+      throw new Error(MESSAGE_ERROR.SIGNUP_FAILED);
+    }
   };
 
   /**
@@ -167,8 +201,8 @@ const SignupForm = () => {
       </Box>
 
       {/* Submit Button */}
-      <Button onClick={handleSubmit(onSubmit)} className="mt-9">
-        Sign Up
+      <Button onClick={handleSubmit(onSubmit)} className="mt-9" isDisabled={isLoading}>
+        {isLoading ? <LoadingIcon /> : 'Sign Up'}
       </Button>
     </form>
   );

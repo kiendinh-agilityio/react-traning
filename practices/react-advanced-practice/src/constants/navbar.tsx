@@ -8,7 +8,7 @@ import {
 
 // Create data for header navbar
 export const HEADER_NAVBAR = [
-  { label: 'DASHBOARD', href: '/dashboard', icon: <DashboardIcon /> },
+  { label: 'DASHBOARD', href: '/home', icon: <DashboardIcon /> },
   { label: 'PROFILE', href: '/profile', icon: <UserIcon /> },
   { label: 'SIGN UP', href: '/signup', icon: <LoginIcon /> },
   { label: 'SIGN IN', href: '/signin', icon: <RegisterIcon /> },

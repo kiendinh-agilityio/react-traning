@@ -10,6 +10,7 @@ interface SidebarItemType {
   icon: React.ReactNode;
   label: string;
   active: boolean;
+  href: string;
   group?: string;
 }
 
@@ -31,6 +32,7 @@ const Sidebar = () => {
         key={item.label}
         icon={item.icon}
         label={item.label}
+        href={item.href}
         active={item.active}
       />
     ));
