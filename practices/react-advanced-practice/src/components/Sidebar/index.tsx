@@ -6,6 +6,9 @@ import { SIDEBAR_ITEMS } from '@/constants';
 // Import sidebar item
 import SidebarItem from './SidebarItem';
 
+// Import help box
+import HelpBox from './HelpBox';
+
 interface SidebarItemType {
   icon: React.ReactNode;
   label: string;
@@ -44,6 +47,7 @@ const Sidebar = () => {
         <li className="font-bold font-helveticaBold py-6 px-4">ACCOUNT PAGES</li>
         {renderSidebarItems(accountItems)}
       </ul>
+      <HelpBox />
     </>
   );
 };
