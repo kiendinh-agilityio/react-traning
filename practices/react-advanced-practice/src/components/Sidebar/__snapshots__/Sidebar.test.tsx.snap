@@ -295,7 +295,7 @@ exports[`Sidebar Component should match snapshot 1`] = `
     </li>
   </ul>
   <div
-    class="bg-primary w-[218px] py-4 px-4 border border-primary rounded-[15px] m-auto mt-16 text-white"
+    class="rt-Box bg-primary w-[218px] py-4 px-4 border border-primary rounded-[15px] m-auto mt-16 text-white"
   >
     <div
       class="flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
