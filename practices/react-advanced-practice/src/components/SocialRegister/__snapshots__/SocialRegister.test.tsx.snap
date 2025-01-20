@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SocialRegister renders SocialRegister component 1`] = `
+<div>
+  <ul
+    class="flex gap-4 mt-[22px]"
+  >
+    <li
+      class="list-none flex items-center justify-center bg-light w-[75px] h-[75px] border border-[#e2e8f0] rounded-[15px]"
+    >
+      <a
+        class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+        data-accent-color=""
+        href="https://facebook.com"
+        target="_blank"
+      >
+        <svg
+          data-testid="facebook-icon"
+        />
+      </a>
+    </li>
+    <li
+      class="list-none flex items-center justify-center bg-light w-[75px] h-[75px] border border-[#e2e8f0] rounded-[15px]"
+    >
+      <a
+        class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+        data-accent-color=""
+        href="https://www.apple.com/vn/"
+        target="_blank"
+      >
+        <svg
+          data-testid="apple-icon"
+        />
+      </a>
+    </li>
+    <li
+      class="list-none flex items-center justify-center bg-light w-[75px] h-[75px] border border-[#e2e8f0] rounded-[15px]"
+    >
+      <a
+        class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+        data-accent-color=""
+        href="https://www.google.com/"
+        target="_blank"
+      >
+        <svg
+          data-testid="google-icon"
+        />
+      </a>
+    </li>
+  </ul>
+</div>
+`;
