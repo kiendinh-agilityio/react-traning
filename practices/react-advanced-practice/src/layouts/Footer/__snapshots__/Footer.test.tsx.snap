@@ -3,7 +3,7 @@
 exports[`Footer Layouts should match snapshot 1`] = `
 <DocumentFragment>
   <footer
-    class="flex justify-between text-base px-[21px]"
+    class="flex justify-between text-xs text-base px-[21px]"
   >
     <p>
       @ 2025, Made with ❤️ by 

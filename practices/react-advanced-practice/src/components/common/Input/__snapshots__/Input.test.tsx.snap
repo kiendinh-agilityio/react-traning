@@ -3,15 +3,19 @@
 exports[`Input Component renders correctly with default props and matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input"
+    class="w-full"
   >
-    <input
-      class="w-full text-regular focus:outline-none text-dark placeholder:text-base"
-      name="test"
-      placeholder="Enter text"
-      type="text"
-      value=""
-    />
+    <div
+      class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input"
+    >
+      <input
+        class="w-full text-regular focus:outline-none text-dark placeholder:text-base"
+        name="test"
+        placeholder="Enter text"
+        type="text"
+        value=""
+      />
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -19,15 +23,24 @@ exports[`Input Component renders correctly with default props and matches snapsh
 exports[`Input Component renders with error message 1`] = `
 <DocumentFragment>
   <div
-    class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-danger"
+    class="w-full"
   >
-    <input
-      class="w-full text-regular focus:outline-none text-dark placeholder:text-base"
-      name="test"
-      placeholder="Enter text"
-      type="text"
-      value=""
-    />
+    <div
+      class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-danger"
+    >
+      <input
+        class="w-full text-regular focus:outline-none text-dark placeholder:text-base"
+        name="test"
+        placeholder="Enter text"
+        type="text"
+        value=""
+      />
+    </div>
+    <span
+      class="rt-Text text-danger mt-1 text-sm"
+    >
+      This field is required
+    </span>
   </div>
 </DocumentFragment>
 `;
@@ -35,46 +48,50 @@ exports[`Input Component renders with error message 1`] = `
 exports[`Input Component renders with left and right icons 1`] = `
 <DocumentFragment>
   <div
-    class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input"
+    class="w-full"
   >
-    <svg
-      fill="none"
-      height="13"
-      width="13"
-      xmlns="http://www.w3.org/2000/svg"
+    <div
+      class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input"
     >
-      <path
-        d="M12.13 11.096 9.374 8.34a5.092 5.092 0 0 0 1.02-3.064A5.125 5.125 0 0 0 5.276.157a5.125 5.125 0 0 0-5.12 5.119 5.125 5.125 0 0 0 5.12 5.119 5.092 5.092 0 0 0 3.063-1.021l2.757 2.756a.733.733 0 0 0 1.034-1.034ZM1.62 5.276a3.656 3.656 0 1 1 7.312 0 3.656 3.656 0 0 1-7.313 0Z"
-        fill="#a0aec0"
-      />
-    </svg>
-    <input
-      class="w-full text-regular focus:outline-none text-dark placeholder:text-base"
-      name="test"
-      placeholder="Enter text"
-      type="text"
-      value=""
-    />
-    <svg
-      fill="none"
-      height="23"
-      viewBox="0 0 28 28"
-      width="23"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g
-        clip-rule="evenodd"
-        fill="#a0aec0"
-        fill-rule="evenodd"
+      <svg
+        fill="none"
+        height="13"
+        width="13"
+        xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M17.747 15.415c.238-.54.372-1.143.372-1.413 0-2.348-1.824-4.25-4.073-4.25-2.25 0-4.073 1.902-4.073 4.25 0 2.347 2.037 3.887 4.073 3.887 1.303 0 2.462-.637 3.206-1.63a4.29 4.29 0 0 0 .495-.844Zm-3.701.349c.51 0 .975-.196 1.332-.518.432-.39.622-.965.622-1.244 0-1.174-.828-2.126-1.954-2.126-1.125 0-2.046.95-2.046 2.124 0 .81.92 1.764 2.046 1.764Z"
+          d="M12.13 11.096 9.374 8.34a5.092 5.092 0 0 0 1.02-3.064A5.125 5.125 0 0 0 5.276.157a5.125 5.125 0 0 0-5.12 5.119 5.125 5.125 0 0 0 5.12 5.119 5.092 5.092 0 0 0 3.063-1.021l2.757 2.756a.733.733 0 0 0 1.034-1.034ZM1.62 5.276a3.656 3.656 0 1 1 7.312 0 3.656 3.656 0 0 1-7.313 0Z"
+          fill="#a0aec0"
         />
-        <path
-          d="M1.092 14.272a.448.448 0 0 1 0-.545c.01-.012.019-.025.028-.039C4.78 8.343 9.32 5.5 14.014 5.5c4.689 0 9.224 2.836 12.882 8.17.069.101.104.205.104.33 0 .13-.04.24-.114.346C23.23 19.67 18.698 22.5 14.014 22.5c-4.705 0-9.257-2.857-12.922-8.228Zm2.847-.92a1.04 1.04 0 0 0 0 1.294c3.135 3.898 6.665 5.729 10.075 5.729 3.41 0 6.94-1.83 10.075-5.729a1.04 1.04 0 0 0 0-1.294c-3.135-3.897-6.665-5.727-10.075-5.727-3.41 0-6.94 1.83-10.075 5.727Z"
-        />
-      </g>
-    </svg>
+      </svg>
+      <input
+        class="w-full text-regular focus:outline-none text-dark placeholder:text-base"
+        name="test"
+        placeholder="Enter text"
+        type="text"
+        value=""
+      />
+      <svg
+        fill="none"
+        height="23"
+        viewBox="0 0 28 28"
+        width="23"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          clip-rule="evenodd"
+          fill="#a0aec0"
+          fill-rule="evenodd"
+        >
+          <path
+            d="M17.747 15.415c.238-.54.372-1.143.372-1.413 0-2.348-1.824-4.25-4.073-4.25-2.25 0-4.073 1.902-4.073 4.25 0 2.347 2.037 3.887 4.073 3.887 1.303 0 2.462-.637 3.206-1.63a4.29 4.29 0 0 0 .495-.844Zm-3.701.349c.51 0 .975-.196 1.332-.518.432-.39.622-.965.622-1.244 0-1.174-.828-2.126-1.954-2.126-1.125 0-2.046.95-2.046 2.124 0 .81.92 1.764 2.046 1.764Z"
+          />
+          <path
+            d="M1.092 14.272a.448.448 0 0 1 0-.545c.01-.012.019-.025.028-.039C4.78 8.343 9.32 5.5 14.014 5.5c4.689 0 9.224 2.836 12.882 8.17.069.101.104.205.104.33 0 .13-.04.24-.114.346C23.23 19.67 18.698 22.5 14.014 22.5c-4.705 0-9.257-2.857-12.922-8.228Zm2.847-.92a1.04 1.04 0 0 0 0 1.294c3.135 3.898 6.665 5.729 10.075 5.729 3.41 0 6.94-1.83 10.075-5.729a1.04 1.04 0 0 0 0-1.294c-3.135-3.897-6.665-5.727-10.075-5.727-3.41 0-6.94 1.83-10.075 5.727Z"
+          />
+        </g>
+      </svg>
+    </div>
   </div>
 </DocumentFragment>
 `;
