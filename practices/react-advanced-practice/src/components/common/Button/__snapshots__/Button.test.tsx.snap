@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component applies custom class names 1`] = `
+<div>
+  <button
+    class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary
+   custom-class"
+    data-accent-color=""
+  >
+    Custom Button
+  </button>
+</div>
+`;
+
+exports[`Button Component renders correctly with default props 1`] = `
+<div>
+  <button
+    class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary
+   undefined"
+    data-accent-color=""
+  >
+    Click Me
+  </button>
+</div>
+`;
+
+exports[`Button Component renders with the correct variant class 1`] = `
+<div>
+  <button
+    class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer secondary
+   undefined"
+    data-accent-color=""
+  >
+    Secondary Button
+  </button>
+</div>
+`;

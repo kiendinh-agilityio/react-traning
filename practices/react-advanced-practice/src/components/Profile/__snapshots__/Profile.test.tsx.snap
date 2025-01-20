@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile Component renders correctly with valid props 1`] = `
+<div>
+  <div
+    class="rt-Flex gap-[15px] text-left"
+  >
+    <span
+      class="rt-reset rt-AvatarRoot rt-r-size-3 rt-variant-soft rounded-base w-[40px] h-[40px] "
+      data-accent-color=""
+    >
+      <span
+        class="rt-AvatarFallback"
+      />
+    </span>
+    <div
+      class="rt-Flex rt-r-fd-column"
+    >
+      <p
+        class="rt-Text rt-r-weight-bold text-sm font-bold leading-base"
+      >
+        Esthera Jackson
+      </p>
+      <p
+        class="rt-Text rt-r-weight-regular text-sm text-gray"
+      >
+        esthera@simmmple.com
+      </p>
+    </div>
+  </div>
+</div>
+`;
