@@ -12,3 +12,7 @@ export { default as SigninIcon } from './SigninIcon';
 export { default as SignupIcon } from './SignupIcon';
 export { default as DeleteIcon } from './DeleteIcon';
 export { default as EditIcon } from './EditIcon';
+export { default as DashboardIcon } from './DashboardIcon';
+export { default as UserIcon } from './UserIcon';
+export { default as LoginIcon } from './LoginIcon';
+export { default as RegisterIcon } from './RegisterIcon';

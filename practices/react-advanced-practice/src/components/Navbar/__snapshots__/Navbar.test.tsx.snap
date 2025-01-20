@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar Component should match snapshot 1`] = `
+<DocumentFragment>
+  <nav
+    class="flex items-center justify-between"
+  >
+    <ul
+      class="flex gap-[30px]"
+    >
+      <li>
+        <a
+          class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer flex flex-row items-center gap-[5px] font-bold text-xs text-dark"
+          data-accent-color=""
+          href="/dashboard"
+          target="_self"
+        >
+          <svg
+            fill="none"
+            height="12"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              clip-path="url(#a)"
+              fill="#2d3748"
+            >
+              <path
+                d="M9.972 3.675a.086.086 0 0 0 0-.148L6.691 1.62a1.378 1.378 0 0 0-1.382 0L2.028 3.527a.086.086 0 0 0 0 .148l3.929 2.312a.086.086 0 0 0 .087 0l3.928-2.312ZM1.66 4.26a.086.086 0 0 0-.129.075V8.07a1.031 1.031 0 0 0 .512.889l3.484 2.089a.086.086 0 0 0 .13-.074V6.64a.086.086 0 0 0-.044-.074L1.66 4.26ZM6.344 6.655v4.318a.086.086 0 0 0 .129.075l3.483-2.09a1.031 1.031 0 0 0 .513-.887V4.335a.085.085 0 0 0-.043-.074.086.086 0 0 0-.086 0L6.387 6.58a.086.086 0 0 0-.043.074Z"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="a"
+              >
+                <path
+                  d="M.5.748h11v11H.5z"
+                  fill="#fff"
+                />
+              </clippath>
+            </defs>
+          </svg>
+          DASHBOARD
+        </a>
+      </li>
+      <li>
+        <a
+          class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer flex flex-row items-center gap-[5px] font-bold text-xs text-dark"
+          data-accent-color=""
+          href="/profile"
+          target="_self"
+        >
+          <svg
+            fill="none"
+            height="12"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              clip-path="url(#a)"
+              fill="#2d3748"
+            >
+              <path
+                d="M7.647 2.135A2.211 2.211 0 0 0 6 1.435c-.648 0-1.234.247-1.65.696-.42.453-.626 1.07-.577 1.735C3.868 5.18 4.867 6.247 6 6.247c1.133 0 2.13-1.068 2.227-2.38.05-.66-.157-1.275-.58-1.732ZM9.781 11.06H2.22a.667.667 0 0 1-.52-.24.759.759 0 0 1-.154-.625c.181-1.006.747-1.851 1.636-2.444.79-.527 1.792-.817 2.82-.817 1.027 0 2.028.29 2.818.817.89.593 1.455 1.438 1.636 2.444a.759.759 0 0 1-.154.625.666.666 0 0 1-.52.24Z"
+              />
+            </g>
+            <defs>
+              <clippath
+                id="a"
+              >
+                <path
+                  d="M.5.748h11v11H.5z"
+                  fill="#fff"
+                />
+              </clippath>
+            </defs>
+          </svg>
+          PROFILE
+        </a>
+      </li>
+      <li>
+        <a
+          class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer flex flex-row items-center gap-[5px] font-bold text-xs text-dark"
+          data-accent-color=""
+          href="/signup"
+          target="_self"
+        >
+          <svg
+            fill="none"
+            height="12"
+            width="11"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.5 1.778a4.474 4.474 0 0 0-4.469 4.47A4.474 4.474 0 0 0 5.5 10.715a4.474 4.474 0 0 0 4.469-4.469A4.474 4.474 0 0 0 5.5 1.778Zm-1.079 2.51A1.462 1.462 0 0 1 5.5 3.841c.424 0 .803.16 1.077.45.277.294.411.688.38 1.113-.064.843-.717 1.53-1.457 1.53-.74 0-1.394-.687-1.456-1.53a1.448 1.448 0 0 1 .377-1.116Zm1.079 5.74a3.77 3.77 0 0 1-2.707-1.143 2.64 2.64 0 0 1 .755-.719c.548-.35 1.24-.544 1.952-.544.711 0 1.404.193 1.951.544.298.187.554.432.756.719A3.77 3.77 0 0 1 5.5 10.028Z"
+              fill="#2d3748"
+            />
+          </svg>
+          SIGN UP
+        </a>
+      </li>
+      <li>
+        <a
+          class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer flex flex-row items-center gap-[5px] font-bold text-xs text-dark"
+          data-accent-color=""
+          href="/signin"
+          target="_self"
+        >
+          <svg
+            fill="none"
+            height="12"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.186 4.34c0 .279 0 .55.088.803-.926 1.087-3.37 3.96-3.598 4.179a.433.433 0 0 0-.144.322c0 .183.111.359.206.458.142.148.748.709.86.601.33-.322.397-.408.532-.541.204-.2-.021-.608.05-.774.07-.165.146-.197.268-.223.123-.026.34.062.51.064.178.003.274-.073.408-.197.107-.1.184-.191.186-.335.005-.194-.275-.45-.066-.654.208-.204.509.134.73.108.222-.026.49-.333.518-.464.028-.131-.251-.469-.208-.66.015-.064.146-.215.245-.236.098-.022.537.148.636.127.12-.026.26-.153.373-.224a2.42 2.42 0 0 0 1.025.202c1.472 0 2.664-1.147 2.664-2.56 0-1.414-1.192-2.557-2.664-2.557-1.471 0-2.619 1.147-2.619 2.56Zm3.908-.498a.687.687 0 1 1-1.375 0 .687.687 0 0 1 1.375 0Z"
+              fill="#2d3748"
+            />
+          </svg>
+          SIGN IN
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
+`;

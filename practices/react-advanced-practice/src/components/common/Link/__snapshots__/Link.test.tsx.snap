@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link Component should match with snapshot 1`] = `
+<div>
+  <a
+    class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+    data-accent-color=""
+    href="#"
+    target="_self"
+  >
+    Blog
+  </a>
+</div>
+`;
