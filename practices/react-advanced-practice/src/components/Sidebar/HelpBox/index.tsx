@@ -1,3 +1,6 @@
+// Import radix ui
+import { Box } from '@radix-ui/themes';
+
 // Import components
 import { QuestionIcon } from '@/components/common/Icons';
 
@@ -13,7 +16,7 @@ const HelpBox = () => {
   };
 
   return (
-    <div className="bg-primary w-[218px] py-4 px-4 border border-primary rounded-[15px] m-auto mt-16 text-white">
+    <Box className="bg-primary w-[218px] py-4 px-4 border border-primary rounded-[15px] m-auto mt-16 text-white">
       <IconWrapper icon={<QuestionIcon />} />
       <Text weight="bold" content="Need help?" className="font-bold mt-5" />
       <Text
@@ -24,7 +27,7 @@ const HelpBox = () => {
       <Button variant={ButtonVariant.Link} onClick={handleLinkDocument}>
         DOCUMENTATION
       </Button>
-    </div>
+    </Box>
   );
 };
 
