@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 // Import useMutation
 import { useMutation } from '@tanstack/react-query';
@@ -10,7 +10,7 @@ import { Box } from '@radix-ui/themes';
 import { SearchIcon } from '@/components/common/Icons';
 
 // import common components
-import { Logo, Heading, Input, Button, LoadingSpinner } from '@/components/common';
+import { Logo, Heading, Input, Button, LoadingSpinner, Text } from '@/components/common';
 
 // Import components
 import { Sidebar, AuthorTable } from '@/components';
@@ -22,7 +22,7 @@ import Header from './Header';
 import { Footer } from '@/layouts';
 
 // Import types
-import { ButtonVariant } from '@/types';
+import { ButtonVariant, TextSize } from '@/types';
 
 // Import services
 import { getAllAuthors } from '@/services';
@@ -30,12 +30,25 @@ import { getAllAuthors } from '@/services';
 // Import Zustand store
 import { useAuthorStore } from '@/stores';
 
+// Import hooks
+import { useDebounce } from '@/hooks';
+
 const Home = () => {
   // Zustand store for authors
-  const { authors, setAuthors } = useAuthorStore();
+  const {
+    authors,
+    filteredAuthors,
+    setAuthors,
+    searchQuery,
+    setSearchQuery,
+    filterAuthors,
+    isLoading,
+    setLoading,
+    setFiltering,
+  } = useAuthorStore();
 
-  // Local state for loading authors
-  const [isLoading, setIsLoading] = useState(true);
+  // useDebounce
+  const debouncedSearchQuery = useDebounce(searchQuery, 500);
 
   // Use mutation for fetching authors
   const { mutate } = useMutation({
@@ -44,14 +57,23 @@ const Home = () => {
       setAuthors(data);
 
       // Set loading state to false when data is loaded
-      setIsLoading(false);
+      setLoading(false);
     },
   });
 
   // Trigger the mutation to fetch authors
   useEffect(() => {
+    // Set loading to true before the fetch
+    setLoading(true);
+
     mutate();
-  }, [mutate]);
+  }, [mutate, setLoading]);
+
+  // Handle search query changes
+  useEffect(() => {
+    setFiltering(!!debouncedSearchQuery);
+    debouncedSearchQuery ? filterAuthors(debouncedSearchQuery) : setAuthors(authors);
+  }, [debouncedSearchQuery, filterAuthors, setFiltering, setAuthors, authors]);
 
   const handleShowAddModal = () => {
     // TODO: Add modal display logic
@@ -66,6 +88,10 @@ const Home = () => {
   const handleShowConfirmModal = () => {
     // TODO: Add modal display logic
   };
+
+  // Handle search change
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setSearchQuery(e.target.value);
 
   return (
     <Box className="bg-tertiary">
@@ -87,10 +113,12 @@ const Home = () => {
               <Box className="flex gap-5">
                 <Box className="w-96">
                   <Input
-                    name="authorName"
+                    name="authorSearch"
                     type="search"
-                    placeholder="Type here..."
+                    placeholder="Search by name or email..."
                     leftIcon={<SearchIcon className="cursor-pointer" />}
+                    value={searchQuery}
+                    onChange={handleSearchChange}
                   />
                 </Box>
                 <Button variant={ButtonVariant.Secondary} onClick={handleShowAddModal}>
@@ -98,6 +126,7 @@ const Home = () => {
                 </Button>
               </Box>
             </Box>
+
             {/* Render AuthorTable with authors from Zustand store */}
             {isLoading ? (
               <Box className="flex justify-center items-center py-10">
@@ -106,10 +135,21 @@ const Home = () => {
             ) : (
               // Render AuthorTable once the authors data is loaded
               <AuthorTable
-                authors={authors}
+                authors={filteredAuthors}
                 onEditAuthor={handleShowEditModal}
                 onDeleteAuthor={handleShowConfirmModal}
               />
+            )}
+
+            {/* Show message if no search results, otherwise render the table */}
+            {filteredAuthors.length === 0 && debouncedSearchQuery && !isLoading && (
+              <Box className="flex justify-center items-center mb-5">
+                <Text
+                  className="font-bold text-center text-[#a0aec0] py-14"
+                  size={TextSize.Huge}
+                  content="No search results found."
+                />
+              </Box>
             )}
           </Box>
           {/* Render the footer */}
