@@ -6,7 +6,7 @@ export const useDebounce = (value: string, delay = 500): string => {
 
   useEffect(() => {
     timerRef.current = setTimeout(() => {
-      setDebouncedValue(value.toLowerCase());
+      setDebouncedValue(value);
     }, delay);
 
     return () => {
