@@ -20,3 +20,6 @@ export { default as AppleIcon } from './AppleIcon';
 export { default as FacebookIcon } from './FacebookIcon';
 export { default as GoogleIcon } from './GoogleIcon';
 export { default as LoadingIcon } from './LoadingIcon';
+export { default as PinionIcon } from './PinionIcon';
+export { default as NotificationIcon } from './NotificationIcon';
+export { default as QuestionIcon } from './QuestionIcon';

@@ -18,6 +18,7 @@ module.exports = {
         overlay: 'rgba(0, 0, 0, 0.5)',
         light: '#fff',
         'light-opacity': 'rgba(255, 255, 255, 0.82)',
+        tertiary: '#f8f9fa',
       },
       fontFamily: {
         regular: ['Helvetica-Regular'],

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumb component matches the snapshot 1`] = `
+<div>
+  <div
+    class="rt-Box flex items-center"
+  >
+    <p
+      class="rt-Text rt-r-weight-regular text-sm text-base text-xs"
+    >
+      Pages
+    </p>
+    <span
+      class="rt-Box text-xs"
+    >
+      / 
+      Tables
+    </span>
+  </div>
+</div>
+`;

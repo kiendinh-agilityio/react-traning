@@ -8,3 +8,5 @@ export { default as Text } from './Text';
 export { default as Status } from './Status';
 export { default as Button } from './Button';
 export { default as Link } from './Link';
+export { default as Breadcrumb } from './Breadcrumb';
+export { default as LoadingSpinner } from './LoadingSpinner';
