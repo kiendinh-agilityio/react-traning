@@ -5,6 +5,7 @@ export enum TextSize {
   Large = 'text-lg',
   ExtraLarge = 'text-xl',
   Huge = 'text-2xl',
+  Base = 'text-base',
 }
 
 // Create Button variant
