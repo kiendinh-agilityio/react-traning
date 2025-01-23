@@ -12,7 +12,7 @@ exports[`Navbar Component should match snapshot 1`] = `
         <a
           class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer flex flex-row items-center gap-[5px] font-bold text-xs text-dark"
           data-accent-color=""
-          href="/dashboard"
+          href="/home"
           target="_self"
         >
           <svg

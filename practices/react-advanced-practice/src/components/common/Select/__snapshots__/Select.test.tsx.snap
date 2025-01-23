@@ -3,7 +3,7 @@
 exports[`Select Component - Render renders correctly with label and options 1`] = `
 <DocumentFragment>
   <div
-    class="rt-Flex flex-col gap-1.5 text-dark font-regular"
+    class="rt-Flex rt-r-fd-column gap-1.5 text-dark font-regular"
   >
     <label>
       Select an option
@@ -38,7 +38,7 @@ exports[`Select Component - Render renders correctly with label and options 1`] 
         </option>
       </select>
       <span
-        class="absolute bottom-1/2 right-[20px]"
+        class="rt-Box absolute bottom-1/2 right-[20px]"
       >
         <span>
           ▼
@@ -52,7 +52,7 @@ exports[`Select Component - Render renders correctly with label and options 1`] 
 exports[`Select Component - Render renders without label 1`] = `
 <DocumentFragment>
   <div
-    class="rt-Flex flex-col gap-1.5 text-dark font-regular"
+    class="rt-Flex rt-r-fd-column gap-1.5 text-dark font-regular"
   >
     <div
       class="rt-Flex relative"
@@ -84,7 +84,7 @@ exports[`Select Component - Render renders without label 1`] = `
         </option>
       </select>
       <span
-        class="absolute bottom-1/2 right-[20px]"
+        class="rt-Box absolute bottom-1/2 right-[20px]"
       >
         <span>
           ▼

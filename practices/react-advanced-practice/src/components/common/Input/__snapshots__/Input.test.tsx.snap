@@ -3,7 +3,7 @@
 exports[`Input Component renders correctly with default props and matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="w-full"
+    class="rt-Box w-full"
   >
     <div
       class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input"
@@ -23,7 +23,7 @@ exports[`Input Component renders correctly with default props and matches snapsh
 exports[`Input Component renders with error message 1`] = `
 <DocumentFragment>
   <div
-    class="w-full"
+    class="rt-Box w-full"
   >
     <div
       class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-danger"
@@ -37,7 +37,7 @@ exports[`Input Component renders with error message 1`] = `
       />
     </div>
     <span
-      class="rt-Text text-danger mt-1 text-sm"
+      class="rt-Text text-regular text-danger mt-1 text-sm"
     >
       This field is required
     </span>
@@ -48,7 +48,7 @@ exports[`Input Component renders with error message 1`] = `
 exports[`Input Component renders with left and right icons 1`] = `
 <DocumentFragment>
   <div
-    class="w-full"
+    class="rt-Box w-full"
   >
     <div
       class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input"

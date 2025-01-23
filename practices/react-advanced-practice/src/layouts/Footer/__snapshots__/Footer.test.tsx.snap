@@ -3,18 +3,20 @@
 exports[`Footer Layouts should match snapshot 1`] = `
 <DocumentFragment>
   <footer
-    class="flex justify-between text-xs text-base px-[21px]"
+    class="flex justify-between text-xs text-base"
   >
-    <p>
+    <p
+      class="rt-Text rt-r-weight-regular text-sm flex gap-1"
+    >
       @ 2025, Made with ❤️ by 
       <span
-        class="text-primary font-bold"
+        class="rt-Box text-primary font-bold"
       >
         Creative Tim
       </span>
        & 
       <span
-        class="text-primary font-bold"
+        class="rt-Box text-primary font-bold"
       >
         Simmmple
       </span>

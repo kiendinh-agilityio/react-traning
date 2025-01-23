@@ -5,9 +5,7 @@ import Text from '.';
 
 describe('Text Component', () => {
   it('should match with snapshot', () => {
-    const { container } = render(
-      <Text content="This is a text" className="font-regular" />,
-    );
+    const { container } = render(<Text className="font-regular">This is a text</Text>);
 
     expect(container).toMatchSnapshot();
   });
