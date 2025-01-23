@@ -57,8 +57,6 @@ const Home = () => {
     searchQuery,
     setSearchQuery,
     filterAuthors,
-    isLoading,
-    setLoading,
     setFiltering,
   } = useAuthorStore();
 
@@ -79,24 +77,18 @@ const Home = () => {
     useToast();
 
   // Use mutation for fetching authors
-  const { mutate } = useMutation({
+  const { mutate: fetchAuthors, isPending: isFetching } = useMutation({
     mutationFn: getAllAuthors,
     onSuccess: (data) => {
       setAuthors(data);
-
-      // Set loading state to false when data is loaded
-      setLoading(false);
     },
   });
 
   // Use mutation for adding a new author
-  const { mutate: addAuthor } = useMutation({
+  const { mutate: addAuthor, isPending: isAdding } = useMutation({
     mutationFn: addNewAuthor,
     onSuccess: (newAuthor) => {
       setAuthors([...authors, newAuthor]);
-
-      // Set loading state to false when data is loaded
-      setLoading(false);
 
       // Show success toast
       handleShowToast(MESSAGE_SUCCESS.ADD_AUTHOR, Notification.Success);
@@ -104,7 +96,7 @@ const Home = () => {
   });
 
   // Use mutation for editing an author
-  const { mutate: editAuthor } = useMutation<
+  const { mutate: editAuthor, isPending: isEditing } = useMutation<
     Author,
     Error,
     { id: string; author: Author }
@@ -118,9 +110,6 @@ const Home = () => {
         ),
       );
 
-      // Set loading state to false
-      setLoading(false);
-
       // Show success toast
       handleShowToast(MESSAGE_SUCCESS.EDIT_AUTHOR, Notification.Success);
     },
@@ -128,11 +117,8 @@ const Home = () => {
 
   // Trigger the mutation to fetch authors
   useEffect(() => {
-    // Set loading to true before the fetch
-    setLoading(true);
-
-    mutate();
-  }, [mutate, setLoading]);
+    fetchAuthors();
+  }, [fetchAuthors]);
 
   // Handle search query changes
   useEffect(() => {
@@ -150,9 +136,6 @@ const Home = () => {
   // Handle form submission for adding or editing an author
   const handleSubmitAuthor = () => {
     setIsModalOpen(false);
-
-    // Set loading to true before the fetch
-    setLoading(true);
 
     isUpdate
       ? editAuthor({ id: selectedAuthor.id, author: selectedAuthor })
@@ -179,6 +162,8 @@ const Home = () => {
   // Handle search change
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setSearchQuery(e.target.value);
+
+  const isLoading = isFetching || isAdding || isEditing;
 
   return (
     <Box className="bg-tertiary">
