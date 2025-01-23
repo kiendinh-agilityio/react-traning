@@ -6,3 +6,4 @@ export { default as SigninForm } from './SigninForm';
 export { default as SignupForm } from './SignupForm';
 export { default as SocialRegister } from './SocialRegister';
 export { default as InputGroup } from './InputGroup';
+export { default as AuthorForm } from './AuthorForm';
