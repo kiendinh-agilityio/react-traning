@@ -12,7 +12,7 @@ exports[`Breadcrumb component matches the snapshot 1`] = `
        /
        
       <span
-        class="rt-Box text-xs"
+        class="rt-Box text-xs text-dark"
       >
         Tables
       </span>
