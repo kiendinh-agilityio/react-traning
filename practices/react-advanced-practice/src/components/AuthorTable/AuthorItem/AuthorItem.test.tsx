@@ -48,7 +48,9 @@ describe('AuthorItem Component', () => {
     expect(getByText('Active')).toBeInTheDocument();
 
     // Verify Date
-    expect(getByText(formatDate(mockAuthor.date, DATE_FORMAT))).toBeInTheDocument();
+    expect(
+      getByText(formatDate(mockAuthor.date, DATE_FORMAT.PRIMARY)),
+    ).toBeInTheDocument();
 
     // Verify Actions
     expect(getByText('Edit')).toBeInTheDocument();

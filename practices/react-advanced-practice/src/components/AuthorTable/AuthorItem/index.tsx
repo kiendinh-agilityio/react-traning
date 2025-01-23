@@ -57,7 +57,7 @@ const AuthorItem = ({ author, onEdit, onDelete }: AuthorItemProps) => {
       {/* Employed Date */}
       <Table.Cell className="py-[22px]">
         <Text weight="bold" className="font-bold">
-          {formatDate(date, DATE_FORMAT)}
+          {formatDate(date, DATE_FORMAT.PRIMARY)}
         </Text>
       </Table.Cell>
 

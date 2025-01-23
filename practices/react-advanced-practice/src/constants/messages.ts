@@ -6,6 +6,8 @@ export const MESSAGE_ERROR = {
   INVALID_NAME: 'Name must start with a capital letter, have no special characters',
   INVALID_SIGNIN:
     "The email ord password that you've entered is incorrect. Please try again.",
+  INVALID_AVATAR_URL: 'Avatar URL must be a valid URL',
+  INVALID_DATE: 'Date is invalid',
   SIGNIN_FAILED: 'An error occurred while signing in. Please try again later.',
   SIGNUP_FAILED: 'Something went wrong. Please try again.',
   ADD_AUTHOR: 'Can not add new author',
