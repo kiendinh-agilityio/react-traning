@@ -19,3 +19,9 @@ export enum ButtonVariant {
   Download = 'download',
   Light = 'light',
 }
+
+// Create type for Notification
+export enum Notification {
+  Success = 'success',
+  Failed = 'failed',
+}

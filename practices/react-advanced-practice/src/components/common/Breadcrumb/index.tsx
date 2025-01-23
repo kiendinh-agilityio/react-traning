@@ -13,7 +13,7 @@ const Breadcrumb = ({ currentPage, label }: BreadcrumbProps) => (
   <Box>
     <Text className="flex gap-[4px] text-base text-xs">
       {label} /{' '}
-      <Box as="span" className="text-xs">
+      <Box as="span" className="text-xs text-dark">
         {currentPage}
       </Box>
     </Text>

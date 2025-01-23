@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toast Component renders correctly with type failed 1`] = `
+<div>
+  <div
+    class="rt-Flex rt-r-ai-center rt-r-jc-space-between toast failed w-[400px] p-4 bg-white rounded shadow-md m-auto absolute left-0 right-0 bottom-8"
+  >
+    <div
+      class="rt-Flex rt-r-ai-center gap-4"
+    >
+      <div
+        data-testid="failed-icon"
+      >
+        FailedIcon
+      </div>
+      <span
+        class="rt-Box font-regular text-base"
+      >
+        Failed message
+      </span>
+    </div>
+    <button
+      class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+   undefined"
+      data-accent-color=""
+    >
+      <div
+        data-testid="close-icon"
+      >
+        CloseIcon
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Toast Component renders correctly with type success 1`] = `
+<div>
+  <div
+    class="rt-Flex rt-r-ai-center rt-r-jc-space-between toast success w-[400px] p-4 bg-white rounded shadow-md m-auto absolute left-0 right-0 bottom-8"
+  >
+    <div
+      class="rt-Flex rt-r-ai-center gap-4"
+    >
+      <div
+        data-testid="success-icon"
+      >
+        SuccessIcon
+      </div>
+      <span
+        class="rt-Box font-regular text-base"
+      >
+        Success message
+      </span>
+    </div>
+    <button
+      class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+   undefined"
+      data-accent-color=""
+    >
+      <div
+        data-testid="close-icon"
+      >
+        CloseIcon
+      </div>
+    </button>
+  </div>
+</div>
+`;

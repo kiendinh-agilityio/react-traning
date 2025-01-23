@@ -11,3 +11,4 @@ export { default as Link } from './Link';
 export { default as Breadcrumb } from './Breadcrumb';
 export { default as LoadingSpinner } from './LoadingSpinner';
 export { default as Modal } from './Modal';
+export { default as Toast } from './Toast';
