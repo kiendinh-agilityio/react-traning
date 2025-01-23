@@ -33,7 +33,7 @@ export const addNewAuthor = async (author: Author): Promise<Author> => {
 };
 
 // API method for edit existing Author
-export const editAuthor = async (id: string, author: Author): Promise<Author> => {
+export const editAuthorById = async (id: string, author: Author): Promise<Author> => {
   try {
     const response = await axios.put<Author>(`${authorUrl}/${id}`, author, {
       headers: {
@@ -47,7 +47,7 @@ export const editAuthor = async (id: string, author: Author): Promise<Author> =>
 };
 
 // API method for delete Author
-export const deleteAuthor = async (id: string): Promise<Author> => {
+export const deleteAuthorById = async (id: string): Promise<Author> => {
   try {
     const response = await axios.delete<Author>(`${authorUrl}/${id}`);
     return response.data;
