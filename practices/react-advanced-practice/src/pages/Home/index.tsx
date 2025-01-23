@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 // Import useMutation
 import { useMutation } from '@tanstack/react-query';
@@ -10,10 +10,19 @@ import { Box, Flex } from '@radix-ui/themes';
 import { SearchIcon } from '@/components/common/Icons';
 
 // import common components
-import { Logo, Heading, Input, Button, LoadingSpinner, Text } from '@/components/common';
+import {
+  Logo,
+  Heading,
+  Input,
+  Button,
+  LoadingSpinner,
+  Text,
+  Modal,
+  Toast,
+} from '@/components/common';
 
 // Import components
-import { Sidebar, AuthorTable } from '@/components';
+import { Sidebar, AuthorTable, AuthorForm } from '@/components';
 
 // Import header for home page
 import Header from './Header';
@@ -22,16 +31,22 @@ import Header from './Header';
 import { Footer } from '@/layouts';
 
 // Import types
-import { ButtonVariant, TextSize } from '@/types';
+import { ButtonVariant, TextSize, Author, Notification } from '@/types';
 
 // Import services
-import { getAllAuthors } from '@/services';
+import { getAllAuthors, addNewAuthor, editAuthorById } from '@/services';
 
 // Import Zustand store
 import { useAuthorStore } from '@/stores';
 
 // Import hooks
-import { useDebounce } from '@/hooks';
+import { useDebounce, useToast } from '@/hooks';
+
+// Import utils
+import { profileAuthor } from '@/utils';
+
+// Import constants
+import { MESSAGE_SUCCESS } from '@/constants';
 
 const Home = () => {
   // Zustand store for authors
@@ -47,8 +62,21 @@ const Home = () => {
     setFiltering,
   } = useAuthorStore();
 
+  // State to control whether the modal is open
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  // State to track whether the modal is in 'update' mode
+  const [isUpdate, setIsUpdate] = useState<boolean>(false);
+
+  // State for the selected author (for add or edit operations)
+  const [selectedAuthor, setSelectedAuthor] = useState<Author>(profileAuthor);
+
   // useDebounce
   const debouncedSearchQuery = useDebounce(searchQuery, 500);
+
+  // Destructure values from custom hook for toast management
+  const { toastMessage, toastType, isToastOpen, handleShowToast, handleCloseToast } =
+    useToast();
 
   // Use mutation for fetching authors
   const { mutate } = useMutation({
@@ -58,6 +86,43 @@ const Home = () => {
 
       // Set loading state to false when data is loaded
       setLoading(false);
+    },
+  });
+
+  // Use mutation for adding a new author
+  const { mutate: addAuthor } = useMutation({
+    mutationFn: addNewAuthor,
+    onSuccess: (newAuthor) => {
+      setAuthors([...authors, newAuthor]);
+
+      // Set loading state to false when data is loaded
+      setLoading(false);
+
+      // Show success toast
+      handleShowToast(MESSAGE_SUCCESS.ADD_AUTHOR, Notification.Success);
+    },
+  });
+
+  // Use mutation for editing an author
+  const { mutate: editAuthor } = useMutation<
+    Author,
+    Error,
+    { id: string; author: Author }
+  >({
+    mutationFn: ({ id, author }) => editAuthorById(id, author),
+    onSuccess: (updatedAuthor) => {
+      // Update authors in the state
+      setAuthors(
+        authors.map((author) =>
+          author.id === updatedAuthor.id ? updatedAuthor : author,
+        ),
+      );
+
+      // Set loading state to false
+      setLoading(false);
+
+      // Show success toast
+      handleShowToast(MESSAGE_SUCCESS.EDIT_AUTHOR, Notification.Success);
     },
   });
 
@@ -75,18 +140,40 @@ const Home = () => {
     debouncedSearchQuery ? filterAuthors(debouncedSearchQuery) : setAuthors(authors);
   }, [debouncedSearchQuery, filterAuthors, setFiltering, setAuthors, authors]);
 
+  // Handle click to show add modal
   const handleShowAddModal = () => {
-    // TODO: Add modal display logic
+    setIsUpdate(false);
+    setSelectedAuthor(profileAuthor);
+    setIsModalOpen(true);
+  };
+
+  // Handle form submission for adding or editing an author
+  const handleSubmitAuthor = () => {
+    setIsModalOpen(false);
+
+    // Set loading to true before the fetch
+    setLoading(true);
+
+    isUpdate
+      ? editAuthor({ id: selectedAuthor.id, author: selectedAuthor })
+      : addAuthor(selectedAuthor);
   };
 
   // Function to show the 'Edit' modal for a specific author
-  const handleShowEditModal = () => {
-    // TODO: Add modal display logic
+  const handleShowEditModal = (author: Author) => {
+    setIsUpdate(true);
+    setSelectedAuthor(author);
+    setIsModalOpen(true);
   };
 
   // Function to show the confirm modal for a specific author ID
   const handleShowConfirmModal = () => {
     // TODO: Add modal display logic
+  };
+
+  // Handle close modal
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
 
   // Handle search change
@@ -95,13 +182,13 @@ const Home = () => {
 
   return (
     <Box className="bg-tertiary">
-      <Box className="min-h-screen flex pt-[30px] pr-[22px] pb-[23px]">
+      <Flex className="min-h-screen pt-[30px] pr-[22px] pb-[23px]">
         <Box>
           {/* Render the sidebar with logo */}
           <Flex
             justify="center"
             align="center"
-            className=" mb-[22px] gap-12 gradient-border pb-7"
+            className="mb-[22px] gap-12 gradient-border pb-7"
           >
             <Logo href="/home" />
           </Flex>
@@ -111,7 +198,7 @@ const Home = () => {
           {/* Render the header */}
           <Header currentPage="Tables" />
           <Box className="bg-white min-h-[88vh] mb-7 rounded-[15px] px-[21px] py-7 relative">
-            <Flex justify="between" align="center" className="mb-7">
+            <Box className="flex justify-between items-center mb-7">
               {/* Render the heading and search bar */}
               <Heading text="Authors Table" />
               <Flex className="gap-5">
@@ -129,20 +216,18 @@ const Home = () => {
                   Add New Author
                 </Button>
               </Flex>
-            </Flex>
+            </Box>
 
-            {/* Render AuthorTable with authors from Zustand store */}
-            {isLoading ? (
+            {/* Render AuthorTable */}
+            <AuthorTable
+              authors={filteredAuthors}
+              onEditAuthor={handleShowEditModal}
+              onDeleteAuthor={handleShowConfirmModal}
+            />
+            {isLoading && (
               <Flex justify="center" align="center" className="py-10">
                 <LoadingSpinner />
               </Flex>
-            ) : (
-              // Render AuthorTable once the authors data is loaded
-              <AuthorTable
-                authors={filteredAuthors}
-                onEditAuthor={handleShowEditModal}
-                onDeleteAuthor={handleShowConfirmModal}
-              />
             )}
 
             {/* Show message if no search results, otherwise render the table */}
@@ -156,11 +241,32 @@ const Home = () => {
                 </Text>
               </Flex>
             )}
+
+            {/* Render the toast notification */}
+            <Toast
+              type={toastType}
+              message={toastMessage}
+              isOpen={isToastOpen}
+              onClose={handleCloseToast}
+            />
           </Box>
           {/* Render the footer */}
           <Footer />
+
+          {/* Modal for adding a new author */}
+          {isModalOpen && (
+            <Modal className="w-2/4 px-9 py-9" onClose={handleCloseModal}>
+              <AuthorForm
+                isUpdate={isUpdate}
+                selectedAuthor={selectedAuthor}
+                closeModal={handleCloseModal}
+                onChange={setSelectedAuthor}
+                onSubmit={handleSubmitAuthor}
+              />
+            </Modal>
+          )}
         </Flex>
-      </Box>
+      </Flex>
     </Box>
   );
 };
