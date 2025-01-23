@@ -5,19 +5,19 @@ import { Text as TextBase, TextProps } from '@radix-ui/themes';
 import { TextSize } from '@/types';
 
 type TextBaseProps = {
-  content: string;
+  children: React.ReactNode;
   size?: TextSize;
 } & TextProps;
 
 const Text = ({
-  content,
+  children,
   size = TextSize.Small,
   as = 'p',
   weight = 'regular',
   className = '',
 }: TextBaseProps) => (
   <TextBase as={as} weight={weight} className={`${size} ${className}`}>
-    {content}
+    {children}
   </TextBase>
 );
 
