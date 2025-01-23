@@ -22,7 +22,7 @@ import {
 } from '@/components/common';
 
 // Import components
-import { Sidebar, AuthorTable, AuthorForm } from '@/components';
+import { Sidebar, AuthorTable, AuthorForm, ConfirmModal } from '@/components';
 
 // Import header for home page
 import Header from './Header';
@@ -34,7 +34,12 @@ import { Footer } from '@/layouts';
 import { ButtonVariant, TextSize, Author, Notification } from '@/types';
 
 // Import services
-import { getAllAuthors, addNewAuthor, editAuthorById } from '@/services';
+import {
+  getAllAuthors,
+  addNewAuthor,
+  editAuthorById,
+  deleteAuthorById,
+} from '@/services';
 
 // Import Zustand store
 import { useAuthorStore } from '@/stores';
@@ -46,7 +51,7 @@ import { useDebounce, useToast } from '@/hooks';
 import { profileAuthor } from '@/utils';
 
 // Import constants
-import { MESSAGE_SUCCESS } from '@/constants';
+import { MESSAGE_SUCCESS, MESSAGE_ERROR } from '@/constants';
 
 const Home = () => {
   // Zustand store for authors
@@ -71,6 +76,9 @@ const Home = () => {
 
   // useDebounce
   const debouncedSearchQuery = useDebounce(searchQuery, 500);
+
+  // State to control whether the confirm modal is open
+  const [isConfirmModalOpen, setIsConfirmModalOpen] = useState<boolean>(false);
 
   // Destructure values from custom hook for toast management
   const { toastMessage, toastType, isToastOpen, handleShowToast, handleCloseToast } =
@@ -115,6 +123,21 @@ const Home = () => {
     },
   });
 
+  // Use mutation for delete an author
+  const { mutate: deleteAuthor, isPending: isDeleting } = useMutation({
+    mutationFn: deleteAuthorById,
+    onSuccess: (_, id) => {
+      setAuthors(authors.filter((author) => author.id !== id));
+
+      // Show success toast
+      handleShowToast(MESSAGE_SUCCESS.DELETE_AUTHOR, Notification.Success);
+    },
+    onError: () => {
+      // Show error toast or perform other error handling actions
+      handleShowToast(MESSAGE_ERROR.DELETE_AUTHOR, Notification.Failed);
+    },
+  });
+
   // Trigger the mutation to fetch authors
   useEffect(() => {
     fetchAuthors();
@@ -150,20 +173,30 @@ const Home = () => {
   };
 
   // Function to show the confirm modal for a specific author ID
-  const handleShowConfirmModal = () => {
-    // TODO: Add modal display logic
+  const handleShowConfirmModal = (authorId: string) => {
+    setSelectedAuthor({ ...selectedAuthor, id: authorId });
+    setIsConfirmModalOpen(true);
   };
 
   // Handle close modal
   const handleCloseModal = () => {
     setIsModalOpen(false);
+    setIsConfirmModalOpen(false);
   };
 
   // Handle search change
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setSearchQuery(e.target.value);
 
-  const isLoading = isFetching || isAdding || isEditing;
+  // Handle delete author
+  const handleDeleteAuthor = () => {
+    setIsConfirmModalOpen(false);
+
+    deleteAuthor(selectedAuthor.id);
+  };
+
+  // Determine if the operation is loading by checking if any of the async actions are in progress
+  const isLoading = isFetching || isAdding || isEditing || isDeleting;
 
   return (
     <Box className="bg-tertiary">
@@ -248,6 +281,13 @@ const Home = () => {
                 onChange={setSelectedAuthor}
                 onSubmit={handleSubmitAuthor}
               />
+            </Modal>
+          )}
+
+          {/* Show the modal confirm when delete Author*/}
+          {isConfirmModalOpen && (
+            <Modal className="w-[580px] p-5" onClose={handleCloseModal}>
+              <ConfirmModal onSubmit={handleDeleteAuthor} onClose={handleCloseModal} />
             </Modal>
           )}
         </Flex>
