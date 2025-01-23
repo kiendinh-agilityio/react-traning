@@ -11,7 +11,7 @@ import { useState } from 'react';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 
 // Import radix ui
-import { Box } from '@radix-ui/themes';
+import { Flex } from '@radix-ui/themes';
 
 // Import common components
 import { Input, Button, Text } from '@/components/common';
@@ -114,8 +114,8 @@ const SignupForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-full">
       {/* Name Input */}
-      <Box className="flex flex-col mb-6 gap-[5px]">
-        <Text content="Name" />
+      <Flex direction="column" className="mb-6 gap-[5px]">
+        <Text>Name</Text>
         <Controller
           name="name"
           control={control}
@@ -137,11 +137,11 @@ const SignupForm = () => {
             />
           )}
         />
-      </Box>
+      </Flex>
 
       {/* Email Input */}
-      <Box className="flex flex-col mb-6 gap-[5px]">
-        <Text content="Email" />
+      <Flex direction="column" className=" mb-6 gap-[5px]">
+        <Text>Email</Text>
         <Controller
           name="email"
           control={control}
@@ -163,11 +163,11 @@ const SignupForm = () => {
             />
           )}
         />
-      </Box>
+      </Flex>
 
       {/* Password Input */}
-      <Box className="flex flex-col gap-[5px]">
-        <Text content="Password" />
+      <Flex direction="column" className=" mb-6 gap-[5px]">
+        <Text>Password</Text>
         <Controller
           name="password"
           control={control}
@@ -198,7 +198,7 @@ const SignupForm = () => {
             />
           )}
         />
-      </Box>
+      </Flex>
 
       {/* Submit Button */}
       <Button onClick={handleSubmit(onSubmit)} className="mt-9" isDisabled={isLoading}>

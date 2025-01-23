@@ -1,7 +1,7 @@
 import { ReactNode, ChangeEvent, forwardRef, memo } from 'react';
 
 // Import radix ui
-import { Flex, Text } from '@radix-ui/themes';
+import { Flex, Text, Box } from '@radix-ui/themes';
 
 interface InputProps {
   name: string;
@@ -38,7 +38,7 @@ const Input = memo(
       }`;
 
       return (
-        <div className="w-full">
+        <Box className="w-full">
           <Flex justify="center" align="center" className={className}>
             {leftIcon && leftIcon}
             <input
@@ -55,9 +55,9 @@ const Input = memo(
             {rightIcon && rightIcon}
           </Flex>
           {errorMessage && (
-            <Text className="text-danger mt-1 text-sm">{errorMessage}</Text>
+            <Text className="text-regular text-danger mt-1 text-sm">{errorMessage}</Text>
           )}
-        </div>
+        </Box>
       );
     },
   ),

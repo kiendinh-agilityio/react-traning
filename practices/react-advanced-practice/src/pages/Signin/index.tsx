@@ -1,5 +1,5 @@
 // Import radix ui
-import { Box } from '@radix-ui/themes';
+import { Box, Flex } from '@radix-ui/themes';
 
 // Import common components
 import { Logo, Button, Text } from '@/components/common';
@@ -25,7 +25,7 @@ const Signin = () => {
   };
 
   return (
-    <Box className="flex flex-col min-h-screen mx-auto max-w-[987px] pt-6 pb-10">
+    <Flex direction="column" className="min-h-screen mx-auto max-w-[987px] pt-6 pb-10">
       <Box className="flex-1 mb-64">
         <Box className="flex items-center justify-between py-4 px-6 border-[1.5px] rounded-[15px] border-light-opacity bg-light-gradient shadow-[0px_4px_10px_rgba(0,0,0,0.05)] backdrop-blur-[21px] mb-48">
           <Logo href="/signin" />
@@ -35,15 +35,12 @@ const Signin = () => {
           </Button>
         </Box>
         <Box>
-          <Text
-            size={TextSize.Huge}
-            className="text-primary font-bold mb-[9px]"
-            content="Welcome Back"
-          />
-          <Text
-            className="text-base font-bold mb-9"
-            content="Enter your email and password to sign in"
-          />
+          <Text size={TextSize.Huge} className="text-primary font-bold mb-[9px]">
+            Welcome Back
+          </Text>
+          <Text className="text-base font-bold mb-9">
+            Enter your email and password to sign in
+          </Text>
           <SigninForm />
         </Box>
         <img
@@ -54,7 +51,7 @@ const Signin = () => {
         />
       </Box>
       <Footer />
-    </Box>
+    </Flex>
   );
 };
 

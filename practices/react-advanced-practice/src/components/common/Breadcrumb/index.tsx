@@ -10,11 +10,13 @@ interface BreadcrumbProps {
 }
 
 const Breadcrumb = ({ currentPage, label }: BreadcrumbProps) => (
-  <Box className="flex items-center">
-    <Text className="text-base text-xs" content={label} />
-    <Box as="span" className="text-xs">
-      / {currentPage}
-    </Box>
+  <Box>
+    <Text className="flex gap-[4px] text-base text-xs">
+      {label} /{' '}
+      <Box as="span" className="text-xs">
+        {currentPage}
+      </Box>
+    </Text>
   </Box>
 );
 

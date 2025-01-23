@@ -11,7 +11,7 @@ import { useState } from 'react';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 
 // Import radix ui
-import { Box } from '@radix-ui/themes';
+import { Flex } from '@radix-ui/themes';
 
 // Import common components
 import { Input, Button, Text } from '@/components/common';
@@ -115,8 +115,8 @@ const SigninForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col max-w-[350px]">
       {/* Email Input */}
-      <Box className="flex flex-col mb-6 gap-[5px]">
-        <Text content="Email" />
+      <Flex direction="column" className="mb-6 gap-[5px]">
+        <Text>Email</Text>
         <Controller
           name="email"
           control={control}
@@ -138,11 +138,11 @@ const SigninForm = () => {
             />
           )}
         />
-      </Box>
+      </Flex>
 
       {/* Password Input */}
-      <Box className="flex flex-col gap-[5px]">
-        <Text content="Password" />
+      <Flex direction="column" className="gap-[5px]">
+        <Text>Password</Text>
         <Controller
           name="password"
           control={control}
@@ -173,12 +173,10 @@ const SigninForm = () => {
             />
           )}
         />
-      </Box>
+      </Flex>
 
       {/* Error Message */}
-      {errorMessage && (
-        <Text content={errorMessage} className="text-danger mt-3 text-sm" />
-      )}
+      {errorMessage && <Text className="text-danger mt-3 text-sm">{errorMessage}</Text>}
 
       {/* Submit Button */}
       <Button

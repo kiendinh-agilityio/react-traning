@@ -1,5 +1,5 @@
 // Import radix ui
-import { Box } from '@radix-ui/themes';
+import { Flex, Box } from '@radix-ui/themes';
 
 // Import components common icon
 import { NotificationIcon, PinionIcon, UserIcon } from '@/components/common/Icons';
@@ -15,16 +15,13 @@ const Header = ({ currentPage }: HeaderProps) => (
   <header className="flex justify-between mb-7 px-[21px]">
     <Box>
       <Breadcrumb label="Pages" currentPage="Tables" />
-      <Text
-        className="font-helveticaBold font-bold text-dark mt-[6px]"
-        content={currentPage}
-      />
+      <Text className="font-bold text-dark mt-[6px]">{currentPage}</Text>
     </Box>
-    <Box className="flex items-center gap-[17px]">
+    <Flex align="center" className="gap-[17px]">
       <UserIcon />
       <PinionIcon className="cursor-pointer" />
       <NotificationIcon className="cursor-pointer" />
-    </Box>
+    </Flex>
   </header>
 );
 

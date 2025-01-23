@@ -16,7 +16,9 @@ const Status = ({ value }: StatusProps) => (
       value === 'Active' ? 'border-active bg-active' : 'border-inactive bg-inactive'
     }`}
   >
-    <Text weight="bold" className="font-bold text-white" content={value} />
+    <Text weight="bold" className="font-bold text-white">
+      {value}
+    </Text>
   </Flex>
 );
 

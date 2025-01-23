@@ -1,7 +1,7 @@
 import { ChangeEvent, forwardRef, memo } from 'react';
 
 // Import radix
-import { Flex } from '@radix-ui/themes';
+import { Flex, Box } from '@radix-ui/themes';
 
 // Import components
 import { ArrowSelectIcon } from '@/components/common/Icons';
@@ -13,8 +13,8 @@ interface SelectProps {
   name: string;
   optionsList: OptionsType;
   value?: string;
-  onBlur?: () => void;
   errorMessage?: string;
+  onBlur?: (e: ChangeEvent<HTMLSelectElement>) => void;
   onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
 }
 
@@ -32,7 +32,7 @@ const Select = memo(
         ));
 
       return (
-        <Flex className="flex-col gap-1.5 text-dark font-regular">
+        <Flex direction="column" className="gap-1.5 text-dark font-regular">
           {label && <label>{label}</label>}
           <Flex className="relative">
             <select
@@ -46,9 +46,9 @@ const Select = memo(
             >
               {renderOptions(optionsList)}
             </select>
-            <span className="absolute bottom-1/2 right-[20px]">
+            <Box as="span" className="absolute bottom-1/2 right-[20px]">
               <ArrowSelectIcon />
-            </span>
+            </Box>
           </Flex>
         </Flex>
       );

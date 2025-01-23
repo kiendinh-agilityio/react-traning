@@ -43,8 +43,10 @@ const AuthorItem = ({ author, onEdit, onDelete }: AuthorItemProps) => {
 
       {/* Function */}
       <Table.Cell className="py-[13px]">
-        <Text weight="bold" className="font-bold text-dark" content={roles} />
-        <Text content={position} className="font-regular text-gray" />
+        <Text weight="bold" className="font-bold text-dark">
+          {roles}
+        </Text>
+        <Text className="font-regular text-gray">{position}</Text>
       </Table.Cell>
 
       {/* Status */}
@@ -54,11 +56,9 @@ const AuthorItem = ({ author, onEdit, onDelete }: AuthorItemProps) => {
 
       {/* Employed Date */}
       <Table.Cell className="py-[22px]">
-        <Text
-          weight="bold"
-          className="font-bold"
-          content={formatDate(date, DATE_FORMAT)}
-        />
+        <Text weight="bold" className="font-bold">
+          {formatDate(date, DATE_FORMAT)}
+        </Text>
       </Table.Cell>
 
       {/* Actions */}

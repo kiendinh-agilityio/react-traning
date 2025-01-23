@@ -1,3 +1,5 @@
+import { Box } from '@radix-ui/themes';
+
 // Import constants
 import { FOOTER_NAVBAR } from '@/constants';
 
@@ -5,15 +7,21 @@ import { FOOTER_NAVBAR } from '@/constants';
 import { currentYear } from '@/utils';
 
 // Import components
-import { Link } from '@/components/common';
+import { Link, Text } from '@/components/common';
 
 const Footer = () => (
   <footer className="flex justify-between text-xs text-base">
-    <p>
+    <Text className="flex gap-1">
       @ {currentYear}, Made with ❤️ by{' '}
-      <span className="text-primary font-bold">Creative Tim</span> &{' '}
-      <span className="text-primary font-bold">Simmmple</span> for a better web
-    </p>
+      <Box as="span" className="text-primary font-bold">
+        Creative Tim
+      </Box>{' '}
+      &{' '}
+      <Box as="span" className="text-primary font-bold">
+        Simmmple
+      </Box>{' '}
+      for a better web
+    </Text>
     <nav>
       <ul className="flex gap-11">
         {FOOTER_NAVBAR.map((item) => (

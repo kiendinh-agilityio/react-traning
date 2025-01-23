@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useMutation } from '@tanstack/react-query';
 
 // Import radix ui
-import { Box } from '@radix-ui/themes';
+import { Box, Flex } from '@radix-ui/themes';
 
 // Import icons
 import { SearchIcon } from '@/components/common/Icons';
@@ -98,19 +98,23 @@ const Home = () => {
       <Box className="min-h-screen flex pt-[30px] pr-[22px] pb-[23px]">
         <Box>
           {/* Render the sidebar with logo */}
-          <Box className="flex justify-center mb-[22px] items-center gap-12 gradient-border pb-7">
+          <Flex
+            justify="center"
+            align="center"
+            className=" mb-[22px] gap-12 gradient-border pb-7"
+          >
             <Logo href="/home" />
-          </Box>
+          </Flex>
           <Sidebar />
         </Box>
-        <Box className="flex-col justify-between w-full">
+        <Flex direction="column" justify="between" className="w-full">
           {/* Render the header */}
           <Header currentPage="Tables" />
           <Box className="bg-white min-h-[88vh] mb-7 rounded-[15px] px-[21px] py-7 relative">
-            <Box className="flex justify-between items-center mb-7">
+            <Flex justify="between" align="center" className="mb-7">
               {/* Render the heading and search bar */}
               <Heading text="Authors Table" />
-              <Box className="flex gap-5">
+              <Flex className="gap-5">
                 <Box className="w-96">
                   <Input
                     name="authorSearch"
@@ -124,14 +128,14 @@ const Home = () => {
                 <Button variant={ButtonVariant.Secondary} onClick={handleShowAddModal}>
                   Add New Author
                 </Button>
-              </Box>
-            </Box>
+              </Flex>
+            </Flex>
 
             {/* Render AuthorTable with authors from Zustand store */}
             {isLoading ? (
-              <Box className="flex justify-center items-center py-10">
+              <Flex justify="center" align="center" className="py-10">
                 <LoadingSpinner />
-              </Box>
+              </Flex>
             ) : (
               // Render AuthorTable once the authors data is loaded
               <AuthorTable
@@ -143,18 +147,19 @@ const Home = () => {
 
             {/* Show message if no search results, otherwise render the table */}
             {filteredAuthors.length === 0 && debouncedSearchQuery && !isLoading && (
-              <Box className="flex justify-center items-center mb-5">
+              <Flex justify="center" align="center" className="mb-5">
                 <Text
                   className="font-bold text-center text-[#a0aec0] py-14"
                   size={TextSize.Huge}
-                  content="No search results found."
-                />
-              </Box>
+                >
+                  No search results found.
+                </Text>
+              </Flex>
             )}
           </Box>
           {/* Render the footer */}
           <Footer />
-        </Box>
+        </Flex>
       </Box>
     </Box>
   );
