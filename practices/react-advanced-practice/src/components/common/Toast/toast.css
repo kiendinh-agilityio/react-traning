@@ -1,0 +1,42 @@
+.toast {
+  animation: show_toast 0.3s ease forwards;
+}
+
+@keyframes show_toast {
+  0% {
+    transform: translateY(100%);
+  }
+  40% {
+    transform: translateY(-5%);
+  }
+  80% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+.toast::before {
+  position: absolute;
+  content: '';
+  height: 3px;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  animation: progress 3s linear forwards;
+}
+
+@keyframes progress {
+  100% {
+    width: 0%;
+  }
+}
+
+.toast.success::before {
+  background-color: #4fd1c5;
+}
+
+.toast.failed::before {
+  background-color: #e53e3e;
+}
