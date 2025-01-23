@@ -23,3 +23,7 @@ export { default as LoadingIcon } from './LoadingIcon';
 export { default as PinionIcon } from './PinionIcon';
 export { default as NotificationIcon } from './NotificationIcon';
 export { default as QuestionIcon } from './QuestionIcon';
+export { default as CloseIcon } from './CloseIcon';
+export { default as FailedIcon } from './FailedIcon';
+export { default as SuccessIcon } from './SuccessIcon';
+export { default as TrashIcon } from './TrashIcon';
