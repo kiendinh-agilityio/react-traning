@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfirmModal Component should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="rt-Flex rt-r-fd-column rt-r-ai-center rt-r-jc-center gap-8 py-4 relative"
+  >
+    <svg
+      aria-hidden="true"
+      class="w-11 h-11"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clip-rule="evenodd"
+        d="M9 2a1 1 0 0 0-.894.553L7.382 4H4a1 1 0 0 0 0 2v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6a1 1 0 1 0 0-2h-3.382l-.724-1.447A1 1 0 0 0 11 2H9zM7 8a1 1 0 0 1 2 0v6a1 1 0 1 1-2 0V8zm5-1a1 1 0 0 0-1 1v6a1 1 0 1 0 2 0V8a1 1 0 0 0-1-1z"
+        fill="#a0aec0"
+        fill-rule="evenodd"
+      />
+    </svg>
+    <button
+      class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+   absolute right-0 top-0 hover:tertiary hover:rounded-full justify-center w-[20px] h-[20px]"
+      data-accent-color=""
+    >
+      <svg
+        aria-label="Close Icon"
+        fill="#959ba4"
+        height="18px"
+        viewBox="0 0 384 512"
+        width="18px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+        />
+      </svg>
+    </button>
+    <h2
+      class="rt-Heading rt-r-size-6 rt-r-weight-bold text-lg font-bold text-dark font-regular text-center text-dark"
+    >
+      Are you sure you want to delete this author?
+    </h2>
+    <div
+      class="rt-Flex rt-r-ai-center rt-r-jc-center gap-6"
+    >
+      <button
+        class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer danger
+   undefined"
+        data-accent-color=""
+      >
+        Yes, I'm sure
+      </button>
+      <button
+        class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer tertiary
+   undefined"
+        data-accent-color=""
+      >
+        No, Cancel
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
