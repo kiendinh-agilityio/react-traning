@@ -40,6 +40,7 @@ const InputGroup = ({
       onChange={onChange}
       onBlur={onBlur}
       errorMessage={errorMessage}
+      className="dark:bg-light"
     />
   </Flex>
 );
