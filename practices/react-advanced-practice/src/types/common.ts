@@ -25,3 +25,8 @@ export enum Notification {
   Success = 'success',
   Failed = 'failed',
 }
+
+// Define an enum for the query keys
+export enum QueryKey {
+  Authors = 'authors',
+}
