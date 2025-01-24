@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
 // Import useMutation
-import { useMutation } from '@tanstack/react-query';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 
-// Import radix ui
+// Import components from Radix UI
 import { Box, Flex } from '@radix-ui/themes';
 
 // Import icons
@@ -31,7 +31,7 @@ import Header from './Header';
 import { Footer } from '@/layouts';
 
 // Import types
-import { ButtonVariant, TextSize, Author, Notification } from '@/types';
+import { ButtonVariant, TextSize, Author, Notification, QueryKey } from '@/types';
 
 // Import services
 import {
@@ -54,6 +54,9 @@ import { profileAuthor } from '@/utils';
 import { MESSAGE_SUCCESS, MESSAGE_ERROR } from '@/constants';
 
 const Home = () => {
+  // Initialize react-query client for cache management
+  const queryClient = useQueryClient();
+
   // Zustand store for authors
   const {
     authors,
@@ -84,22 +87,24 @@ const Home = () => {
   const { toastMessage, toastType, isToastOpen, handleShowToast, handleCloseToast } =
     useToast();
 
-  // Use mutation for fetching authors
-  const { mutate: fetchAuthors, isPending: isFetching } = useMutation({
-    mutationFn: getAllAuthors,
-    onSuccess: (data) => {
-      setAuthors(data);
-    },
+  // Query to fetch all authors from the API
+  const { data, isLoading } = useQuery<Author[], Error>({
+    queryKey: [QueryKey.Authors],
+    queryFn: getAllAuthors,
   });
 
   // Use mutation for adding a new author
   const { mutate: addAuthor, isPending: isAdding } = useMutation({
     mutationFn: addNewAuthor,
-    onSuccess: (newAuthor) => {
-      setAuthors([...authors, newAuthor]);
+    onSuccess: async () => {
+      await queryClient.invalidateQueries({ queryKey: [QueryKey.Authors] });
 
       // Show success toast
       handleShowToast(MESSAGE_SUCCESS.ADD_AUTHOR, Notification.Success);
+    },
+    onError: () => {
+      // Show error toast for add operation
+      handleShowToast(MESSAGE_ERROR.ADD_AUTHOR, Notification.Failed);
     },
   });
 
@@ -110,24 +115,23 @@ const Home = () => {
     { id: string; author: Author }
   >({
     mutationFn: ({ id, author }) => editAuthorById(id, author),
-    onSuccess: (updatedAuthor) => {
-      // Update authors in the state
-      setAuthors(
-        authors.map((author) =>
-          author.id === updatedAuthor.id ? updatedAuthor : author,
-        ),
-      );
+    onSuccess: async () => {
+      await queryClient.invalidateQueries({ queryKey: [QueryKey.Authors] });
 
       // Show success toast
       handleShowToast(MESSAGE_SUCCESS.EDIT_AUTHOR, Notification.Success);
+    },
+    onError: () => {
+      // Show error toast for edit operation
+      handleShowToast(MESSAGE_ERROR.EDIT_AUTHOR, Notification.Failed);
     },
   });
 
   // Use mutation for delete an author
   const { mutate: deleteAuthor, isPending: isDeleting } = useMutation({
     mutationFn: deleteAuthorById,
-    onSuccess: (_, id) => {
-      setAuthors(authors.filter((author) => author.id !== id));
+    onSuccess: async () => {
+      await queryClient.invalidateQueries({ queryKey: [QueryKey.Authors] });
 
       // Show success toast
       handleShowToast(MESSAGE_SUCCESS.DELETE_AUTHOR, Notification.Success);
@@ -138,10 +142,10 @@ const Home = () => {
     },
   });
 
-  // Trigger the mutation to fetch authors
+  // Update authors in the Zustand store when API data changes
   useEffect(() => {
-    fetchAuthors();
-  }, [fetchAuthors]);
+    data && setAuthors(data);
+  }, [data, setAuthors]);
 
   // Handle search query changes
   useEffect(() => {
@@ -195,8 +199,8 @@ const Home = () => {
     deleteAuthor(selectedAuthor.id);
   };
 
-  // Determine if the operation is loading by checking if any of the async actions are in progress
-  const isLoading = isFetching || isAdding || isEditing || isDeleting;
+  // Check if any mutation is currently loading
+  const isLoadingMutation = isAdding || isEditing || isDeleting;
 
   return (
     <Box className="bg-tertiary">
@@ -242,7 +246,7 @@ const Home = () => {
               onEditAuthor={handleShowEditModal}
               onDeleteAuthor={handleShowConfirmModal}
             />
-            {isLoading && (
+            {(isLoading || isLoadingMutation) && (
               <Flex justify="center" align="center" className="py-10">
                 <LoadingSpinner />
               </Flex>
