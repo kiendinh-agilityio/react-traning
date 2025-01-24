@@ -6,13 +6,13 @@ exports[`Breadcrumb component matches the snapshot 1`] = `
     class="rt-Box"
   >
     <p
-      class="rt-Text rt-r-weight-regular text-sm flex gap-[4px] text-base text-xs"
+      class="rt-Text rt-r-weight-regular text-sm flex gap-[4px] text-base"
     >
       Pages
        /
        
       <span
-        class="rt-Box text-xs text-dark"
+        class="rt-Box text-xs text-dark dark:text-light"
       >
         Tables
       </span>
