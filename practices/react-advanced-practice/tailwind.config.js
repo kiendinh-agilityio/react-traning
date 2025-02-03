@@ -30,7 +30,6 @@ module.exports = {
         lg: ['18px', { lineHeight: '25px' }],
         xl: ['22px', { lineHeight: '30px' }],
         '2xl': ['32px', { lineHeight: '41px' }],
-        base: ['16px', { lineHeight: '24px' }],
       },
       lineHeight: {
         base: '18px',
@@ -45,6 +44,7 @@ module.exports = {
       },
     },
   },
+  darkMode: 'class',
   plugins: [
     plugin(function ({ addUtilities }) {
       addUtilities({

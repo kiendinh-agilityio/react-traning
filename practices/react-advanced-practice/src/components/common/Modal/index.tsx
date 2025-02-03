@@ -22,7 +22,7 @@ const Modal = ({ children, className, onClose }: ModalProps) => {
     >
       <Flex
         direction="column"
-        className={`w-[900px] gap-8 rounded-2xl bg-white shadow z-10 py-8 px-10 ${className}`}
+        className={`gap-8 rounded-2xl bg-white shadow z-10 py-8 px-10 ${className}`}
         onClick={handleStopPropagation}
       >
         {children}

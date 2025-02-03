@@ -14,10 +14,10 @@ exports[`InputGroup Component renders correctly and matches snapshot 1`] = `
       class="rt-Box w-full"
     >
       <div
-        class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input"
+        class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input dark:bg-light"
       >
         <input
-          class="w-full text-regular focus:outline-none text-dark placeholder:text-base"
+          class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
           name="email"
           placeholder="Enter your email"
           type="email"

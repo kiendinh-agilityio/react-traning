@@ -43,7 +43,7 @@ const AuthorItem = ({ author, onEdit, onDelete }: AuthorItemProps) => {
 
       {/* Function */}
       <Table.Cell className="py-[13px]">
-        <Text weight="bold" className="font-bold text-dark">
+        <Text weight="bold" className="font-bold text-dark dark:text-light">
           {roles}
         </Text>
         <Text className="font-regular text-gray">{position}</Text>
