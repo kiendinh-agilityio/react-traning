@@ -1,3 +1,5 @@
+import { Box } from '@radix-ui/themes';
+
 interface IconWrapperProps {
   icon: React.ReactNode;
   active?: boolean;
@@ -8,7 +10,7 @@ const IconWrapper = ({ icon, active }: IconWrapperProps) => {
     active ? 'bg-primary border-primary' : 'bg-white border-white'
   }`;
 
-  return <div className={iconClassName}>{icon}</div>;
+  return <Box className={iconClassName}>{icon}</Box>;
 };
 
 export default IconWrapper;
