@@ -84,7 +84,7 @@ const AuthorForm = ({
       <Heading
         as="h2"
         text={`${isUpdate ? 'EDIT' : 'ADD'} AUTHOR`}
-        className="font-helveticaBold font-bold justify-end"
+        className="font-bold text-center"
       />
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
         <Controller

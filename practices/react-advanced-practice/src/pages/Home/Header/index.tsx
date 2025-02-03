@@ -22,7 +22,7 @@ const Header = ({ currentPage }: HeaderProps) => (
     </Box>
     <Flex align="center" className="gap-[17px]">
       <SwitchTheme />
-      <UserIcon />
+      <UserIcon color="#718096" className="cursor-pointer" />
       <PinionIcon className="cursor-pointer" />
       <NotificationIcon className="cursor-pointer" />
     </Flex>

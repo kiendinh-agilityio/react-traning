@@ -1,4 +1,4 @@
-import { memo, useMemo } from 'react';
+import { memo, useMemo, ReactElement } from 'react';
 
 // Import constants
 import { SIDEBAR_ITEMS } from '@/constants';
@@ -10,7 +10,7 @@ import SidebarItem from './SidebarItem';
 import HelpBox from './HelpBox';
 
 interface SidebarItemType {
-  icon: React.ReactNode;
+  icon: ReactElement;
   label: string;
   active: boolean;
   href: string;

@@ -6,17 +6,17 @@ exports[`Sidebar Component should match snapshot 1`] = `
     class="px-[30px]"
   >
     <li
-      class="sidebar-item bg-white text-dark w-[220px] h-[54px] flex items-center rounded-[15px] cursor-pointer"
+      class="py-2 px-4 text-sm w-[220px] h-[54px] rounded-[15px] font-bold text-base mb-3 bg-white text-dark flex items-center cursor-pointer"
     >
       <a
         class="flex items-center gap-4"
         href="#"
       >
         <div
-          class="flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-primary border-primary"
+          class="rt-Box flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-primary border-primary"
         >
           <svg
-            fill="none"
+            fill="#4fd1c5"
             height="16"
             width="15"
             xmlns="http://www.w3.org/2000/svg"
@@ -52,14 +52,14 @@ exports[`Sidebar Component should match snapshot 1`] = `
       </a>
     </li>
     <li
-      class="sidebar-item "
+      class="py-2 px-4 text-sm w-[220px] h-[54px] rounded-[15px] font-bold text-base mb-3 "
     >
       <a
         class="flex items-center gap-4"
         href="#"
       >
         <div
-          class="flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
+          class="rt-Box flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
         >
           <svg
             fill="none"
@@ -69,7 +69,7 @@ exports[`Sidebar Component should match snapshot 1`] = `
           >
             <g
               clip-path="url(#a)"
-              fill="#4FD1C5"
+              fill="#4fd1c5"
             >
               <path
                 d="M3.047 15.032h-.938a.703.703 0 0 1-.703-.704V10.11a.703.703 0 0 1 .703-.703h.938a.703.703 0 0 1 .703.703v4.219a.703.703 0 0 1-.703.703ZM9.61 15.03h-.938a.703.703 0 0 1-.703-.702V7.296a.703.703 0 0 1 .703-.703h.937a.703.703 0 0 1 .703.703v7.032a.703.703 0 0 1-.703.703ZM12.89 15.031h-.937a.703.703 0 0 1-.703-.703V4.015a.703.703 0 0 1 .703-.703h.938a.703.703 0 0 1 .703.704v10.312a.703.703 0 0 1-.703.703ZM6.328 15.031h-.937a.703.703 0 0 1-.704-.703V1.672a.703.703 0 0 1 .704-.703h.937a.703.703 0 0 1 .703.703v12.656a.703.703 0 0 1-.703.703Z"
@@ -95,14 +95,14 @@ exports[`Sidebar Component should match snapshot 1`] = `
       </a>
     </li>
     <li
-      class="sidebar-item "
+      class="py-2 px-4 text-sm w-[220px] h-[54px] rounded-[15px] font-bold text-base mb-3 "
     >
       <a
         class="flex items-center gap-4"
         href="#"
       >
         <div
-          class="flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
+          class="rt-Box flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
         >
           <svg
             fill="none"
@@ -112,7 +112,7 @@ exports[`Sidebar Component should match snapshot 1`] = `
           >
             <g
               clip-path="url(#a)"
-              fill="#4FD1C5"
+              fill="#4fd1c5"
             >
               <path
                 d="M.937 11.515a1.64 1.64 0 0 0 1.641 1.64h9.844a1.641 1.641 0 0 0 1.64-1.64V7.004H.937v4.511ZM2.871 9.29a.879.879 0 0 1 .879-.88h1.406a.879.879 0 0 1 .88.88v.586a.879.879 0 0 1-.88.879H3.75a.879.879 0 0 1-.879-.88V9.29ZM12.422 2.843H2.578a1.64 1.64 0 0 0-1.64 1.64v.762h13.124v-.761a1.64 1.64 0 0 0-1.64-1.641Z"
@@ -138,14 +138,14 @@ exports[`Sidebar Component should match snapshot 1`] = `
       </a>
     </li>
     <li
-      class="sidebar-item "
+      class="py-2 px-4 text-sm w-[220px] h-[54px] rounded-[15px] font-bold text-base mb-3 "
     >
       <a
         class="flex items-center gap-4"
         href="#"
       >
         <div
-          class="flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
+          class="rt-Box flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
         >
           <svg
             fill="none"
@@ -158,7 +158,7 @@ exports[`Sidebar Component should match snapshot 1`] = `
             >
               <path
                 d="M13.757 4.031a.468.468 0 0 0-.749-.117l-1.8 1.801a.472.472 0 0 1-.663 0l-.778-.779a.469.469 0 0 1 0-.663L11.56 2.48a.468.468 0 0 0-.14-.759c-1.354-.605-3.044-.29-4.11.768-.905.9-1.175 2.304-.74 3.854a.466.466 0 0 1-.13.468l-4.878 4.455a1.88 1.88 0 1 0 2.654 2.655l4.502-4.888A.466.466 0 0 1 9.18 8.9c.442.121.897.184 1.355.187.978 0 1.837-.317 2.456-.927 1.147-1.13 1.322-3.047.766-4.128Zm-10.842 9.57a.937.937 0 1 1-.203-1.864.937.937 0 0 1 .203 1.864Z"
-                fill="#4FD1C5"
+                fill="#4fd1c5"
               />
             </g>
             <defs>
@@ -186,14 +186,14 @@ exports[`Sidebar Component should match snapshot 1`] = `
       ACCOUNT PAGES
     </li>
     <li
-      class="sidebar-item "
+      class="py-2 px-4 text-sm w-[220px] h-[54px] rounded-[15px] font-bold text-base mb-3 "
     >
       <a
         class="flex items-center gap-4"
         href="#"
       >
         <div
-          class="flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
+          class="rt-Box flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
         >
           <svg
             fill="none"
@@ -203,7 +203,7 @@ exports[`Sidebar Component should match snapshot 1`] = `
           >
             <path
               d="M9.745 2.392c-.57-.616-1.366-.955-2.245-.955-.884 0-1.683.337-2.25.949-.574.618-.853 1.459-.788 2.367C4.592 6.543 5.955 8 7.5 8c1.545 0 2.905-1.457 3.037-3.247.067-.9-.215-1.738-.792-2.361ZM12.656 14.562H2.344a.908.908 0 0 1-.71-.326 1.035 1.035 0 0 1-.21-.853c.248-1.372 1.02-2.524 2.232-3.333C4.734 9.332 6.1 8.937 7.5 8.937c1.401 0 2.766.395 3.844 1.113 1.213.808 1.984 1.96 2.232 3.332.056.315-.02.626-.21.853a.908.908 0 0 1-.71.327Z"
-              fill="#4FD1C5"
+              fill="#4fd1c5"
             />
           </svg>
         </div>
@@ -215,14 +215,14 @@ exports[`Sidebar Component should match snapshot 1`] = `
       </a>
     </li>
     <li
-      class="sidebar-item "
+      class="py-2 px-4 text-sm w-[220px] h-[54px] rounded-[15px] font-bold text-base mb-3 "
     >
       <a
         class="flex items-center gap-4"
         href="/signin"
       >
         <div
-          class="flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
+          class="rt-Box flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
         >
           <svg
             fill="none"
@@ -232,11 +232,11 @@ exports[`Sidebar Component should match snapshot 1`] = `
           >
             <path
               d="M12.539 7.063H8.437a1.406 1.406 0 0 1-1.406-1.407V1.555a.117.117 0 0 0-.117-.117H4.219a1.875 1.875 0 0 0-1.875 1.875v9.375a1.875 1.875 0 0 0 1.875 1.875h6.562a1.875 1.875 0 0 0 1.875-1.875V7.18a.117.117 0 0 0-.117-.117Z"
-              fill="#4FD1C5"
+              fill="#4fd1c5"
             />
             <path
               d="M12.282 6.026 8.069 1.813a.059.059 0 0 0-.1.041v3.803a.469.469 0 0 0 .468.469h3.804a.059.059 0 0 0 .04-.1Z"
-              fill="#4FD1C5"
+              fill="#4fd1c5"
             />
           </svg>
         </div>
@@ -248,14 +248,14 @@ exports[`Sidebar Component should match snapshot 1`] = `
       </a>
     </li>
     <li
-      class="sidebar-item "
+      class="py-2 px-4 text-sm w-[220px] h-[54px] rounded-[15px] font-bold text-base mb-3 "
     >
       <a
         class="flex items-center gap-4"
         href="/signup"
       >
         <div
-          class="flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
+          class="rt-Box flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
         >
           <svg
             fill="none"
@@ -265,7 +265,7 @@ exports[`Sidebar Component should match snapshot 1`] = `
           >
             <g
               clip-path="url(#a)"
-              fill="#4FD1C5"
+              fill="#4fd1c5"
             >
               <path
                 d="M13.993 1.622a.139.139 0 0 0-.104-.108c-1.716-.42-5.68 1.076-7.828 3.223-.384.38-.733.793-1.044 1.233-.663-.058-1.325-.01-1.89.237-1.592.7-2.056 2.53-2.185 3.317a.282.282 0 0 0 .309.328l2.558-.282c.001.193.013.386.034.577a.572.572 0 0 0 .167.352l.99.988a.574.574 0 0 0 .352.167c.191.021.383.033.574.035l-.28 2.555a.283.283 0 0 0 .328.309c.785-.126 2.618-.59 3.315-2.183.246-.564.296-1.224.24-1.883.441-.311.855-.66 1.236-1.044 2.155-2.144 3.641-6.02 3.228-7.821ZM8.615 6.885a1.406 1.406 0 1 1 1.988-1.989 1.406 1.406 0 0 1-1.988 1.99Z"
@@ -298,7 +298,7 @@ exports[`Sidebar Component should match snapshot 1`] = `
     class="rt-Box bg-primary w-[218px] py-4 px-4 border border-primary rounded-[15px] m-auto mt-16 text-white"
   >
     <div
-      class="flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
+      class="rt-Box flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
     >
       <svg
         fill="none"
