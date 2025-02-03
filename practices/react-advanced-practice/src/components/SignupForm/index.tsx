@@ -14,7 +14,7 @@ import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { Flex } from '@radix-ui/themes';
 
 // Import common components
-import { Input, Button, Text } from '@/components/common';
+import { Input, Button, Text, Link } from '@/components/common';
 
 // Import icons
 import {
@@ -204,6 +204,12 @@ const SignupForm = () => {
       <Button onClick={handleSubmit(onSubmit)} className="mt-9" isDisabled={isLoading}>
         {isLoading ? <LoadingIcon /> : 'Sign Up'}
       </Button>
+      <Text as="div" className="font-regular text-base text-center mt-[22px]">
+        Already have an account?{' '}
+        <Link href="/signin" className="text-primary">
+          Sign in
+        </Link>
+      </Text>
     </form>
   );
 };
