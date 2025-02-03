@@ -290,7 +290,7 @@ const Home = () => {
 
           {/* Modal for adding a new author */}
           {isModalOpen && (
-            <Modal className="w-2/4 px-9 py-9" onClose={handleCloseModal}>
+            <Modal className="w-[900px] w-2/4 px-9 py-9" onClose={handleCloseModal}>
               <AuthorForm
                 isUpdate={isUpdate}
                 selectedAuthor={selectedAuthor}
