@@ -8,7 +8,7 @@ import { Button, Heading } from '@/components/common/';
 import { TrashIcon, CloseIcon } from '@/components/common/Icons';
 
 // Import types
-import { ButtonVariant } from '@/types';
+import { ButtonVariant, TextSize } from '@/types';
 
 interface ConfirmModalProps {
   onSubmit: () => void;
@@ -32,8 +32,9 @@ const ConfirmModal = ({ onSubmit, onClose }: ConfirmModalProps) => (
     </Button>
     <Heading
       as="h2"
+      size={TextSize.ExtraLarge}
       text="Are you sure you want to delete this author?"
-      className="font-regular text-center text-dark"
+      className="font-bold text-center text-dark"
     />
     <Flex justify="center" align="center" className="gap-6">
       <Button variant={ButtonVariant.Danger} onClick={onSubmit}>

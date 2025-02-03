@@ -44,7 +44,7 @@ const Sidebar = () => {
     <>
       <ul className="px-[30px]">
         {renderSidebarItems(mainItems)}
-        <li className="font-bold font-helveticaBold py-6 px-4">ACCOUNT PAGES</li>
+        <li className="font-bold py-6 px-4 dark:text-light">ACCOUNT PAGES</li>
         {renderSidebarItems(accountItems)}
       </ul>
       <HelpBox />

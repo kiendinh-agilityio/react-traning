@@ -6,10 +6,10 @@ exports[`Input Component renders correctly with default props and matches snapsh
     class="rt-Box w-full"
   >
     <div
-      class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input"
+      class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
     >
       <input
-        class="w-full text-regular focus:outline-none text-dark placeholder:text-base"
+        class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
         name="test"
         placeholder="Enter text"
         type="text"
@@ -26,10 +26,10 @@ exports[`Input Component renders with error message 1`] = `
     class="rt-Box w-full"
   >
     <div
-      class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-danger"
+      class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-danger "
     >
       <input
-        class="w-full text-regular focus:outline-none text-dark placeholder:text-base"
+        class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
         name="test"
         placeholder="Enter text"
         type="text"
@@ -51,7 +51,7 @@ exports[`Input Component renders with left and right icons 1`] = `
     class="rt-Box w-full"
   >
     <div
-      class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input"
+      class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
     >
       <svg
         fill="none"
@@ -65,7 +65,7 @@ exports[`Input Component renders with left and right icons 1`] = `
         />
       </svg>
       <input
-        class="w-full text-regular focus:outline-none text-dark placeholder:text-base"
+        class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
         name="test"
         placeholder="Enter text"
         type="text"

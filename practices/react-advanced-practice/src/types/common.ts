@@ -30,3 +30,9 @@ export enum Notification {
 export enum QueryKey {
   Authors = 'authors',
 }
+
+// Define enum for Theme mode
+export enum ThemeMode {
+  Dark = 'dark',
+  Light = 'light',
+}

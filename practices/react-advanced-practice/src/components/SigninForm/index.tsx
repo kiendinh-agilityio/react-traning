@@ -14,10 +14,10 @@ import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { Flex } from '@radix-ui/themes';
 
 // Import common components
-import { Input, Button, Text } from '@/components/common';
+import { Input, Button, Text, Link } from '@/components/common';
 
 // Import constants
-import { REGEX, MESSAGE_ERROR, API_AUTH_URL, END_POINTS } from '@/constants';
+import { REGEX, MESSAGE_ERROR, API_AUTH_URL } from '@/constants';
 
 // Import icons
 import {
@@ -62,7 +62,7 @@ const SigninForm = () => {
 
     try {
       // Simulate API call
-      const response = await axios.get(`${API_AUTH_URL}/${END_POINTS.USERS}`);
+      const response = await axios.get(`${API_AUTH_URL}`);
       const users = response.data;
 
       // Check if a user with the provided email and password exists
@@ -186,6 +186,12 @@ const SigninForm = () => {
       >
         {isLoading ? <LoadingIcon /> : 'Sign In'}
       </Button>
+      <Text as="div" className="font-regular text-base text-center mt-[22px]">
+        Don't have an account?{' '}
+        <Link href="/signup" className="text-primary">
+          Sign up
+        </Link>
+      </Text>
     </form>
   );
 };

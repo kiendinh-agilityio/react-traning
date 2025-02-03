@@ -31,7 +31,14 @@ import Header from './Header';
 import { Footer } from '@/layouts';
 
 // Import types
-import { ButtonVariant, TextSize, Author, Notification, QueryKey } from '@/types';
+import {
+  ButtonVariant,
+  TextSize,
+  Author,
+  Notification,
+  QueryKey,
+  ThemeMode,
+} from '@/types';
 
 // Import services
 import {
@@ -42,7 +49,7 @@ import {
 } from '@/services';
 
 // Import Zustand store
-import { useAuthorStore } from '@/stores';
+import { useAuthorStore, useThemeStore } from '@/stores';
 
 // Import hooks
 import { useDebounce, useToast } from '@/hooks';
@@ -67,6 +74,8 @@ const Home = () => {
     filterAuthors,
     setFiltering,
   } = useAuthorStore();
+
+  const { theme } = useThemeStore();
 
   // State to control whether the modal is open
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -203,7 +212,7 @@ const Home = () => {
   const isLoadingMutation = isAdding || isEditing || isDeleting;
 
   return (
-    <Box className="bg-tertiary">
+    <Box className="bg-tertiary dark:bg-dark">
       <Flex className="min-h-screen pt-[30px] pr-[22px] pb-[23px]">
         <Box>
           {/* Render the sidebar with logo */}
@@ -212,17 +221,20 @@ const Home = () => {
             align="center"
             className="mb-[22px] gap-12 gradient-border pb-7"
           >
-            <Logo href="/home" />
+            <Logo
+              color={theme === ThemeMode.Dark ? 'secondary' : 'primary'}
+              href="/home"
+            />
           </Flex>
           <Sidebar />
         </Box>
         <Flex direction="column" justify="between" className="w-full">
           {/* Render the header */}
           <Header currentPage="Tables" />
-          <Box className="bg-white min-h-[88vh] mb-7 rounded-[15px] px-[21px] py-7 relative">
+          <Box className="bg-white dark:bg-dark min-h-[88vh] mb-7 rounded-[15px] px-[21px] py-7 relative dark:border dark:border-light">
             <Box className="flex justify-between items-center mb-7">
               {/* Render the heading and search bar */}
-              <Heading text="Authors Table" />
+              <Heading text="Authors Table" className="dark:text-light" />
               <Flex className="gap-5">
                 <Box className="w-96">
                   <Input
@@ -232,6 +244,7 @@ const Home = () => {
                     leftIcon={<SearchIcon className="cursor-pointer" />}
                     value={searchQuery}
                     onChange={handleSearchChange}
+                    className="dark:placeholder:bg-dark dark:text-light"
                   />
                 </Box>
                 <Button variant={ButtonVariant.Secondary} onClick={handleShowAddModal}>
@@ -277,7 +290,7 @@ const Home = () => {
 
           {/* Modal for adding a new author */}
           {isModalOpen && (
-            <Modal className="w-2/4 px-9 py-9" onClose={handleCloseModal}>
+            <Modal className="w-[900px] w-2/4 px-9 py-9" onClose={handleCloseModal}>
               <AuthorForm
                 isUpdate={isUpdate}
                 selectedAuthor={selectedAuthor}
