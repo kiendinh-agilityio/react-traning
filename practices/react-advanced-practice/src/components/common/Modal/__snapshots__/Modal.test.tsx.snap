@@ -6,7 +6,7 @@ exports[`Modal Component renders correctly and matches snapshot 1`] = `
     class="rt-Flex rt-r-ai-center rt-r-jc-center bg-overlay fixed top-0 left-0 right-0 bottom-0"
   >
     <div
-      class="rt-Flex rt-r-fd-column w-[900px] gap-8 rounded-2xl bg-white shadow z-10 py-8 px-10 undefined"
+      class="rt-Flex rt-r-fd-column gap-8 rounded-2xl bg-white shadow z-10 py-8 px-10 undefined"
     >
       <div>
         Modal Content
