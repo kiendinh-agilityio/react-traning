@@ -27,7 +27,7 @@ import {
 import { useSignupStore } from '@/stores';
 
 // Import constants
-import { REGEX, MESSAGE_ERROR, API_AUTH_URL, END_POINTS } from '@/constants';
+import { REGEX, MESSAGE_ERROR, API_AUTH_URL } from '@/constants';
 
 interface SignupFormInputs {
   name: string;
@@ -83,7 +83,7 @@ const SignupForm = () => {
       setEmail(data.email);
       setPassword(data.password);
 
-      await axios.post(`${API_AUTH_URL}/${END_POINTS.USERS}`, {
+      await axios.post(`${API_AUTH_URL}`, {
         name: data.name,
         email: data.email,
         password: data.password,
@@ -140,7 +140,7 @@ const SignupForm = () => {
       </Flex>
 
       {/* Email Input */}
-      <Flex direction="column" className=" mb-6 gap-[5px]">
+      <Flex direction="column" className="mb-6 gap-[5px]">
         <Text>Email</Text>
         <Controller
           name="email"
@@ -166,7 +166,7 @@ const SignupForm = () => {
       </Flex>
 
       {/* Password Input */}
-      <Flex direction="column" className=" mb-6 gap-[5px]">
+      <Flex direction="column" className="gap-[5px]">
         <Text>Password</Text>
         <Controller
           name="password"

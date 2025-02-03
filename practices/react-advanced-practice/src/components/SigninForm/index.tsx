@@ -17,7 +17,7 @@ import { Flex } from '@radix-ui/themes';
 import { Input, Button, Text, Link } from '@/components/common';
 
 // Import constants
-import { REGEX, MESSAGE_ERROR, API_AUTH_URL, END_POINTS } from '@/constants';
+import { REGEX, MESSAGE_ERROR, API_AUTH_URL } from '@/constants';
 
 // Import icons
 import {
@@ -62,7 +62,7 @@ const SigninForm = () => {
 
     try {
       // Simulate API call
-      const response = await axios.get(`${API_AUTH_URL}/${END_POINTS.USERS}`);
+      const response = await axios.get(`${API_AUTH_URL}`);
       const users = response.data;
 
       // Check if a user with the provided email and password exists
