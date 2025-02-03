@@ -25,3 +25,14 @@ export enum Notification {
   Success = 'success',
   Failed = 'failed',
 }
+
+// Define an enum for the query keys
+export enum QueryKey {
+  Authors = 'authors',
+}
+
+// Define enum for Theme mode
+export enum ThemeMode {
+  Dark = 'dark',
+  Light = 'light',
+}

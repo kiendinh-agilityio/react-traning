@@ -14,7 +14,7 @@ import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { Flex } from '@radix-ui/themes';
 
 // Import common components
-import { Input, Button, Text } from '@/components/common';
+import { Input, Button, Text, Link } from '@/components/common';
 
 // Import icons
 import {
@@ -27,7 +27,7 @@ import {
 import { useSignupStore } from '@/stores';
 
 // Import constants
-import { REGEX, MESSAGE_ERROR, API_AUTH_URL, END_POINTS } from '@/constants';
+import { REGEX, MESSAGE_ERROR, API_AUTH_URL } from '@/constants';
 
 interface SignupFormInputs {
   name: string;
@@ -83,7 +83,7 @@ const SignupForm = () => {
       setEmail(data.email);
       setPassword(data.password);
 
-      await axios.post(`${API_AUTH_URL}/${END_POINTS.USERS}`, {
+      await axios.post(`${API_AUTH_URL}`, {
         name: data.name,
         email: data.email,
         password: data.password,
@@ -140,7 +140,7 @@ const SignupForm = () => {
       </Flex>
 
       {/* Email Input */}
-      <Flex direction="column" className=" mb-6 gap-[5px]">
+      <Flex direction="column" className="mb-6 gap-[5px]">
         <Text>Email</Text>
         <Controller
           name="email"
@@ -166,7 +166,7 @@ const SignupForm = () => {
       </Flex>
 
       {/* Password Input */}
-      <Flex direction="column" className=" mb-6 gap-[5px]">
+      <Flex direction="column" className="gap-[5px]">
         <Text>Password</Text>
         <Controller
           name="password"
@@ -204,6 +204,12 @@ const SignupForm = () => {
       <Button onClick={handleSubmit(onSubmit)} className="mt-9" isDisabled={isLoading}>
         {isLoading ? <LoadingIcon /> : 'Sign Up'}
       </Button>
+      <Text as="div" className="font-regular text-base text-center mt-[22px]">
+        Already have an account?{' '}
+        <Link href="/signin" className="text-primary">
+          Sign in
+        </Link>
+      </Text>
     </form>
   );
 };

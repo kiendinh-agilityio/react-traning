@@ -27,3 +27,5 @@ export { default as CloseIcon } from './CloseIcon';
 export { default as FailedIcon } from './FailedIcon';
 export { default as SuccessIcon } from './SuccessIcon';
 export { default as TrashIcon } from './TrashIcon';
+export { default as MoonIcon } from './MoonIcon';
+export { default as SunIcon } from './SunIcon';

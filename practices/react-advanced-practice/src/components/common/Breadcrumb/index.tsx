@@ -11,9 +11,9 @@ interface BreadcrumbProps {
 
 const Breadcrumb = ({ currentPage, label }: BreadcrumbProps) => (
   <Box>
-    <Text className="flex gap-[4px] text-base text-xs">
+    <Text className="flex gap-[4px] text-base">
       {label} /{' '}
-      <Box as="span" className="text-xs text-dark">
+      <Box as="span" className="text-xs text-dark dark:text-light">
         {currentPage}
       </Box>
     </Text>

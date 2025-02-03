@@ -14,6 +14,7 @@ interface InputProps {
   defaultValue?: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  className?: string; // Thêm props className
 }
 
 const Input = memo(
@@ -30,16 +31,17 @@ const Input = memo(
         onBlur,
         errorMessage,
         defaultValue,
+        className = '',
       },
       ref,
     ) => {
-      const className = `flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] ${
+      const baseClassName = `flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] ${
         errorMessage ? 'border-danger' : 'border-input'
-      }`;
+      } ${className}`;
 
       return (
         <Box className="w-full">
-          <Flex justify="center" align="center" className={className}>
+          <Flex justify="center" align="center" className={baseClassName}>
             {leftIcon && leftIcon}
             <input
               ref={ref}
@@ -50,7 +52,7 @@ const Input = memo(
               placeholder={placeholder}
               onChange={onChange}
               onBlur={onBlur}
-              className="w-full text-regular focus:outline-none text-dark placeholder:text-base"
+              className={`w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark ${className}`}
             />
             {rightIcon && rightIcon}
           </Flex>
