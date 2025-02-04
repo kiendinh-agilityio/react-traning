@@ -9,3 +9,4 @@ export { default as InputGroup } from './InputGroup';
 export { default as AuthorForm } from './AuthorForm';
 export { default as ConfirmModal } from './ConfirmModal';
 export { default as SwitchTheme } from './SwitchTheme';
+export { default as ErrorBoundary } from './ErrorBoundary';
