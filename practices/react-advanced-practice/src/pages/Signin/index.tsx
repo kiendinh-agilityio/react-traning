@@ -5,7 +5,7 @@ import { Box, Flex } from '@radix-ui/themes';
 import { Logo, Button, Text } from '@/components/common';
 
 // Import components
-import { Navbar, SigninForm } from '@/components';
+import { Navbar, SigninForm, ErrorBoundary } from '@/components';
 
 // Import types
 import { ButtonVariant } from '@/types';
@@ -41,7 +41,13 @@ const Signin = () => {
           <Text className="text-base font-bold mb-9">
             Enter your email and password to sign in
           </Text>
-          <SigninForm />
+          <ErrorBoundary
+            fallback={
+              <Text className="text-center">SigninForm from sign in went wrong!!</Text>
+            }
+          >
+            <SigninForm />
+          </ErrorBoundary>
         </Box>
         <img
           width="730px"

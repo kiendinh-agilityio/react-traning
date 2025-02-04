@@ -1,25 +1,35 @@
-// Libraries
-import { render } from "@testing-library/react";
-import ErrorBoundary from "./index";
+import { Component } from 'react';
+import { render } from '@testing-library/react';
 
-describe("ErrorBoundary", () => {
-  it('renders "Something went wrong." when an error is thrown', () => {
-    const spy = jest.spyOn(console, "error");
+// Components
+import ErrorBoundary from '.';
 
-    spy.mockImplementation(() => {});
-
-    const Throw = () => {
-      throw new Error("bad");
-    };
-
-    const { getByText } = render(
-      <ErrorBoundary>
-        <Throw />
+describe('ErrorBoundary', () => {
+  test('renders children when there is no error', () => {
+    const { container } = render(
+      <ErrorBoundary fallback={<div>Error occurred</div>}>
+        <div>Normal content</div>
       </ErrorBoundary>,
     );
+    expect(container).toMatchSnapshot();
+  });
 
-    expect(getByText("Oops, something went wrong!")).toBeDefined();
+  test('renders fallback content when there is an error', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    class ChildComponent extends Component {
+      componentDidMount() {
+        throw new Error('Test error');
+      }
+      render() {
+        return <div>Child Component</div>;
+      }
+    }
 
-    spy.mockRestore();
+    const { container } = render(
+      <ErrorBoundary fallback={<div>Error occurred</div>}>
+        <ChildComponent />
+      </ErrorBoundary>,
+    );
+    expect(container).toMatchSnapshot();
   });
 });

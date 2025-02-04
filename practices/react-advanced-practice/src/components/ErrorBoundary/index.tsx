@@ -1,44 +1,34 @@
-// Libraries
-import { Component, ReactNode, ErrorInfo } from "react";
+import { Component, ErrorInfo, ReactNode } from 'react';
 
-type ErrorBoundaryState = {
+interface Props {
+  children: ReactNode;
+  fallback: ReactNode;
+}
+
+interface State {
   hasError: boolean;
-  error: Error | ErrorInfo | null;
-};
-type ErrorBoundaryProps = { children: ReactNode };
+}
 
-class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
-  constructor(props: ErrorBoundaryProps) {
+class ErrorBoundary extends Component<Props, State> {
+  constructor(props: Props) {
     super(props);
-
-    this.state = { hasError: false, error: null };
-  }
-  static getDerivedStateFromError(error: Error): ErrorBoundaryState {
-    return {
-      hasError: true,
-      error: error,
-    };
+    this.state = { hasError: false };
   }
 
-  componentDidCatch(_: Error, errorInfo: ErrorInfo) {
-    this.setState({
-      error: errorInfo,
-    });
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    console.error('ErrorBoundary caught an error: ', error, errorInfo);
+    this.setState({ hasError: true });
   }
 
   render() {
-    if (this.state.hasError) {
-      return (
-        <div>
-          <h2>Oops, something went wrong!</h2>
-          <div style={{ whiteSpace: "pre-wrap" }}>
-            {this.state.error && this.state.error.toString()}
-          </div>
-        </div>
-      );
+    const { hasError } = this.state;
+    const { children, fallback } = this.props;
+
+    if (hasError) {
+      return fallback;
     }
 
-    return this.props.children;
+    return children;
   }
 }
 
