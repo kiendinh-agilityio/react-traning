@@ -5,7 +5,7 @@ import { Box, Container, Flex } from '@radix-ui/themes';
 import { Logo, Button, Text } from '@/components/common';
 
 // Import components
-import { Navbar, SignupForm, SocialRegister } from '@/components';
+import { Navbar, SignupForm, SocialRegister, ErrorBoundary } from '@/components';
 
 // Import types
 import { ButtonVariant } from '@/types';
@@ -66,7 +66,15 @@ const Signup = () => {
               >
                 or
               </Text>
-              <SignupForm />
+              <ErrorBoundary
+                fallback={
+                  <Text className="text-center">
+                    SignupForm from sign up went wrong!!
+                  </Text>
+                }
+              >
+                <SignupForm />
+              </ErrorBoundary>
             </Flex>
           </Box>
           <Footer />
