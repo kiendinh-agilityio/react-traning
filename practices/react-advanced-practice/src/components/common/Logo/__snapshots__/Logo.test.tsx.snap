@@ -3,6 +3,7 @@
 exports[`Logo Component renders the primary icon by default 1`] = `
 <DocumentFragment>
   <a
+    aria-label="Logo"
     href="/"
   >
     <svg
@@ -27,6 +28,7 @@ exports[`Logo Component renders the primary icon by default 1`] = `
 exports[`Logo Component renders the secondary icon when type is secondary 1`] = `
 <DocumentFragment>
   <a
+    aria-label="Logo"
     href="/"
   >
     <svg
@@ -51,6 +53,7 @@ exports[`Logo Component renders the secondary icon when type is secondary 1`] = 
 exports[`Logo Component renders with the correct href 1`] = `
 <DocumentFragment>
   <a
+    aria-label="Logo"
     href="/test"
   >
     <svg
