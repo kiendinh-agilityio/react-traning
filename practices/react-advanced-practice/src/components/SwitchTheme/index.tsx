@@ -39,6 +39,7 @@ const SwitchTheme = () => {
       variant={ButtonVariant.Transparent}
       onClick={handleToggleTheme}
       className="p-2 rounded-full bg-primary text-white"
+      ariaLabel="Button switch theme"
     >
       {theme === ThemeMode.Light ? <SunIcon /> : <MoonIcon />}
     </Button>
