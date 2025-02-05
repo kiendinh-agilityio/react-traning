@@ -45,7 +45,13 @@ const SignupForm = () => {
     handleSubmit,
     trigger,
     formState: { errors },
-  } = useForm<SignupFormInputs>();
+  } = useForm<SignupFormInputs>({
+    defaultValues: {
+      name: '',
+      email: '',
+      password: '',
+    },
+  });
 
   // State to toggle password visibility
   const [showPassword, setShowPassword] = useState(false);

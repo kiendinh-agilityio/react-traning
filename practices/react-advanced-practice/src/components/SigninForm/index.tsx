@@ -51,7 +51,12 @@ const SigninForm = () => {
     trigger,
     handleSubmit,
     formState: { errors },
-  } = useForm<SigninFormInputs>();
+  } = useForm<SigninFormInputs>({
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+  });
 
   const onSubmit: SubmitHandler<SigninFormInputs> = async (data) => {
     // Set loading to true
@@ -82,6 +87,9 @@ const SigninForm = () => {
       }
     } catch (error) {
       setErrorMessage(MESSAGE_ERROR.SIGNIN_FAILED);
+    } finally {
+      // Ensure the loading state is turned off after the process
+      setIsLoading(false);
     }
   };
 

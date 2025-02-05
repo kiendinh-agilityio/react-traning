@@ -14,7 +14,7 @@ interface InputProps {
   defaultValue?: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
-  className?: string; // Thêm props className
+  className?: string;
 }
 
 const Input = memo(
