@@ -8,6 +8,7 @@ interface ButtonProps {
   variant?: ButtonVariant;
   isDisabled?: boolean;
   className?: string;
+  ariaLabel?: string;
   onClick: () => void;
 }
 
@@ -17,6 +18,7 @@ const Button = ({
   isDisabled,
   className,
   onClick,
+  ariaLabel,
 }: ButtonProps) => {
   const baseClass = ` 
     px-[22px] py-2.5 font-bold rounded-xl cursor-pointer ${isDisabled ? 'primary opacity-50 cursor-not-allowed' : variant}
@@ -25,6 +27,7 @@ const Button = ({
   return (
     <ButtonBase
       className={`${baseClass} ${className}`}
+      aria-label={ariaLabel}
       onClick={onClick}
       disabled={isDisabled}
     >
