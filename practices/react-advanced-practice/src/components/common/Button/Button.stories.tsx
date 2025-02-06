@@ -15,42 +15,46 @@ export default {
 export const Primary = {
   args: {
     variant: 'primary',
-    label: 'Submit',
+    children: 'Submit',
   },
 };
 
 export const Secondary = {
   args: {
     variant: 'secondary',
-    label: 'Add New Author',
+    children: 'Add New Author',
   },
 };
 
 export const Tertiary = {
   args: {
     variant: 'tertiary',
-    label: 'Cancel',
+    children: 'Cancel',
   },
 };
 
 export const Link = {
   args: {
     variant: 'link',
-    label: 'DOCUMENTATION',
+    children: 'DOCUMENTATION',
   },
 };
 
 export const Danger = {
   args: {
     variant: 'danger',
-    label: 'Yes, Im sure',
+    children: 'Yes, Im sure',
   },
 };
 
 export const Transparent = {
   args: {
     variant: 'transparent',
-    icon: <EditIcon />,
-    label: 'Edit',
+    children: (
+      <>
+        {' '}
+        <EditIcon /> Edit{' '}
+      </>
+    ),
   },
 };
