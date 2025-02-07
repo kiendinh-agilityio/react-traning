@@ -29,3 +29,4 @@ export { default as SuccessIcon } from './SuccessIcon';
 export { default as TrashIcon } from './TrashIcon';
 export { default as MoonIcon } from './MoonIcon';
 export { default as SunIcon } from './SunIcon';
+export { default as LogoutIcon } from './LogoutIcon';
