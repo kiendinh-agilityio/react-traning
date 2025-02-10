@@ -34,7 +34,7 @@ const ConfirmModal = ({ onSubmit, onClose }: ConfirmModalProps) => (
       as="h2"
       size={TextSize.ExtraLarge}
       text="Are you sure you want to delete this author?"
-      className="font-bold text-center text-dark"
+      className="font-bold text-center text-gray"
     />
     <Flex justify="center" align="center" className="gap-6">
       <Button variant={ButtonVariant.Danger} onClick={onSubmit}>
