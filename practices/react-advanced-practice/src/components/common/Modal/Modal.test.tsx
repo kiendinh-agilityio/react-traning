@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import Modal from '.';
 
 describe('Modal Component', () => {
@@ -10,8 +10,37 @@ describe('Modal Component', () => {
         <div>Modal Content</div>
       </Modal>,
     );
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-    // Match the snapshot
+  it('does not call onClose when clicking inside modal', () => {
+    const { asFragment, container } = render(
+      <Modal onClose={mockOnClose}>
+        <div>Modal Content</div>
+      </Modal>,
+    );
+    const modalContent = container.querySelector('.bg-white');
+    if (modalContent) {
+      fireEvent.click(modalContent);
+    }
+    expect(mockOnClose).not.toHaveBeenCalled();
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('handles stopPropagation correctly', () => {
+    const stopPropagationMock = jest.fn();
+    const { asFragment, container } = render(
+      <Modal onClose={mockOnClose}>
+        <div className="modal-content" onClick={(e) => stopPropagationMock(e)}>
+          Modal Content
+        </div>
+      </Modal>,
+    );
+    const modalContent = container.querySelector('.modal-content');
+    if (modalContent) {
+      fireEvent.click(modalContent);
+    }
+    expect(stopPropagationMock).toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();
   });
 });
