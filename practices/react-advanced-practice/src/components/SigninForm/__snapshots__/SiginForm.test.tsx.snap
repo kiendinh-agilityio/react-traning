@@ -19,13 +19,18 @@ exports[`SigninForm renders correctly 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
         >
-          <input
-            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
-            name="email"
-            placeholder="Your email address"
-            type="email"
-            value=""
-          />
+          <div
+            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+          >
+            <input
+              class="rt-reset rt-TextFieldInput"
+              name="email"
+              placeholder="Your email address"
+              spellcheck="false"
+              type="email"
+              value=""
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -43,13 +48,18 @@ exports[`SigninForm renders correctly 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
         >
-          <input
-            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
-            name="password"
-            placeholder="Your password"
-            type="password"
-            value=""
-          />
+          <div
+            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+          >
+            <input
+              class="rt-reset rt-TextFieldInput"
+              name="password"
+              placeholder="Your password"
+              spellcheck="false"
+              type="password"
+              value=""
+            />
+          </div>
           <button
             aria-label="Show password"
             type="button"
@@ -122,13 +132,18 @@ exports[`SigninForm renders correctly with a successful signin attempt 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
         >
-          <input
-            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
-            name="email"
-            placeholder="Your email address"
-            type="email"
-            value=""
-          />
+          <div
+            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+          >
+            <input
+              class="rt-reset rt-TextFieldInput"
+              name="email"
+              placeholder="Your email address"
+              spellcheck="false"
+              type="email"
+              value=""
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -146,13 +161,18 @@ exports[`SigninForm renders correctly with a successful signin attempt 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
         >
-          <input
-            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
-            name="password"
-            placeholder="Your password"
-            type="password"
-            value=""
-          />
+          <div
+            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+          >
+            <input
+              class="rt-reset rt-TextFieldInput"
+              name="password"
+              placeholder="Your password"
+              spellcheck="false"
+              type="password"
+              value=""
+            />
+          </div>
           <button
             aria-label="Show password"
             type="button"
@@ -225,13 +245,18 @@ exports[`SigninForm renders correctly with signin failure error message 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
         >
-          <input
-            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
-            name="email"
-            placeholder="Your email address"
-            type="email"
-            value=""
-          />
+          <div
+            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+          >
+            <input
+              class="rt-reset rt-TextFieldInput"
+              name="email"
+              placeholder="Your email address"
+              spellcheck="false"
+              type="email"
+              value=""
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -249,13 +274,18 @@ exports[`SigninForm renders correctly with signin failure error message 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
         >
-          <input
-            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
-            name="password"
-            placeholder="Your password"
-            type="password"
-            value=""
-          />
+          <div
+            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+          >
+            <input
+              class="rt-reset rt-TextFieldInput"
+              name="password"
+              placeholder="Your password"
+              spellcheck="false"
+              type="password"
+              value=""
+            />
+          </div>
           <button
             aria-label="Show password"
             type="button"
@@ -328,13 +358,18 @@ exports[`SigninForm renders with invalid email error message 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
         >
-          <input
-            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
-            name="email"
-            placeholder="Your email address"
-            type="email"
-            value=""
-          />
+          <div
+            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+          >
+            <input
+              class="rt-reset rt-TextFieldInput"
+              name="email"
+              placeholder="Your email address"
+              spellcheck="false"
+              type="email"
+              value=""
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -352,13 +387,18 @@ exports[`SigninForm renders with invalid email error message 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
         >
-          <input
-            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
-            name="password"
-            placeholder="Your password"
-            type="password"
-            value=""
-          />
+          <div
+            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+          >
+            <input
+              class="rt-reset rt-TextFieldInput"
+              name="password"
+              placeholder="Your password"
+              spellcheck="false"
+              type="password"
+              value=""
+            />
+          </div>
           <button
             aria-label="Show password"
             type="button"
@@ -431,13 +471,18 @@ exports[`SigninForm renders with invalid password error message 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
         >
-          <input
-            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
-            name="email"
-            placeholder="Your email address"
-            type="email"
-            value=""
-          />
+          <div
+            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+          >
+            <input
+              class="rt-reset rt-TextFieldInput"
+              name="email"
+              placeholder="Your email address"
+              spellcheck="false"
+              type="email"
+              value=""
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -455,13 +500,18 @@ exports[`SigninForm renders with invalid password error message 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
         >
-          <input
-            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
-            name="password"
-            placeholder="Your password"
-            type="password"
-            value=""
-          />
+          <div
+            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+          >
+            <input
+              class="rt-reset rt-TextFieldInput"
+              name="password"
+              placeholder="Your password"
+              spellcheck="false"
+              type="password"
+              value=""
+            />
+          </div>
           <button
             aria-label="Show password"
             type="button"
