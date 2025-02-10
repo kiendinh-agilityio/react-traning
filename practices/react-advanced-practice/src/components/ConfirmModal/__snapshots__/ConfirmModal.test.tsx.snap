@@ -39,7 +39,7 @@ exports[`ConfirmModal Component should match snapshot 1`] = `
       </svg>
     </button>
     <h2
-      class="rt-Heading rt-r-size-6 rt-r-weight-bold text-xl font-bold text-dark font-bold text-center text-dark"
+      class="rt-Heading rt-r-size-6 rt-r-weight-bold text-xl font-bold text-dark font-bold text-center text-gray"
     >
       Are you sure you want to delete this author?
     </h2>

@@ -31,3 +31,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
 li {
   list-style: none;
 }
+
+.rt-TextFieldRoot {
+  --text-field-border-width: unset;
+}

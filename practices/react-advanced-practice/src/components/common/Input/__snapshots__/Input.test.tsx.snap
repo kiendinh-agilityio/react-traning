@@ -8,13 +8,18 @@ exports[`Input Component renders correctly with default props and matches snapsh
     <div
       class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
     >
-      <input
-        class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
-        name="test"
-        placeholder="Enter text"
-        type="text"
-        value=""
-      />
+      <div
+        class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+      >
+        <input
+          class="rt-reset rt-TextFieldInput"
+          name="test"
+          placeholder="Enter text"
+          spellcheck="false"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -28,13 +33,18 @@ exports[`Input Component renders with error message 1`] = `
     <div
       class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-danger "
     >
-      <input
-        class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
-        name="test"
-        placeholder="Enter text"
-        type="text"
-        value=""
-      />
+      <div
+        class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+      >
+        <input
+          class="rt-reset rt-TextFieldInput"
+          name="test"
+          placeholder="Enter text"
+          spellcheck="false"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
     <span
       class="rt-Text text-regular text-danger mt-1 text-sm"
@@ -64,13 +74,18 @@ exports[`Input Component renders with left and right icons 1`] = `
           fill="#a0aec0"
         />
       </svg>
-      <input
-        class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
-        name="test"
-        placeholder="Enter text"
-        type="text"
-        value=""
-      />
+      <div
+        class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+      >
+        <input
+          class="rt-reset rt-TextFieldInput"
+          name="test"
+          placeholder="Enter text"
+          spellcheck="false"
+          type="text"
+          value=""
+        />
+      </div>
       <svg
         fill="none"
         height="23"
