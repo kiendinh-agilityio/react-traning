@@ -42,8 +42,13 @@ const Header = ({ currentPage }: HeaderProps) => {
         <UserIcon color="#718096" className="cursor-pointer" />
         <PinionIcon className="cursor-pointer" />
         <NotificationIcon className="cursor-pointer" />
-        <Button variant={ButtonVariant.Transparent} onClick={handleLogout}>
-          <LogoutIcon />
+        <Button
+          variant={ButtonVariant.Transparent}
+          onClick={handleLogout}
+          ariaLabel="Button logout"
+          className="text-gray"
+        >
+          <LogoutIcon /> Log Out
         </Button>
       </Flex>
     </header>
