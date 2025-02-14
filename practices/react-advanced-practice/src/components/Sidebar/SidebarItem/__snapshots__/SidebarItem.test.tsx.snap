@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SidebarItem renders correctly and matches snapshot 1`] = `
+<DocumentFragment>
+  <li
+    class="py-2 px-4 text-sm w-[220px] h-[54px] rounded-[15px] font-bold text-base mb-3 "
+  >
+    <a
+      class="flex items-center gap-4"
+      href="/home"
+    >
+      <div
+        data-testid="icon-wrapper"
+      >
+        <svg
+          fill="#4fd1c5"
+          height="12"
+          width="12"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            clip-path="url(#a)"
+            fill="#2d3748"
+          >
+            <path
+              d="M9.972 3.675a.086.086 0 0 0 0-.148L6.691 1.62a1.378 1.378 0 0 0-1.382 0L2.028 3.527a.086.086 0 0 0 0 .148l3.929 2.312a.086.086 0 0 0 .087 0l3.928-2.312ZM1.66 4.26a.086.086 0 0 0-.129.075V8.07a1.031 1.031 0 0 0 .512.889l3.484 2.089a.086.086 0 0 0 .13-.074V6.64a.086.086 0 0 0-.044-.074L1.66 4.26ZM6.344 6.655v4.318a.086.086 0 0 0 .129.075l3.483-2.09a1.031 1.031 0 0 0 .513-.887V4.335a.085.085 0 0 0-.043-.074.086.086 0 0 0-.086 0L6.387 6.58a.086.086 0 0 0-.043.074Z"
+            />
+          </g>
+          <defs>
+            <clippath
+              id="a"
+            >
+              <path
+                d="M.5.748h11v11H.5z"
+                fill="#fff"
+              />
+            </clippath>
+          </defs>
+        </svg>
+      </div>
+      <span
+        class="text-xs leading-base"
+      >
+        Home
+      </span>
+    </a>
+  </li>
+</DocumentFragment>
+`;
