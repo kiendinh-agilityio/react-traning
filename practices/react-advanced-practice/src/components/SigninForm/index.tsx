@@ -27,7 +27,7 @@ import {
 } from '@/components/common/Icons';
 
 // Import stores
-import { useSigninStore } from '@/stores';
+import { useAuthStore } from '@/stores';
 
 // Define form input types
 interface SigninFormInputs {
@@ -36,7 +36,7 @@ interface SigninFormInputs {
 }
 
 const SigninForm = () => {
-  const { showPassword, togglePasswordVisibility } = useSigninStore();
+  const { showPassword, togglePasswordVisibility } = useAuthStore();
 
   const navigate = useNavigate();
 
