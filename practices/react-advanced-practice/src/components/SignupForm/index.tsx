@@ -24,7 +24,7 @@ import {
 } from '@/components/common/Icons';
 
 // Import stores
-import { useSignupStore } from '@/stores';
+import { useAuthStore } from '@/stores';
 
 // Import constants
 import { REGEX, MESSAGE_ERROR, API_AUTH_URL } from '@/constants';
@@ -36,7 +36,8 @@ interface SignupFormInputs {
 }
 
 const SignupForm = () => {
-  const { setName, setEmail, setPassword } = useSignupStore();
+  const { showPassword, togglePasswordVisibility, setName, setEmail, setPassword } =
+    useAuthStore();
 
   const navigate = useNavigate();
 
@@ -44,6 +45,7 @@ const SignupForm = () => {
     control,
     handleSubmit,
     trigger,
+    setError,
     formState: { errors },
   } = useForm<SignupFormInputs>({
     defaultValues: {
@@ -53,14 +55,8 @@ const SignupForm = () => {
     },
   });
 
-  // State to toggle password visibility
-  const [showPassword, setShowPassword] = useState(false);
-
   // State to handle loading
   const [isLoading, setIsLoading] = useState(false);
-
-  // Toggles the visibility of the password field between text and password.
-  const togglePasswordVisibility = () => setShowPassword((prev) => !prev);
 
   /**
    * Creates an event handler for the blur event to validate a specific field.
@@ -100,7 +96,10 @@ const SignupForm = () => {
       }, 1500);
     } catch (error) {
       setIsLoading(false);
-      throw new Error(MESSAGE_ERROR.SIGNUP_FAILED);
+      setError('email', {
+        type: 'manual',
+        message: MESSAGE_ERROR.SIGNUP_FAILED,
+      });
     }
   };
 
