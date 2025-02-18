@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Signin Component renders without crashing 1`] = `
+exports[`Signup Component calls handleDownload when the download button is clicked 1`] = `
 <DocumentFragment>
   <div
     class="rt-Box px-6 pt-6 pb-[52px]"
@@ -277,7 +277,7 @@ exports[`Signin Component renders without crashing 1`] = `
                 or
               </p>
               <form
-                class="flex flex-col w-full"
+                class="flex flex-col max-w-[350px]"
               >
                 <div
                   class="rt-Flex rt-r-fd-column mb-6 gap-[5px]"
@@ -394,7 +394,1035 @@ exports[`Signin Component renders without crashing 1`] = `
                 <button
                   class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
     px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary
-   mt-9"
+   mt-9 w-[350px]"
+                  data-accent-color=""
+                >
+                  Sign Up
+                </button>
+                <div
+                  class="rt-Text rt-r-weight-regular text-sm font-regular text-base text-center mt-[22px]"
+                >
+                  Already have an account? 
+                  <a
+                    class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer text-primary"
+                    data-accent-color=""
+                    href="/signin"
+                    target="_self"
+                  >
+                    Sign in
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+          <footer
+            class="flex justify-between text-xs text-base"
+          >
+            <p
+              class="rt-Text rt-r-weight-regular text-sm flex gap-1"
+            >
+              @ 2025, Made with ❤️ by 
+              <span
+                class="rt-Box text-primary font-bold"
+              >
+                Creative Tim
+              </span>
+               & 
+              <span
+                class="rt-Box text-primary font-bold"
+              >
+                Simmmple
+              </span>
+               for a better web
+            </p>
+            <nav>
+              <ul
+                class="flex gap-11"
+              >
+                <li>
+                  <a
+                    class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+                    data-accent-color=""
+                    href="https://www.creative-tim.com"
+                    target="_blank"
+                  >
+                    Creative Tim
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+                    data-accent-color=""
+                    href="https://www.simmmple.com"
+                    target="_blank"
+                  >
+                    Simmmple
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+                    data-accent-color=""
+                    href="/blog"
+                    target="_blank"
+                  >
+                    Blog
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+                    data-accent-color=""
+                    href="/license"
+                    target="_blank"
+                  >
+                    License
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Signup Component calls handleSignupSubmit with the correct data when the form is submitted 1`] = `
+<DocumentFragment>
+  <div
+    class="rt-Box px-6 pt-6 pb-[52px]"
+  >
+    <div
+      class="rt-Container rt-r-size-4 relative"
+    >
+      <div
+        class="rt-ContainerInner"
+      >
+        <img
+          alt="Background"
+          class="absolute top-0 -z-10 w-full"
+          src="[object Object]"
+        />
+        <div
+          class="rt-Flex rt-r-fd-column min-h-screen mx-auto max-w-[939px]"
+        >
+          <div
+            class="rt-Box flex-1 mb-64"
+          >
+            <div
+              class="rt-Flex rt-r-ai-center rt-r-jc-space-between py-4 px-6"
+            >
+              <a
+                aria-label="Logo"
+                href="/signup"
+              >
+                <svg
+                  fill="none"
+                  height="23"
+                  width="198"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M40.74 10.13c0-.524-.139-.898-.417-1.121-.273-.223-.658-.335-1.155-.335h-1.962v2.967h1.962c.497 0 .882-.121 1.155-.363.278-.241.417-.624.417-1.148Zm2.085-.014c0 1.19-.3 2.03-.902 2.523-.602.492-1.46.738-2.577.738h-2.14V17h-2.092V6.924h4.389c1.012 0 1.818.26 2.42.78.601.519.902 1.323.902 2.412Zm1.58-3.192h2.139v6.193c0 .693.082 1.199.246 1.518.255.565.811.848 1.668.848.852 0 1.406-.283 1.661-.848.164-.32.246-.825.246-1.518V6.924h2.14v6.193c0 1.071-.166 1.905-.5 2.502-.619 1.094-1.802 1.64-3.547 1.64s-2.93-.546-3.555-1.64c-.332-.597-.499-1.43-.499-2.502V6.924Zm12.222 1.75v2.707h2.386c.474 0 .83-.055 1.066-.164.42-.192.629-.57.629-1.135 0-.61-.203-1.02-.608-1.23-.228-.119-.57-.178-1.026-.178h-2.447Zm2.885-1.75c.706.014 1.248.1 1.627.26.382.16.706.394.97.704.22.255.392.538.52.847.128.31.191.664.191 1.06 0 .479-.12.95-.362 1.415-.242.46-.64.786-1.196.978.465.186.793.453.984.8.196.341.294.865.294 1.572v.676c0 .46.018.773.055.937.054.26.182.451.383.574V17H60.66a7.208 7.208 0 0 1-.137-.54 4.964 4.964 0 0 1-.089-.868l-.013-.937c-.01-.642-.128-1.07-.356-1.285-.223-.214-.645-.321-1.264-.321h-2.174V17h-2.058V6.924h4.943ZM66.566 17h-2.091V6.924h2.091V17Zm9.29-10.076v1.784h-3.014V17h-2.12V8.708h-3.028V6.924h8.162Zm6.987 0h2.385l-3.37 6.289V17h-2.105v-3.787l-3.486-6.29h2.481l2.092 4.39 2.003-4.39Zm7.239 0h2.14v6.193c0 .693.082 1.199.246 1.518.255.565.81.848 1.668.848.852 0 1.406-.283 1.66-.848.165-.32.247-.825.247-1.518V6.924h2.14v6.193c0 1.071-.167 1.905-.5 2.502-.62 1.094-1.802 1.64-3.547 1.64-1.746 0-2.93-.546-3.555-1.64-.333-.597-.499-1.43-.499-2.502V6.924ZM102.127 17h-2.092V6.924h2.092V17Zm7.909-8.326v6.576h1.941c.994 0 1.687-.49 2.079-1.47.214-.537.321-1.178.321-1.92 0-1.026-.162-1.812-.485-2.359-.319-.551-.957-.827-1.915-.827h-1.941Zm2.297-1.75c.624.009 1.144.082 1.559.219a3.324 3.324 0 0 1 1.715 1.278c.351.501.591 1.044.718 1.627.128.583.192 1.14.192 1.668 0 1.34-.269 2.475-.807 3.404-.729 1.253-1.855 1.88-3.377 1.88h-4.341V6.924h4.341Zm8.531 6.268h2.557l-1.258-3.964-1.299 3.964Zm.13-6.268h2.379L126.941 17h-2.283l-.649-2.071h-3.712L119.6 17h-2.202l3.596-10.076Zm8.757 6.966c.064.46.189.804.376 1.032.342.415.927.622 1.757.622.496 0 .9-.055 1.21-.164.588-.21.882-.6.882-1.169 0-.333-.146-.59-.438-.773-.292-.177-.75-.334-1.374-.471l-1.066-.24c-1.049-.236-1.773-.494-2.174-.772-.679-.465-1.019-1.192-1.019-2.18 0-.903.328-1.653.985-2.25.656-.597 1.62-.895 2.891-.895 1.062 0 1.967.282 2.714.848.752.56 1.146 1.376 1.183 2.447h-2.024c-.036-.606-.301-1.037-.793-1.292-.328-.169-.736-.253-1.223-.253-.543 0-.976.11-1.299.328a1.045 1.045 0 0 0-.486.916c0 .36.16.629.479.807.205.118.643.257 1.312.417l1.737.417c.761.182 1.335.426 1.722.731.602.474.903 1.16.903 2.058 0 .92-.353 1.686-1.06 2.297-.702.606-1.695.909-2.98.909-1.313 0-2.345-.299-3.097-.896-.752-.601-1.128-1.426-1.128-2.474h2.01Zm7.8 3.11V6.924h2.085v3.842h3.937V6.924h2.092V17h-2.092v-4.498h-3.937V17h-2.085Zm12.175-8.326v2.222h2.474c.442 0 .8-.083 1.073-.247.278-.168.417-.464.417-.888 0-.47-.182-.78-.546-.93-.315-.105-.716-.157-1.204-.157h-2.214Zm0 3.89v2.686h2.474c.442 0 .786-.06 1.032-.178.447-.218.67-.638.67-1.257 0-.525-.216-.885-.649-1.08-.242-.11-.581-.167-1.019-.171h-2.508Zm2.884-5.64c1.235.018 2.11.376 2.625 1.073.31.429.465.941.465 1.538 0 .615-.155 1.11-.465 1.484-.173.21-.428.4-.765.574.515.187.902.483 1.162.889.264.405.396.897.396 1.476 0 .597-.15 1.133-.451 1.607a2.78 2.78 0 0 1-1.866 1.298 7.01 7.01 0 0 1-1.429.137h-4.566V6.924h4.894Zm9.646 8.572c.834 0 1.495-.308 1.982-.923.492-.615.739-1.49.739-2.625 0-1.13-.247-2.003-.739-2.618-.487-.62-1.148-.93-1.982-.93-.834 0-1.5.308-1.996.923-.497.616-.745 1.49-.745 2.625s.248 2.01.745 2.625c.496.615 1.162.923 1.996.923Zm4.826-3.548c0 1.81-.508 3.195-1.524 4.157-.761.783-1.862 1.175-3.302 1.175s-2.541-.392-3.302-1.175c-1.021-.962-1.531-2.348-1.531-4.157 0-1.845.51-3.23 1.531-4.156.761-.784 1.862-1.176 3.302-1.176s2.541.392 3.302 1.176c1.016.925 1.524 2.31 1.524 4.156Zm4.368 1.244h2.557l-1.258-3.964-1.299 3.964Zm.13-6.268h2.379L177.527 17h-2.283l-.649-2.071h-3.712L170.186 17h-2.202l3.596-10.076Zm9.338 1.75v2.707h2.386c.474 0 .829-.055 1.066-.164.419-.192.629-.57.629-1.135 0-.61-.203-1.02-.608-1.23-.228-.119-.57-.178-1.026-.178h-2.447Zm2.885-1.75c.706.014 1.248.1 1.627.26.382.16.706.394.97.704.219.255.392.538.52.847.127.31.191.664.191 1.06 0 .479-.12.95-.362 1.415-.242.46-.64.786-1.196.978.465.186.793.453.984.8.196.341.294.865.294 1.572v.676c0 .46.018.773.055.937.054.26.182.451.383.574V17h-2.318a7.492 7.492 0 0 1-.137-.54 4.973 4.973 0 0 1-.088-.868l-.014-.937c-.009-.642-.128-1.07-.356-1.285-.223-.214-.644-.321-1.264-.321h-2.174V17h-2.058V6.924h4.943Zm7.171 1.75v6.576h1.941c.993 0 1.686-.49 2.078-1.47.214-.537.321-1.178.321-1.92 0-1.026-.161-1.812-.485-2.359-.319-.551-.957-.827-1.914-.827h-1.941Zm2.296-1.75c.625.009 1.144.082 1.559.219a3.33 3.33 0 0 1 1.716 1.278 4.49 4.49 0 0 1 .718 1.627c.127.583.191 1.14.191 1.668 0 1.34-.269 2.475-.807 3.404-.729 1.253-1.854 1.88-3.377 1.88h-4.34V6.924h4.34ZM20.88 0H1.121C.502 0 0 .502 0 1.122v9.408c0 .62.502 1.122 1.122 1.122h4.054v9.228A1.12 1.12 0 0 0 6.296 22h9.408c.62 0 1.122-.502 1.122-1.122v-9.223h4.053A1.12 1.12 0 0 0 22 10.534V1.122A1.12 1.12 0 0 0 20.88 0ZM1.3 1.302h9.05v9.05H1.3v-9.05ZM15.525 20.7h-9.05v-9.045h9.05V20.7Zm5.175-10.35h-9.05v-9.05h9.05v9.05Z"
+                    fill="#fff"
+                  />
+                  <path
+                    d="M7.448 7.325a.65.65 0 0 0 .92-.92L6.291 4.327a.654.654 0 0 0-.92 0L3.287 6.405a.65.65 0 1 0 .92.92l1.618-1.618 1.623 1.618ZM14.557 7.325l1.618-1.618 1.617 1.618a.65.65 0 0 0 .92-.92l-2.077-2.078a.654.654 0 0 0-.92 0l-2.078 2.078a.65.65 0 0 0 .92.92ZM9.382 14.677a.65.65 0 0 0-.92.921l2.079 2.076a.65.65 0 0 0 .92 0l2.077-2.076a.651.651 0 1 0-.92-.921l-1.617 1.619-1.62-1.62Z"
+                    fill="#fff"
+                  />
+                </svg>
+              </a>
+              <nav
+                class="flex items-center justify-between"
+              >
+                <ul
+                  class="flex gap-[30px]"
+                >
+                  <li>
+                    <a
+                      class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer flex flex-row items-center gap-[5px] font-bold text-xs text-light"
+                      data-accent-color=""
+                      href="/home"
+                      target="_self"
+                    >
+                      <svg
+                        fill="none"
+                        height="12"
+                        width="12"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g
+                          clip-path="url(#a)"
+                          fill="#fff"
+                        >
+                          <path
+                            d="M9.972 3.675a.086.086 0 0 0 0-.148L6.691 1.62a1.378 1.378 0 0 0-1.382 0L2.028 3.527a.086.086 0 0 0 0 .148l3.929 2.312a.086.086 0 0 0 .087 0l3.928-2.312ZM1.66 4.26a.086.086 0 0 0-.129.075V8.07a1.031 1.031 0 0 0 .512.889l3.484 2.089a.086.086 0 0 0 .13-.074V6.64a.086.086 0 0 0-.044-.074L1.66 4.26ZM6.344 6.655v4.318a.086.086 0 0 0 .129.075l3.483-2.09a1.031 1.031 0 0 0 .513-.887V4.335a.085.085 0 0 0-.043-.074.086.086 0 0 0-.086 0L6.387 6.58a.086.086 0 0 0-.043.074Z"
+                          />
+                        </g>
+                        <defs>
+                          <clippath
+                            id="a"
+                          >
+                            <path
+                              d="M.5.748h11v11H.5z"
+                              fill="#fff"
+                            />
+                          </clippath>
+                        </defs>
+                      </svg>
+                      DASHBOARD
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer flex flex-row items-center gap-[5px] font-bold text-xs text-light"
+                      data-accent-color=""
+                      href="/profile"
+                      target="_self"
+                    >
+                      <svg
+                        fill="none"
+                        height="12"
+                        width="12"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g
+                          clip-path="url(#a)"
+                          fill="#fff"
+                        >
+                          <path
+                            d="M7.647 2.135A2.211 2.211 0 0 0 6 1.435c-.648 0-1.234.247-1.65.696-.42.453-.626 1.07-.577 1.735C3.868 5.18 4.867 6.247 6 6.247c1.133 0 2.13-1.068 2.227-2.38.05-.66-.157-1.275-.58-1.732ZM9.781 11.06H2.22a.667.667 0 0 1-.52-.24.759.759 0 0 1-.154-.625c.181-1.006.747-1.851 1.636-2.444.79-.527 1.792-.817 2.82-.817 1.027 0 2.028.29 2.818.817.89.593 1.455 1.438 1.636 2.444a.759.759 0 0 1-.154.625.666.666 0 0 1-.52.24Z"
+                          />
+                        </g>
+                        <defs>
+                          <clippath
+                            id="a"
+                          >
+                            <path
+                              d="M.5.748h11v11H.5z"
+                              fill="#fff"
+                            />
+                          </clippath>
+                        </defs>
+                      </svg>
+                      PROFILE
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer flex flex-row items-center gap-[5px] font-bold text-xs text-light"
+                      data-accent-color=""
+                      href="/signup"
+                      target="_self"
+                    >
+                      <svg
+                        fill="none"
+                        height="12"
+                        width="11"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.5 1.778a4.474 4.474 0 0 0-4.469 4.47A4.474 4.474 0 0 0 5.5 10.715a4.474 4.474 0 0 0 4.469-4.469A4.474 4.474 0 0 0 5.5 1.778Zm-1.079 2.51A1.462 1.462 0 0 1 5.5 3.841c.424 0 .803.16 1.077.45.277.294.411.688.38 1.113-.064.843-.717 1.53-1.457 1.53-.74 0-1.394-.687-1.456-1.53a1.448 1.448 0 0 1 .377-1.116Zm1.079 5.74a3.77 3.77 0 0 1-2.707-1.143 2.64 2.64 0 0 1 .755-.719c.548-.35 1.24-.544 1.952-.544.711 0 1.404.193 1.951.544.298.187.554.432.756.719A3.77 3.77 0 0 1 5.5 10.028Z"
+                          fill="#fff"
+                        />
+                      </svg>
+                      SIGN UP
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer flex flex-row items-center gap-[5px] font-bold text-xs text-light"
+                      data-accent-color=""
+                      href="/signin"
+                      target="_self"
+                    >
+                      <svg
+                        fill="none"
+                        height="12"
+                        width="12"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.186 4.34c0 .279 0 .55.088.803-.926 1.087-3.37 3.96-3.598 4.179a.433.433 0 0 0-.144.322c0 .183.111.359.206.458.142.148.748.709.86.601.33-.322.397-.408.532-.541.204-.2-.021-.608.05-.774.07-.165.146-.197.268-.223.123-.026.34.062.51.064.178.003.274-.073.408-.197.107-.1.184-.191.186-.335.005-.194-.275-.45-.066-.654.208-.204.509.134.73.108.222-.026.49-.333.518-.464.028-.131-.251-.469-.208-.66.015-.064.146-.215.245-.236.098-.022.537.148.636.127.12-.026.26-.153.373-.224a2.42 2.42 0 0 0 1.025.202c1.472 0 2.664-1.147 2.664-2.56 0-1.414-1.192-2.557-2.664-2.557-1.471 0-2.619 1.147-2.619 2.56Zm3.908-.498a.687.687 0 1 1-1.375 0 .687.687 0 0 1 1.375 0Z"
+                          fill="#fff"
+                        />
+                      </svg>
+                      SIGN IN
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <button
+                class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer light
+   w-[150px] rounded-[34px]"
+                data-accent-color=""
+              >
+                Free Download
+              </button>
+            </div>
+            <div
+              class="rt-Flex rt-r-fd-column rt-r-ai-center text-center mt-[55px]"
+            >
+              <p
+                class="rt-Text rt-r-weight-regular text-2xl text-light font-bold mb-[9px]"
+              >
+                Welcome!
+              </p>
+              <p
+                class="rt-Text rt-r-weight-regular text-sm text-light font-regular mb-9 max-w-[333px]"
+              >
+                Use these awesome forms to login or create new account in your project for free.
+              </p>
+            </div>
+            <div
+              class="rt-Flex rt-r-fd-column rt-r-ai-center rt-r-w mx-auto bg-light py-[45px] px-[51px] border border-light rounded-[15px] drop-shadow-md"
+              style="--width: 452px;"
+            >
+              <p
+                class="rt-Text rt-r-weight-regular text-lg text-dark font-bold"
+              >
+                Register with
+              </p>
+              <ul
+                class="flex gap-4 mt-[22px]"
+              >
+                <li
+                  class="list-none flex items-center justify-center bg-light w-[75px] h-[75px] border border-[#e2e8f0] rounded-[15px]"
+                >
+                  <a
+                    class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+                    data-accent-color=""
+                    href="https://facebook.com"
+                    target="_blank"
+                  >
+                    <svg
+                      fill="none"
+                      height="26"
+                      width="26"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M25.917 13c0-7.13-5.786-12.917-12.916-12.917C5.87.083.084 5.87.084 13c0 6.252 4.443 11.457 10.333 12.658v-8.783H7.834V13h2.583V9.77a4.526 4.526 0 0 1 4.521-4.52h3.23v3.875h-2.584c-.71 0-1.292.581-1.292 1.292V13h3.875v3.875h-3.875v8.977c6.523-.646 11.625-6.148 11.625-12.852Z"
+                        fill="#2D3748"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li
+                  class="list-none flex items-center justify-center bg-light w-[75px] h-[75px] border border-[#e2e8f0] rounded-[15px]"
+                >
+                  <a
+                    class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+                    data-accent-color=""
+                    href="https://www.apple.com/vn/"
+                    target="_blank"
+                  >
+                    <svg
+                      fill="none"
+                      height="32"
+                      width="32"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M21.638 8.785c-2.441 0-3.473 1.165-5.173 1.165-1.743 0-3.073-1.157-5.188-1.157-2.071 0-4.28 1.264-5.682 3.418-1.969 3.037-1.634 8.757 1.555 13.63 1.14 1.744 2.664 3.7 4.662 3.721h.036c1.737 0 2.252-1.137 4.642-1.15h.037c2.354 0 2.826 1.144 4.555 1.144h.036c1.998-.021 3.604-2.189 4.744-3.927.821-1.25 1.126-1.877 1.756-3.29-4.613-1.751-5.354-8.291-.792-10.798-1.392-1.744-3.35-2.754-5.194-2.754l.006-.002Z"
+                        fill="#2D3748"
+                      />
+                      <path
+                        d="M21.1 2.439c-1.452.099-3.148 1.024-4.14 2.232-.902 1.094-1.643 2.718-1.352 4.293h.116c1.548 0 3.132-.932 4.057-2.126.891-1.136 1.567-2.747 1.32-4.399Z"
+                        fill="#2D3748"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li
+                  class="list-none flex items-center justify-center bg-light w-[75px] h-[75px] border border-[#e2e8f0] rounded-[15px]"
+                >
+                  <a
+                    class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+                    data-accent-color=""
+                    href="https://www.google.com/"
+                    target="_blank"
+                  >
+                    <svg
+                      fill="none"
+                      height="24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m22.18 10.382-.107-.45h-9.77v4.136h5.838c-.606 2.878-3.419 4.393-5.716 4.393-1.672 0-3.434-.703-4.6-1.834a6.566 6.566 0 0 1-1.96-4.635c0-1.742.783-3.484 1.922-4.63 1.14-1.146 2.86-1.787 4.57-1.787 1.96 0 3.363 1.04 3.888 1.514l2.939-2.923c-.862-.757-3.23-2.666-6.922-2.666-2.847 0-5.578 1.09-7.574 3.08C2.718 6.539 1.7 9.372 1.7 12s.965 5.32 2.874 7.294C6.613 21.399 9.5 22.5 12.475 22.5c2.706 0 5.27-1.06 7.1-2.984 1.796-1.894 2.726-4.514 2.726-7.261 0-1.157-.116-1.843-.122-1.873Z"
+                        fill="#2D3748"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+              <p
+                class="rt-Text rt-r-weight-regular text-lg text-base font-bold mt-[20px] mb-[17px]"
+              >
+                or
+              </p>
+              <form
+                class="flex flex-col max-w-[350px]"
+              >
+                <div
+                  class="rt-Flex rt-r-fd-column mb-6 gap-[5px]"
+                >
+                  <p
+                    class="rt-Text rt-r-weight-regular text-sm "
+                  >
+                    Name
+                  </p>
+                  <div
+                    class="rt-Box w-full"
+                  >
+                    <div
+                      class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
+                    >
+                      <div
+                        class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+                      >
+                        <input
+                          class="rt-reset rt-TextFieldInput"
+                          name="name"
+                          placeholder="Your full name"
+                          spellcheck="false"
+                          type="text"
+                          value="Test User"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="rt-Flex rt-r-fd-column mb-6 gap-[5px]"
+                >
+                  <p
+                    class="rt-Text rt-r-weight-regular text-sm "
+                  >
+                    Email
+                  </p>
+                  <div
+                    class="rt-Box w-full"
+                  >
+                    <div
+                      class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
+                    >
+                      <div
+                        class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+                      >
+                        <input
+                          class="rt-reset rt-TextFieldInput"
+                          name="email"
+                          placeholder="Your email address"
+                          spellcheck="false"
+                          type="email"
+                          value="test@example.com"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="rt-Flex rt-r-fd-column gap-[5px]"
+                >
+                  <p
+                    class="rt-Text rt-r-weight-regular text-sm "
+                  >
+                    Password
+                  </p>
+                  <div
+                    class="rt-Box w-full"
+                  >
+                    <div
+                      class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
+                    >
+                      <div
+                        class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+                      >
+                        <input
+                          class="rt-reset rt-TextFieldInput"
+                          name="password"
+                          placeholder="Your password"
+                          spellcheck="false"
+                          type="password"
+                          value="Password@123"
+                        />
+                      </div>
+                      <button
+                        aria-label="Show password"
+                        type="button"
+                      >
+                        <svg
+                          fill="none"
+                          height="23"
+                          viewBox="0 0 28 28"
+                          width="23"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g
+                            clip-rule="evenodd"
+                            fill="#a0aec0"
+                            fill-rule="evenodd"
+                          >
+                            <path
+                              d="M17.747 15.415c.238-.54.372-1.143.372-1.413 0-2.348-1.824-4.25-4.073-4.25-2.25 0-4.073 1.902-4.073 4.25 0 2.347 2.037 3.887 4.073 3.887 1.303 0 2.462-.637 3.206-1.63a4.29 4.29 0 0 0 .495-.844Zm-3.701.349c.51 0 .975-.196 1.332-.518.432-.39.622-.965.622-1.244 0-1.174-.828-2.126-1.954-2.126-1.125 0-2.046.95-2.046 2.124 0 .81.92 1.764 2.046 1.764Z"
+                            />
+                            <path
+                              d="M1.092 14.272a.448.448 0 0 1 0-.545c.01-.012.019-.025.028-.039C4.78 8.343 9.32 5.5 14.014 5.5c4.689 0 9.224 2.836 12.882 8.17.069.101.104.205.104.33 0 .13-.04.24-.114.346C23.23 19.67 18.698 22.5 14.014 22.5c-4.705 0-9.257-2.857-12.922-8.228Zm2.847-.92a1.04 1.04 0 0 0 0 1.294c3.135 3.898 6.665 5.729 10.075 5.729 3.41 0 6.94-1.83 10.075-5.729a1.04 1.04 0 0 0 0-1.294c-3.135-3.897-6.665-5.727-10.075-5.727-3.41 0-6.94 1.83-10.075 5.727Z"
+                            />
+                          </g>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary opacity-50 cursor-not-allowed
+   mt-9 w-[350px]"
+                  data-accent-color=""
+                  data-disabled="true"
+                  disabled=""
+                >
+                  <svg
+                    class="animate-spin"
+                    fill="#fff"
+                    height="20"
+                    stroke="#fff"
+                    viewBox="0 0 26.349 26.35"
+                    width="20"
+                    xml:space="preserve"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="13.792"
+                      cy="3.082"
+                      r="3.082"
+                    />
+                    <circle
+                      cx="13.792"
+                      cy="24.501"
+                      r="1.849"
+                    />
+                    <circle
+                      cx="6.219"
+                      cy="6.218"
+                      r="2.774"
+                    />
+                    <circle
+                      cx="21.365"
+                      cy="21.363"
+                      r="1.541"
+                    />
+                    <circle
+                      cx="3.082"
+                      cy="13.792"
+                      r="2.465"
+                    />
+                    <circle
+                      cx="24.501"
+                      cy="13.791"
+                      r="1.232"
+                    />
+                    <path
+                      d="M4.694 19.84a2.155 2.155 0 0 0 0 3.05 2.155 2.155 0 0 0 3.05 0 2.155 2.155 0 0 0 0-3.05 2.146 2.146 0 0 0-3.05 0z"
+                    />
+                    <circle
+                      cx="21.364"
+                      cy="6.218"
+                      r="0.924"
+                    />
+                  </svg>
+                </button>
+                <div
+                  class="rt-Text rt-r-weight-regular text-sm font-regular text-base text-center mt-[22px]"
+                >
+                  Already have an account? 
+                  <a
+                    class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer text-primary"
+                    data-accent-color=""
+                    href="/signin"
+                    target="_self"
+                  >
+                    Sign in
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+          <footer
+            class="flex justify-between text-xs text-base"
+          >
+            <p
+              class="rt-Text rt-r-weight-regular text-sm flex gap-1"
+            >
+              @ 2025, Made with ❤️ by 
+              <span
+                class="rt-Box text-primary font-bold"
+              >
+                Creative Tim
+              </span>
+               & 
+              <span
+                class="rt-Box text-primary font-bold"
+              >
+                Simmmple
+              </span>
+               for a better web
+            </p>
+            <nav>
+              <ul
+                class="flex gap-11"
+              >
+                <li>
+                  <a
+                    class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+                    data-accent-color=""
+                    href="https://www.creative-tim.com"
+                    target="_blank"
+                  >
+                    Creative Tim
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+                    data-accent-color=""
+                    href="https://www.simmmple.com"
+                    target="_blank"
+                  >
+                    Simmmple
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+                    data-accent-color=""
+                    href="/blog"
+                    target="_blank"
+                  >
+                    Blog
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+                    data-accent-color=""
+                    href="/license"
+                    target="_blank"
+                  >
+                    License
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Signup Component renders without crashing 1`] = `
+<DocumentFragment>
+  <div
+    class="rt-Box px-6 pt-6 pb-[52px]"
+  >
+    <div
+      class="rt-Container rt-r-size-4 relative"
+    >
+      <div
+        class="rt-ContainerInner"
+      >
+        <img
+          alt="Background"
+          class="absolute top-0 -z-10 w-full"
+          src="[object Object]"
+        />
+        <div
+          class="rt-Flex rt-r-fd-column min-h-screen mx-auto max-w-[939px]"
+        >
+          <div
+            class="rt-Box flex-1 mb-64"
+          >
+            <div
+              class="rt-Flex rt-r-ai-center rt-r-jc-space-between py-4 px-6"
+            >
+              <a
+                aria-label="Logo"
+                href="/signup"
+              >
+                <svg
+                  fill="none"
+                  height="23"
+                  width="198"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M40.74 10.13c0-.524-.139-.898-.417-1.121-.273-.223-.658-.335-1.155-.335h-1.962v2.967h1.962c.497 0 .882-.121 1.155-.363.278-.241.417-.624.417-1.148Zm2.085-.014c0 1.19-.3 2.03-.902 2.523-.602.492-1.46.738-2.577.738h-2.14V17h-2.092V6.924h4.389c1.012 0 1.818.26 2.42.78.601.519.902 1.323.902 2.412Zm1.58-3.192h2.139v6.193c0 .693.082 1.199.246 1.518.255.565.811.848 1.668.848.852 0 1.406-.283 1.661-.848.164-.32.246-.825.246-1.518V6.924h2.14v6.193c0 1.071-.166 1.905-.5 2.502-.619 1.094-1.802 1.64-3.547 1.64s-2.93-.546-3.555-1.64c-.332-.597-.499-1.43-.499-2.502V6.924Zm12.222 1.75v2.707h2.386c.474 0 .83-.055 1.066-.164.42-.192.629-.57.629-1.135 0-.61-.203-1.02-.608-1.23-.228-.119-.57-.178-1.026-.178h-2.447Zm2.885-1.75c.706.014 1.248.1 1.627.26.382.16.706.394.97.704.22.255.392.538.52.847.128.31.191.664.191 1.06 0 .479-.12.95-.362 1.415-.242.46-.64.786-1.196.978.465.186.793.453.984.8.196.341.294.865.294 1.572v.676c0 .46.018.773.055.937.054.26.182.451.383.574V17H60.66a7.208 7.208 0 0 1-.137-.54 4.964 4.964 0 0 1-.089-.868l-.013-.937c-.01-.642-.128-1.07-.356-1.285-.223-.214-.645-.321-1.264-.321h-2.174V17h-2.058V6.924h4.943ZM66.566 17h-2.091V6.924h2.091V17Zm9.29-10.076v1.784h-3.014V17h-2.12V8.708h-3.028V6.924h8.162Zm6.987 0h2.385l-3.37 6.289V17h-2.105v-3.787l-3.486-6.29h2.481l2.092 4.39 2.003-4.39Zm7.239 0h2.14v6.193c0 .693.082 1.199.246 1.518.255.565.81.848 1.668.848.852 0 1.406-.283 1.66-.848.165-.32.247-.825.247-1.518V6.924h2.14v6.193c0 1.071-.167 1.905-.5 2.502-.62 1.094-1.802 1.64-3.547 1.64-1.746 0-2.93-.546-3.555-1.64-.333-.597-.499-1.43-.499-2.502V6.924ZM102.127 17h-2.092V6.924h2.092V17Zm7.909-8.326v6.576h1.941c.994 0 1.687-.49 2.079-1.47.214-.537.321-1.178.321-1.92 0-1.026-.162-1.812-.485-2.359-.319-.551-.957-.827-1.915-.827h-1.941Zm2.297-1.75c.624.009 1.144.082 1.559.219a3.324 3.324 0 0 1 1.715 1.278c.351.501.591 1.044.718 1.627.128.583.192 1.14.192 1.668 0 1.34-.269 2.475-.807 3.404-.729 1.253-1.855 1.88-3.377 1.88h-4.341V6.924h4.341Zm8.531 6.268h2.557l-1.258-3.964-1.299 3.964Zm.13-6.268h2.379L126.941 17h-2.283l-.649-2.071h-3.712L119.6 17h-2.202l3.596-10.076Zm8.757 6.966c.064.46.189.804.376 1.032.342.415.927.622 1.757.622.496 0 .9-.055 1.21-.164.588-.21.882-.6.882-1.169 0-.333-.146-.59-.438-.773-.292-.177-.75-.334-1.374-.471l-1.066-.24c-1.049-.236-1.773-.494-2.174-.772-.679-.465-1.019-1.192-1.019-2.18 0-.903.328-1.653.985-2.25.656-.597 1.62-.895 2.891-.895 1.062 0 1.967.282 2.714.848.752.56 1.146 1.376 1.183 2.447h-2.024c-.036-.606-.301-1.037-.793-1.292-.328-.169-.736-.253-1.223-.253-.543 0-.976.11-1.299.328a1.045 1.045 0 0 0-.486.916c0 .36.16.629.479.807.205.118.643.257 1.312.417l1.737.417c.761.182 1.335.426 1.722.731.602.474.903 1.16.903 2.058 0 .92-.353 1.686-1.06 2.297-.702.606-1.695.909-2.98.909-1.313 0-2.345-.299-3.097-.896-.752-.601-1.128-1.426-1.128-2.474h2.01Zm7.8 3.11V6.924h2.085v3.842h3.937V6.924h2.092V17h-2.092v-4.498h-3.937V17h-2.085Zm12.175-8.326v2.222h2.474c.442 0 .8-.083 1.073-.247.278-.168.417-.464.417-.888 0-.47-.182-.78-.546-.93-.315-.105-.716-.157-1.204-.157h-2.214Zm0 3.89v2.686h2.474c.442 0 .786-.06 1.032-.178.447-.218.67-.638.67-1.257 0-.525-.216-.885-.649-1.08-.242-.11-.581-.167-1.019-.171h-2.508Zm2.884-5.64c1.235.018 2.11.376 2.625 1.073.31.429.465.941.465 1.538 0 .615-.155 1.11-.465 1.484-.173.21-.428.4-.765.574.515.187.902.483 1.162.889.264.405.396.897.396 1.476 0 .597-.15 1.133-.451 1.607a2.78 2.78 0 0 1-1.866 1.298 7.01 7.01 0 0 1-1.429.137h-4.566V6.924h4.894Zm9.646 8.572c.834 0 1.495-.308 1.982-.923.492-.615.739-1.49.739-2.625 0-1.13-.247-2.003-.739-2.618-.487-.62-1.148-.93-1.982-.93-.834 0-1.5.308-1.996.923-.497.616-.745 1.49-.745 2.625s.248 2.01.745 2.625c.496.615 1.162.923 1.996.923Zm4.826-3.548c0 1.81-.508 3.195-1.524 4.157-.761.783-1.862 1.175-3.302 1.175s-2.541-.392-3.302-1.175c-1.021-.962-1.531-2.348-1.531-4.157 0-1.845.51-3.23 1.531-4.156.761-.784 1.862-1.176 3.302-1.176s2.541.392 3.302 1.176c1.016.925 1.524 2.31 1.524 4.156Zm4.368 1.244h2.557l-1.258-3.964-1.299 3.964Zm.13-6.268h2.379L177.527 17h-2.283l-.649-2.071h-3.712L170.186 17h-2.202l3.596-10.076Zm9.338 1.75v2.707h2.386c.474 0 .829-.055 1.066-.164.419-.192.629-.57.629-1.135 0-.61-.203-1.02-.608-1.23-.228-.119-.57-.178-1.026-.178h-2.447Zm2.885-1.75c.706.014 1.248.1 1.627.26.382.16.706.394.97.704.219.255.392.538.52.847.127.31.191.664.191 1.06 0 .479-.12.95-.362 1.415-.242.46-.64.786-1.196.978.465.186.793.453.984.8.196.341.294.865.294 1.572v.676c0 .46.018.773.055.937.054.26.182.451.383.574V17h-2.318a7.492 7.492 0 0 1-.137-.54 4.973 4.973 0 0 1-.088-.868l-.014-.937c-.009-.642-.128-1.07-.356-1.285-.223-.214-.644-.321-1.264-.321h-2.174V17h-2.058V6.924h4.943Zm7.171 1.75v6.576h1.941c.993 0 1.686-.49 2.078-1.47.214-.537.321-1.178.321-1.92 0-1.026-.161-1.812-.485-2.359-.319-.551-.957-.827-1.914-.827h-1.941Zm2.296-1.75c.625.009 1.144.082 1.559.219a3.33 3.33 0 0 1 1.716 1.278 4.49 4.49 0 0 1 .718 1.627c.127.583.191 1.14.191 1.668 0 1.34-.269 2.475-.807 3.404-.729 1.253-1.854 1.88-3.377 1.88h-4.34V6.924h4.34ZM20.88 0H1.121C.502 0 0 .502 0 1.122v9.408c0 .62.502 1.122 1.122 1.122h4.054v9.228A1.12 1.12 0 0 0 6.296 22h9.408c.62 0 1.122-.502 1.122-1.122v-9.223h4.053A1.12 1.12 0 0 0 22 10.534V1.122A1.12 1.12 0 0 0 20.88 0ZM1.3 1.302h9.05v9.05H1.3v-9.05ZM15.525 20.7h-9.05v-9.045h9.05V20.7Zm5.175-10.35h-9.05v-9.05h9.05v9.05Z"
+                    fill="#fff"
+                  />
+                  <path
+                    d="M7.448 7.325a.65.65 0 0 0 .92-.92L6.291 4.327a.654.654 0 0 0-.92 0L3.287 6.405a.65.65 0 1 0 .92.92l1.618-1.618 1.623 1.618ZM14.557 7.325l1.618-1.618 1.617 1.618a.65.65 0 0 0 .92-.92l-2.077-2.078a.654.654 0 0 0-.92 0l-2.078 2.078a.65.65 0 0 0 .92.92ZM9.382 14.677a.65.65 0 0 0-.92.921l2.079 2.076a.65.65 0 0 0 .92 0l2.077-2.076a.651.651 0 1 0-.92-.921l-1.617 1.619-1.62-1.62Z"
+                    fill="#fff"
+                  />
+                </svg>
+              </a>
+              <nav
+                class="flex items-center justify-between"
+              >
+                <ul
+                  class="flex gap-[30px]"
+                >
+                  <li>
+                    <a
+                      class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer flex flex-row items-center gap-[5px] font-bold text-xs text-light"
+                      data-accent-color=""
+                      href="/home"
+                      target="_self"
+                    >
+                      <svg
+                        fill="none"
+                        height="12"
+                        width="12"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g
+                          clip-path="url(#a)"
+                          fill="#fff"
+                        >
+                          <path
+                            d="M9.972 3.675a.086.086 0 0 0 0-.148L6.691 1.62a1.378 1.378 0 0 0-1.382 0L2.028 3.527a.086.086 0 0 0 0 .148l3.929 2.312a.086.086 0 0 0 .087 0l3.928-2.312ZM1.66 4.26a.086.086 0 0 0-.129.075V8.07a1.031 1.031 0 0 0 .512.889l3.484 2.089a.086.086 0 0 0 .13-.074V6.64a.086.086 0 0 0-.044-.074L1.66 4.26ZM6.344 6.655v4.318a.086.086 0 0 0 .129.075l3.483-2.09a1.031 1.031 0 0 0 .513-.887V4.335a.085.085 0 0 0-.043-.074.086.086 0 0 0-.086 0L6.387 6.58a.086.086 0 0 0-.043.074Z"
+                          />
+                        </g>
+                        <defs>
+                          <clippath
+                            id="a"
+                          >
+                            <path
+                              d="M.5.748h11v11H.5z"
+                              fill="#fff"
+                            />
+                          </clippath>
+                        </defs>
+                      </svg>
+                      DASHBOARD
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer flex flex-row items-center gap-[5px] font-bold text-xs text-light"
+                      data-accent-color=""
+                      href="/profile"
+                      target="_self"
+                    >
+                      <svg
+                        fill="none"
+                        height="12"
+                        width="12"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g
+                          clip-path="url(#a)"
+                          fill="#fff"
+                        >
+                          <path
+                            d="M7.647 2.135A2.211 2.211 0 0 0 6 1.435c-.648 0-1.234.247-1.65.696-.42.453-.626 1.07-.577 1.735C3.868 5.18 4.867 6.247 6 6.247c1.133 0 2.13-1.068 2.227-2.38.05-.66-.157-1.275-.58-1.732ZM9.781 11.06H2.22a.667.667 0 0 1-.52-.24.759.759 0 0 1-.154-.625c.181-1.006.747-1.851 1.636-2.444.79-.527 1.792-.817 2.82-.817 1.027 0 2.028.29 2.818.817.89.593 1.455 1.438 1.636 2.444a.759.759 0 0 1-.154.625.666.666 0 0 1-.52.24Z"
+                          />
+                        </g>
+                        <defs>
+                          <clippath
+                            id="a"
+                          >
+                            <path
+                              d="M.5.748h11v11H.5z"
+                              fill="#fff"
+                            />
+                          </clippath>
+                        </defs>
+                      </svg>
+                      PROFILE
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer flex flex-row items-center gap-[5px] font-bold text-xs text-light"
+                      data-accent-color=""
+                      href="/signup"
+                      target="_self"
+                    >
+                      <svg
+                        fill="none"
+                        height="12"
+                        width="11"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.5 1.778a4.474 4.474 0 0 0-4.469 4.47A4.474 4.474 0 0 0 5.5 10.715a4.474 4.474 0 0 0 4.469-4.469A4.474 4.474 0 0 0 5.5 1.778Zm-1.079 2.51A1.462 1.462 0 0 1 5.5 3.841c.424 0 .803.16 1.077.45.277.294.411.688.38 1.113-.064.843-.717 1.53-1.457 1.53-.74 0-1.394-.687-1.456-1.53a1.448 1.448 0 0 1 .377-1.116Zm1.079 5.74a3.77 3.77 0 0 1-2.707-1.143 2.64 2.64 0 0 1 .755-.719c.548-.35 1.24-.544 1.952-.544.711 0 1.404.193 1.951.544.298.187.554.432.756.719A3.77 3.77 0 0 1 5.5 10.028Z"
+                          fill="#fff"
+                        />
+                      </svg>
+                      SIGN UP
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer flex flex-row items-center gap-[5px] font-bold text-xs text-light"
+                      data-accent-color=""
+                      href="/signin"
+                      target="_self"
+                    >
+                      <svg
+                        fill="none"
+                        height="12"
+                        width="12"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.186 4.34c0 .279 0 .55.088.803-.926 1.087-3.37 3.96-3.598 4.179a.433.433 0 0 0-.144.322c0 .183.111.359.206.458.142.148.748.709.86.601.33-.322.397-.408.532-.541.204-.2-.021-.608.05-.774.07-.165.146-.197.268-.223.123-.026.34.062.51.064.178.003.274-.073.408-.197.107-.1.184-.191.186-.335.005-.194-.275-.45-.066-.654.208-.204.509.134.73.108.222-.026.49-.333.518-.464.028-.131-.251-.469-.208-.66.015-.064.146-.215.245-.236.098-.022.537.148.636.127.12-.026.26-.153.373-.224a2.42 2.42 0 0 0 1.025.202c1.472 0 2.664-1.147 2.664-2.56 0-1.414-1.192-2.557-2.664-2.557-1.471 0-2.619 1.147-2.619 2.56Zm3.908-.498a.687.687 0 1 1-1.375 0 .687.687 0 0 1 1.375 0Z"
+                          fill="#fff"
+                        />
+                      </svg>
+                      SIGN IN
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <button
+                class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer light
+   w-[150px] rounded-[34px]"
+                data-accent-color=""
+              >
+                Free Download
+              </button>
+            </div>
+            <div
+              class="rt-Flex rt-r-fd-column rt-r-ai-center text-center mt-[55px]"
+            >
+              <p
+                class="rt-Text rt-r-weight-regular text-2xl text-light font-bold mb-[9px]"
+              >
+                Welcome!
+              </p>
+              <p
+                class="rt-Text rt-r-weight-regular text-sm text-light font-regular mb-9 max-w-[333px]"
+              >
+                Use these awesome forms to login or create new account in your project for free.
+              </p>
+            </div>
+            <div
+              class="rt-Flex rt-r-fd-column rt-r-ai-center rt-r-w mx-auto bg-light py-[45px] px-[51px] border border-light rounded-[15px] drop-shadow-md"
+              style="--width: 452px;"
+            >
+              <p
+                class="rt-Text rt-r-weight-regular text-lg text-dark font-bold"
+              >
+                Register with
+              </p>
+              <ul
+                class="flex gap-4 mt-[22px]"
+              >
+                <li
+                  class="list-none flex items-center justify-center bg-light w-[75px] h-[75px] border border-[#e2e8f0] rounded-[15px]"
+                >
+                  <a
+                    class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+                    data-accent-color=""
+                    href="https://facebook.com"
+                    target="_blank"
+                  >
+                    <svg
+                      fill="none"
+                      height="26"
+                      width="26"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M25.917 13c0-7.13-5.786-12.917-12.916-12.917C5.87.083.084 5.87.084 13c0 6.252 4.443 11.457 10.333 12.658v-8.783H7.834V13h2.583V9.77a4.526 4.526 0 0 1 4.521-4.52h3.23v3.875h-2.584c-.71 0-1.292.581-1.292 1.292V13h3.875v3.875h-3.875v8.977c6.523-.646 11.625-6.148 11.625-12.852Z"
+                        fill="#2D3748"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li
+                  class="list-none flex items-center justify-center bg-light w-[75px] h-[75px] border border-[#e2e8f0] rounded-[15px]"
+                >
+                  <a
+                    class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+                    data-accent-color=""
+                    href="https://www.apple.com/vn/"
+                    target="_blank"
+                  >
+                    <svg
+                      fill="none"
+                      height="32"
+                      width="32"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M21.638 8.785c-2.441 0-3.473 1.165-5.173 1.165-1.743 0-3.073-1.157-5.188-1.157-2.071 0-4.28 1.264-5.682 3.418-1.969 3.037-1.634 8.757 1.555 13.63 1.14 1.744 2.664 3.7 4.662 3.721h.036c1.737 0 2.252-1.137 4.642-1.15h.037c2.354 0 2.826 1.144 4.555 1.144h.036c1.998-.021 3.604-2.189 4.744-3.927.821-1.25 1.126-1.877 1.756-3.29-4.613-1.751-5.354-8.291-.792-10.798-1.392-1.744-3.35-2.754-5.194-2.754l.006-.002Z"
+                        fill="#2D3748"
+                      />
+                      <path
+                        d="M21.1 2.439c-1.452.099-3.148 1.024-4.14 2.232-.902 1.094-1.643 2.718-1.352 4.293h.116c1.548 0 3.132-.932 4.057-2.126.891-1.136 1.567-2.747 1.32-4.399Z"
+                        fill="#2D3748"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li
+                  class="list-none flex items-center justify-center bg-light w-[75px] h-[75px] border border-[#e2e8f0] rounded-[15px]"
+                >
+                  <a
+                    class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+                    data-accent-color=""
+                    href="https://www.google.com/"
+                    target="_blank"
+                  >
+                    <svg
+                      fill="none"
+                      height="24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m22.18 10.382-.107-.45h-9.77v4.136h5.838c-.606 2.878-3.419 4.393-5.716 4.393-1.672 0-3.434-.703-4.6-1.834a6.566 6.566 0 0 1-1.96-4.635c0-1.742.783-3.484 1.922-4.63 1.14-1.146 2.86-1.787 4.57-1.787 1.96 0 3.363 1.04 3.888 1.514l2.939-2.923c-.862-.757-3.23-2.666-6.922-2.666-2.847 0-5.578 1.09-7.574 3.08C2.718 6.539 1.7 9.372 1.7 12s.965 5.32 2.874 7.294C6.613 21.399 9.5 22.5 12.475 22.5c2.706 0 5.27-1.06 7.1-2.984 1.796-1.894 2.726-4.514 2.726-7.261 0-1.157-.116-1.843-.122-1.873Z"
+                        fill="#2D3748"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+              <p
+                class="rt-Text rt-r-weight-regular text-lg text-base font-bold mt-[20px] mb-[17px]"
+              >
+                or
+              </p>
+              <form
+                class="flex flex-col max-w-[350px]"
+              >
+                <div
+                  class="rt-Flex rt-r-fd-column mb-6 gap-[5px]"
+                >
+                  <p
+                    class="rt-Text rt-r-weight-regular text-sm "
+                  >
+                    Name
+                  </p>
+                  <div
+                    class="rt-Box w-full"
+                  >
+                    <div
+                      class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
+                    >
+                      <div
+                        class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+                      >
+                        <input
+                          class="rt-reset rt-TextFieldInput"
+                          name="name"
+                          placeholder="Your full name"
+                          spellcheck="false"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="rt-Flex rt-r-fd-column mb-6 gap-[5px]"
+                >
+                  <p
+                    class="rt-Text rt-r-weight-regular text-sm "
+                  >
+                    Email
+                  </p>
+                  <div
+                    class="rt-Box w-full"
+                  >
+                    <div
+                      class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
+                    >
+                      <div
+                        class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+                      >
+                        <input
+                          class="rt-reset rt-TextFieldInput"
+                          name="email"
+                          placeholder="Your email address"
+                          spellcheck="false"
+                          type="email"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="rt-Flex rt-r-fd-column gap-[5px]"
+                >
+                  <p
+                    class="rt-Text rt-r-weight-regular text-sm "
+                  >
+                    Password
+                  </p>
+                  <div
+                    class="rt-Box w-full"
+                  >
+                    <div
+                      class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
+                    >
+                      <div
+                        class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+                      >
+                        <input
+                          class="rt-reset rt-TextFieldInput"
+                          name="password"
+                          placeholder="Your password"
+                          spellcheck="false"
+                          type="password"
+                          value=""
+                        />
+                      </div>
+                      <button
+                        aria-label="Show password"
+                        type="button"
+                      >
+                        <svg
+                          fill="none"
+                          height="23"
+                          viewBox="0 0 28 28"
+                          width="23"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g
+                            clip-rule="evenodd"
+                            fill="#a0aec0"
+                            fill-rule="evenodd"
+                          >
+                            <path
+                              d="M17.747 15.415c.238-.54.372-1.143.372-1.413 0-2.348-1.824-4.25-4.073-4.25-2.25 0-4.073 1.902-4.073 4.25 0 2.347 2.037 3.887 4.073 3.887 1.303 0 2.462-.637 3.206-1.63a4.29 4.29 0 0 0 .495-.844Zm-3.701.349c.51 0 .975-.196 1.332-.518.432-.39.622-.965.622-1.244 0-1.174-.828-2.126-1.954-2.126-1.125 0-2.046.95-2.046 2.124 0 .81.92 1.764 2.046 1.764Z"
+                            />
+                            <path
+                              d="M1.092 14.272a.448.448 0 0 1 0-.545c.01-.012.019-.025.028-.039C4.78 8.343 9.32 5.5 14.014 5.5c4.689 0 9.224 2.836 12.882 8.17.069.101.104.205.104.33 0 .13-.04.24-.114.346C23.23 19.67 18.698 22.5 14.014 22.5c-4.705 0-9.257-2.857-12.922-8.228Zm2.847-.92a1.04 1.04 0 0 0 0 1.294c3.135 3.898 6.665 5.729 10.075 5.729 3.41 0 6.94-1.83 10.075-5.729a1.04 1.04 0 0 0 0-1.294c-3.135-3.897-6.665-5.727-10.075-5.727-3.41 0-6.94 1.83-10.075 5.727Z"
+                            />
+                          </g>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary
+   mt-9 w-[350px]"
                   data-accent-color=""
                 >
                   Sign Up
