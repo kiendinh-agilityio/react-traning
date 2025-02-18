@@ -1,0 +1,256 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthForm Component matches the snapshot for signin 1`] = `
+<DocumentFragment>
+  <form
+    class="flex flex-col max-w-[350px]"
+  >
+    <div
+      class="rt-Flex rt-r-fd-column mb-6 gap-[5px]"
+    >
+      <p
+        class="rt-Text rt-r-weight-regular text-sm "
+      >
+        Email
+      </p>
+      <div
+        class="rt-Box w-full"
+      >
+        <div
+          class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
+        >
+          <div
+            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+          >
+            <input
+              class="rt-reset rt-TextFieldInput"
+              name="email"
+              placeholder="Your email address"
+              spellcheck="false"
+              type="email"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="rt-Flex rt-r-fd-column gap-[5px]"
+    >
+      <p
+        class="rt-Text rt-r-weight-regular text-sm "
+      >
+        Password
+      </p>
+      <div
+        class="rt-Box w-full"
+      >
+        <div
+          class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
+        >
+          <div
+            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+          >
+            <input
+              class="rt-reset rt-TextFieldInput"
+              name="password"
+              placeholder="Your password"
+              spellcheck="false"
+              type="password"
+              value=""
+            />
+          </div>
+          <button
+            aria-label="Show password"
+            type="button"
+          >
+            <svg
+              fill="none"
+              height="23"
+              viewBox="0 0 28 28"
+              width="23"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                clip-rule="evenodd"
+                fill="#a0aec0"
+                fill-rule="evenodd"
+              >
+                <path
+                  d="M17.747 15.415c.238-.54.372-1.143.372-1.413 0-2.348-1.824-4.25-4.073-4.25-2.25 0-4.073 1.902-4.073 4.25 0 2.347 2.037 3.887 4.073 3.887 1.303 0 2.462-.637 3.206-1.63a4.29 4.29 0 0 0 .495-.844Zm-3.701.349c.51 0 .975-.196 1.332-.518.432-.39.622-.965.622-1.244 0-1.174-.828-2.126-1.954-2.126-1.125 0-2.046.95-2.046 2.124 0 .81.92 1.764 2.046 1.764Z"
+                />
+                <path
+                  d="M1.092 14.272a.448.448 0 0 1 0-.545c.01-.012.019-.025.028-.039C4.78 8.343 9.32 5.5 14.014 5.5c4.689 0 9.224 2.836 12.882 8.17.069.101.104.205.104.33 0 .13-.04.24-.114.346C23.23 19.67 18.698 22.5 14.014 22.5c-4.705 0-9.257-2.857-12.922-8.228Zm2.847-.92a1.04 1.04 0 0 0 0 1.294c3.135 3.898 6.665 5.729 10.075 5.729 3.41 0 6.94-1.83 10.075-5.729a1.04 1.04 0 0 0 0-1.294c-3.135-3.897-6.665-5.727-10.075-5.727-3.41 0-6.94 1.83-10.075 5.727Z"
+                />
+              </g>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <button
+      class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary
+   mt-9 w-[350px]"
+      data-accent-color=""
+    >
+      Sign In
+    </button>
+    <div
+      class="rt-Text rt-r-weight-regular text-sm font-regular text-base text-center mt-[22px]"
+    >
+      Don't have an account? 
+      <a
+        class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer text-primary"
+        data-accent-color=""
+        href="/signup"
+        target="_self"
+      >
+        Sign up
+      </a>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`AuthForm Component matches the snapshot for signup 1`] = `
+<DocumentFragment>
+  <form
+    class="flex flex-col max-w-[350px]"
+  >
+    <div
+      class="rt-Flex rt-r-fd-column mb-6 gap-[5px]"
+    >
+      <p
+        class="rt-Text rt-r-weight-regular text-sm "
+      >
+        Name
+      </p>
+      <div
+        class="rt-Box w-full"
+      >
+        <div
+          class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
+        >
+          <div
+            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+          >
+            <input
+              class="rt-reset rt-TextFieldInput"
+              name="name"
+              placeholder="Your full name"
+              spellcheck="false"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="rt-Flex rt-r-fd-column mb-6 gap-[5px]"
+    >
+      <p
+        class="rt-Text rt-r-weight-regular text-sm "
+      >
+        Email
+      </p>
+      <div
+        class="rt-Box w-full"
+      >
+        <div
+          class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
+        >
+          <div
+            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+          >
+            <input
+              class="rt-reset rt-TextFieldInput"
+              name="email"
+              placeholder="Your email address"
+              spellcheck="false"
+              type="email"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="rt-Flex rt-r-fd-column gap-[5px]"
+    >
+      <p
+        class="rt-Text rt-r-weight-regular text-sm "
+      >
+        Password
+      </p>
+      <div
+        class="rt-Box w-full"
+      >
+        <div
+          class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
+        >
+          <div
+            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+          >
+            <input
+              class="rt-reset rt-TextFieldInput"
+              name="password"
+              placeholder="Your password"
+              spellcheck="false"
+              type="password"
+              value=""
+            />
+          </div>
+          <button
+            aria-label="Show password"
+            type="button"
+          >
+            <svg
+              fill="none"
+              height="23"
+              viewBox="0 0 28 28"
+              width="23"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                clip-rule="evenodd"
+                fill="#a0aec0"
+                fill-rule="evenodd"
+              >
+                <path
+                  d="M17.747 15.415c.238-.54.372-1.143.372-1.413 0-2.348-1.824-4.25-4.073-4.25-2.25 0-4.073 1.902-4.073 4.25 0 2.347 2.037 3.887 4.073 3.887 1.303 0 2.462-.637 3.206-1.63a4.29 4.29 0 0 0 .495-.844Zm-3.701.349c.51 0 .975-.196 1.332-.518.432-.39.622-.965.622-1.244 0-1.174-.828-2.126-1.954-2.126-1.125 0-2.046.95-2.046 2.124 0 .81.92 1.764 2.046 1.764Z"
+                />
+                <path
+                  d="M1.092 14.272a.448.448 0 0 1 0-.545c.01-.012.019-.025.028-.039C4.78 8.343 9.32 5.5 14.014 5.5c4.689 0 9.224 2.836 12.882 8.17.069.101.104.205.104.33 0 .13-.04.24-.114.346C23.23 19.67 18.698 22.5 14.014 22.5c-4.705 0-9.257-2.857-12.922-8.228Zm2.847-.92a1.04 1.04 0 0 0 0 1.294c3.135 3.898 6.665 5.729 10.075 5.729 3.41 0 6.94-1.83 10.075-5.729a1.04 1.04 0 0 0 0-1.294c-3.135-3.897-6.665-5.727-10.075-5.727-3.41 0-6.94 1.83-10.075 5.727Z"
+                />
+              </g>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <button
+      class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary
+   mt-9 w-[350px]"
+      data-accent-color=""
+    >
+      Sign Up
+    </button>
+    <div
+      class="rt-Text rt-r-weight-regular text-sm font-regular text-base text-center mt-[22px]"
+    >
+      Don't have an account? 
+      <a
+        class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer text-primary"
+        data-accent-color=""
+        href="/signup"
+        target="_self"
+      >
+        Sign up
+      </a>
+    </div>
+  </form>
+</DocumentFragment>
+`;

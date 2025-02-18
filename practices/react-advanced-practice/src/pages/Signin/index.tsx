@@ -5,7 +5,7 @@ import { Box, Flex } from '@radix-ui/themes';
 import { Logo, Button, Text } from '@/components/common';
 
 // Import components
-import { Navbar, SigninForm, ErrorBoundary } from '@/components';
+import { Navbar, AuthForm, ErrorBoundary } from '@/components';
 
 // Import types
 import { ButtonVariant } from '@/types';
@@ -19,10 +19,17 @@ import { TextSize } from '@/types';
 // import images
 import { BgSignin } from '@/assets/images';
 
+// Import services
+import { authenticateUser } from '@/services';
+
 const Signin = () => {
   const handleDownload = () => {
     // TODO: Add button click handling logic here when buttons are enabled
   };
+
+  // Handle signin submit
+  const handleSigninSubmit = async (data: { email: string; password: string }) =>
+    await authenticateUser(data);
 
   return (
     <Flex direction="column" className="min-h-screen mx-auto max-w-[987px] pt-6 pb-10">
@@ -46,7 +53,13 @@ const Signin = () => {
               <Text className="text-center">SigninForm from sign in went wrong!!</Text>
             }
           >
-            <SigninForm />
+            <AuthForm
+              type="signin"
+              onSubmit={handleSigninSubmit}
+              bottomText="Don't have an account?"
+              bottomLink="/signup"
+              bottomLinkText="Sign up"
+            />
           </ErrorBoundary>
         </Box>
         <img

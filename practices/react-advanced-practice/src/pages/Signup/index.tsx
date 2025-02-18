@@ -5,7 +5,7 @@ import { Box, Container, Flex } from '@radix-ui/themes';
 import { Logo, Button, Text } from '@/components/common';
 
 // Import components
-import { Navbar, SignupForm, SocialRegister, ErrorBoundary } from '@/components';
+import { Navbar, AuthForm, SocialRegister, ErrorBoundary } from '@/components';
 
 // Import types
 import { ButtonVariant } from '@/types';
@@ -16,13 +16,23 @@ import { Footer } from '@/layouts';
 // Import types
 import { TextSize } from '@/types';
 
-// import images
+// Import images
 import { BgSignup } from '@/assets/images';
+
+// Import constants
+import { registerUser } from '@/services';
 
 const Signup = () => {
   const handleButtonDownload = () => {
     // TODO: Add button click handling logic here when buttons are enabled
   };
+
+  // Handle signup submit
+  const handleSignupSubmit = async (data: {
+    name?: string;
+    email: string;
+    password: string;
+  }) => await registerUser(data);
 
   return (
     <Box className="px-6 pt-6 pb-[52px]">
@@ -73,7 +83,13 @@ const Signup = () => {
                   </Text>
                 }
               >
-                <SignupForm />
+                <AuthForm
+                  type="signup"
+                  onSubmit={handleSignupSubmit}
+                  bottomText="Already have an account?"
+                  bottomLink="/signin"
+                  bottomLinkText="Sign in"
+                />
               </ErrorBoundary>
             </Flex>
           </Box>

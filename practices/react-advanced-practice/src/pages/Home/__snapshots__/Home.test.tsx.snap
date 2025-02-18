@@ -1,0 +1,763 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Component renders without crashing 1`] = `
+<DocumentFragment>
+  <div
+    class="rt-Box bg-tertiary dark:bg-dark"
+  >
+    <div
+      class="rt-Flex min-h-screen pt-[30px] pr-[22px] pb-[23px]"
+    >
+      <div
+        class="rt-Box"
+      >
+        <div
+          class="rt-Flex rt-r-ai-center rt-r-jc-center mb-[22px] gap-12 gradient-border pb-7"
+        >
+          <a
+            aria-label="Logo"
+            href="/home"
+          >
+            <svg
+              fill="none"
+              height="23"
+              width="198"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M40.74 10.13c0-.524-.139-.898-.417-1.121-.273-.223-.658-.335-1.155-.335h-1.962v2.967h1.962c.497 0 .882-.121 1.155-.363.278-.241.417-.624.417-1.148Zm2.085-.014c0 1.19-.3 2.03-.902 2.523-.602.492-1.46.738-2.577.738h-2.14V17h-2.092V6.924h4.389c1.012 0 1.818.26 2.42.78.601.519.902 1.323.902 2.412Zm1.58-3.192h2.139v6.193c0 .693.082 1.199.246 1.518.255.565.811.848 1.668.848.852 0 1.406-.283 1.661-.848.164-.32.246-.825.246-1.518V6.924h2.14v6.193c0 1.071-.166 1.905-.5 2.502-.619 1.094-1.802 1.64-3.547 1.64s-2.93-.546-3.555-1.64c-.332-.597-.499-1.43-.499-2.502V6.924Zm12.222 1.75v2.707h2.386c.474 0 .83-.055 1.066-.164.42-.192.629-.57.629-1.135 0-.61-.203-1.02-.608-1.23-.228-.119-.57-.178-1.026-.178h-2.447Zm2.885-1.75c.706.014 1.248.1 1.627.26.382.16.706.394.97.704.22.255.392.538.52.847.128.31.191.664.191 1.06 0 .479-.12.95-.362 1.415-.242.46-.64.786-1.196.978.465.186.793.453.984.8.196.341.294.865.294 1.572v.676c0 .46.018.773.055.937.054.26.182.451.383.574V17H60.66a7.208 7.208 0 0 1-.137-.54 4.964 4.964 0 0 1-.089-.868l-.013-.937c-.01-.642-.128-1.07-.356-1.285-.223-.214-.645-.321-1.264-.321h-2.174V17h-2.058V6.924h4.943ZM66.566 17h-2.091V6.924h2.091V17Zm9.29-10.076v1.784h-3.014V17h-2.12V8.708h-3.028V6.924h8.162Zm6.987 0h2.385l-3.37 6.289V17h-2.105v-3.787l-3.486-6.29h2.481l2.092 4.39 2.003-4.39Zm7.239 0h2.14v6.193c0 .693.082 1.199.246 1.518.255.565.81.848 1.668.848.852 0 1.406-.283 1.66-.848.165-.32.247-.825.247-1.518V6.924h2.14v6.193c0 1.071-.167 1.905-.5 2.502-.62 1.094-1.802 1.64-3.547 1.64-1.746 0-2.93-.546-3.555-1.64-.333-.597-.499-1.43-.499-2.502V6.924ZM102.127 17h-2.092V6.924h2.092V17Zm7.909-8.326v6.576h1.941c.994 0 1.687-.49 2.079-1.47.214-.537.321-1.178.321-1.92 0-1.026-.162-1.812-.485-2.359-.319-.551-.957-.827-1.915-.827h-1.941Zm2.297-1.75c.624.009 1.144.082 1.559.219a3.324 3.324 0 0 1 1.715 1.278c.351.501.591 1.044.718 1.627.128.583.192 1.14.192 1.668 0 1.34-.269 2.475-.807 3.404-.729 1.253-1.855 1.88-3.377 1.88h-4.341V6.924h4.341Zm8.531 6.268h2.557l-1.258-3.964-1.299 3.964Zm.13-6.268h2.379L126.941 17h-2.283l-.649-2.071h-3.712L119.6 17h-2.202l3.596-10.076Zm8.757 6.966c.064.46.189.804.376 1.032.342.415.927.622 1.757.622.496 0 .9-.055 1.21-.164.588-.21.882-.6.882-1.169 0-.333-.146-.59-.438-.773-.292-.177-.75-.334-1.374-.471l-1.066-.24c-1.049-.236-1.773-.494-2.174-.772-.679-.465-1.019-1.192-1.019-2.18 0-.903.328-1.653.985-2.25.656-.597 1.62-.895 2.891-.895 1.062 0 1.967.282 2.714.848.752.56 1.146 1.376 1.183 2.447h-2.024c-.036-.606-.301-1.037-.793-1.292-.328-.169-.736-.253-1.223-.253-.543 0-.976.11-1.299.328a1.045 1.045 0 0 0-.486.916c0 .36.16.629.479.807.205.118.643.257 1.312.417l1.737.417c.761.182 1.335.426 1.722.731.602.474.903 1.16.903 2.058 0 .92-.353 1.686-1.06 2.297-.702.606-1.695.909-2.98.909-1.313 0-2.345-.299-3.097-.896-.752-.601-1.128-1.426-1.128-2.474h2.01Zm7.8 3.11V6.924h2.085v3.842h3.937V6.924h2.092V17h-2.092v-4.498h-3.937V17h-2.085Zm12.175-8.326v2.222h2.474c.442 0 .8-.083 1.073-.247.278-.168.417-.464.417-.888 0-.47-.182-.78-.546-.93-.315-.105-.716-.157-1.204-.157h-2.214Zm0 3.89v2.686h2.474c.442 0 .786-.06 1.032-.178.447-.218.67-.638.67-1.257 0-.525-.216-.885-.649-1.08-.242-.11-.581-.167-1.019-.171h-2.508Zm2.884-5.64c1.235.018 2.11.376 2.625 1.073.31.429.465.941.465 1.538 0 .615-.155 1.11-.465 1.484-.173.21-.428.4-.765.574.515.187.902.483 1.162.889.264.405.396.897.396 1.476 0 .597-.15 1.133-.451 1.607a2.78 2.78 0 0 1-1.866 1.298 7.01 7.01 0 0 1-1.429.137h-4.566V6.924h4.894Zm9.646 8.572c.834 0 1.495-.308 1.982-.923.492-.615.739-1.49.739-2.625 0-1.13-.247-2.003-.739-2.618-.487-.62-1.148-.93-1.982-.93-.834 0-1.5.308-1.996.923-.497.616-.745 1.49-.745 2.625s.248 2.01.745 2.625c.496.615 1.162.923 1.996.923Zm4.826-3.548c0 1.81-.508 3.195-1.524 4.157-.761.783-1.862 1.175-3.302 1.175s-2.541-.392-3.302-1.175c-1.021-.962-1.531-2.348-1.531-4.157 0-1.845.51-3.23 1.531-4.156.761-.784 1.862-1.176 3.302-1.176s2.541.392 3.302 1.176c1.016.925 1.524 2.31 1.524 4.156Zm4.368 1.244h2.557l-1.258-3.964-1.299 3.964Zm.13-6.268h2.379L177.527 17h-2.283l-.649-2.071h-3.712L170.186 17h-2.202l3.596-10.076Zm9.338 1.75v2.707h2.386c.474 0 .829-.055 1.066-.164.419-.192.629-.57.629-1.135 0-.61-.203-1.02-.608-1.23-.228-.119-.57-.178-1.026-.178h-2.447Zm2.885-1.75c.706.014 1.248.1 1.627.26.382.16.706.394.97.704.219.255.392.538.52.847.127.31.191.664.191 1.06 0 .479-.12.95-.362 1.415-.242.46-.64.786-1.196.978.465.186.793.453.984.8.196.341.294.865.294 1.572v.676c0 .46.018.773.055.937.054.26.182.451.383.574V17h-2.318a7.492 7.492 0 0 1-.137-.54 4.973 4.973 0 0 1-.088-.868l-.014-.937c-.009-.642-.128-1.07-.356-1.285-.223-.214-.644-.321-1.264-.321h-2.174V17h-2.058V6.924h4.943Zm7.171 1.75v6.576h1.941c.993 0 1.686-.49 2.078-1.47.214-.537.321-1.178.321-1.92 0-1.026-.161-1.812-.485-2.359-.319-.551-.957-.827-1.914-.827h-1.941Zm2.296-1.75c.625.009 1.144.082 1.559.219a3.33 3.33 0 0 1 1.716 1.278 4.49 4.49 0 0 1 .718 1.627c.127.583.191 1.14.191 1.668 0 1.34-.269 2.475-.807 3.404-.729 1.253-1.854 1.88-3.377 1.88h-4.34V6.924h4.34ZM20.88 0H1.121C.502 0 0 .502 0 1.122v9.408c0 .62.502 1.122 1.122 1.122h4.054v9.228A1.12 1.12 0 0 0 6.296 22h9.408c.62 0 1.122-.502 1.122-1.122v-9.223h4.053A1.12 1.12 0 0 0 22 10.534V1.122A1.12 1.12 0 0 0 20.88 0ZM1.3 1.302h9.05v9.05H1.3v-9.05ZM15.525 20.7h-9.05v-9.045h9.05V20.7Zm5.175-10.35h-9.05v-9.05h9.05v9.05Z"
+                fill="#2d3748"
+              />
+              <path
+                d="M7.448 7.325a.65.65 0 0 0 .92-.92L6.291 4.327a.654.654 0 0 0-.92 0L3.287 6.405a.65.65 0 1 0 .92.92l1.618-1.618 1.623 1.618ZM14.557 7.325l1.618-1.618 1.617 1.618a.65.65 0 0 0 .92-.92l-2.077-2.078a.654.654 0 0 0-.92 0l-2.078 2.078a.65.65 0 0 0 .92.92ZM9.382 14.677a.65.65 0 0 0-.92.921l2.079 2.076a.65.65 0 0 0 .92 0l2.077-2.076a.651.651 0 1 0-.92-.921l-1.617 1.619-1.62-1.62Z"
+                fill="#2d3748"
+              />
+            </svg>
+          </a>
+        </div>
+        <ul
+          class="px-[30px]"
+        >
+          <li
+            class="py-2 px-4 text-sm w-[220px] h-[54px] rounded-[15px] font-bold text-base mb-3 bg-white text-dark flex items-center cursor-pointer"
+          >
+            <a
+              class="flex items-center gap-4"
+              href="#"
+            >
+              <div
+                class="rt-Box flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-primary border-primary"
+              >
+                <svg
+                  fill="#4fd1c5"
+                  height="16"
+                  width="15"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    clip-path="url(#a)"
+                    fill="#fff"
+                  >
+                    <path
+                      d="M7.663 3.468a.234.234 0 0 0-.324 0L1.945 8.62a.234.234 0 0 0-.072.17l-.001 4.835a.938.938 0 0 0 .937.938h2.816a.469.469 0 0 0 .469-.469V10.11a.234.234 0 0 1 .234-.235h2.344a.234.234 0 0 1 .234.235v3.984a.469.469 0 0 0 .469.469h2.814a.937.937 0 0 0 .938-.938V8.79a.232.232 0 0 0-.073-.17L7.663 3.468Z"
+                    />
+                    <path
+                      d="m14.382 7.654-2.191-2.097V2.376a.469.469 0 0 0-.469-.469h-1.406a.469.469 0 0 0-.469.469v.937L8.15 1.691a.912.912 0 0 0-.65-.253.91.91 0 0 0-.648.253L.62 7.653a.478.478 0 0 0-.04.656.469.469 0 0 0 .68.03l6.08-5.808a.234.234 0 0 1 .323 0l6.08 5.809a.469.469 0 0 0 .662-.013.48.48 0 0 0-.023-.673Z"
+                    />
+                  </g>
+                  <defs>
+                    <clippath
+                      id="a"
+                    >
+                      <path
+                        d="M0 .5h15v15H0z"
+                        fill="#fff"
+                      />
+                    </clippath>
+                  </defs>
+                </svg>
+              </div>
+              <span
+                class="text-xs leading-base"
+              >
+                Dashboard
+              </span>
+            </a>
+          </li>
+          <li
+            class="py-2 px-4 text-sm w-[220px] h-[54px] rounded-[15px] font-bold text-base mb-3 "
+          >
+            <a
+              class="flex items-center gap-4"
+              href="#"
+            >
+              <div
+                class="rt-Box flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
+              >
+                <svg
+                  fill="none"
+                  height="16"
+                  width="15"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    clip-path="url(#a)"
+                    fill="#4fd1c5"
+                  >
+                    <path
+                      d="M3.047 15.032h-.938a.703.703 0 0 1-.703-.704V10.11a.703.703 0 0 1 .703-.703h.938a.703.703 0 0 1 .703.703v4.219a.703.703 0 0 1-.703.703ZM9.61 15.03h-.938a.703.703 0 0 1-.703-.702V7.296a.703.703 0 0 1 .703-.703h.937a.703.703 0 0 1 .703.703v7.032a.703.703 0 0 1-.703.703ZM12.89 15.031h-.937a.703.703 0 0 1-.703-.703V4.015a.703.703 0 0 1 .703-.703h.938a.703.703 0 0 1 .703.704v10.312a.703.703 0 0 1-.703.703ZM6.328 15.031h-.937a.703.703 0 0 1-.704-.703V1.672a.703.703 0 0 1 .704-.703h.937a.703.703 0 0 1 .703.703v12.656a.703.703 0 0 1-.703.703Z"
+                    />
+                  </g>
+                  <defs>
+                    <clippath
+                      id="a"
+                    >
+                      <path
+                        d="M0 .5h15v15H0z"
+                        fill="#fff"
+                      />
+                    </clippath>
+                  </defs>
+                </svg>
+              </div>
+              <span
+                class="text-xs leading-base"
+              >
+                Tables
+              </span>
+            </a>
+          </li>
+          <li
+            class="py-2 px-4 text-sm w-[220px] h-[54px] rounded-[15px] font-bold text-base mb-3 "
+          >
+            <a
+              class="flex items-center gap-4"
+              href="#"
+            >
+              <div
+                class="rt-Box flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
+              >
+                <svg
+                  fill="none"
+                  height="16"
+                  width="15"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    clip-path="url(#a)"
+                    fill="#4fd1c5"
+                  >
+                    <path
+                      d="M.937 11.515a1.64 1.64 0 0 0 1.641 1.64h9.844a1.641 1.641 0 0 0 1.64-1.64V7.004H.937v4.511ZM2.871 9.29a.879.879 0 0 1 .879-.88h1.406a.879.879 0 0 1 .88.88v.586a.879.879 0 0 1-.88.879H3.75a.879.879 0 0 1-.879-.88V9.29ZM12.422 2.843H2.578a1.64 1.64 0 0 0-1.64 1.64v.762h13.124v-.761a1.64 1.64 0 0 0-1.64-1.641Z"
+                    />
+                  </g>
+                  <defs>
+                    <clippath
+                      id="a"
+                    >
+                      <path
+                        d="M0 .5h15v15H0z"
+                        fill="#fff"
+                      />
+                    </clippath>
+                  </defs>
+                </svg>
+              </div>
+              <span
+                class="text-xs leading-base"
+              >
+                Billing
+              </span>
+            </a>
+          </li>
+          <li
+            class="py-2 px-4 text-sm w-[220px] h-[54px] rounded-[15px] font-bold text-base mb-3 "
+          >
+            <a
+              class="flex items-center gap-4"
+              href="#"
+            >
+              <div
+                class="rt-Box flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
+              >
+                <svg
+                  fill="none"
+                  height="16"
+                  width="15"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    clip-path="url(#a)"
+                  >
+                    <path
+                      d="M13.757 4.031a.468.468 0 0 0-.749-.117l-1.8 1.801a.472.472 0 0 1-.663 0l-.778-.779a.469.469 0 0 1 0-.663L11.56 2.48a.468.468 0 0 0-.14-.759c-1.354-.605-3.044-.29-4.11.768-.905.9-1.175 2.304-.74 3.854a.466.466 0 0 1-.13.468l-4.878 4.455a1.88 1.88 0 1 0 2.654 2.655l4.502-4.888A.466.466 0 0 1 9.18 8.9c.442.121.897.184 1.355.187.978 0 1.837-.317 2.456-.927 1.147-1.13 1.322-3.047.766-4.128Zm-10.842 9.57a.937.937 0 1 1-.203-1.864.937.937 0 0 1 .203 1.864Z"
+                      fill="#4fd1c5"
+                    />
+                  </g>
+                  <defs>
+                    <clippath
+                      id="a"
+                    >
+                      <path
+                        d="M0 .5h15v15H0z"
+                        fill="#fff"
+                      />
+                    </clippath>
+                  </defs>
+                </svg>
+              </div>
+              <span
+                class="text-xs leading-base"
+              >
+                RTL
+              </span>
+            </a>
+          </li>
+          <li
+            class="font-bold py-6 px-4 dark:text-light"
+          >
+            ACCOUNT PAGES
+          </li>
+          <li
+            class="py-2 px-4 text-sm w-[220px] h-[54px] rounded-[15px] font-bold text-base mb-3 "
+          >
+            <a
+              class="flex items-center gap-4"
+              href="#"
+            >
+              <div
+                class="rt-Box flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
+              >
+                <svg
+                  fill="none"
+                  height="16"
+                  width="15"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.745 2.392c-.57-.616-1.366-.955-2.245-.955-.884 0-1.683.337-2.25.949-.574.618-.853 1.459-.788 2.367C4.592 6.543 5.955 8 7.5 8c1.545 0 2.905-1.457 3.037-3.247.067-.9-.215-1.738-.792-2.361ZM12.656 14.562H2.344a.908.908 0 0 1-.71-.326 1.035 1.035 0 0 1-.21-.853c.248-1.372 1.02-2.524 2.232-3.333C4.734 9.332 6.1 8.937 7.5 8.937c1.401 0 2.766.395 3.844 1.113 1.213.808 1.984 1.96 2.232 3.332.056.315-.02.626-.21.853a.908.908 0 0 1-.71.327Z"
+                    fill="#4fd1c5"
+                  />
+                </svg>
+              </div>
+              <span
+                class="text-xs leading-base"
+              >
+                Profile
+              </span>
+            </a>
+          </li>
+          <li
+            class="py-2 px-4 text-sm w-[220px] h-[54px] rounded-[15px] font-bold text-base mb-3 "
+          >
+            <a
+              class="flex items-center gap-4"
+              href="/signin"
+            >
+              <div
+                class="rt-Box flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
+              >
+                <svg
+                  fill="none"
+                  height="16"
+                  width="15"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.539 7.063H8.437a1.406 1.406 0 0 1-1.406-1.407V1.555a.117.117 0 0 0-.117-.117H4.219a1.875 1.875 0 0 0-1.875 1.875v9.375a1.875 1.875 0 0 0 1.875 1.875h6.562a1.875 1.875 0 0 0 1.875-1.875V7.18a.117.117 0 0 0-.117-.117Z"
+                    fill="#4fd1c5"
+                  />
+                  <path
+                    d="M12.282 6.026 8.069 1.813a.059.059 0 0 0-.1.041v3.803a.469.469 0 0 0 .468.469h3.804a.059.059 0 0 0 .04-.1Z"
+                    fill="#4fd1c5"
+                  />
+                </svg>
+              </div>
+              <span
+                class="text-xs leading-base"
+              >
+                Sign In
+              </span>
+            </a>
+          </li>
+          <li
+            class="py-2 px-4 text-sm w-[220px] h-[54px] rounded-[15px] font-bold text-base mb-3 "
+          >
+            <a
+              class="flex items-center gap-4"
+              href="/signup"
+            >
+              <div
+                class="rt-Box flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
+              >
+                <svg
+                  fill="none"
+                  height="16"
+                  width="15"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    clip-path="url(#a)"
+                    fill="#4fd1c5"
+                  >
+                    <path
+                      d="M13.993 1.622a.139.139 0 0 0-.104-.108c-1.716-.42-5.68 1.076-7.828 3.223-.384.38-.733.793-1.044 1.233-.663-.058-1.325-.01-1.89.237-1.592.7-2.056 2.53-2.185 3.317a.282.282 0 0 0 .309.328l2.558-.282c.001.193.013.386.034.577a.572.572 0 0 0 .167.352l.99.988a.574.574 0 0 0 .352.167c.191.021.383.033.574.035l-.28 2.555a.283.283 0 0 0 .328.309c.785-.126 2.618-.59 3.315-2.183.246-.564.296-1.224.24-1.883.441-.311.855-.66 1.236-1.044 2.155-2.144 3.641-6.02 3.228-7.821ZM8.615 6.885a1.406 1.406 0 1 1 1.988-1.989 1.406 1.406 0 0 1-1.988 1.99Z"
+                    />
+                    <path
+                      d="M4.934 12.203c-.161.16-.418.223-.728.277a1.026 1.026 0 0 1-1.187-1.187c.048-.267.19-.641.277-.729a.128.128 0 0 0-.107-.218c-.39.047-.751.224-1.029.501-.689.69-.754 3.248-.754 3.248s2.56-.066 3.248-.755c.279-.277.455-.64.502-1.03.011-.122-.138-.195-.222-.107Z"
+                    />
+                  </g>
+                  <defs>
+                    <clippath
+                      id="a"
+                    >
+                      <path
+                        d="M0 .5h15v15H0z"
+                        fill="#fff"
+                      />
+                    </clippath>
+                  </defs>
+                </svg>
+              </div>
+              <span
+                class="text-xs leading-base"
+              >
+                Sign Up
+              </span>
+            </a>
+          </li>
+        </ul>
+        <div
+          class="rt-Box bg-primary w-[218px] py-4 px-4 border border-primary rounded-[15px] m-auto mt-16 text-white"
+        >
+          <div
+            class="rt-Box flex items-center justify-center w-[30px] h-[30px] rounded-xl border drop-shadow-[0px_3.5px_5.5px_0px_#00000005] bg-white border-white"
+          >
+            <svg
+              fill="none"
+              height="18"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 0C4.031 0 0 4.031 0 9s4.031 9 9 9 9-4.031 9-9-4.031-9-9-9Zm-.281 14.25a.938.938 0 1 1 0-1.875.938.938 0 0 1 0 1.875Zm1.567-4.781c-.76.51-.864.977-.864 1.406a.656.656 0 1 1-1.313 0c0-1.027.473-1.844 1.445-2.497.904-.606 1.415-.99 1.415-1.836 0-.574-.328-1.01-1.008-1.334-.16-.076-.515-.15-.953-.145-.55.007-.976.139-1.305.403-.62.499-.672 1.042-.672 1.05a.657.657 0 0 1-1.312-.064c.005-.114.084-1.14 1.16-2.006.56-.449 1.27-.682 2.11-.693.596-.007 1.155.094 1.534.273 1.135.537 1.758 1.432 1.758 2.516 0 1.586-1.06 2.298-1.995 2.927Z"
+                fill="#4FD1C5"
+              />
+            </svg>
+          </div>
+          <p
+            class="rt-Text rt-r-weight-bold text-sm font-bold mt-5"
+          >
+            Need help?
+          </p>
+          <p
+            class="rt-Text rt-r-weight-regular text-xs mb-[9px]"
+          >
+            Please check our docs
+          </p>
+          <button
+            class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer link
+   undefined"
+            data-accent-color=""
+          >
+            DOCUMENTATION
+          </button>
+        </div>
+      </div>
+      <div
+        class="rt-Flex rt-r-fd-column rt-r-jc-space-between w-full"
+      >
+        <header
+          class="flex justify-between mb-7 px-[21px]"
+        >
+          <div
+            class="rt-Box"
+          >
+            <div
+              class="rt-Box"
+            >
+              <p
+                class="rt-Text rt-r-weight-regular text-sm flex gap-[4px] text-base"
+              >
+                Pages / 
+                <span
+                  class="rt-Box text-xs text-dark dark:text-light"
+                >
+                  Tables
+                </span>
+              </p>
+            </div>
+            <p
+              class="rt-Text rt-r-weight-regular text-sm font-bold text-dark mt-[6px] dark:text-light"
+            >
+              Tables
+            </p>
+          </div>
+          <div
+            class="rt-Flex rt-r-ai-center gap-[17px]"
+          >
+            <button
+              aria-label="Button switch theme"
+              class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+   p-2 rounded-full bg-primary text-white"
+              data-accent-color=""
+            >
+              <svg
+                fill="none"
+                height="32"
+                viewBox="0 0 17 16"
+                width="32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  clip-path="url(#clip0_76_1062)"
+                >
+                  <path
+                    d="M8.5 12C10.7091 12 12.5 10.2091 12.5 8C12.5 5.79086 10.7091 4 8.5 4C6.29086 4 4.5 5.79086 4.5 8C4.5 10.2091 6.29086 12 8.5 12Z"
+                    fill="#e52424"
+                  />
+                  <path
+                    d="M8.50001 2.39972C8.05782 2.39972 7.70001 2.0415 7.70001 1.59972V0.8C7.70001 0.358219 8.05782 0 8.50001 0C8.9422 0 9.30001 0.358219 9.30001 0.8V1.59972C9.30001 2.0415 8.9422 2.39972 8.50001 2.39972Z"
+                    fill="#e52424"
+                  />
+                  <path
+                    d="M13.0258 4.2743C12.8211 4.2743 12.6164 4.19618 12.4601 4.03993C12.1476 3.72752 12.1476 3.22099 12.4601 2.90858L13.0258 2.34305C13.3383 2.03074 13.8445 2.03065 14.157 2.34315C14.4695 2.65555 14.4695 3.16208 14.157 3.47449L13.5914 4.04002C13.4351 4.19618 13.2305 4.2743 13.0258 4.2743Z"
+                    fill="#e52424"
+                  />
+                  <path
+                    d="M15.7 8.8H14.9C14.4578 8.8 14.1 8.44178 14.1 8C14.1 7.55822 14.4578 7.2 14.9 7.2H15.7C16.1422 7.2 16.5 7.55822 16.5 8C16.5 8.44178 16.1422 8.8 15.7 8.8Z"
+                    fill="#e52424"
+                  />
+                  <path
+                    d="M13.5914 13.8912C13.3867 13.8912 13.182 13.8132 13.0258 13.6569L12.4601 13.0914C12.1476 12.779 12.1476 12.2725 12.4601 11.9601C12.7726 11.6476 13.2789 11.6475 13.5914 11.96L14.157 12.5255C14.4695 12.8379 14.4695 13.3444 14.157 13.6568C14.0008 13.8131 13.7961 13.8912 13.5914 13.8912Z"
+                    fill="#e52424"
+                  />
+                  <path
+                    d="M8.50001 16C8.05782 16 7.70001 15.6418 7.70001 15.2V14.4003C7.70001 13.9585 8.05782 13.6003 8.50001 13.6003C8.9422 13.6003 9.30001 13.9585 9.30001 14.4003V15.2C9.30001 15.6418 8.9422 16 8.50001 16Z"
+                    fill="#e52424"
+                  />
+                  <path
+                    d="M3.40858 13.8912C3.20389 13.8912 2.99921 13.8131 2.84296 13.6568C2.53046 13.3444 2.53046 12.8379 2.84296 12.5255L3.40858 11.96C3.72108 11.6477 4.22733 11.6476 4.53983 11.9601C4.85233 12.2725 4.85233 12.779 4.53983 13.0914L3.97421 13.6569C3.81796 13.8131 3.61327 13.8912 3.40858 13.8912Z"
+                    fill="#e52424"
+                  />
+                  <path
+                    d="M2.1 8.8H1.3C0.857813 8.8 0.5 8.44178 0.5 8C0.5 7.55822 0.857813 7.2 1.3 7.2H2.1C2.54219 7.2 2.9 7.55822 2.9 8C2.9 8.44178 2.54219 8.8 2.1 8.8Z"
+                    fill="#e52424"
+                  />
+                  <path
+                    d="M3.97421 4.27431C3.76952 4.27431 3.56483 4.19628 3.40858 4.04003L2.84296 3.4745C2.53046 3.16209 2.53046 2.65556 2.84296 2.34316C3.15546 2.03066 3.66171 2.03056 3.97421 2.34306L4.53983 2.90859C4.85233 3.221 4.85233 3.72753 4.53983 4.03994C4.38358 4.19619 4.17889 4.27431 3.97421 4.27431Z"
+                    fill="#e52424"
+                  />
+                </g>
+                <defs>
+                  <clippath
+                    id="clip0_76_1062"
+                  >
+                    <rect
+                      fill="white"
+                      height="16"
+                      transform="translate(0.5)"
+                      width="16"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+            <svg
+              class="cursor-pointer"
+              fill="none"
+              height="12"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                clip-path="url(#a)"
+                fill="#718096"
+              >
+                <path
+                  d="M7.647 2.135A2.211 2.211 0 0 0 6 1.435c-.648 0-1.234.247-1.65.696-.42.453-.626 1.07-.577 1.735C3.868 5.18 4.867 6.247 6 6.247c1.133 0 2.13-1.068 2.227-2.38.05-.66-.157-1.275-.58-1.732ZM9.781 11.06H2.22a.667.667 0 0 1-.52-.24.759.759 0 0 1-.154-.625c.181-1.006.747-1.851 1.636-2.444.79-.527 1.792-.817 2.82-.817 1.027 0 2.028.29 2.818.817.89.593 1.455 1.438 1.636 2.444a.759.759 0 0 1-.154.625.666.666 0 0 1-.52.24Z"
+                />
+              </g>
+              <defs>
+                <clippath
+                  id="a"
+                >
+                  <path
+                    d="M.5.748h11v11H.5z"
+                    fill="#fff"
+                  />
+                </clippath>
+              </defs>
+            </svg>
+            <svg
+              class="cursor-pointer"
+              fill="none"
+              height="13"
+              width="13"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.5 4.625a1.875 1.875 0 1 0 0 3.75 1.875 1.875 0 0 0 0-3.75ZM10.548 6.5c0 .175-.014.35-.038.523l1.14.894a.272.272 0 0 1 .063.346l-1.08 1.864a.272.272 0 0 1-.331.115L8.96 9.704c-.28.216-.585.394-.91.532l-.2 1.424a.28.28 0 0 1-.27.231H5.42a.281.281 0 0 1-.27-.223l-.2-1.425a3.967 3.967 0 0 1-.91-.531l-1.342.539a.273.273 0 0 1-.33-.116l-1.08-1.863a.272.272 0 0 1 .061-.346L2.49 7.03a4.09 4.09 0 0 1-.038-.531c0-.175.014-.35.038-.524l-1.14-.893a.272.272 0 0 1-.062-.347l1.08-1.863a.273.273 0 0 1 .33-.116l1.342.54c.28-.216.585-.395.91-.532l.2-1.425a.28.28 0 0 1 .27-.23h2.16a.281.281 0 0 1 .27.223l.2 1.424c.326.136.632.315.911.532l1.34-.54a.273.273 0 0 1 .332.116l1.08 1.864a.272.272 0 0 1-.062.346l-1.141.894c.024.176.037.353.038.53Z"
+                fill="#718096"
+              />
+            </svg>
+            <svg
+              class="cursor-pointer"
+              fill="none"
+              height="13"
+              width="13"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m10.814 8.499-.114-.14c-.516-.623-.828-1-.828-2.765 0-.914-.218-1.664-.65-2.226-.317-.416-.747-.731-1.313-.964a.07.07 0 0 1-.02-.016C7.687 1.706 7.13 1.25 6.5 1.25s-1.186.457-1.39 1.139a.073.073 0 0 1-.018.015c-1.322.544-1.964 1.587-1.964 3.19 0 1.767-.311 2.143-.827 2.766l-.115.14a.824.824 0 0 0-.11.88.876.876 0 0 0 .806.495h7.24c.35 0 .655-.19.8-.492a.825.825 0 0 0-.108-.883ZM6.5 11.75a1.876 1.876 0 0 0 1.65-.988.094.094 0 0 0-.082-.137H4.932a.095.095 0 0 0-.08.045.093.093 0 0 0-.003.092 1.876 1.876 0 0 0 1.651.988Z"
+                fill="#718096"
+              />
+            </svg>
+            <button
+              aria-label="Button logout"
+              class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+   text-gray"
+              data-accent-color=""
+            >
+              <svg
+                height="28"
+                viewBox="0 0 256 256"
+                width="28"
+                xml:space="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+                >
+                  <path
+                    d="M69.313 54.442a2 2 0 0 1-1.634-3.149l10.118-14.399-10.118-14.399a2 2 0 0 1 3.273-2.3l10.926 15.549c.484.69.484 1.61 0 2.3L70.952 53.592a1.998 1.998 0 0 1-1.639.85zM57.693 30.092a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H9.759c-.013 0-.024.003-.037.004-.037 0-.074.008-.111.011-.122.009-.24.027-.354.057-.046.011-.089.026-.133.041A1.952 1.952 0 0 0 8.8.255c-.025.014-.053.019-.077.034-.012.007-.02.018-.031.025-.13.083-.252.177-.36.287-.019.019-.033.042-.051.061a2.088 2.088 0 0 0-.294.429 2.032 2.032 0 0 0-.129.316c-.013.042-.028.082-.038.125A1.955 1.955 0 0 0 7.759 2v69.787c0 .17.028.333.068.49.011.043.025.083.039.124.04.123.091.239.152.35.019.033.034.068.054.1.086.135.185.26.3.371.022.021.047.037.07.058.102.09.214.169.333.237.021.012.037.03.058.042l31.016 16.213a2.004 2.004 0 0 0 1.962-.061A2.002 2.002 0 0 0 42.775 88V73.787h14.918a2 2 0 0 0 2-2V45a2 2 0 0 0-4 0v24.787H42.775V18.213c0-.745-.414-1.428-1.074-1.772L17.902 4h37.791v24.092a2 2 0 0 0 2 2z"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: #718096; fill-rule: nonzero; opacity: 1;"
+                    transform="matrix(2.81 0 0 2.81 1.407 1.407)"
+                  />
+                  <path
+                    d="M80.241 38.894H47.536a2 2 0 0 1 0-4h32.705a2 2 0 0 1 0 4z"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: #718096; fill-rule: nonzero; opacity: 1;"
+                    transform="matrix(2.81 0 0 2.81 1.407 1.407)"
+                  />
+                </g>
+              </svg>
+               Log Out
+            </button>
+          </div>
+        </header>
+        <div
+          class="rt-Box bg-white dark:bg-dark min-h-[88vh] mb-7 rounded-[15px] px-[21px] py-7 relative dark:border dark:border-light"
+        >
+          <div
+            class="rt-Box flex justify-between items-center mb-7"
+          >
+            <h1
+              class="rt-Heading rt-r-size-6 rt-r-weight-bold text-lg font-bold text-dark dark:text-light"
+            >
+              Authors Table
+            </h1>
+            <div
+              class="rt-Flex gap-5"
+            >
+              <div
+                class="rt-Box w-96"
+              >
+                <div
+                  class="rt-Box w-full"
+                >
+                  <div
+                    class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input dark:placeholder:bg-dark dark:text-light"
+                  >
+                    <svg
+                      class="cursor-pointer"
+                      fill="none"
+                      height="13"
+                      width="13"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12.13 11.096 9.374 8.34a5.092 5.092 0 0 0 1.02-3.064A5.125 5.125 0 0 0 5.276.157a5.125 5.125 0 0 0-5.12 5.119 5.125 5.125 0 0 0 5.12 5.119 5.092 5.092 0 0 0 3.063-1.021l2.757 2.756a.733.733 0 0 0 1.034-1.034ZM1.62 5.276a3.656 3.656 0 1 1 7.312 0 3.656 3.656 0 0 1-7.313 0Z"
+                        fill="#a0aec0"
+                      />
+                    </svg>
+                    <div
+                      class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:placeholder:bg-dark dark:text-light"
+                    >
+                      <input
+                        class="rt-reset rt-TextFieldInput"
+                        name="authorSearch"
+                        placeholder="Search by name or email..."
+                        spellcheck="false"
+                        type="search"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
+    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer secondary
+   undefined"
+                data-accent-color=""
+              >
+                Add New Author
+              </button>
+            </div>
+          </div>
+          <div
+            class="rt-TableRoot rt-r-size-2 rt-variant-ghost w-full"
+          >
+            <div
+              class="rt-ScrollAreaRoot"
+              dir="ltr"
+              style="position: relative; --radix-scroll-area-corner-width: 0px; --radix-scroll-area-corner-height: 0px;"
+            >
+              <style>
+                [data-radix-scroll-area-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-scroll-area-viewport]::-webkit-scrollbar{display:none}
+              </style>
+              <div
+                class="rt-ScrollAreaViewport"
+                data-radix-scroll-area-viewport=""
+                style="overflow-x: scroll; overflow-y: scroll;"
+              >
+                <div
+                  style="min-width: 100%; display: table;"
+                >
+                  <table
+                    class="rt-TableRootTable"
+                  >
+                    <thead
+                      class="rt-TableHeader"
+                    >
+                      <tr
+                        class="rt-TableRow font-bold text-base"
+                      >
+                        <th
+                          class="rt-TableCell rt-TableColumnHeaderCell py-3.5 text-sm"
+                          scope="col"
+                        >
+                          Author
+                        </th>
+                        <th
+                          class="rt-TableCell rt-TableColumnHeaderCell py-3.5 text-sm"
+                          scope="col"
+                        >
+                          Function
+                        </th>
+                        <th
+                          class="rt-TableCell rt-TableColumnHeaderCell py-3.5 text-sm"
+                          scope="col"
+                        >
+                          Status
+                        </th>
+                        <th
+                          class="rt-TableCell rt-TableColumnHeaderCell py-3.5 text-sm"
+                          scope="col"
+                        >
+                          Employed
+                        </th>
+                        <th
+                          class="rt-TableCell rt-TableColumnHeaderCell w-32 py-3.5"
+                          scope="col"
+                        />
+                      </tr>
+                    </thead>
+                    <tbody
+                      class="rt-TableBody"
+                    />
+                  </table>
+                </div>
+              </div>
+              <div
+                class="rt-ScrollAreaViewportFocusRing"
+              />
+            </div>
+          </div>
+          <div
+            class="rt-Flex rt-r-ai-center rt-r-jc-center py-10"
+          >
+            <div
+              class="rt-Box loading-container"
+            >
+              <span
+                class="rt-Box loading-indicator"
+              />
+            </div>
+          </div>
+        </div>
+        <footer
+          class="flex justify-between text-xs text-base"
+        >
+          <p
+            class="rt-Text rt-r-weight-regular text-sm flex gap-1"
+          >
+            @ 2025, Made with ❤️ by 
+            <span
+              class="rt-Box text-primary font-bold"
+            >
+              Creative Tim
+            </span>
+             & 
+            <span
+              class="rt-Box text-primary font-bold"
+            >
+              Simmmple
+            </span>
+             for a better web
+          </p>
+          <nav>
+            <ul
+              class="flex gap-11"
+            >
+              <li>
+                <a
+                  class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+                  data-accent-color=""
+                  href="https://www.creative-tim.com"
+                  target="_blank"
+                >
+                  Creative Tim
+                </a>
+              </li>
+              <li>
+                <a
+                  class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+                  data-accent-color=""
+                  href="https://www.simmmple.com"
+                  target="_blank"
+                >
+                  Simmmple
+                </a>
+              </li>
+              <li>
+                <a
+                  class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+                  data-accent-color=""
+                  href="/blog"
+                  target="_blank"
+                >
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a
+                  class="rt-Text rt-reset rt-Link rt-underline-auto cursor-pointer undefined"
+                  data-accent-color=""
+                  href="/license"
+                  target="_blank"
+                >
+                  License
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </footer>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
