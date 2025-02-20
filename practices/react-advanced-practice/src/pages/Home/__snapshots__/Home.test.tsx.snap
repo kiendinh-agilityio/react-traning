@@ -563,7 +563,7 @@ exports[`Home Component renders without crashing 1`] = `
               class="rt-Flex gap-5"
             >
               <div
-                class="rt-Box w-96"
+                class="rt-Box w-96 relative"
               >
                 <div
                   class="rt-Box w-full"
