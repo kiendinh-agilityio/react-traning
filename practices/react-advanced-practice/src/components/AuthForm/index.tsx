@@ -74,8 +74,11 @@ const AuthForm = ({
   const handleFieldChange =
     (fieldName: keyof AuthFormInputs, fieldOnChange: (value: string) => void) =>
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      fieldOnChange(e.target.value);
+      const value = e.target.value;
+      fieldOnChange(value);
       trigger(fieldName);
+
+      fieldName === 'password' && value.match(REGEX.PASSWORD) && setErrorMessage('');
     };
 
   // Handle Form Submit
@@ -98,7 +101,7 @@ const AuthForm = ({
     } catch (error) {
       setIsLoading(false);
       setErrorMessage(
-        type === 'signin' ? MESSAGE_ERROR.SIGNIN_FAILED : MESSAGE_ERROR.SIGNUP_FAILED,
+        type === 'signin' ? MESSAGE_ERROR.INVALID_SIGNIN : MESSAGE_ERROR.SIGNUP_FAILED,
       );
     }
   };
@@ -194,7 +197,9 @@ const AuthForm = ({
         />
       </Flex>
 
-      {errorMessage && <Text className="text-danger mt-3 text-sm">{errorMessage}</Text>}
+      {errorMessage && !errors.password && (
+        <Text className="text-danger mt-3 text-sm">{errorMessage}</Text>
+      )}
 
       <Button
         onClick={handleSubmit(handleFormSubmit)}
