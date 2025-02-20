@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ThemeMode } from '@/types';
 import Home from '.';
 import { PROFILE_AUTHORS } from '@/mocks';
+import { today } from '@/utils';
 
 // Mock Zustand store
 jest.mock('@/stores', () => ({
@@ -132,7 +133,7 @@ describe('Home Component', () => {
           position: 'Organization',
           roles: 'Manager',
           status: 'Active',
-          date: '2025-02-20',
+          date: today,
         }),
       );
     });
