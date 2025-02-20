@@ -722,7 +722,7 @@ exports[`AuthorForm should render correctly with empty selectedAuthor 1`] = `
               placeholder=""
               spellcheck="false"
               type="date"
-              value="2025-02-19"
+              value="2025-02-20"
             />
           </div>
         </div>
