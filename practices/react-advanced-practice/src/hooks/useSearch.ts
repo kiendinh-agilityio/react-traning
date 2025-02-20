@@ -9,6 +9,8 @@ import { Author } from '@/types';
 export const useSearch = (authors: Author[]) => {
   const [searchTerm, setSearchTerm] = useState<string>('');
 
+  const isSearchActive = searchTerm.length > 0;
+
   // Debounced value of the search term
   const debouncedSearchQuery = useDebounce(searchTerm);
 
@@ -18,10 +20,14 @@ export const useSearch = (authors: Author[]) => {
       author.email.toLowerCase().includes(debouncedSearchQuery.toLowerCase()),
   );
 
+  const clearSearch = () => setSearchTerm('');
+
   return {
     searchTerm,
     setSearchTerm,
     filteredAuthors,
     debouncedSearchQuery,
+    isSearchActive,
+    clearSearch,
   };
 };
