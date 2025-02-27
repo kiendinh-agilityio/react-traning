@@ -5,7 +5,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Box, Flex } from '@radix-ui/themes';
 
 // Import icons
-import { SearchIcon, CloseIcon } from '@/components/common/Icons';
+import { SearchIcon } from '@/components/common/Icons';
 
 // import common components
 import {
@@ -88,14 +88,8 @@ const Home = () => {
   });
 
   // Destructure values from custom hook for search
-  const {
-    searchTerm,
-    setSearchTerm,
-    filteredAuthors,
-    debouncedSearchQuery,
-    isSearchActive,
-    clearSearch,
-  } = useSearch(authors);
+  const { searchTerm, setSearchTerm, filteredAuthors, debouncedSearchQuery } =
+    useSearch(authors);
 
   // Use mutation for adding a new author
   const { mutate: addAuthor, isPending: isAdding } = useMutation({
@@ -195,15 +189,6 @@ const Home = () => {
                     onChange={handleSearchChange}
                     className="dark:placeholder:bg-dark dark:text-light"
                   />
-                  {isSearchActive && (
-                    <Button
-                      variant={ButtonVariant.Transparent}
-                      onClick={clearSearch}
-                      className="absolute right-[19px] top-1/2 transform -translate-y-1/2"
-                    >
-                      <CloseIcon />
-                    </Button>
-                  )}
                 </Box>
                 <Button variant={ButtonVariant.Secondary} onClick={handleShowAddModal}>
                   Add New Author
