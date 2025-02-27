@@ -583,18 +583,13 @@ exports[`Home Component renders without crashing 1`] = `
                         fill="#a0aec0"
                       />
                     </svg>
-                    <div
-                      class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:placeholder:bg-dark dark:text-light"
-                    >
-                      <input
-                        class="rt-reset rt-TextFieldInput"
-                        name="authorSearch"
-                        placeholder="Search by name or email..."
-                        spellcheck="false"
-                        type="search"
-                        value=""
-                      />
-                    </div>
+                    <input
+                      class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:placeholder:bg-dark dark:text-light"
+                      name="authorSearch"
+                      placeholder="Search by name or email..."
+                      type="search"
+                      value=""
+                    />
                   </div>
                 </div>
               </div>
