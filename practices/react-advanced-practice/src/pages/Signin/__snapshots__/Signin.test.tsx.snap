@@ -190,18 +190,13 @@ exports[`Signin Component calls handleDownload when the download button is click
               <div
                 class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
               >
-                <div
-                  class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
-                >
-                  <input
-                    class="rt-reset rt-TextFieldInput"
-                    name="email"
-                    placeholder="Your email address"
-                    spellcheck="false"
-                    type="email"
-                    value=""
-                  />
-                </div>
+                <input
+                  class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+                  name="email"
+                  placeholder="Your email address"
+                  type="email"
+                  value=""
+                />
               </div>
             </div>
           </div>
@@ -219,18 +214,13 @@ exports[`Signin Component calls handleDownload when the download button is click
               <div
                 class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
               >
-                <div
-                  class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
-                >
-                  <input
-                    class="rt-reset rt-TextFieldInput"
-                    name="password"
-                    placeholder="Your password"
-                    spellcheck="false"
-                    type="password"
-                    value=""
-                  />
-                </div>
+                <input
+                  class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+                  name="password"
+                  placeholder="Your password"
+                  type="password"
+                  value=""
+                />
                 <button
                   aria-label="Show password"
                   type="button"
@@ -550,18 +540,13 @@ exports[`Signin Component calls handleSigninSubmit with the correct data when th
               <div
                 class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
               >
-                <div
-                  class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
-                >
-                  <input
-                    class="rt-reset rt-TextFieldInput"
-                    name="email"
-                    placeholder="Your email address"
-                    spellcheck="false"
-                    type="email"
-                    value="test@example.com"
-                  />
-                </div>
+                <input
+                  class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+                  name="email"
+                  placeholder="Your email address"
+                  type="email"
+                  value="test@example.com"
+                />
               </div>
             </div>
           </div>
@@ -579,18 +564,13 @@ exports[`Signin Component calls handleSigninSubmit with the correct data when th
               <div
                 class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
               >
-                <div
-                  class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
-                >
-                  <input
-                    class="rt-reset rt-TextFieldInput"
-                    name="password"
-                    placeholder="Your password"
-                    spellcheck="false"
-                    type="password"
-                    value="Password@123"
-                  />
-                </div>
+                <input
+                  class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+                  name="password"
+                  placeholder="Your password"
+                  type="password"
+                  value="Password@123"
+                />
                 <button
                   aria-label="Show password"
                   type="button"
@@ -960,18 +940,13 @@ exports[`Signin Component renders without crashing 1`] = `
               <div
                 class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
               >
-                <div
-                  class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
-                >
-                  <input
-                    class="rt-reset rt-TextFieldInput"
-                    name="email"
-                    placeholder="Your email address"
-                    spellcheck="false"
-                    type="email"
-                    value=""
-                  />
-                </div>
+                <input
+                  class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+                  name="email"
+                  placeholder="Your email address"
+                  type="email"
+                  value=""
+                />
               </div>
             </div>
           </div>
@@ -989,18 +964,13 @@ exports[`Signin Component renders without crashing 1`] = `
               <div
                 class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input "
               >
-                <div
-                  class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
-                >
-                  <input
-                    class="rt-reset rt-TextFieldInput"
-                    name="password"
-                    placeholder="Your password"
-                    spellcheck="false"
-                    type="password"
-                    value=""
-                  />
-                </div>
+                <input
+                  class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark "
+                  name="password"
+                  placeholder="Your password"
+                  type="password"
+                  value=""
+                />
                 <button
                   aria-label="Show password"
                   type="button"
