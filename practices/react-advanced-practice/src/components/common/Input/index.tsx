@@ -1,7 +1,7 @@
 import { ReactNode, ChangeEvent, forwardRef, memo } from 'react';
 
 // Import radix ui
-import { Flex, Text, Box, TextField } from '@radix-ui/themes';
+import { Flex, Text, Box } from '@radix-ui/themes';
 
 interface InputProps {
   name: string;
@@ -43,7 +43,7 @@ const Input = memo(
         <Box className="w-full">
           <Flex justify="center" align="center" className={baseClassName}>
             {leftIcon && leftIcon}
-            <TextField.Root
+            <input
               ref={ref}
               type={type}
               value={value}
