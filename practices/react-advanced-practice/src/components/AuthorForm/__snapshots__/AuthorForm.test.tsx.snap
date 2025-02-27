@@ -24,18 +24,13 @@ exports[`AuthorForm should render correctly in update mode 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input dark:bg-light"
         >
-          <div
-            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
-          >
-            <input
-              class="rt-reset rt-TextFieldInput"
-              name="name"
-              placeholder="Please enter name"
-              spellcheck="false"
-              type="text"
-              value="Ken"
-            />
-          </div>
+          <input
+            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
+            name="name"
+            placeholder="Please enter name"
+            type="text"
+            value="Ken"
+          />
         </div>
       </div>
     </div>
@@ -53,18 +48,13 @@ exports[`AuthorForm should render correctly in update mode 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input dark:bg-light"
         >
-          <div
-            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
-          >
-            <input
-              class="rt-reset rt-TextFieldInput"
-              name="email"
-              placeholder="Please enter email address"
-              spellcheck="false"
-              type="email"
-              value="example@gmail.com"
-            />
-          </div>
+          <input
+            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
+            name="email"
+            placeholder="Please enter email address"
+            type="email"
+            value="example@gmail.com"
+          />
         </div>
       </div>
     </div>
@@ -82,18 +72,13 @@ exports[`AuthorForm should render correctly in update mode 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input dark:bg-light"
         >
-          <div
-            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
-          >
-            <input
-              class="rt-reset rt-TextFieldInput"
-              name="avatarUrl"
-              placeholder="Please enter link image"
-              spellcheck="false"
-              type="text"
-              value="https://phimtat.vn/wp-content/uploads/2023/11/avt-3d.jpg"
-            />
-          </div>
+          <input
+            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
+            name="avatarUrl"
+            placeholder="Please enter link image"
+            type="text"
+            value="https://phimtat.vn/wp-content/uploads/2023/11/avt-3d.jpg"
+          />
         </div>
       </div>
     </div>
@@ -111,18 +96,13 @@ exports[`AuthorForm should render correctly in update mode 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input dark:bg-light"
         >
-          <div
-            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
-          >
-            <input
-              class="rt-reset rt-TextFieldInput"
-              name="date"
-              placeholder=""
-              spellcheck="false"
-              type="date"
-              value="26/10/24"
-            />
-          </div>
+          <input
+            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
+            name="date"
+            placeholder=""
+            type="date"
+            value="26/10/24"
+          />
         </div>
       </div>
     </div>
@@ -326,18 +306,13 @@ exports[`AuthorForm should render correctly with default props 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input dark:bg-light"
         >
-          <div
-            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
-          >
-            <input
-              class="rt-reset rt-TextFieldInput"
-              name="name"
-              placeholder="Please enter name"
-              spellcheck="false"
-              type="text"
-              value="Ken"
-            />
-          </div>
+          <input
+            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
+            name="name"
+            placeholder="Please enter name"
+            type="text"
+            value="Ken"
+          />
         </div>
       </div>
     </div>
@@ -355,18 +330,13 @@ exports[`AuthorForm should render correctly with default props 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input dark:bg-light"
         >
-          <div
-            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
-          >
-            <input
-              class="rt-reset rt-TextFieldInput"
-              name="email"
-              placeholder="Please enter email address"
-              spellcheck="false"
-              type="email"
-              value="example@gmail.com"
-            />
-          </div>
+          <input
+            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
+            name="email"
+            placeholder="Please enter email address"
+            type="email"
+            value="example@gmail.com"
+          />
         </div>
       </div>
     </div>
@@ -384,18 +354,13 @@ exports[`AuthorForm should render correctly with default props 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input dark:bg-light"
         >
-          <div
-            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
-          >
-            <input
-              class="rt-reset rt-TextFieldInput"
-              name="avatarUrl"
-              placeholder="Please enter link image"
-              spellcheck="false"
-              type="text"
-              value="https://phimtat.vn/wp-content/uploads/2023/11/avt-3d.jpg"
-            />
-          </div>
+          <input
+            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
+            name="avatarUrl"
+            placeholder="Please enter link image"
+            type="text"
+            value="https://phimtat.vn/wp-content/uploads/2023/11/avt-3d.jpg"
+          />
         </div>
       </div>
     </div>
@@ -413,18 +378,13 @@ exports[`AuthorForm should render correctly with default props 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input dark:bg-light"
         >
-          <div
-            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
-          >
-            <input
-              class="rt-reset rt-TextFieldInput"
-              name="date"
-              placeholder=""
-              spellcheck="false"
-              type="date"
-              value="26/10/24"
-            />
-          </div>
+          <input
+            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
+            name="date"
+            placeholder=""
+            type="date"
+            value="26/10/24"
+          />
         </div>
       </div>
     </div>
@@ -626,18 +586,13 @@ exports[`AuthorForm should render correctly with empty selectedAuthor 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input dark:bg-light"
         >
-          <div
-            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
-          >
-            <input
-              class="rt-reset rt-TextFieldInput"
-              name="name"
-              placeholder="Please enter name"
-              spellcheck="false"
-              type="text"
-              value=""
-            />
-          </div>
+          <input
+            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
+            name="name"
+            placeholder="Please enter name"
+            type="text"
+            value=""
+          />
         </div>
       </div>
     </div>
@@ -655,18 +610,13 @@ exports[`AuthorForm should render correctly with empty selectedAuthor 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input dark:bg-light"
         >
-          <div
-            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
-          >
-            <input
-              class="rt-reset rt-TextFieldInput"
-              name="email"
-              placeholder="Please enter email address"
-              spellcheck="false"
-              type="email"
-              value=""
-            />
-          </div>
+          <input
+            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
+            name="email"
+            placeholder="Please enter email address"
+            type="email"
+            value=""
+          />
         </div>
       </div>
     </div>
@@ -684,18 +634,13 @@ exports[`AuthorForm should render correctly with empty selectedAuthor 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input dark:bg-light"
         >
-          <div
-            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
-          >
-            <input
-              class="rt-reset rt-TextFieldInput"
-              name="avatarUrl"
-              placeholder="Please enter link image"
-              spellcheck="false"
-              type="text"
-              value=""
-            />
-          </div>
+          <input
+            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
+            name="avatarUrl"
+            placeholder="Please enter link image"
+            type="text"
+            value=""
+          />
         </div>
       </div>
     </div>
@@ -713,18 +658,13 @@ exports[`AuthorForm should render correctly with empty selectedAuthor 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input dark:bg-light"
         >
-          <div
-            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
-          >
-            <input
-              class="rt-reset rt-TextFieldInput"
-              name="date"
-              placeholder=""
-              spellcheck="false"
-              type="date"
-              value="2025-02-20"
-            />
-          </div>
+          <input
+            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
+            name="date"
+            placeholder=""
+            type="date"
+            value="2025-02-27"
+          />
         </div>
       </div>
     </div>
@@ -926,18 +866,13 @@ exports[`AuthorForm should render correctly with errors 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input dark:bg-light"
         >
-          <div
-            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
-          >
-            <input
-              class="rt-reset rt-TextFieldInput"
-              name="name"
-              placeholder="Please enter name"
-              spellcheck="false"
-              type="text"
-              value="invalid name"
-            />
-          </div>
+          <input
+            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
+            name="name"
+            placeholder="Please enter name"
+            type="text"
+            value="invalid name"
+          />
         </div>
       </div>
     </div>
@@ -955,18 +890,13 @@ exports[`AuthorForm should render correctly with errors 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input dark:bg-light"
         >
-          <div
-            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
-          >
-            <input
-              class="rt-reset rt-TextFieldInput"
-              name="email"
-              placeholder="Please enter email address"
-              spellcheck="false"
-              type="email"
-              value="invalid email"
-            />
-          </div>
+          <input
+            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
+            name="email"
+            placeholder="Please enter email address"
+            type="email"
+            value="invalid email"
+          />
         </div>
       </div>
     </div>
@@ -984,18 +914,13 @@ exports[`AuthorForm should render correctly with errors 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input dark:bg-light"
         >
-          <div
-            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
-          >
-            <input
-              class="rt-reset rt-TextFieldInput"
-              name="avatarUrl"
-              placeholder="Please enter link image"
-              spellcheck="false"
-              type="text"
-              value="invalid avatarUrl"
-            />
-          </div>
+          <input
+            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
+            name="avatarUrl"
+            placeholder="Please enter link image"
+            type="text"
+            value="invalid avatarUrl"
+          />
         </div>
       </div>
     </div>
@@ -1013,18 +938,13 @@ exports[`AuthorForm should render correctly with errors 1`] = `
         <div
           class="rt-Flex rt-r-ai-center rt-r-jc-center flex justify-center items-center px-5 py-[15px] border gap-3 w-full rounded-[15px] border-input dark:bg-light"
         >
-          <div
-            class="rt-TextFieldRoot rt-r-size-2 rt-variant-surface w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
-          >
-            <input
-              class="rt-reset rt-TextFieldInput"
-              name="date"
-              placeholder=""
-              spellcheck="false"
-              type="date"
-              value="invalid date"
-            />
-          </div>
+          <input
+            class="w-full text-regular focus:outline-none text-dark placeholder:text-base dark:bg-dark dark:bg-light"
+            name="date"
+            placeholder=""
+            type="date"
+            value="invalid date"
+          />
         </div>
       </div>
     </div>
