@@ -56,17 +56,13 @@ import { useToast, useSearch, useModal } from '@/hooks';
 import { MESSAGE_SUCCESS, MESSAGE_ERROR } from '@/constants';
 
 const Home = () => {
-  // Initialize react-query client for cache management
   const queryClient = useQueryClient();
 
-  // Zustand store for theme
   const { theme } = useThemeStore();
 
-  // Destructure values from custom hook for toast management
   const { toastMessage, toastType, isToastOpen, handleShowToast, handleCloseToast } =
     useToast();
 
-  // Destructure values from custom hooks for modal management
   const {
     isUpdate,
     isModalOpen,
@@ -87,7 +83,6 @@ const Home = () => {
     queryFn: getAllAuthors,
   });
 
-  // Destructure values from custom hook for search
   const { searchTerm, setSearchTerm, filteredAuthors, debouncedSearchQuery } =
     useSearch(authors);
 
@@ -134,7 +129,6 @@ const Home = () => {
     },
   });
 
-  // Handle form submission for adding or editing an author
   const handleSubmitAuthor = () => {
     setIsModalOpen(false);
 
@@ -143,11 +137,9 @@ const Home = () => {
       : addAuthor(selectedAuthor);
   };
 
-  // Handle search change
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setSearchTerm(e.target.value);
 
-  // Handle delete author
   const handleDeleteAuthor = () => {
     setIsConfirmModalOpen(false);
 

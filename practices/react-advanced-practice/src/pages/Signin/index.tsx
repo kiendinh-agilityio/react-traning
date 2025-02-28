@@ -27,7 +27,6 @@ const Signin = () => {
     // TODO: Add button click handling logic here when buttons are enabled
   };
 
-  // Handle signin submit
   const handleSigninSubmit = async (data: { email: string; password: string }) =>
     await authenticateUser(data);
 

@@ -34,6 +34,5 @@ export const validateDate = (date: string, format: string): boolean => {
   const parsedDate = dayjs(date, format);
   const year = parsedDate.year();
 
-  // Check if the date is valid and the year is >= 1000
   return parsedDate.isValid() && year >= 1000 && parsedDate.format(format) === date;
 };

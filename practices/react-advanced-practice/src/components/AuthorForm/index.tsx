@@ -66,11 +66,9 @@ const AuthorForm = ({
       handleFormAction(name, value);
     };
 
-  // Validate for date
   const handleValidateDate = (value: string): string | boolean =>
     validateDate(value, DATE_FORMAT.SECONDARY) || MESSAGE_ERROR.INVALID_DATE;
 
-  // Handle function check isDisabled
   const handleCheckIsDisabled = (
     isUpdate: boolean,
     isDirty: boolean,
