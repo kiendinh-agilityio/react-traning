@@ -12,27 +12,23 @@ export const useModal = () => {
   const [selectedAuthor, setSelectedAuthor] = useState<Author>(profileAuthor);
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState<boolean>(false);
 
-  // Handle click to show add modal
   const handleShowAddModal = () => {
     setIsUpdate(false);
     setSelectedAuthor(profileAuthor);
     setIsModalOpen(true);
   };
 
-  // Handle click to show edit modal
   const handleShowEditModal = (author: Author) => {
     setIsUpdate(true);
     setSelectedAuthor(author);
     setIsModalOpen(true);
   };
 
-  // Handle click to show confirm modal
   const handleShowConfirmModal = (authorId: string) => {
     setSelectedAuthor((prev) => ({ ...prev, id: authorId }));
     setIsConfirmModalOpen(true);
   };
 
-  // Handle click close modal
   const handleCloseModal = () => {
     setIsModalOpen(false);
     setIsConfirmModalOpen(false);

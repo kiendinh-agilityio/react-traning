@@ -11,7 +11,6 @@ export const useSearch = (authors: Author[]) => {
 
   const isSearchActive = searchTerm.length > 0;
 
-  // Debounced value of the search term
   const debouncedSearchQuery = useDebounce(searchTerm);
 
   const filteredAuthors = authors.filter(

@@ -27,7 +27,6 @@ const Signup = () => {
     // TODO: Add button click handling logic here when buttons are enabled
   };
 
-  // Handle signup submit
   const handleSignupSubmit = async (data: {
     name?: string;
     email: string;

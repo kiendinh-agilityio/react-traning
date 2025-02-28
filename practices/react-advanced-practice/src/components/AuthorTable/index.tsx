@@ -40,15 +40,12 @@ const AuthorTable = ({ authors, onEditAuthor, onDeleteAuthor }: AuthorTableProps
 
   return (
     <Table.Root className="w-full">
-      {/* Header */}
       <Table.Header>
         <Table.Row className="font-bold text-base">
           {renderTableHeaderContent()}
           <Table.ColumnHeaderCell className="w-32 py-3.5"></Table.ColumnHeaderCell>
         </Table.Row>
       </Table.Header>
-
-      {/* Body */}
       <Table.Body>
         {renderTableBodyContent(authors, onEditAuthor, onDeleteAuthor)}
       </Table.Body>
