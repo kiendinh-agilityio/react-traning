@@ -23,7 +23,7 @@
 - TailwindCSS [v3.4.12]
 - RadixUI [v3.1.6]
 - Jest [v29.7.0]
-- Strapi
+- MockApi
 
 ## DEVELOPMENT TOOLS
 
@@ -48,7 +48,6 @@
 - Using Storybook for documenting React components
 - Apply the UI Libs such as Radix
 - Apply the React Query, Zustand for practice
-- Optimize performance (Must use the Profile and Why did you render)
 - Unit testing and Storybook is required (coverage > 80%)
 - Check PageSpeed scores frequently during development time and ensure the scores at minimum 98 points.
 
