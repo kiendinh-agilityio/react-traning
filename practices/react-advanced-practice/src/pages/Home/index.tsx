@@ -1,3 +1,5 @@
+import { lazy, Suspense } from 'react';
+
 // Import useMutation
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 
@@ -15,12 +17,11 @@ import {
   Button,
   LoadingSpinner,
   Text,
-  Modal,
   Toast,
 } from '@/components/common';
 
 // Import components
-import { Sidebar, AuthorTable, AuthorForm, ConfirmModal } from '@/components';
+import { Sidebar, AuthorTable } from '@/components';
 
 // Import header for home page
 import Header from './Header';
@@ -45,6 +46,11 @@ import {
   editAuthorById,
   deleteAuthorById,
 } from '@/services';
+
+// Lazy load components
+const Modal = lazy(() => import('@/components/common/Modal'));
+const AuthorForm = lazy(() => import('@/components/AuthorForm'));
+const ConfirmModal = lazy(() => import('@/components/ConfirmModal'));
 
 // Import Zustand store
 import { useThemeStore } from '@/stores';
@@ -215,22 +221,26 @@ const Home = () => {
             />
           </Box>
           <Footer />
-          {isModalOpen && (
-            <Modal className="w-[900px] w-2/4 px-9 py-9" onClose={handleCloseModal}>
-              <AuthorForm
-                isUpdate={isUpdate}
-                selectedAuthor={selectedAuthor}
-                closeModal={handleCloseModal}
-                onChange={setSelectedAuthor}
-                onSubmit={handleSubmitAuthor}
-              />
-            </Modal>
-          )}
-          {isConfirmModalOpen && (
-            <Modal className="w-[580px] p-5" onClose={handleCloseModal}>
-              <ConfirmModal onSubmit={handleDeleteAuthor} onClose={handleCloseModal} />
-            </Modal>
-          )}
+          <Suspense fallback={<LoadingSpinner />}>
+            {isModalOpen && (
+              <Modal className="w-[900px] w-2/4 px-9 py-9" onClose={handleCloseModal}>
+                <AuthorForm
+                  isUpdate={isUpdate}
+                  selectedAuthor={selectedAuthor}
+                  closeModal={handleCloseModal}
+                  onChange={setSelectedAuthor}
+                  onSubmit={handleSubmitAuthor}
+                />
+              </Modal>
+            )}
+          </Suspense>
+          <Suspense fallback={<LoadingSpinner />}>
+            {isConfirmModalOpen && (
+              <Modal className="w-[580px] p-5" onClose={handleCloseModal}>
+                <ConfirmModal onSubmit={handleDeleteAuthor} onClose={handleCloseModal} />
+              </Modal>
+            )}
+          </Suspense>
         </Flex>
       </Flex>
     </Box>
