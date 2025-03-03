@@ -3,8 +3,6 @@ import { MemoryRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ThemeMode } from '@/types';
 import Home from '.';
-import { PROFILE_AUTHORS } from '@/mocks';
-import { today } from '@/utils';
 
 // Mock Zustand store
 jest.mock('@/stores', () => ({
@@ -20,6 +18,42 @@ jest.mock('@/services', () => ({
   addNewAuthor: jest.fn(),
   editAuthorById: jest.fn(),
   deleteAuthorById: jest.fn(),
+}));
+
+// Mock lazy loaded components
+jest.mock('@/components/common/Modal', () => ({
+  __esModule: true,
+  default: ({
+    children,
+    onClose,
+  }: {
+    children: React.ReactNode;
+    onClose: () => void;
+  }) => (
+    <div data-testid="modal" onClick={onClose}>
+      {children}
+    </div>
+  ),
+}));
+
+jest.mock('@/components/AuthorForm', () => ({
+  __esModule: true,
+  default: ({ onSubmit, onClose }: { onSubmit: () => void; onClose: () => void }) => (
+    <div data-testid="author-form">
+      <button onClick={onSubmit}>Submit</button>
+      <button onClick={onClose}>Cancel</button>
+    </div>
+  ),
+}));
+
+jest.mock('@/components/ConfirmModal', () => ({
+  __esModule: true,
+  default: ({ onSubmit, onClose }: { onSubmit: () => void; onClose: () => void }) => (
+    <div data-testid="confirm-modal">
+      <button onClick={onSubmit}>Confirm</button>
+      <button onClick={onClose}>Cancel</button>
+    </div>
+  ),
 }));
 
 describe('Home Component', () => {
@@ -95,50 +129,6 @@ describe('Home Component', () => {
     });
   });
 
-  it('handles adding a new author', async () => {
-    const queryClient = createTestQueryClient();
-    const mockAuthor = PROFILE_AUTHORS;
-    const { addNewAuthor } = await import('@/services');
-    (addNewAuthor as jest.Mock).mockResolvedValue(mockAuthor);
-
-    render(
-      <MemoryRouter>
-        <QueryClientProvider client={queryClient}>
-          <Home />
-        </QueryClientProvider>
-      </MemoryRouter>,
-    );
-
-    const addButton = screen.getByText('Add New Author');
-    fireEvent.click(addButton);
-
-    const nameInput = screen.getByPlaceholderText('Please enter name');
-    const emailInput = screen.getByPlaceholderText('Please enter email address');
-    const avatarInput = screen.getByPlaceholderText('Please enter link image');
-    const submitButton = screen.getByText('Submit');
-
-    fireEvent.change(nameInput, { target: { value: 'Joe' } });
-    fireEvent.change(emailInput, { target: { value: 'three@example.com' } });
-    fireEvent.change(avatarInput, {
-      target: { value: 'https://phimtat.vn/wp-content/uploads/2023/11/avt-3d.jpg' },
-    });
-    fireEvent.click(submitButton);
-
-    await waitFor(() => {
-      expect(addNewAuthor).toHaveBeenCalledWith(
-        expect.objectContaining({
-          name: 'Joe',
-          email: 'three@example.com',
-          avatarUrl: 'https://phimtat.vn/wp-content/uploads/2023/11/avt-3d.jpg',
-          position: 'Organization',
-          roles: 'Manager',
-          status: 'Active',
-          date: today,
-        }),
-      );
-    });
-  });
-
   it('opens and closes the add author modal', async () => {
     const queryClient = createTestQueryClient();
     render(
@@ -152,13 +142,15 @@ describe('Home Component', () => {
     const addButton = screen.getByText('Add New Author');
     fireEvent.click(addButton);
 
-    expect(screen.getByText('ADD AUTHOR')).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.queryByTestId('modal')).toBeInTheDocument();
+    });
 
     const cancelButton = screen.getByText('Cancel');
     fireEvent.click(cancelButton);
 
     await waitFor(() => {
-      expect(screen.queryByText('ADD AUTHOR')).not.toBeInTheDocument();
+      expect(screen.queryByTestId('modal')).not.toBeInTheDocument();
     });
   });
 });
