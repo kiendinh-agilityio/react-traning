@@ -82,7 +82,7 @@ exports[`AuthorItem Component calls onDelete when the Delete button is clicked 1
           >
             <button
               class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+    px-[22px] py-2.5 font-bold rounded-xl transparent cursor-pointer
    text-gray"
               data-accent-color=""
             >
@@ -115,7 +115,7 @@ exports[`AuthorItem Component calls onDelete when the Delete button is clicked 1
             </button>
             <button
               class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+    px-[22px] py-2.5 font-bold rounded-xl transparent cursor-pointer
    text-danger"
               data-accent-color=""
             >
@@ -236,7 +236,7 @@ exports[`AuthorItem Component calls onEdit when the Edit button is clicked 1`] =
           >
             <button
               class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+    px-[22px] py-2.5 font-bold rounded-xl transparent cursor-pointer
    text-gray"
               data-accent-color=""
             >
@@ -269,7 +269,7 @@ exports[`AuthorItem Component calls onEdit when the Edit button is clicked 1`] =
             </button>
             <button
               class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+    px-[22px] py-2.5 font-bold rounded-xl transparent cursor-pointer
    text-danger"
               data-accent-color=""
             >
@@ -390,7 +390,7 @@ exports[`AuthorItem Component renders correctly 1`] = `
           >
             <button
               class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+    px-[22px] py-2.5 font-bold rounded-xl transparent cursor-pointer
    text-gray"
               data-accent-color=""
             >
@@ -423,7 +423,7 @@ exports[`AuthorItem Component renders correctly 1`] = `
             </button>
             <button
               class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+    px-[22px] py-2.5 font-bold rounded-xl transparent cursor-pointer
    text-danger"
               data-accent-color=""
             >
