@@ -21,7 +21,7 @@ const Button = ({
   ariaLabel,
 }: ButtonProps) => {
   const baseClass = ` 
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer ${isDisabled ? 'primary opacity-50 cursor-not-allowed' : variant}
+    px-[22px] py-2.5 font-bold rounded-xl ${isDisabled ? 'primary opacity-50 cursor-not-allowed' : `${variant} cursor-pointer`}
   `;
 
   return (
