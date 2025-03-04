@@ -80,7 +80,7 @@ exports[`AuthForm Component matches the snapshot for signin 1`] = `
     </div>
     <button
       class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary
+    px-[22px] py-2.5 font-bold rounded-xl primary cursor-pointer
    mt-9 w-[350px]"
       data-accent-color=""
     >
@@ -207,7 +207,7 @@ exports[`AuthForm Component matches the snapshot for signup 1`] = `
     </div>
     <button
       class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary
+    px-[22px] py-2.5 font-bold rounded-xl primary cursor-pointer
    mt-9 w-[350px]"
       data-accent-color=""
     >
