@@ -21,7 +21,7 @@ exports[`Toast Component renders correctly with type failed 1`] = `
     </div>
     <button
       class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+    px-[22px] py-2.5 font-bold rounded-xl transparent cursor-pointer
    undefined"
       data-accent-color=""
     >
@@ -56,7 +56,7 @@ exports[`Toast Component renders correctly with type success 1`] = `
     </div>
     <button
       class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+    px-[22px] py-2.5 font-bold rounded-xl transparent cursor-pointer
    undefined"
       data-accent-color=""
     >
