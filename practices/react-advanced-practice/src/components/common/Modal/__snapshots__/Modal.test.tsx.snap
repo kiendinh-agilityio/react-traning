@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Modal Component calls onClose when clicking on overlay 1`] = `
+<DocumentFragment>
+  <div
+    class="rt-Flex rt-r-ai-center rt-r-jc-center bg-overlay fixed top-0 left-0 right-0 bottom-0"
+  >
+    <div
+      class="rt-Flex rt-r-fd-column gap-8 rounded-2xl bg-white shadow z-10 py-8 px-10 undefined"
+    >
+      <div>
+        Modal Content
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Modal Component does not call onClose when clicking inside modal 1`] = `
 <DocumentFragment>
   <div
