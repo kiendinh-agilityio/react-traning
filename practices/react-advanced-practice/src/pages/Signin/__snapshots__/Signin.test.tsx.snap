@@ -153,7 +153,7 @@ exports[`Signin Component calls handleDownload when the download button is click
         </nav>
         <button
           class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer download
+    px-[22px] py-2.5 font-bold rounded-xl download cursor-pointer
    undefined"
           data-accent-color=""
         >
@@ -251,7 +251,7 @@ exports[`Signin Component calls handleDownload when the download button is click
           </div>
           <button
             class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary
+    px-[22px] py-2.5 font-bold rounded-xl primary cursor-pointer
    mt-9 w-[350px]"
             data-accent-color=""
           >
@@ -503,7 +503,7 @@ exports[`Signin Component calls handleSigninSubmit with the correct data when th
         </nav>
         <button
           class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer download
+    px-[22px] py-2.5 font-bold rounded-xl download cursor-pointer
    undefined"
           data-accent-color=""
         >
@@ -601,7 +601,7 @@ exports[`Signin Component calls handleSigninSubmit with the correct data when th
           </div>
           <button
             class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary opacity-50 cursor-not-allowed
+    px-[22px] py-2.5 font-bold rounded-xl primary opacity-50 cursor-not-allowed
    mt-9 w-[350px]"
             data-accent-color=""
             data-disabled="true"
@@ -903,7 +903,7 @@ exports[`Signin Component renders without crashing 1`] = `
         </nav>
         <button
           class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer download
+    px-[22px] py-2.5 font-bold rounded-xl download cursor-pointer
    undefined"
           data-accent-color=""
         >
@@ -1001,7 +1001,7 @@ exports[`Signin Component renders without crashing 1`] = `
           </div>
           <button
             class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary
+    px-[22px] py-2.5 font-bold rounded-xl primary cursor-pointer
    mt-9 w-[350px]"
             data-accent-color=""
           >
