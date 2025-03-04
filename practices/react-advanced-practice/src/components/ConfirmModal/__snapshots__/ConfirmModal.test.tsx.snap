@@ -21,7 +21,7 @@ exports[`ConfirmModal Component should match snapshot 1`] = `
     </svg>
     <button
       class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+    px-[22px] py-2.5 font-bold rounded-xl transparent cursor-pointer
    absolute right-0 top-0 hover:tertiary hover:rounded-full justify-center w-[20px] h-[20px]"
       data-accent-color=""
     >
@@ -48,7 +48,7 @@ exports[`ConfirmModal Component should match snapshot 1`] = `
     >
       <button
         class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer danger
+    px-[22px] py-2.5 font-bold rounded-xl danger cursor-pointer
    undefined"
         data-accent-color=""
       >
@@ -56,7 +56,7 @@ exports[`ConfirmModal Component should match snapshot 1`] = `
       </button>
       <button
         class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer tertiary
+    px-[22px] py-2.5 font-bold rounded-xl tertiary cursor-pointer
    undefined"
         data-accent-color=""
       >

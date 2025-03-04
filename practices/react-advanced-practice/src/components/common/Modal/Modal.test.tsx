@@ -4,6 +4,10 @@ import Modal from '.';
 describe('Modal Component', () => {
   const mockOnClose = jest.fn();
 
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('renders correctly and matches snapshot', () => {
     const { asFragment } = render(
       <Modal onClose={mockOnClose}>
@@ -24,6 +28,20 @@ describe('Modal Component', () => {
       fireEvent.click(modalContent);
     }
     expect(mockOnClose).not.toHaveBeenCalled();
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('calls onClose when clicking on overlay', () => {
+    const { asFragment, container } = render(
+      <Modal onClose={mockOnClose}>
+        <div>Modal Content</div>
+      </Modal>,
+    );
+    const overlay = container.querySelector('.bg-overlay');
+    if (overlay) {
+      fireEvent.click(overlay);
+    }
+    expect(mockOnClose).toHaveBeenCalledTimes(1);
     expect(asFragment()).toMatchSnapshot();
   });
 

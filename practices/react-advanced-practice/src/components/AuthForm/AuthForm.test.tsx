@@ -1,5 +1,6 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import AuthForm from '.';
 import { MESSAGE_ERROR } from '@/constants';
 
@@ -13,8 +14,22 @@ jest.mock('@/stores', () => ({
   })),
 }));
 
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useNavigate: jest.fn(),
+}));
+
+jest.useFakeTimers();
+jest.spyOn(global, 'setTimeout');
+
 describe('AuthForm Component', () => {
   const mockOnSubmit = jest.fn();
+  const mockNavigate = jest.fn();
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+    (useNavigate as jest.Mock).mockReturnValue(mockNavigate);
+  });
 
   const renderComponent = (type: 'signin' | 'signup' = 'signin') =>
     render(
@@ -51,7 +66,7 @@ describe('AuthForm Component', () => {
   });
 
   it('shows an error when submitting an empty form', async () => {
-    renderComponent();
+    const { asFragment } = renderComponent();
     fireEvent.click(screen.getByRole('button', { name: /sign in/i }));
     await waitFor(() => {
       expect(screen.getByText(MESSAGE_ERROR.REQUIRED_ERROR('Email'))).toBeInTheDocument();
@@ -59,6 +74,7 @@ describe('AuthForm Component', () => {
         screen.getByText(MESSAGE_ERROR.REQUIRED_ERROR('Password')),
       ).toBeInTheDocument();
     });
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('validates email format', async () => {
@@ -81,7 +97,66 @@ describe('AuthForm Component', () => {
     });
   });
 
+  it('shows an error when name is empty in signup', async () => {
+    renderComponent('signup');
+    fireEvent.click(screen.getByRole('button', { name: /sign up/i }));
+    await waitFor(() => {
+      expect(screen.getByText(MESSAGE_ERROR.REQUIRED_ERROR('Name'))).toBeInTheDocument();
+    });
+  });
+
   it('calls onSubmit with valid data on signin', async () => {
+    const { asFragment } = renderComponent();
+
+    fireEvent.input(screen.getByPlaceholderText('Your email address'), {
+      target: { value: 'test@example.com' },
+    });
+    fireEvent.input(screen.getByPlaceholderText('Your password'), {
+      target: { value: 'Password@123' },
+    });
+
+    expect(asFragment()).toMatchSnapshot();
+
+    fireEvent.click(screen.getByRole('button', { name: /sign in/i }));
+
+    await waitFor(() => {
+      expect(mockOnSubmit).toHaveBeenCalledWith(
+        expect.objectContaining({
+          email: 'test@example.com',
+          password: 'Password@123',
+        }),
+      );
+    });
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('calls onSubmit with valid data on signup', async () => {
+    renderComponent('signup');
+
+    fireEvent.input(screen.getByPlaceholderText('Your full name'), {
+      target: { value: 'John Doe' },
+    });
+    fireEvent.input(screen.getByPlaceholderText('Your email address'), {
+      target: { value: 'john@example.com' },
+    });
+    fireEvent.input(screen.getByPlaceholderText('Your password'), {
+      target: { value: 'Password@123' },
+    });
+    fireEvent.click(screen.getByRole('button', { name: /sign up/i }));
+
+    await waitFor(() => {
+      expect(mockOnSubmit).toHaveBeenCalledWith({
+        name: 'John Doe',
+        email: 'john@example.com',
+        password: 'Password@123',
+      });
+    });
+  });
+
+  it('navigates to /home after successful submission', async () => {
+    mockOnSubmit.mockResolvedValueOnce(Promise.resolve());
+
     renderComponent();
 
     fireEvent.input(screen.getByPlaceholderText('Your email address'), {
@@ -92,38 +167,31 @@ describe('AuthForm Component', () => {
     });
     fireEvent.click(screen.getByRole('button', { name: /sign in/i }));
 
-    // Use waitFor to wait for async actions to complete
     await waitFor(() => {
-      expect(mockOnSubmit).toHaveBeenCalledWith(
-        expect.objectContaining({
-          email: 'test@example.com',
-          password: 'Password@123',
-        }),
-      );
+      expect(mockOnSubmit).toHaveBeenCalledTimes(1);
+    });
+
+    jest.advanceTimersByTime(1500);
+
+    await waitFor(() => {
+      expect(mockNavigate).toHaveBeenCalledWith('/home');
     });
   });
 
-  it('submits the form with correct data', async () => {
-    renderComponent('signup');
+  it('shows error message when submission fails', async () => {
+    mockOnSubmit.mockRejectedValueOnce(new Error('Login failed'));
+    renderComponent();
 
-    fireEvent.input(screen.getByPlaceholderText('Your full name'), {
-      target: { value: 'Test User' },
-    });
     fireEvent.input(screen.getByPlaceholderText('Your email address'), {
       target: { value: 'test@example.com' },
     });
     fireEvent.input(screen.getByPlaceholderText('Your password'), {
       target: { value: 'Password@123' },
     });
-
-    fireEvent.click(screen.getByRole('button', { name: /sign up/i }));
+    fireEvent.click(screen.getByRole('button', { name: /sign in/i }));
 
     await waitFor(() => {
-      expect(mockOnSubmit).toHaveBeenCalledWith({
-        name: 'Test User',
-        email: 'test@example.com',
-        password: 'Password@123',
-      });
+      expect(screen.getByText(MESSAGE_ERROR.INVALID_SIGNIN)).toBeInTheDocument();
     });
   });
 });

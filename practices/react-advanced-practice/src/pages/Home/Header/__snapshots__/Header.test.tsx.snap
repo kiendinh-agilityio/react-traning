@@ -34,7 +34,7 @@ exports[`Header Component displays the current page title and matches snapshot 1
       <button
         aria-label="Button switch theme"
         class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+    px-[22px] py-2.5 font-bold rounded-xl transparent cursor-pointer
    p-2 rounded-full bg-primary text-white"
         data-accent-color=""
       >
@@ -152,7 +152,7 @@ exports[`Header Component displays the current page title and matches snapshot 1
       <button
         aria-label="Button logout"
         class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+    px-[22px] py-2.5 font-bold rounded-xl transparent cursor-pointer
    text-gray"
         data-accent-color=""
       >
@@ -219,7 +219,7 @@ exports[`Header Component renders correctly and matches snapshot 1`] = `
       <button
         aria-label="Button switch theme"
         class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+    px-[22px] py-2.5 font-bold rounded-xl transparent cursor-pointer
    p-2 rounded-full bg-primary text-white"
         data-accent-color=""
       >
@@ -337,7 +337,7 @@ exports[`Header Component renders correctly and matches snapshot 1`] = `
       <button
         aria-label="Button logout"
         class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer transparent
+    px-[22px] py-2.5 font-bold rounded-xl transparent cursor-pointer
    text-gray"
         data-accent-color=""
       >

@@ -4,7 +4,7 @@ exports[`Button Component applies custom class names 1`] = `
 <div>
   <button
     class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary
+    px-[22px] py-2.5 font-bold rounded-xl primary cursor-pointer
    custom-class"
     data-accent-color=""
   >
@@ -17,7 +17,7 @@ exports[`Button Component renders correctly with default props 1`] = `
 <div>
   <button
     class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary
+    px-[22px] py-2.5 font-bold rounded-xl primary cursor-pointer
    undefined"
     data-accent-color=""
   >
@@ -30,7 +30,7 @@ exports[`Button Component renders with the correct variant class 1`] = `
 <div>
   <button
     class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer secondary
+    px-[22px] py-2.5 font-bold rounded-xl secondary cursor-pointer
    undefined"
     data-accent-color=""
   >

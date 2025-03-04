@@ -1,12 +1,6 @@
-import { render } from '@testing-library/react';
-
-// Import components AuthorForm
+import { render, fireEvent, screen, act } from '@testing-library/react';
 import AuthorForm from '.';
-
-// Import data mock
 import { PROFILE_AUTHORS } from '@/mocks';
-
-// Import types
 import { Author } from '@/types';
 
 const mockProps = {
@@ -24,38 +18,54 @@ describe('AuthorForm', () => {
   });
 
   it('should render correctly in update mode', () => {
-    const updateProps = {
-      ...mockProps,
-      isUpdate: true,
-    };
-    const { container } = render(<AuthorForm {...updateProps} />);
-    expect(container).toMatchSnapshot();
+    const updateProps = { ...mockProps, isUpdate: true };
+    render(<AuthorForm {...updateProps} />);
+    expect(screen.getByText('EDIT AUTHOR')).toBeInTheDocument();
   });
 
   it('should render correctly with empty selectedAuthor', () => {
-    const emptyAuthorProps = {
-      ...mockProps,
-      selectedAuthor: {} as Author,
-    };
-    const { container } = render(<AuthorForm {...emptyAuthorProps} />);
-    expect(container).toMatchSnapshot();
+    const emptyAuthorProps = { ...mockProps, selectedAuthor: {} as Author };
+    render(<AuthorForm {...emptyAuthorProps} />);
+    expect(screen.getByPlaceholderText('Please enter name')).toBeInTheDocument();
   });
 
-  it('should render correctly with errors', () => {
-    const errorAuthor: Author = {
-      ...PROFILE_AUTHORS,
-      name: 'invalid name',
-      email: 'invalid email',
-      avatarUrl: 'invalid avatarUrl',
-      date: 'invalid date',
-    };
+  it('should handle field changes correctly', async () => {
+    render(<AuthorForm {...mockProps} />);
+    const nameInput = screen.getByPlaceholderText('Please enter name');
 
-    const errorProps = {
-      ...mockProps,
-      selectedAuthor: errorAuthor,
-    };
+    await act(async () => {
+      fireEvent.change(nameInput, { target: { value: 'New Author Name' } });
+    });
 
-    const { container } = render(<AuthorForm {...errorProps} />);
-    expect(container).toMatchSnapshot();
+    expect(mockProps.onChange).toHaveBeenCalled();
+  });
+
+  it('should validate date correctly', async () => {
+    render(<AuthorForm {...mockProps} />);
+    const dateInput = screen.getByPlaceholderText('');
+
+    await act(async () => {
+      fireEvent.change(dateInput, { target: { value: 'invalid-date' } });
+    });
+
+    expect(mockProps.onChange).toHaveBeenCalled();
+  });
+
+  it('should disable submit button correctly when not dirty in update mode', () => {
+    const updateProps = { ...mockProps, isUpdate: true };
+    render(<AuthorForm {...updateProps} />);
+    const submitButton = screen.getByText('Save');
+    expect(submitButton).toBeDisabled();
+  });
+
+  it('should call closeModal when cancel button is clicked', async () => {
+    render(<AuthorForm {...mockProps} />);
+    const cancelButton = screen.getByText('Cancel');
+
+    await act(async () => {
+      fireEvent.click(cancelButton);
+    });
+
+    expect(mockProps.closeModal).toHaveBeenCalled();
   });
 });

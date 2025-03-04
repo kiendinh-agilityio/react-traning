@@ -1,6 +1,8 @@
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Toast from '.';
+
+jest.useFakeTimers();
 
 jest.mock('@/components/common/Icons', () => ({
   CloseIcon: () => <div data-testid="close-icon">CloseIcon</div>,
@@ -11,17 +13,20 @@ jest.mock('@/components/common/Icons', () => ({
 describe('Toast Component', () => {
   it('renders correctly with type success', () => {
     const { container } = render(
-      <Toast type="success" message="Success message" isOpen={true} />,
+      <Toast
+        type="success"
+        message="Success message"
+        isOpen={true}
+        onClose={jest.fn()}
+      />,
     );
-
     expect(container).toMatchSnapshot();
   });
 
   it('renders correctly with type failed', () => {
     const { container } = render(
-      <Toast type="failed" message="Failed message" isOpen={true} />,
+      <Toast type="failed" message="Failed message" isOpen={true} onClose={jest.fn()} />,
     );
-
     expect(container).toMatchSnapshot();
   });
 
@@ -40,5 +45,39 @@ describe('Toast Component', () => {
     fireEvent.click(getByTestId('close-icon'));
 
     expect(onCloseMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('calls onClose automatically after 3 seconds', () => {
+    const onCloseMock = jest.fn();
+
+    render(
+      <Toast
+        type="success"
+        message="Auto close test"
+        isOpen={true}
+        onClose={onCloseMock}
+      />,
+    );
+
+    act(() => {
+      jest.advanceTimersByTime(3000);
+    });
+
+    expect(onCloseMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('clears timeout on unmount', () => {
+    const onCloseMock = jest.fn();
+    const { unmount } = render(
+      <Toast type="success" message="Unmount test" isOpen={true} onClose={onCloseMock} />,
+    );
+
+    unmount();
+
+    act(() => {
+      jest.advanceTimersByTime(3000);
+    });
+
+    expect(onCloseMock).not.toHaveBeenCalled();
   });
 });
