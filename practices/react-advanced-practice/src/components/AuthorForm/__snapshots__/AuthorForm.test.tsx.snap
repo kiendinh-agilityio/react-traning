@@ -261,7 +261,7 @@ exports[`AuthorForm should render correctly in update mode 1`] = `
     >
       <button
         class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary opacity-50 cursor-not-allowed
+    px-[22px] py-2.5 font-bold rounded-xl primary opacity-50 cursor-not-allowed
    w-[150px]"
         data-accent-color=""
         data-disabled="true"
@@ -271,7 +271,7 @@ exports[`AuthorForm should render correctly in update mode 1`] = `
       </button>
       <button
         class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer tertiary
+    px-[22px] py-2.5 font-bold rounded-xl tertiary cursor-pointer
    w-[150px]"
         data-accent-color=""
       >
@@ -543,7 +543,7 @@ exports[`AuthorForm should render correctly with default props 1`] = `
     >
       <button
         class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary
+    px-[22px] py-2.5 font-bold rounded-xl primary cursor-pointer
    w-[150px]"
         data-accent-color=""
       >
@@ -551,7 +551,7 @@ exports[`AuthorForm should render correctly with default props 1`] = `
       </button>
       <button
         class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer tertiary
+    px-[22px] py-2.5 font-bold rounded-xl tertiary cursor-pointer
    w-[150px]"
         data-accent-color=""
       >
@@ -663,7 +663,7 @@ exports[`AuthorForm should render correctly with empty selectedAuthor 1`] = `
             name="date"
             placeholder=""
             type="date"
-            value="2025-03-03"
+            value="2025-03-04"
           />
         </div>
       </div>
@@ -823,7 +823,7 @@ exports[`AuthorForm should render correctly with empty selectedAuthor 1`] = `
     >
       <button
         class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary
+    px-[22px] py-2.5 font-bold rounded-xl primary cursor-pointer
    w-[150px]"
         data-accent-color=""
       >
@@ -831,7 +831,7 @@ exports[`AuthorForm should render correctly with empty selectedAuthor 1`] = `
       </button>
       <button
         class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer tertiary
+    px-[22px] py-2.5 font-bold rounded-xl tertiary cursor-pointer
    w-[150px]"
         data-accent-color=""
       >
@@ -1103,7 +1103,7 @@ exports[`AuthorForm should render correctly with errors 1`] = `
     >
       <button
         class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary
+    px-[22px] py-2.5 font-bold rounded-xl primary cursor-pointer
    w-[150px]"
         data-accent-color=""
       >
@@ -1111,7 +1111,7 @@ exports[`AuthorForm should render correctly with errors 1`] = `
       </button>
       <button
         class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer tertiary
+    px-[22px] py-2.5 font-bold rounded-xl tertiary cursor-pointer
    w-[150px]"
         data-accent-color=""
       >
