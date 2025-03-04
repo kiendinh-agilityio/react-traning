@@ -167,7 +167,7 @@ exports[`Signup Component calls handleDownload when the download button is click
               </nav>
               <button
                 class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer light
+    px-[22px] py-2.5 font-bold rounded-xl light cursor-pointer
    w-[150px] rounded-[34px]"
                 data-accent-color=""
               >
@@ -378,7 +378,7 @@ exports[`Signup Component calls handleDownload when the download button is click
                 </div>
                 <button
                   class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary
+    px-[22px] py-2.5 font-bold rounded-xl primary cursor-pointer
    mt-9 w-[350px]"
                   data-accent-color=""
                 >
@@ -641,7 +641,7 @@ exports[`Signup Component calls handleSignupSubmit with the correct data when th
               </nav>
               <button
                 class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer light
+    px-[22px] py-2.5 font-bold rounded-xl light cursor-pointer
    w-[150px] rounded-[34px]"
                 data-accent-color=""
               >
@@ -852,7 +852,7 @@ exports[`Signup Component calls handleSignupSubmit with the correct data when th
                 </div>
                 <button
                   class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary opacity-50 cursor-not-allowed
+    px-[22px] py-2.5 font-bold rounded-xl primary opacity-50 cursor-not-allowed
    mt-9 w-[350px]"
                   data-accent-color=""
                   data-disabled="true"
@@ -1165,7 +1165,7 @@ exports[`Signup Component renders without crashing 1`] = `
               </nav>
               <button
                 class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer light
+    px-[22px] py-2.5 font-bold rounded-xl light cursor-pointer
    w-[150px] rounded-[34px]"
                 data-accent-color=""
               >
@@ -1376,7 +1376,7 @@ exports[`Signup Component renders without crashing 1`] = `
                 </div>
                 <button
                   class="rt-reset rt-BaseButton rt-r-size-2 rt-variant-solid rt-Button  
-    px-[22px] py-2.5 font-bold rounded-xl cursor-pointer primary
+    px-[22px] py-2.5 font-bold rounded-xl primary cursor-pointer
    mt-9 w-[350px]"
                   data-accent-color=""
                 >
